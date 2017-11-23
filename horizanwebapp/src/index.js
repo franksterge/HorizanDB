@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-import firebase from './firebase';
+import React from "react";
 
-// r:database
-let database = firebase.database();
-let usersRef = database.ref().child('users');
+import { render } from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Provider as ReduxProvider } from "react-redux";
 
-usersRef.on('value', snapshot => {
-	console.log('Users: ', snapshot.val());
-});
+import App from "./views/layouts/app";
+import store from "./state/store";
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const reduxStore = configureStore( window.REDUX_INITIAL_DATA );
+
+const RootHtml = ( ) => (
+	<ReduxProvider store={ reduxStore }>
+		<Router>
+			<App />
+		</Router>
+	</ReduxProvider>
+);
+
+render( <RootHtml />, document.getElementById( "react-root" ) );
