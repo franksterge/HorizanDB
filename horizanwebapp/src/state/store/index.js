@@ -1,5 +1,5 @@
 import configureStore from './configureStore';
-import * as reducers from './ducks';
+import initialState from './initialState';
 
 const store = configureStore(
   initialState

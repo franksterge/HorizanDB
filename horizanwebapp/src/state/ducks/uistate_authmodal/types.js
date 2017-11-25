@@ -1,0 +1,3 @@
+export const REQUEST_MODAL_OPEN = 'uiStateAuthModal/REQUEST_MODAL_OPEN';
+export const REQUEST_MODAL_CLOSE = 'uiStateAuthModal/REQUEST_MODAL_CLOSE';
+export const REQUEST_MODAL_CONTENTSET = 'uiStateAuthModal/REQUEST_MODAL_CONTENTSET';

@@ -1,18 +1,15 @@
 import React from "react";
-
 import { render } from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider as ReduxProvider } from "react-redux";
 
-import App from "./views/layouts/app";
+import Home from "./views/pages/Home";
 import store from "./state/store";
 
-const reduxStore = configureStore( window.REDUX_INITIAL_DATA );
-
 const RootHtml = ( ) => (
-	<ReduxProvider store={ reduxStore }>
+	<ReduxProvider store={ store }>
 		<Router>
-			<App />
+			<Home />
 		</Router>
 	</ReduxProvider>
 );

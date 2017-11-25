@@ -1,13 +1,12 @@
 import { Map } from 'immutable';
 
-const initialState = {
+export default {
 	uiStateAuthModal: Map({
 		modalIsOpen: false,
 		modalContentType: 'LOGIN'
 	}),
 	currentAuthStatus: Map({
-		authenticated: false,
-		currentUser: Map(null),
-		token: null
+		currentUser: null,
+		status: 'Not Authenticated'
 	})
 };
