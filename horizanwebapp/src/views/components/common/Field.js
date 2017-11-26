@@ -13,6 +13,35 @@ const Field = ({
 }) => {
   let innerContents;
 
+  let controlElement;
+
+  switch (type) {
+    case 'textarea':
+      controlElement = (
+        <textarea name={name}
+          required={isRequired}
+          defaultValue={defaultValue || ''}>
+        </textarea>
+      );
+      break;
+    case 'submit':
+      controlElement = (
+        <button type={ type } className="success button expanded">
+          { text }
+        </button>
+      );
+      break;
+    default:
+      controlElement = (
+        <input type={type}
+          placeholder={placeholder || ''}
+          name={name}
+          required={isRequired}
+          defaultValue={defaultValue || ''} />
+      );
+      break;
+  }
+
   if (children) {
     innerContents = (
       <fieldset>
@@ -23,9 +52,11 @@ const Field = ({
     innerContents = (
       <fieldset>
         {
-          <label>
-            <strong>{label}</strong>
-          </label>
+          label ? (
+            <label>
+              {label}
+            </label>
+          ) : null
         }
         {
           subtitle ? (
@@ -33,26 +64,8 @@ const Field = ({
           ) : null
         }
         {
-          type === 'textarea' ? (
-            <textarea name={name}
-              required={isRequired}
-              defaultValue={defaultValue || ''}>
-            </textarea>
-          ) : (
-            <input type={type}
-              placeholder={placeholder || ''}
-              name={name}
-              required={isRequired}
-              defaultValue={defaultValue || ''} />
-          )
-				}
-				{
-					type === 'submit' ? (
-						<button type={ type }>
-							{ text }
-						</button>
-					) : null
-				}
+          controlElement
+        }
       </fieldset>
     );
   }

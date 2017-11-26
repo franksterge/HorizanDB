@@ -9,7 +9,9 @@ const Form = ({
 }) => (
 	<form onSubmit={onSubmit}>
 		{
-			fields && fields.length ? fields.map(fieldMeta => (<Field {...fieldMeta} />)) : 'Missing form fields!'
+			fields && fields.length ? fields.map((fieldMeta, key) => (
+				<Field key={key} {...fieldMeta} />
+			)) : 'Missing form fields!'
 		}
 	</form>
 );

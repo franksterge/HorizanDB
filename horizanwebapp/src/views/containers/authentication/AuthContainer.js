@@ -13,7 +13,7 @@ const mapDispatchToProps = {
 	requestLogin: authActions.requestLogin,
 	requestSignup: authActions.requestSignup,
 	openModal: uistate_authmodalActions.openModal,
-	closeModal: uistate_authmodalActions.closeModal,
+	closeModal: uistate_authmodalActions.requestModalClose,
 	setModalContent: uistate_authmodalActions.requestModalContentSet
 };
 
@@ -112,6 +112,8 @@ class AuthContainer extends Component {
 	}
 	render() {
 		let { props, state } = this;
+
+		console.log(props.uiStateAuthModal.get('modalIsOpen'));
 
 		let authenticationProps = {
 			closeAuthModal: props.closeModal,

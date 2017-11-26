@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import foundation from '../styles/foundation.min.css';
+import App from '../styles/App.css';
 import AuthContainer from '../containers/authentication/AuthContainer';
 import { uistate_authmodalActions } from '../../state/ducks/uistate_authmodal';
 import store from '../../state/store/index';
 
 const mapStateToProps = state => ({
-	currentAuthStatus: state.currentAuthStatus,
-	uiStateAuthModal: state.uiStateAuthModal
+	currentAuthStatus: state.currentAuthStatus
 });
 const mapDispatchToProps = {
-	openModal: uistate_authmodalActions.openModal
+	openModal: uistate_authmodalActions.requestModalOpen
 };
 
 class Home extends Component {
@@ -21,37 +22,37 @@ class Home extends Component {
     return (
       <div className="App">
 				<AuthContainer />
-				<header>
-					<nav className="Navbar">
-						<div className="Logo">
+				<nav className="Navbar row simple">
+					<div className="Logo column medium-10 small-5">
+						<Link className="clear button" to="#">
 							Horizan
-						</div>
-						<div className="Links">
-							{
-								currentAuthStatus.get('status') === 'Authenticated!' ? (
-									<ul>
-										<li>
-											<Link to='/profile'>
-												{
-													currentAuthStatus.currentUser.email ||
-													currentAuthStatus.currentUser.name
-												}
-											</Link>
-										</li>
-									</ul>
-								) : (
-									<ul>
-										<li>
-											<button onClick={props.openModal}>
-												Login / Signup
-											</button>
-										</li>
-									</ul>
-								)
-							}
-						</div>
-					</nav>
-				</header>
+						</Link>
+					</div>
+					<div className="Links column medium-2 small-5">
+						{
+							currentAuthStatus.get('status') === 'Authenticated!' ? (
+								<ul className="menu simple">
+									<li>
+										<Link className="clear button" to='/profile'>
+											{
+												currentAuthStatus.currentUser.email ||
+												currentAuthStatus.currentUser.name
+											}
+										</Link>
+									</li>
+								</ul>
+							) : (
+								<ul className="menu simple">
+									<li>
+										<button className="clear button" onClick={props.openModal}>
+											Login / Signup
+										</button>
+									</li>
+								</ul>
+							)
+						}
+					</div>
+				</nav>
 			</div>
     );
   }
