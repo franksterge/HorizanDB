@@ -73,7 +73,7 @@ const Authentication = ({
 								</strong>
 							</h5>
 							<Form fields={getSignUpFields()}
-								onSubmit={handleLogin.bind(this)} />
+								onSubmit={handleSignup.bind(this)} />
 							<h6>
 								Already have an account?
 							</h6>

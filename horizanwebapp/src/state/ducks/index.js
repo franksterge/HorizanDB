@@ -6,6 +6,6 @@ export { default as uistate_authmodal } from './uistate_authmodal';
 
 export function* rootSaga() {
 	yield all([
-		...authSagas
+		...authSagas.default()
 	]);
 };

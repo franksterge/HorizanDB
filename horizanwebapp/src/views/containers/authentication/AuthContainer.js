@@ -23,26 +23,44 @@ class AuthContainer extends Component {
       authModalIsOpen: true
     })
   }
-	handleLogin(e) {}
+	handleLogin(e) {
+		e.preventDefault();
+
+		let { target } = e;
+
+		let email = target.email.value;
+		let password = target.password.value;
+
+		if (!email ||
+			!password) {
+			throw new Error('Missing fields');
+		} else {
+			// location where ui feedback should start
+			this.props.requestLogin(email, password);
+		}
+	}
 	handleSignup(e) {
 		e.preventDefault();
 
 		let { target } = e;
 
-		let name = target.name.value;
+		let firstname = target.firstname.value;
+		let lastname = target.lastname.value;
 		let email = target.email.value;
-		let password = target.email.password;
-		let confirmPassword = target.email.confirmPassword;
+		let password = target.password.value;
+		let confirmPassword = target.confirmPassword.value;
 
-		if (!name ||
-				!email ||
-				!password ||
-				!confirmPassword) {
+		if (!firstname ||
+			!lastname ||
+			!email ||
+			!password ||
+			!confirmPassword) {
 			throw new Error('Missing fields');
 		} else if (password !== confirmPassword) {
 			throw new Error('Passwords dont match');
 		} else {
-			this.props.requestSignup(email, password, name);
+			// location where ui feedback should start
+			this.props.requestSignup(email, password, firstname, lastname);
 		}
 	}
 	getSignUpFields() {
@@ -121,8 +139,8 @@ class AuthContainer extends Component {
 			modalContentType: props.uiStateAuthModal.get('modalContentType'),
 			getLoginFields: this.getLoginFields,
 			getSignUpFields: this.getSignUpFields,
-			handleLogin: this.handleLogin,
-			handleSignup: this.handleSignup,
+			handleLogin: this.handleLogin.bind(this),
+			handleSignup: this.handleSignup.bind(this),
 			setModalContent: props.setModalContent
 		};
 

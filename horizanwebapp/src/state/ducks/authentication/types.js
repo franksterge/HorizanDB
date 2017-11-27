@@ -6,5 +6,9 @@ export const REQUEST_SIGNUP = 'auth/REQUEST_SIGNUP';
 export const SIGNUP_SUCCESS = 'auth/SIGNUP_SUCCESS';
 export const SIGNUP_FAILED = 'auth/SIGNUP_FAILED';
 
+export const REQUEST_PROFILE = 'auth/REQUEST_USER_PROFILE';
+export const PROFILE_READ_SUCCESS = 'auth/PROFILE_READ_SUCCESS';
+export const PROFILE_READ_FAILED = 'auth/PROFILE_READ_FAILED';
+
 
 

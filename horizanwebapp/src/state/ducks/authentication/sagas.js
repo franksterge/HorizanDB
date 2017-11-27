@@ -1,19 +1,20 @@
 import * as types from './types';
-import { takeEvery } from 'redux-saga';
-import { call, put } from 'redux-saga/effects';
-import * as firebase from 'firebase';
+import { call, put, takeEvery } from 'redux-saga/effects';
+import firebaseApp, { firebaseAuth, firebaseDatabase } from '../../firebase';
 import * as actions from './actions';
+import * as authModalActions from '../uistate_authmodal/actions';
 import { getNormalizedUserProfile } from './utils';
 
 export function* loginUser(action) {
 	try {
-		// - call firebase api
+		// - call firebaseApp api
 		// - upon success, dispatch types.LOGIN_SUCCESS
-		let auth = firebase.auth();
+		let auth = firebaseApp.auth();
 		let { email, password } = action.meta;
 
 		const response = yield call(auth.signInWithEmailAndPassword, email, password);
 
+		yield call(authModalActions.requestModalClose);
 		yield put(actions.loginSuccessful, response.user);
 	} catch (e) {
 		// - upon success, dispatch types.LOGIN_FAILER
@@ -23,28 +24,42 @@ export function* loginUser(action) {
 
 export function* signupUser(action) {
 	try {
-		let { email, password, name } = action.meta;
-		const auth = firebase.auth();
+		let { email, password, firstname, lastname } = action.meta;
 
-		// call the firebase api that creates users
-		const createAuthResponse = yield call(auth.createUserWithEmailAndPassword, email, password);
-		// destructure for less redundancy
-		let { user } = createAuthResponse;
-		// create the location in the database where the user data will be stored
-		const userLocationRef = firebase.database().ref('Users/' + user.uid);
+		// call the firebaseApp api that creates users
+		const createdUser = yield call(
+			[ firebaseAuth, firebaseAuth.createUserWithEmailAndPassword],
+			email,
+			password
+		);
+
 		// create a normalized user profile based off of all data associated with the user
-		let userProfileNorm = getNormalizedUserProfile(Object.assign({}, action.meta, user));
-		// call the firebase api that stores this user profile at the previously created location
-		const storeUserResponse = yield call(userLocationRef.set, userProfileNorm);
+		const userProfileNorm = getNormalizedUserProfile(Object.assign({}, action.meta, createdUser));
+		// create a ref to the location in the database where the profile will be stored
+		const userLocationRef = firebaseDatabase.ref('User/' + userProfileNorm.uid);
+		// store the profile at that location
+		yield call([userLocationRef, userLocationRef.set], userProfileNorm);
+		yield put(actions.signupSuccessful(userProfileNorm));
 
-		yield put(actions.signupSuccessful, userProfileNorm);
+		yield put(authModalActions.requestModalClose());
 	} catch (e) {
 		// - upon success, dispatch types.LOGIN_FAILER
 		console.log('error in loginUser:catch', e);
 	}
 }
 
+export function* getUserProfile(action) {
+	try {
+		const userProfileLocation = firebaseDatabase.ref('User/' + action.meta.userProfileId);
+		const userProfile = yield call([userProfileLocation, userProfileLocation.once], 'value');
+		yield put(actions.profileReadSuccess(userProfile.val()));
+	} catch (e) {
+		console.log('Profile read error: ', e);
+	}
+}
+
 export default function* watchAuthentication() {
 	yield takeEvery(types.REQUEST_LOGIN, loginUser);
 	yield takeEvery(types.REQUEST_SIGNUP, signupUser);
+	yield takeEvery(types.REQUEST_PROFILE, getUserProfile);
 }

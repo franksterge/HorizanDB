@@ -13,6 +13,7 @@
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0",
+    "redux-saga-firebase": "^0.7.1",
     "redux-thunk": "^2.2.0"
   },
   "scripts": {

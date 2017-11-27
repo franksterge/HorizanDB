@@ -12,7 +12,6 @@ const Field = ({
 	text
 }) => {
   let innerContents;
-
   let controlElement;
 
   switch (type) {
@@ -53,9 +52,7 @@ const Field = ({
       <fieldset>
         {
           label ? (
-            <label>
-              {label}
-            </label>
+            <label>{label}</label>
           ) : null
         }
         {

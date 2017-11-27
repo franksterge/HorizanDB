@@ -19,6 +19,9 @@ class Home extends Component {
 		let { props } = this;
 		let { currentAuthStatus } = props;
 
+		let authStatus = currentAuthStatus.get('status');
+		let currentUser = currentAuthStatus.get('currentUser');
+
     return (
       <div className="App">
 				<AuthContainer />
@@ -30,12 +33,12 @@ class Home extends Component {
 					</div>
 					<div className="Links column medium-2 small-5">
 						{
-							currentAuthStatus.get('status') === 'Authenticated!' ? (
+							authStatus === 'Authenticated!' ? (
 								<ul className="menu simple">
 									<li>
 										<Link className="clear button" to='/profile'>
 											{
-												currentAuthStatus.currentUser.email ||
+												currentAuthStatus.get('currentUser').email ||
 												currentAuthStatus.currentUser.name
 											}
 										</Link>
