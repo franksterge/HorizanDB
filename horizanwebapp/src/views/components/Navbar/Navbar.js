@@ -36,7 +36,9 @@ const Navbar = ({
 						<ul className="Navbar_uncollapsed_links">
 							<li>
 								<Link to='/profile'>
-									{ currentUser.email || 'Lodaing...' }
+									{
+										!!currentUser ? currentUser.email : null
+									}
 								</Link>
 							</li>
 							<li>
