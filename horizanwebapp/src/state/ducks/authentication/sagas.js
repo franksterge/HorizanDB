@@ -7,15 +7,18 @@ import { getNormalizedUserProfile } from './utils';
 
 export function* loginUser(action) {
 	try {
+		console.log(action);
+
 		// - call firebaseApp api
 		// - upon success, dispatch types.LOGIN_SUCCESS
-		let auth = firebaseApp.auth();
 		let { email, password } = action.meta;
 
-		const response = yield call(auth.signInWithEmailAndPassword, email, password);
+		const response = yield call([firebaseAuth, firebaseAuth.signInWithEmailAndPassword], email, password);
 
-		yield call(authModalActions.requestModalClose);
-		yield put(actions.loginSuccessful, response.user);
+		console.log('response: ', response);
+
+		yield put(actions.loginSuccessful(getNormalizedUserProfile(response.user)));
+		yield put(authModalActions.requestModalClose());
 	} catch (e) {
 		// - upon success, dispatch types.LOGIN_FAILER
 		console.log('error in loginUser:catch', e);
@@ -48,6 +51,18 @@ export function* signupUser(action) {
 	}
 }
 
+export function* logOut() {
+	try {
+		// - call firebaseApp api
+		// - upon success, dispatch types.LOGIN_SUCCESS
+		yield call(firebaseAuth.signOut);
+		yield put(actions.requestLogOut());
+	} catch (e) {
+		// - upon success, dispatch types.LOGIN_FAILER
+		console.log('error in loginUser:catch', e);
+	}
+}
+
 export function* getUserProfile(action) {
 	try {
 		const userProfileLocation = firebaseDatabase.ref('User/' + action.meta.userProfileId);
@@ -60,6 +75,7 @@ export function* getUserProfile(action) {
 
 export default function* watchAuthentication() {
 	yield takeEvery(types.REQUEST_LOGIN, loginUser);
+	yield takeEvery(types.REQUEST_LOGOUT, logOut);
 	yield takeEvery(types.REQUEST_SIGNUP, signupUser);
 	yield takeEvery(types.REQUEST_PROFILE, getUserProfile);
 }

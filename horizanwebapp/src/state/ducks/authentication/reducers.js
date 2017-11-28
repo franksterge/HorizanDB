@@ -12,6 +12,7 @@ export default function(state = initialState.currentAuthStatus, action) {
 				status: action.meta.status
 			}))
 		// met/un-met requests
+		case types.REQUEST_LOGOUT:
 		case types.LOGIN_SUCCESS:
 		case types.LOGIN_FAILED:
 		case types.SIGNUP_FAILED:

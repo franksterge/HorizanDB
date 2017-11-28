@@ -1,22 +1,27 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Provider as ReduxProvider } from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom'
+import { Provider } from 'react-redux';
+import routes from './views/routes';
 
-import Home from './views/pages/Home';
+import './views/styles/reset.min.css';
+import './views/styles/App.css';
+
 import store from './state/store';
 import initializeStore from './state/store/initializeStore';
 
-const RootHtml = ( ) => (
-	<ReduxProvider store={ store }>
-		<Router>
-			<Home />
-		</Router>
-	</ReduxProvider>
-);
+initializeStore(error => {
+	if (error) {
+		console.log('Error occurred while initializing app.');
+		throw error;
+	}
 
-initializeStore(() => {
-	render( <RootHtml />, document.getElementById( 'react-root' ) );
+	render(
+		<Provider store={store}>
+			<BrowserRouter>
+				{ routes }
+			</BrowserRouter>
+		</Provider>,
+		document.getElementById('react-root')
+	);
 });
-
-

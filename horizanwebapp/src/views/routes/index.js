@@ -1,11 +1,7 @@
-import { Home } from "../pages";
+import React from 'react';
+import { Route } from 'react-router';
+import App from '../containers/App';
 
-const routes = [
-	{
-		path: "/",
-		component: Home,
-		exact: true
-	}
-];
-
-export default routes;
+export default (
+	<Route path='/' component={App} />
+);

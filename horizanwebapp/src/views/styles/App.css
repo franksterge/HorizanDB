@@ -1,21 +1,37 @@
-.no-padding {
-	padding: 0 !important;
+/*
+	Resets for all browsers
+*/
+body {
+	font-family: sans-serif;
 }
-.no-padding-x {
-	padding-left: 0 !important;
-	padding-right: 0 !important;
+a {
+	text-decoration: none;
 }
-.no-padding-y {
-	padding-top: 0 !important;
-	padding-bottom: 0 !important;
+/*
+	System base styles
+*/
+
+
+/*
+	Specific styles
+*/
+.Navbar_uncollapsed {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	height: 50px;
+	align-items: center;
+}
+.Navbar_uncollapsed > li:first-child {
+	padding: 100px;
 }
 
-button:focus,
-a:focus {
-	outline: 2px solid lightskyblue;
+.Navbar_uncollapsed_links {
+	display: flex;
+	flex-direction: row;
+	padding: 0 50px;
 }
-
-.button:not(.clear) {
-	color: #fff !important;
+.Navbar_uncollapsed_links > li {
+	margin: 0 50px;
 }
-

@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import { connect } from 'react-redux';
 import { authActions } from '../../../state/ducks/authentication';
 import { uistate_authmodalActions } from '../../../state/ducks/uistate_authmodal';
-import Authentication from '../../components/authentication/Authentication';
+import Authentication from '../../components/Authentication/Authentication';
 
 const mapStateToProps = state => ({
 	currentAuthStatus: state.currentAuthStatus,

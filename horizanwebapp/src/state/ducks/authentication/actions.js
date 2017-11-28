@@ -25,6 +25,14 @@ export const loginFailed = () => ({
 	}
 });
 
+export const requestLogOut = (email, password) => ({
+	type: types.REQUEST_LOGOUT,
+	meta: {
+		currentUser: null,
+		status: 'Not Authenticated'
+	}
+});
+
 export const requestSignup = (email, password, firstname, lastname) => {
 	return {
 		type: types.REQUEST_SIGNUP,
