@@ -80,7 +80,8 @@ export function* getUserProfile(action) {
 	try {
 		const userProfileLocation = firebaseDatabase.ref('User/' + action.meta.userProfileId);
 		const userProfile = yield call([userProfileLocation, userProfileLocation.once], 'value');
-		yield put(actions.profileReadSuccess(userProfile.val()));
+
+		yield put(actions.profileReadSuccess( userProfile.val() ));
 	} catch (e) {
 		console.log('Profile read error: ', e);
 	}

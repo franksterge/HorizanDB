@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import AuthContainer from './Authentication/AuthContainer';
 import NavbarContainer from './Navbar/NavbarContainer';
 import HomeContainer from '../containers/Home/HomeContainer';
+import ProfileContainer from '../containers/Profile/ProfileContainer';
 // import FeedBackContainer from '../containers/FeedBack/FeedBackContainer';
 // import NavbarContainer from '../containers/Navbar/NavbarContainer';
 // consts
@@ -15,6 +16,7 @@ const App = ({ children }) => (
     <NavbarContainer />
     <div className='App_content'>
       <Route exact path='/' component={ HomeContainer }/>
+      <Route exact path='/profile' component={ ProfileContainer }/>
     </div>
   </div>
 );

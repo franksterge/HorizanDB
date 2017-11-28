@@ -9,9 +9,6 @@ export default function(onInitComplete) {
 		if (!!user) {
 			let { currentAuthStatus } = store.getState();
 
-			console.log('user in firebase listener: ', user);
-			console.log('user in state: ', currentAuthStatus.toJS());
-
 			// setCurrentUser if its partially filled out
 			if (!currentAuthStatus.get('currentUser')) {
 				store.dispatch(authActions.requestProfileRead(user.uid));
