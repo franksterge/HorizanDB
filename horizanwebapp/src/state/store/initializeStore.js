@@ -1,8 +1,13 @@
 import store from './';
-import { firebaseAuth } from '../firebase';
+import { firebaseAuth, firebaseDatabase } from '../firebase';
 import { authActions } from '../ducks/authentication';
 
 export default function(onInitComplete) {
+	store.subscribe(() => {
+		// Hack until new solution found
+		if (store.getState().uiStateAuthModal.get('modalIsOpen')) document.body.classList.add('atlasCounterHeight');
+	});
+
 	// auth listener, needed for keeping user
 	// profile populated after app refresh
 	firebaseAuth.onAuthStateChanged(user => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from 'react-modal';
+import ModalWrapper from '../common/ModalWrapper';
 import Form from '../common/Form';
 import Field from '../common/Field';
 
@@ -34,66 +34,110 @@ const Authentication = ({
 	handleSignup,
 	setModalContent
 }) => {
+	let modalContent = (
+		<div style={{
+			alignItems: 'center',
+			display: 'flex',
+			flexDirection: 'column'
+		}}>
+			{
+				modalContentType === 'LOGIN' ? (
+					<div>
+						<Form fields={getLoginFields()}
+							onSubmit={handleLogin.bind(this)} />
+						<h6>
+							Don't have an account?
+						</h6>
+						<button type="button"
+							className="secondary button expanded"
+							onClick={setModalContent.bind(null, 'SIGNUP')}>
+							Sign Up
+						</button>
+					</div>
+				) : (
+					<div>
+						<Form fields={getSignUpFields()}
+							onSubmit={handleSignup.bind(this)} />
+						<h6>
+							Already have an account?
+						</h6>
+						<button type="button"
+							className="secondary button expanded"
+							onClick={setModalContent.bind(null, 'LOGIN')}>
+							Log In
+						</button>
+					</div>
+				)
+			}
+		</div>
+	);
+
+	let footerContent = (
+		<div>
+			<button className="clear button expanded">
+				Forgot password
+			</button>
+		</div>
+	);
+
+	let modalProps = {
+		isOpen: modalIsOpen,
+		onClose: closeAuthModal,
+		title: modalContentType === 'LOGIN' ? 'Login' : 'Signup',
+		content: modalContent,
+		footerContent: footerContent
+	};
+
 	return (
-		<Modal
-			isOpen={modalIsOpen}
-			onRequestClose={closeAuthModal}
-			contentLabel="Modal"
-			className="column medium-6 small-10"
-			style={ modalStyles }>
-			<div className="column medium-12 small-12">
-				<div className="medium-12 small-12 row align-right">
-					<button className="no-padding-x button clear"
-						onClick={closeAuthModal}>
-						Close
-					</button>
-				</div>
-				{
-					modalContentType === 'LOGIN' ? (
-						<div>
-							<h5>
-								<strong>Login</strong>
-							</h5>
-							<Form fields={getLoginFields()}
-								onSubmit={handleLogin.bind(this)} />
-							<h6>
-								Don't have an account?
-							</h6>
-							<button type="button"
-								className="secondary button expanded"
-								onClick={setModalContent.bind(null, 'SIGNUP')}>
-								Sign Up
-							</button>
-						</div>
-					) : (
-						<div>
-							<h5>
-								<strong>
-									Signup
-								</strong>
-							</h5>
-							<Form fields={getSignUpFields()}
-								onSubmit={handleSignup.bind(this)} />
-							<h6>
-								Already have an account?
-							</h6>
-							<button type="button"
-								className="secondary button expanded"
-								onClick={setModalContent.bind(null, 'LOGIN')}>
-								Log In
-							</button>
-						</div>
-					)
-				}
-				<div>
-					<button className="clear button expanded">
-						Forgot password
-					</button>
-				</div>
-			</div>
-			
-		</Modal>
+		<ModalWrapper {...modalProps} />
 	);
 };
 
 export default Authentication;
+
+{/*
+	<div>
+		{
+			modalContentType === 'LOGIN' ? (
+				<div>
+					<h5>
+						<strong>Login</strong>
+					</h5>
+					<Form fields={getLoginFields()}
+						onSubmit={handleLogin.bind(this)} />
+					<h6>
+						Don't have an account?
+					</h6>
+					<button type="button"
+						className="secondary button expanded"
+						onClick={setModalContent.bind(null, 'SIGNUP')}>
+						Sign Up
+					</button>
+				</div>
+			) : (
+				<div>
+					<h5>
+						<strong>
+							Signup
+						</strong>
+					</h5>
+					<Form fields={getSignUpFields()}
+						onSubmit={handleSignup.bind(this)} />
+					<h6>
+						Already have an account?
+					</h6>
+					<button type="button"
+						className="secondary button expanded"
+						onClick={setModalContent.bind(null, 'LOGIN')}>
+						Log In
+					</button>
+				</div>
+			)
+		}
+		<div>
+			<button className="clear button expanded">
+				Forgot password
+			</button>
+		</div>
+	</div>
+*/}

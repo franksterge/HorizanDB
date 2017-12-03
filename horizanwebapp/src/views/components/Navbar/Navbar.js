@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@atlaskit/button';
 import { Link } from "react-router-dom";
 
 const Navbar = ({
@@ -6,7 +7,6 @@ const Navbar = ({
 	currentUser,
 	setModalContent,
 	openModal,
-	closeModal,
 	logout
 }) => (
 	<nav className="Navbar">
@@ -24,12 +24,13 @@ const Navbar = ({
 					authStatus !== 'Authenticated!' ? (
 						<ul className="Navbar_uncollapsed_links">
 							<li>
-								<button onClick={() => {
-									setModalContent('LOGIN')
-									openModal()
-								}}>
+								<Button
+									onClick={() => {
+										setModalContent('LOGIN')
+										openModal()
+									}}>
 									Login / Signup
-								</button>
+								</Button>
 							</li>
 						</ul>
 					) : (
@@ -42,9 +43,10 @@ const Navbar = ({
 								</Link>
 							</li>
 							<li>
-								<button onClick={logout}>
+								<Button
+									onClick={logout}>
 									Logout
-								</button>
+								</Button>
 							</li>
 						</ul>
 					)

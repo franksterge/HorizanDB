@@ -1,4 +1,7 @@
 import React from 'react';
+import Button from '@atlaskit/button';
+import TextField from '@atlaskit/field-text'
+import FieldTextArea from '@atlaskit/field-text'
 
 const Field = ({
   type,
@@ -17,26 +20,32 @@ const Field = ({
   switch (type) {
     case 'textarea':
       controlElement = (
-        <textarea name={name}
+        <FieldTextArea
           required={isRequired}
-          defaultValue={defaultValue || ''}>
-        </textarea>
+          label={label || ''}
+          name={name}
+          value={defaultValue || ''} />
       );
       break;
     case 'submit':
       controlElement = (
-        <button type={ type } className="success button expanded">
+        <Button
+          appearance='primary'
+          type={type}>
           { text }
-        </button>
+        </Button>
       );
       break;
     default:
       controlElement = (
-        <input type={type}
-          placeholder={placeholder || ''}
+        <TextField
+          type={type}
           name={name}
-          required={isRequired}
-          defaultValue={defaultValue || ''} />
+          placeholder={placeholder || ''}
+          label={label}
+          value={defaultValue || ''}
+          compact={true}
+          required={isRequired} />
       );
       break;
   }
@@ -50,16 +59,6 @@ const Field = ({
   } else {
     innerContents = (
       <fieldset>
-        {
-          label ? (
-            <label>{label}</label>
-          ) : null
-        }
-        {
-          subtitle ? (
-            <p>{subtitle}</p>
-          ) : null
-        }
         {
           controlElement
         }

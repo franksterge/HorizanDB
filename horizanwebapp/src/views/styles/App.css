@@ -4,6 +4,11 @@
 body {
 	font-family: sans-serif;
 }
+/* Hack that must be removed soon */
+body.atlasCounterHeight {
+	height: 100vh !important;
+}
+
 a {
 	text-decoration: none;
 }
