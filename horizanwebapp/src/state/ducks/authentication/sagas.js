@@ -20,6 +20,7 @@ import { call, put, takeEvery, fork } from 'redux-saga/effects';
 import firebaseApp, { firebaseAuth, firebaseDatabase } from '../../firebase';
 import * as actions from './actions';
 import * as authModalActions from '../uistate_authmodal/actions';
+import * as feedbackActions from '../uistate_feedback/actions';
 import { getNormalizedUserProfile } from './utils';
 
 export function* loginUser(action) {
@@ -34,7 +35,7 @@ export function* loginUser(action) {
 		yield put(authModalActions.requestModalClose());
 	} catch (e) {
 		// - upon success, dispatch types.LOGIN_FAILER
-		console.log('error in loginUser:catch', e);
+		yield put(feedbackActions.emitFeedback(e));
 	}
 }
 
@@ -60,7 +61,7 @@ export function* signupUser(action) {
 		yield put(authModalActions.requestModalClose());
 	} catch (e) {
 		// - upon success, dispatch types.LOGIN_FAILER
-		console.log('error in loginUser:catch', e);
+		yield put(feedbackActions.emitFeedback(e));
 	}
 }
 

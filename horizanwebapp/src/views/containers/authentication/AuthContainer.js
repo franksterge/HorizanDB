@@ -3,26 +3,25 @@ import Modal from 'react-modal';
 import { connect } from 'react-redux';
 import { authActions } from '../../../state/ducks/authentication';
 import { uistate_authmodalActions } from '../../../state/ducks/uistate_authmodal';
+import { uistate_feedbackActions } from '../../../state/ducks/uistate_feedback';
 import Authentication from '../../components/Authentication/Authentication';
 
 const mapStateToProps = state => ({
 	currentAuthStatus: state.currentAuthStatus,
-	uiStateAuthModal: state.uiStateAuthModal
+	uiStateAuthModal: state.uiStateAuthModal,
+	uiStateFeedback: state.uiStateFeedback
 });
 const mapDispatchToProps = {
 	requestLogin: authActions.requestLogin,
 	requestSignup: authActions.requestSignup,
 	openModal: uistate_authmodalActions.openModal,
 	closeModal: uistate_authmodalActions.requestModalClose,
-	setModalContent: uistate_authmodalActions.requestModalContentSet
+	setModalContent: uistate_authmodalActions.requestModalContentSet,
+	emitFeedback: uistate_feedbackActions.emitFeedback,
+	dismissFeedback: uistate_feedbackActions.dismissFeedback
 };
 
 class AuthContainer extends Component {
-	openAuthModal() {
-    this.setState({
-      authModalIsOpen: true
-    })
-  }
 	handleLogin(e) {
 		e.preventDefault();
 
@@ -43,6 +42,7 @@ class AuthContainer extends Component {
 		e.preventDefault();
 
 		let { target } = e;
+		let { props } = this;
 
 		let firstname = target.firstname.value;
 		let lastname = target.lastname.value;
@@ -57,10 +57,10 @@ class AuthContainer extends Component {
 			!confirmPassword) {
 			throw new Error('Missing fields');
 		} else if (password !== confirmPassword) {
-			throw new Error('Passwords dont match');
+			 props.emitFeedback('auth/passwords-dont-match');
 		} else {
 			// location where ui feedback should start
-			this.props.requestSignup(email, password, firstname, lastname);
+			props.requestSignup(email, password, firstname, lastname);
 		}
 	}
 	getSignUpFields() {
@@ -102,7 +102,7 @@ class AuthContainer extends Component {
 			},
 			{
 				type: 'submit',
-				text: 'Signup'
+				text: 'Sign up'
 			}
 		];
 	}
@@ -130,8 +130,9 @@ class AuthContainer extends Component {
 	}
 	render() {
 		let { props, state } = this;
+		let { uiStateFeedback } = props;
 
-		console.log(props.uiStateAuthModal.get('modalIsOpen'));
+		let authModalFeedback = !!uiStateFeedback.size && uiStateFeedback.get('uiLocatin') === 'AUTH_MODAL' ? uiStateFeedback : null;
 
 		let authenticationProps = {
 			closeAuthModal: props.closeModal,
@@ -141,7 +142,9 @@ class AuthContainer extends Component {
 			getSignUpFields: this.getSignUpFields,
 			handleLogin: this.handleLogin.bind(this),
 			handleSignup: this.handleSignup.bind(this),
-			setModalContent: props.setModalContent
+			setModalContent: props.setModalContent,
+			dismissFeedback: props.dismissFeedback,
+			authModalFeedback
 		};
 
 		return <Authentication {...authenticationProps} />

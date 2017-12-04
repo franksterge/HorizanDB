@@ -29,7 +29,7 @@ const Navbar = ({
 										setModalContent('LOGIN')
 										openModal()
 									}}>
-									Login / Signup
+									Login / Sign up
 								</Button>
 							</li>
 						</ul>

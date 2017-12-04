@@ -7,7 +7,8 @@ import { rootSaga } from '../ducks';
 export default function configureStore( initialState ) {
 	const rootReducer = combineReducers({
 		uiStateAuthModal: reducers.uistate_authmodal,
-		currentAuthStatus: reducers.authentication
+		currentAuthStatus: reducers.authentication,
+		uiStateFeedback: reducers.uistate_feedback
 	});
 
 	const sagaMiddleware = createSagaMiddleware();

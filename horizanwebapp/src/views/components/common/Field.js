@@ -24,14 +24,17 @@ const Field = ({
           required={isRequired}
           label={label || ''}
           name={name}
-          value={defaultValue || ''} />
+          value={defaultValue || ''}
+          shouldFitContainer />
       );
       break;
     case 'submit':
       controlElement = (
         <Button
           appearance='primary'
-          type={type}>
+          type={type}
+          inline={false}
+          shouldFitContainer>
           { text }
         </Button>
       );
@@ -45,23 +48,29 @@ const Field = ({
           label={label}
           value={defaultValue || ''}
           compact={true}
-          required={isRequired} />
+          required={isRequired}
+          shouldFitContainer />
       );
       break;
   }
 
   if (children) {
     innerContents = (
-      <fieldset>
+      <fieldset style={{
+        width: '100%'
+      }}>
         { children }
       </fieldset>
     );
   } else {
     innerContents = (
-      <fieldset>
+      <fieldset style={{
+        width: '100%'
+      }}>
         {
           controlElement
         }
+        <br />
       </fieldset>
     );
   }

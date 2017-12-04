@@ -2,6 +2,16 @@
 # yarn lockfile v1
 
 
+"@atlaskit/banner@^4.0.4":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@atlaskit/banner/-/banner-4.0.4.tgz#9b62c9287f51c201395fc7658859ce414897e8f4"
+  dependencies:
+    "@atlaskit/theme" "^2.0.0"
+    "@atlaskit/util-shared-styles" "^2.0.1"
+    babel-runtime "^6.11.6"
+    prop-types "^15.5.10"
+    styled-components "^1.4.6"
+
 "@atlaskit/blanket@^3.0.0":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@atlaskit/blanket/-/blanket-3.0.3.tgz#845729e629ea0fbcca8f96c98ccf353469f6f6f2"
@@ -113,7 +123,7 @@
     prop-types "^15.5.10"
     styled-components "^1.4.6"
 
-"@atlaskit/util-shared-styles@^2.10.3":
+"@atlaskit/util-shared-styles@^2.0.1", "@atlaskit/util-shared-styles@^2.10.3":
   version "2.10.6"
   resolved "https://registry.yarnpkg.com/@atlaskit/util-shared-styles/-/util-shared-styles-2.10.6.tgz#56aa25d59cef0324f653a6e857d512a70be47c65"
   dependencies:

@@ -2,6 +2,9 @@ import React, { PureComponent } from 'react';
 import Modal, { ModalHeader, ModalFooter, ModalTitle } from '@atlaskit/modal-dialog';
 import Button from '@atlaskit/button';
 import CrossIcon from '@atlaskit/icon/glyph/cross';
+import Banner from '@atlaskit/banner';
+
+import Feedback from './FeedBack';
 
 // props: onClose, showKeyline, modalTitle
 const Header = ({
@@ -43,12 +46,21 @@ const ModalWrapper = ({
 	onClose,
 	content,
 	title,
-	footerContent
+	footerContent,
+	modalFeedback,
+	dismissFeedback
 }) => {
 	let header = (
 		<Header onClose={onClose}
 			modalTitle={title} />
 	);
+
+	let feedback = !!modalFeedback ? (
+		<Feedback code={modalFeedback.get('code')}
+			message={modalFeedback.get('message')}
+			type={modalFeedback.get('type')}
+			onDismiss={dismissFeedback} />
+	) : null;
 
 	let footer = !!footerContent ? (
 		<Footer onClose={onClose}>
@@ -63,9 +75,10 @@ const ModalWrapper = ({
 			onClose={onClose}
 			shouldCloseOnEscapePress={false}
 			shouldCloseOnOverlayClick={true}
-			width={'medium'}>
+			width='small'>
 			{ header }
 			{ content }
+			{ feedback }
 			{ footer }
 		</Modal>
 	) : null;

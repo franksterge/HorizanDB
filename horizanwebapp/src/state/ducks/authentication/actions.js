@@ -33,64 +33,52 @@ export const requestLogOut = (email, password) => ({
 	}
 });
 
-export const requestSignup = (email, password, firstname, lastname) => {
-	return {
-		type: types.REQUEST_SIGNUP,
-		meta: {
-			email,
-			password,
-			firstname,
-			lastname,
-			status: 'Creating user...'
-		}
+export const requestSignup = (email, password, firstname, lastname) => ({
+	type: types.REQUEST_SIGNUP,
+	meta: {
+		email,
+		password,
+		firstname,
+		lastname,
+		status: 'Creating user...'
 	}
-};
+});
 
-export const signupSuccessful = user => {
-	return {
-		type: types.SIGNUP_SUCCESS,
-		meta: {
-			currentUser: user,
-			status: 'Authenticated!'
-		}
+export const signupSuccessful = user => ({
+	type: types.SIGNUP_SUCCESS,
+	meta: {
+		currentUser: user,
+		status: 'Authenticated!'
 	}
-};
+});
 
-export const signupFailed = () => {
-	return {
-		type: types.SIGNUP_FAILED,
-		meta: {
-			status: 'Not Authenticated'
-		}
+export const signupFailed = () => ({
+	type: types.SIGNUP_FAILED,
+	meta: {
+		status: 'Not Authenticated'
 	}
-};
+});
 
-export const requestProfileRead = userProfileId => {
-	return {
-		type: types.REQUEST_PROFILE,
-		meta: {
-			userProfileId,
-			status: 'Authenticating...'
-		}
-	};
-};
+export const requestProfileRead = userProfileId => ({
+	type: types.REQUEST_PROFILE,
+	meta: {
+		userProfileId,
+		status: 'Authenticating...'
+	}
+});
 
-export const profileReadSuccess = userProfile => {
-	return {
-		type: types.PROFILE_READ_SUCCESS,
-		meta: {
-			currentUser: userProfile,
-			status: 'Authenticated!'
-		}
-	};
-};
+export const profileReadSuccess = userProfile => ({
+	type: types.PROFILE_READ_SUCCESS,
+	meta: {
+		currentUser: userProfile,
+		status: 'Authenticated!'
+	}
+});
 
-export const profileReadFailed = () => {
-	return {
-		type: types.PROFILE_READ_FAILED,
-		meta: {
-			currentUser: null,
-			status: 'Not Authenticated'
-		}
-	};
-};
+export const profileReadFailed = () => ({
+	type: types.PROFILE_READ_FAILED,
+	meta: {
+		currentUser: null,
+		status: 'Not Authenticated'
+	}
+});

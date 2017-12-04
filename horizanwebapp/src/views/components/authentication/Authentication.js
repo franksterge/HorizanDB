@@ -1,28 +1,8 @@
 import React from 'react';
 import ModalWrapper from '../common/ModalWrapper';
+import Button from '@atlaskit/button';
 import Form from '../common/Form';
 import Field from '../common/Field';
-
-const modalStyles = {
-	overlay : {
-		backgroundColor   : 'rgba(0, 0, 0, 0.3)',
-		display: 'flex',
-		WebkitOverflowScrolling    : 'touch',
-		justifyContent: 'center',
-		alignItems: 'center'
-	},
-	content : {
-		display: 'flex',
-		maxHeight: '75%',
-		overflow: 'scroll',
-		border                     : '1px solid #ccc',
-		background                 : '#fff',
-		WebkitOverflowScrolling    : 'touch',
-		borderRadius               : '0px',
-		outline                    : 'none',
-		padding                    : '0px'
-	}
-};
 
 const Authentication = ({
 	closeAuthModal,
@@ -32,40 +12,52 @@ const Authentication = ({
 	getSignUpFields,
 	handleLogin,
 	handleSignup,
-	setModalContent
+	setModalContent,
+	authModalFeedback,
+	dismissFeedback
 }) => {
+	let temporaryStyles = {
+		alignItems: 'center',
+		display: 'flex',
+		flexDirection: 'column',
+		width: '100%',
+		flex: 1
+	};
+
 	let modalContent = (
-		<div style={{
-			alignItems: 'center',
-			display: 'flex',
-			flexDirection: 'column'
-		}}>
+		<div style={temporaryStyles}>
 			{
 				modalContentType === 'LOGIN' ? (
-					<div>
+					<div style={temporaryStyles}>
 						<Form fields={getLoginFields()}
-							onSubmit={handleLogin.bind(this)} />
+							onSubmit={handleLogin.bind(this)}
+							customStyles={temporaryStyles} />
+						<br />
 						<h6>
 							Don't have an account?
 						</h6>
-						<button type="button"
-							className="secondary button expanded"
-							onClick={setModalContent.bind(null, 'SIGNUP')}>
-							Sign Up
-						</button>
+						<br />
+						<Button type="button"
+							onClick={setModalContent.bind(null, 'SIGNUP')}
+							shouldFitContainer>
+							Sign up
+						</Button>
 					</div>
 				) : (
-					<div>
+					<div style={temporaryStyles}>
 						<Form fields={getSignUpFields()}
-							onSubmit={handleSignup.bind(this)} />
+							onSubmit={handleSignup.bind(this)}
+							customStyles={temporaryStyles} />
+						<br />
 						<h6>
 							Already have an account?
 						</h6>
-						<button type="button"
-							className="secondary button expanded"
-							onClick={setModalContent.bind(null, 'LOGIN')}>
+						<br />
+						<Button type="button"
+							onClick={setModalContent.bind(null, 'LOGIN')}
+							shouldFitContainer>
 							Log In
-						</button>
+						</Button>
 					</div>
 				)
 			}
@@ -73,11 +65,10 @@ const Authentication = ({
 	);
 
 	let footerContent = (
-		<div>
-			<button className="clear button expanded">
-				Forgot password
-			</button>
-		</div>
+		<Button
+			appearance='subtle'>
+			Forgot password
+		</Button>
 	);
 
 	let modalProps = {
@@ -85,7 +76,9 @@ const Authentication = ({
 		onClose: closeAuthModal,
 		title: modalContentType === 'LOGIN' ? 'Login' : 'Signup',
 		content: modalContent,
-		footerContent: footerContent
+		footerContent: footerContent,
+		modalFeedback: authModalFeedback,
+		dismissFeedback
 	};
 
 	return (

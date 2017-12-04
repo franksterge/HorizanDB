@@ -5,9 +5,12 @@ const Form = ({
 	fields,
 	onSubmit,
 	classNames,
-	children
+	children,
+	customStyles
 }) => (
-	<form onSubmit={onSubmit}>
+	<form onSubmit={onSubmit} style={{
+			...customStyles
+		}}>
 		{
 			fields && fields.length ? fields.map((fieldMeta, key) => (
 				<Field key={key} {...fieldMeta} />
