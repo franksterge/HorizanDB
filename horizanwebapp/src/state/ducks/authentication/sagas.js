@@ -4,9 +4,9 @@
  *
  * Purpose of this file: use generators and redux-saga
  * to remove api level code (interactions with firebase
- * and other sources of callback hell) from react/redux.
+ * and other sources of callback hell) from action creators.
  *
- * Rough explanation of this works: there are two types
+ * Rough explanation of how this works: there are two types
  * of sagas, watcher sagas and worker sagas. Watcher sagas
  * *watch* for actions that've been dispatched, and then
  * they call the corresponding worker sagas. Inside worker
@@ -23,6 +23,28 @@ import * as authModalActions from '../uistate_authmodal/actions';
 import * as feedbackActions from '../uistate_feedback/actions';
 import { getNormalizedUserProfile } from './utils';
 
+/**
+ * The redux-saga library provides some helpful
+ * methods that let us turn .then calls into yields.
+ * This greatly improves readability (no more callback
+ * hell).
+ */
+
+/**
+ * This gets access to the action emitted, and
+ * calls the signInWithEmailAndPassword firebase
+ * method with the email and password values. When
+ * the yield call resumes it now contains
+ * the newly created user profile returned from firebase.
+ * Afterwards we finish by dispatching some actions based
+ * on the api call's response, namely, loginSuccessful and
+ * requestModalClose
+ *
+ * @param {
+ * 	 type,
+ * 	 meta: { email, password }
+ * } action
+ */
 export function* loginUser(action) {
 	try {
 		// - call firebaseApp api
@@ -34,11 +56,27 @@ export function* loginUser(action) {
 		yield put(actions.loginSuccessful(getNormalizedUserProfile(response)));
 		yield put(authModalActions.requestModalClose());
 	} catch (e) {
-		// - upon success, dispatch types.LOGIN_FAILER
 		yield put(feedbackActions.emitFeedback(e));
 	}
 }
 
+/**
+ * This gets access to the action emitted, and
+ * calls the createUserWithEmailAndPassword firebase
+ * method with the firstname, lastname, email and password
+ * values. After getting the response from the yield call, 
+ * we get a normalized user profile thats located in utils.
+ * This ensures a predictable shape for all users created 
+ * via this app (down the road we can discuss the specs for
+ * this so that it is consistent on mobile as well). We take
+ * the normalized user profile and store it in the firebase
+ * database.
+ *
+ * @param {
+ * 	 type,
+ * 	 meta: { email, password, firstname, lastname }
+ * } action
+ */
 export function* signupUser(action) {
 	try {
 		let { email, password, firstname, lastname } = action.meta;
@@ -77,6 +115,23 @@ export function* logOut() {
 	}
 }
 
+/**
+ * This generator is needed because of a browser
+ * refresh quirk. When the browser refreshes, the
+ * firebase api only returns email and uid via the
+ * snapshot value in the api callback. What we can
+ * do to get the full user profile is take the uid
+ * and read in the profile by accessing the database.
+ * Thats what goes on here, the full profile can be
+ * retrieved at 'User/' + action.meta.userProfileId
+ * (to learn more about where userProfileId came from
+ * look at ../../store/initializeStore.js). We retrieve
+ * the profile from firebase and dispatch profileReadSuccess
+ * with it. This helps us get around not having the full
+ * user profile.
+ *
+ * @param {Object} action
+ */
 export function* getUserProfile(action) {
 	try {
 		const userProfileLocation = firebaseDatabase.ref('User/' + action.meta.userProfileId);

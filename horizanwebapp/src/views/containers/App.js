@@ -5,10 +5,6 @@ import AuthContainer from './Authentication/AuthContainer';
 import NavbarContainer from './Navbar/NavbarContainer';
 import HomeContainer from '../containers/Home/HomeContainer';
 import ProfileContainer from '../containers/Profile/ProfileContainer';
-// import FeedBackContainer from '../containers/FeedBack/FeedBackContainer';
-// import NavbarContainer from '../containers/Navbar/NavbarContainer';
-// consts
-// import links from '../consts/links';
 
 const App = ({ children }) => (
   <div className='App'>

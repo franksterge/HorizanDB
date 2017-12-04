@@ -1,3 +1,7 @@
+/**
+ * Todo: read up on new react-router as it is
+ * drastically different from the old ones.
+ */
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom'

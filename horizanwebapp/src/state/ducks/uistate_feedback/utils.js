@@ -1,7 +1,10 @@
 /*
 	An object used for converting third
 	party api feedback codes to something
-	recognizable to users.
+	recognizable to users. This could very
+	easily break the second firebase changes
+	their api so a backup solution would be
+	nice. (https://firebase.google.com/docs/reference/js/firebase.auth.Auth)
 	*/
 export const feedbackTypes = {
 	'auth/wrong-password': {
