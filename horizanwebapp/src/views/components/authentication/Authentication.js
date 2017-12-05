@@ -16,22 +16,14 @@ const Authentication = ({
 	authModalFeedback,
 	dismissFeedback
 }) => {
-	let temporaryStyles = {
-		alignItems: 'center',
-		display: 'flex',
-		flexDirection: 'column',
-		width: '100%',
-		flex: 1
-	};
 
 	let modalContent = (
-		<div style={temporaryStyles}>
+		<div>
 			{
 				modalContentType === 'LOGIN' ? (
-					<div style={temporaryStyles}>
+					<div>
 						<Form fields={getLoginFields()}
-							onSubmit={handleLogin.bind(this)}
-							customStyles={temporaryStyles} />
+							onSubmit={handleLogin.bind(this)} />
 						<br />
 						<h6>
 							Don't have an account?
@@ -44,10 +36,9 @@ const Authentication = ({
 						</Button>
 					</div>
 				) : (
-					<div style={temporaryStyles}>
+					<div>
 						<Form fields={getSignUpFields()}
-							onSubmit={handleSignup.bind(this)}
-							customStyles={temporaryStyles} />
+							onSubmit={handleSignup.bind(this)} />
 						<br />
 						<h6>
 							Already have an account?

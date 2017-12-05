@@ -8,9 +8,7 @@ const Form = ({
 	children,
 	customStyles
 }) => (
-	<form onSubmit={onSubmit} style={{
-			...customStyles
-		}}>
+	<form onSubmit={onSubmit}>
 		{
 			fields && fields.length ? fields.map((fieldMeta, key) => (
 				<Field key={key} {...fieldMeta} />

@@ -40,9 +40,12 @@ export default function(onInitComplete) {
 	firebaseAuth.onAuthStateChanged(user => {
 		if (!!user) {
 			let { currentAuthStatus } = store.getState();
+			let currentUser = currentAuthStatus.get('currentUser');
+
+			let userDataNotFullyLoaded = !!currentUser && (!currentUser.firstname || !currentUser.lastname) || !currentUser;
 
 			// setCurrentUser if its partially filled out
-			if (!currentAuthStatus.get('currentUser')) {
+			if (userDataNotFullyLoaded) {
 				store.dispatch(authActions.requestProfileRead(user.uid));
 				onInitComplete(null);
 			}

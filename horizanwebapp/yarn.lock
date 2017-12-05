@@ -20,13 +20,45 @@
     babel-runtime "^6.11.6"
     styled-components "^1.4.6"
 
-"@atlaskit/button@^5.1.1", "@atlaskit/button@^5.4.14":
+"@atlaskit/button@^5.1.1", "@atlaskit/button@^5.4.13", "@atlaskit/button@^5.4.14":
   version "5.4.14"
   resolved "https://registry.yarnpkg.com/@atlaskit/button/-/button-5.4.14.tgz#600975141fd356ccbf712885a00f63a1367dd28d"
   dependencies:
     "@atlaskit/theme" "^2.0.0"
     babel-runtime "^6.11.6"
     classnames "^2.2.5"
+    prop-types "^15.5.10"
+    styled-components "^1.4.6"
+
+"@atlaskit/dropdown-menu@^3.11.4":
+  version "3.11.4"
+  resolved "https://registry.yarnpkg.com/@atlaskit/dropdown-menu/-/dropdown-menu-3.11.4.tgz#519950eda6c902fa6c4e64c6a698cf4e0295f72a"
+  dependencies:
+    uid "0.0.2"
+    "@atlaskit/button" "^5.4.13"
+    "@atlaskit/droplist" "^4.11.0"
+    "@atlaskit/icon" "^10.1.3"
+    "@atlaskit/item" "^4.2.0"
+    "@atlaskit/util-shared-styles" "^2.10.3"
+    array-find "^1.0.0"
+    babel-runtime "^6.23.0"
+    prop-types "^15.5.10"
+    prop-types-extra "^1.0.1"
+    styled-components "^1.4.6"
+
+"@atlaskit/droplist@^4.11.0":
+  version "4.11.3"
+  resolved "https://registry.yarnpkg.com/@atlaskit/droplist/-/droplist-4.11.3.tgz#bf749542f50e3bb940db2acdd7e56adb6283d2f8"
+  dependencies:
+    "@atlaskit/icon" "^10.1.3"
+    "@atlaskit/item" "^4.1.0"
+    "@atlaskit/layer" "^2.5.3"
+    "@atlaskit/spinner" "^4.0.0"
+    "@atlaskit/theme" "^2.0.1"
+    "@atlaskit/tooltip" "^8.0.1"
+    babel-runtime "^6.23.0"
+    classnames "^2.2.5"
+    keycode "^2.1.9"
     prop-types "^15.5.10"
     styled-components "^1.4.6"
 
@@ -71,7 +103,18 @@
     prop-types "^15.5.10"
     styled-components "^1.4.6"
 
-"@atlaskit/layer-manager@^2.1.0":
+"@atlaskit/item@^4.1.0", "@atlaskit/item@^4.2.0":
+  version "4.2.5"
+  resolved "https://registry.yarnpkg.com/@atlaskit/item/-/item-4.2.5.tgz#84e871f34354977dc3e07158b5d9b7a9379cee7b"
+  dependencies:
+    uid "0.0.2"
+    "@atlaskit/theme" "^2.1.0"
+    babel-runtime "^6.23.0"
+    prop-types "^15.5.10"
+    react-addons-text-content "^0.0.4"
+    styled-components "^1.4.6"
+
+"@atlaskit/layer-manager@^2.1.0", "@atlaskit/layer-manager@^2.5.3":
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/@atlaskit/layer-manager/-/layer-manager-2.5.3.tgz#a40e5114c4acbc84422ba559b039c6351ba95287"
   dependencies:
@@ -81,7 +124,7 @@
     styled-components "^1.4.6"
     tabbable "^1.1.0"
 
-"@atlaskit/layer@^2.0.0":
+"@atlaskit/layer@^2.0.0", "@atlaskit/layer@^2.5.3":
   version "2.5.8"
   resolved "https://registry.yarnpkg.com/@atlaskit/layer/-/layer-2.5.8.tgz#7b6a6f4b1d8963ac4e22350dedf7189f735bd4d3"
   dependencies:
@@ -116,11 +159,20 @@
     react-transition-group "^2.2.1"
     styled-components "^1.4.6"
 
-"@atlaskit/theme@^2.0.0", "@atlaskit/theme@^2.2.0", "@atlaskit/theme@^2.2.7":
+"@atlaskit/theme@^2.0.0", "@atlaskit/theme@^2.0.1", "@atlaskit/theme@^2.1.0", "@atlaskit/theme@^2.2.0", "@atlaskit/theme@^2.2.7":
   version "2.2.7"
   resolved "https://registry.yarnpkg.com/@atlaskit/theme/-/theme-2.2.7.tgz#e1625f5e8080fda94df398b0978f264381ba4eb4"
   dependencies:
     prop-types "^15.5.10"
+    styled-components "^1.4.6"
+
+"@atlaskit/tooltip@^8.0.1":
+  version "8.0.7"
+  resolved "https://registry.yarnpkg.com/@atlaskit/tooltip/-/tooltip-8.0.7.tgz#2892a878cec2958aae11e309674577aa5ea8bc63"
+  dependencies:
+    "@atlaskit/layer-manager" "^2.5.3"
+    "@atlaskit/theme" "^2.2.7"
+    react-transition-group "^2.2.1"
     styled-components "^1.4.6"
 
 "@atlaskit/util-shared-styles@^2.0.1", "@atlaskit/util-shared-styles@^2.10.3":
@@ -360,6 +412,10 @@ array-filter@~0.0.0:
 array-find-index@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/array-find-index/-/array-find-index-1.0.2.tgz#df010aa1287e164bbda6f9723b0a96a1ec4187a1"
+
+array-find@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/array-find/-/array-find-1.0.0.tgz#6c8e286d11ed768327f8e62ecee87353ca3e78b8"
 
 array-flatten@1.1.1:
   version "1.1.1"
@@ -1091,7 +1147,7 @@ babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@6.26.0, babel-runtime@^6.11.6, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.25.0, babel-runtime@^6.26.0:
+babel-runtime@6.26.0, babel-runtime@^6.11.6, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.25.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -4123,6 +4179,10 @@ jsx-ast-utils@^2.0.0:
   dependencies:
     array-includes "^3.0.3"
 
+keycode@^2.1.9:
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.1.9.tgz#964a23c54e4889405b4861a5c9f0480d45141dfa"
+
 killable@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/killable/-/killable-1.0.0.tgz#da8b84bd47de5395878f95d64d02f2449fe05e6b"
@@ -5323,6 +5383,12 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
+prop-types-extra@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/prop-types-extra/-/prop-types-extra-1.0.1.tgz#a57bd4810e82d27a3ff4317ecc1b4ad005f79a82"
+  dependencies:
+    warning "^3.0.0"
+
 prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
@@ -5470,6 +5536,10 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+react-addons-text-content@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/react-addons-text-content/-/react-addons-text-content-0.0.4.tgz#d2e259fdc951d1d8906c08902002108dce8792e5"
 
 react-dev-utils@^4.2.1:
   version "4.2.1"
@@ -6628,6 +6698,10 @@ uglifyjs-webpack-plugin@^0.4.6:
 uid-number@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/uid-number/-/uid-number-0.0.6.tgz#0ea10e8035e8eb5b8e4449f06da1c730663baa81"
+
+uid@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/uid/-/uid-0.0.2.tgz#5e4a5d4b78138b4f70f89fd3c76fc59aa9d2f103"
 
 underscore@~1.4.4:
   version "1.4.4"
