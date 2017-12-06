@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import routes from './views/routes';
 
 import './views/styles/reset.min.css';
-import './views/styles/App.css';
+import './views/styles/css/index.css';
 
 import store from './state/store';
 import initializeStore from './state/store/initializeStore';

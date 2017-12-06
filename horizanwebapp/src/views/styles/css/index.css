@@ -1,0 +1,44 @@
+/*
+	Resets for all browsers
+*/
+body {
+  font-family: sans-serif;
+  background-color: lightblue; }
+
+/* Hack that must be removed soon */
+body.atlasCounterHeight {
+  height: 100vh !important; }
+
+a {
+  text-decoration: none; }
+
+/*
+	System base styles
+*/
+/*
+	Specific styles
+*/
+/* Navbar styles */
+.Navbar,
+.Navbar_list_segment,
+.Navbar_list {
+  display: flex; }
+
+.Navbar {
+  flex-direction: column; }
+
+.Navbar_list {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px; }
+
+.Navbar_list.collapsed {
+  height: 50px; }
+
+.Brand {
+  font-weight: bold; }
+
+@media (max-width: 599px) {
+  body {
+    background-color: lightyellow; } }
