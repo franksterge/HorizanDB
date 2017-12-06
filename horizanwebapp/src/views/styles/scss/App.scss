@@ -1,12 +1,8 @@
-/*
-	Resets for all browsers
-*/
 $blue: lightblue;
-$green: lightyellow;
+$green: lightgreen;
 
 body {
 	font-family: sans-serif;
-	background-color: $blue;
 }
 /* Hack that must be removed soon */
 body.atlasCounterHeight {
@@ -15,46 +11,4 @@ body.atlasCounterHeight {
 
 a {
 	text-decoration: none;
-}
-/*
-	System base styles
-*/
-
-
-/*
-	Specific styles
-*/
-
-/* Navbar styles */
-.Navbar,
-.Navbar_list_segment,
-.Navbar_list {
-	display: flex;
-}
-
-.Navbar {
-	flex-direction: column;
-}
-
-.Navbar_list {
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-
-	height: 75px;
-}
-.Navbar_list.collapsed {
-	height: 50px;
-}
-
-.Brand {
-	font-weight: bold;
-}
-
-.Navbar_list_segment.mobile {}
-
-.Navbar_list_segment.desktop_tablet {}
-
-@include for-phone-only {
-	body { background-color: $green }
 }

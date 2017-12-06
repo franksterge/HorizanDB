@@ -1,9 +1,5 @@
-/*
-	Resets for all browsers
-*/
 body {
-  font-family: sans-serif;
-  background-color: lightblue; }
+  font-family: sans-serif; }
 
 /* Hack that must be removed soon */
 body.atlasCounterHeight {
@@ -12,13 +8,6 @@ body.atlasCounterHeight {
 a {
   text-decoration: none; }
 
-/*
-	System base styles
-*/
-/*
-	Specific styles
-*/
-/* Navbar styles */
 .Navbar,
 .Navbar_list_segment,
 .Navbar_list {
@@ -38,7 +27,3 @@ a {
 
 .Brand {
   font-weight: bold; }
-
-@media (max-width: 599px) {
-  body {
-    background-color: lightyellow; } }
