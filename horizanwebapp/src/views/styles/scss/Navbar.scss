@@ -1,0 +1,34 @@
+.Navbar,
+.Navbar_list_segment,
+.Navbar_list {
+	display: flex;
+}
+
+.Navbar {
+	flex-direction: column;
+}
+
+.Navbar_list {
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	height: 75px;
+}
+.Navbar_list.collapsed {
+	height: 50px;
+}
+
+.Brand {
+	font-weight: bold;
+}
+
+.Navbar_list_segment.mobile {}
+
+.Navbar_list_segment.desktop_tablet {}
+
+@include for-phone-only {}
+
+@include for-tablet-portrait-up {}
+
+@include for-desktop-up {}
