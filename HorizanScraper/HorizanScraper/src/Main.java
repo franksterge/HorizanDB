@@ -45,7 +45,15 @@ public class Main {
 	
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException{
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		Scanner sc = new Scanner(System.in);
+		if(System.getProperty("os.name").contains("Wind")){
+			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		}else {
+			System.out.println("Enter your username for your Mac: ");
+			String username = sc.nextLine();
+			System.setProperty("webdriver.chrome.driver", "/Users/" + username + "/Desktop/chromedriver");
+		}
+		
 		ChromeOptions options = new ChromeOptions();
 		options.addExtensions(new File("ublock.crx"));
 		DesiredCapabilities capabilities = new DesiredCapabilities();
