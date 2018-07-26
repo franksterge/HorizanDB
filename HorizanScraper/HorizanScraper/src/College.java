@@ -17,4 +17,8 @@ public class College {
 		tuition = e;
 		acceptanceRate = f;
 	}
+	
+	public String toString() {
+		return name + ": " + population + " " + deadline + " " + avgSAT + " " + tuition + " " + acceptanceRate;
+	}
 }
