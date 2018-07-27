@@ -1,24 +1,24 @@
 
 public class College {
 
+	/**
+	 * Note to future developer:
+	 * I coded this badly, I know. To fix this, I would recommend using a HashMap for all the attributes, and just having the name a separate field
+	 * But for now i had to do this
+	 */
+	
 	String name;
 	
-	String population;
-	String deadline;
+	String avgACT;
 	String avgSAT;
-	String tuition;
-	String acceptanceRate;
 	
-	public College (String a, String b, String c, String d, String e, String f) {
-		name = a;
-		population = b;
-		deadline = c;
-		avgSAT = d;
-		tuition = e;
-		acceptanceRate = f;
+	public College (String n, String a, String b) {
+		name = n;
+		avgACT = a;
+		avgSAT = b;
 	}
 	
 	public String toString() {
-		return name + ": " + population + " " + deadline + " " + avgSAT + " " + tuition + " " + acceptanceRate;
+		return name + ": " + avgACT + " " + avgSAT;
 	}
 }

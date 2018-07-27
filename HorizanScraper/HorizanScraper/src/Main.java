@@ -49,9 +49,9 @@ public class Main {
 		if(System.getProperty("os.name").contains("Wind")){
 			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		}else {
-			System.out.println("Enter your username for your Mac: ");
-			String username = sc.nextLine();
-			System.setProperty("webdriver.chrome.driver", "/Users/" + username + "/Desktop/chromedriver");
+			System.out.println("(Mac) Copy the chromedriver file and paste here: ");
+			String path = sc.nextLine();
+			System.setProperty("webdriver.chrome.driver", path);
 		}
 		
 		ChromeOptions options = new ChromeOptions();
@@ -72,14 +72,15 @@ public class Main {
 		errorColleges = new ArrayList<String>();
 
 		/* Run Scraping */
-		
-		for(int i = 1; i < unis.length; i++) {
+		int size = unis.length;
+		//size = 2;
+		for(int i = 1; i < size; i++) {
 			System.out.println(unis[i]);
 			info.clear();
 			try {
 				IPEDS(driver, unis[i]);
-				getPetersonData(unis[i]);
-				College test = new College(unis[i], info.get("Population"), info.get("Deadline"), info.get("SAT Range"), info.get("TuitionFees"), info.get("AdmissionRate"));
+				//getPetersonData(unis[i]);
+				College test = new College(unis[i], info.get("ACT Range"), info.get("SAT Range"));
 				allColleges.add(test);
 				System.out.println(test.toString());
 				System.out.println();
@@ -167,30 +168,15 @@ public class Main {
 		//get nth tr based on elementPos and second td and find the href link
 		WebElement element = driver.findElement(By.xpath("//tr[" + elementPos + "]//td[2]//a"));
 		element.click();
+	
+	/**	
 		
 		//pop
 		element = driver.findElement(By.xpath("(//td[@class='srb'])[7]/../td[2]"));
 		temp = element.getText().split(" ")[0];
 		//System.out.println(temp);
 		info.put("Population", temp);
-		
-		/*
-		//SFR
-			element = driver.findElement(By.xpath("(//td[@class='srb'])[8]/../td[2]"));
-			temp = element.getText();
-			System.out.println(temp);
-			info.put("SFR", temp);
-			
-					
-	//Tuition (WRONG DATA DONT USE)
-		driver.get(originalURL + "#expenses");
-		driver.navigate().refresh();
-		element = driver.findElement(By.xpath("(//td[contains(text(), 'Tuition and fees')])/../td[5]"));
-		temp = element.getText();
-		System.out.println("Tuition: "+ temp);
-		info.put("TuitionFees", temp);
-		*/
-		
+	
 	//Type of Uni
 		element = driver.findElement(By.xpath("(//td[@class='srb'])[3]/../td[2]"));
 		temp = element.getText();
@@ -202,15 +188,19 @@ public class Main {
 		temp = element.getText();
 		System.out.println(temp);
 		info.put("setting", temp);
+				
+		**/
 		
 	//Admissions
 		originalURL = driver.getCurrentUrl();
 		driver.get(originalURL + "#admsns");
 		driver.navigate().refresh();
-		element = driver.findElement(By.xpath("(//td[contains(text(), 'Percent admitted')])/../td[2]"));
-		temp = element.getText();
-		//System.out.println(temp);
-		info.put("AdmissionRate", temp);
+		/*
+			element = driver.findElement(By.xpath("(//td[contains(text(), 'Percent admitted')])/../td[2]"));
+			temp = element.getText();
+			//System.out.println(temp);
+			info.put("AdmissionRate", temp);
+		*/
 		
 	//SAT
 		element = driver.findElement(By.xpath("(//td[text()='SAT Evidence-Based Reading and Writing'])/../td[2]"));
@@ -224,9 +214,41 @@ public class Main {
 		r1 = r1+r3;
 		r2 = r2+r4;     
 		info.put("SAT Range", r1 + "-" + r2);
-		//System.out.println(info.get("SAT Range"));
-
+		System.out.println(info.get("SAT Range"));
+		
+	//ACT
+		element = driver.findElement(By.xpath("(//td[text()='ACT Composite'])/../td[2]"));
+		int a1 = Integer.parseInt(element.getText());
+		element = driver.findElement(By.xpath("(//td[text()='ACT Composite'])/../td[3]"));
+		int a2 = Integer.parseInt(element.getText());    
+		info.put("ACT Range", a1 + "-" + a2);
+		System.out.println(info.get("ACT Range"));
 	}
+	
+	
+	//TODO boneyard for stuff we dont need rn
+	
+	/*
+	//SFR
+		element = driver.findElement(By.xpath("(//td[@class='srb'])[8]/../td[2]"));
+		temp = element.getText();
+		System.out.println(temp);
+		info.put("SFR", temp);
+		
+				
+//Tuition (WRONG DATA DONT USE)
+	driver.get(originalURL + "#expenses");
+	driver.navigate().refresh();
+	element = driver.findElement(By.xpath("(//td[contains(text(), 'Tuition and fees')])/../td[5]"));
+	temp = element.getText();
+	System.out.println("Tuition: "+ temp);
+	info.put("TuitionFees", temp);
+	*/
+	
+	
+	
+	
+	
 	
 	public static void getPetersonData(String uniName) throws IOException, InterruptedException {
 		searchFirstResult("\"" + uniName + "\" site: petersons.com");

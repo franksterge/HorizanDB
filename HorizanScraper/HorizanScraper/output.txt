@@ -1,1 +1,1 @@
-[{"name":"Princeton University","population":"8,181","deadline":"January 1","avgSAT":"1430-1570","tuition":"$47,140","acceptanceRate":"6%"}]
+[{"name":"Princeton University","avgACT":"31-35","avgSAT":"1430-1570"}]
