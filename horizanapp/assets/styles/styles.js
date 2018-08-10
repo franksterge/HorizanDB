@@ -47,5 +47,12 @@ export default styles = StyleSheet.create({
       borderBottomWidth: 4,
       paddingBottom: 5,
       textAlign: 'center'
-    }
+    },
+    logoimage: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: 191,
+      height: 46,
+      resizeMode: 'contain' }
   });
