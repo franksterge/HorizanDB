@@ -6,6 +6,10 @@ import Touchable from 'react-native-platform-touchable';
 import { TextField } from 'react-native-material-textfield';
 import { Ionicons } from '@expo/vector-icons';
 
+import firebase from "@firebase/app"
+import "firebase/auth"
+import "firebase/database"
+
 export default class LoginScreen extends Component {
 
     static navigationOptions = {
@@ -17,9 +21,30 @@ export default class LoginScreen extends Component {
         }
       };
 
+    componentDidMount(){
+        //Constantly check for login, then upload info to firebase
+        this._checkForUser();
+    }
+
+  _checkForUser = () => {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        console.log(user);
+        Alert.alert(
+          'Got Data!',
+          `Hi ${user.displayName}!`,
+      );
+        () => this.props.navigation.navigate('CallToAction');
+      } else {
+        // No user is signed in.
+      }
+    });
+  }
+
   _handleGoogleLogin = async () => {
     try {
-      const { type, user } = await Google.logInAsync({
+      const results = await Google.logInAsync({
        // androidStandaloneAppClientId: '<ANDROID_CLIENT_ID>',
        // iosStandaloneAppClientId: '<IOS_CLIENT_ID>',
         androidClientId: '7107222998-j63jutpdimj4u5m9str4opk79olqmhee.apps.googleusercontent.com',
@@ -27,13 +52,15 @@ export default class LoginScreen extends Component {
         scopes: ['profile', 'email']
       });
 
-      switch (type) {
+      switch (results.type) {
         case 'success': {
-          Alert.alert(
-            'Logged in!',
-            `Hi ${user.name}!`,
-          );
-          break;
+            const credential = firebase.auth.GoogleAuthProvider.credential(results.idToken, results.accessToken);
+            firebase.auth().signInAndRetrieveDataWithCredential(credential);
+            Alert.alert(
+                'Logged in!',
+                `Hi ${results.user.name}!`,
+            );
+            break;
         }
         case 'cancel': {
           Alert.alert(
@@ -54,6 +81,7 @@ export default class LoginScreen extends Component {
         'Oops!',
         'Login failed!',
       );
+      console.log(e);
     }
   };
 //        <Image source={require('.././assets/images/logo.png')} />
@@ -71,7 +99,7 @@ export default class LoginScreen extends Component {
                             Log in
                         </Text>
                     </Touchable>
-                <Touchable onPress={() => this.props.navigation.navigate('LoginScreen')} style={[styles.button, {backgroundColor: 'black', marginTop: 10}]} >
+                <Touchable onPress={() => this.props.navigation.navigate('RegisterScreen')} style={[styles.button, {backgroundColor: 'black', marginTop: 10}]} >
                         <Text style={styles.whitetext}>
                             Register
                         </Text>
@@ -86,15 +114,6 @@ export default class LoginScreen extends Component {
     );
   }
 }
-
-/*  //old method, apparently cant use google logo if you dont design it right wow
-<Ionicons name = "logo-google" size={42} color="white" style={{marginRight: 10}}/>
-                <View style={{justifyContent: 'center', alignItems: 'center'}}>
-                    <Text style={[styles.whitetext, {fontSize: 18}]}>
-                    Sign in with Google </Text>
-                    </View>
-
-*/
 
 const mystyles = StyleSheet.create({
   container: {
