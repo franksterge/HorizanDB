@@ -161,7 +161,7 @@ export default class App extends React.Component {
   render() {
     if(this.state.fontLoaded){
       //this.state.signedIn
-      if(this.state.signedIn){    //if signed in, skip directly to home screen
+      if(false){    //if signed in, skip directly to home screen
           return(<HomeStack />);
       }else{    //if not signed in, allow survey but require login after
         return (
