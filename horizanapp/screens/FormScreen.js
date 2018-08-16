@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { WebView } from 'react-native';
+import { WebView, Alert } from 'react-native';
 
 class FormScreen extends Component {
 
@@ -12,13 +12,25 @@ class FormScreen extends Component {
           }
       };
 
+    _onMessage = (message) => {
+        if(message.nativeEvent.data.length > 0){
+            console.log(message.nativeEvent.data)
+            Alert.alert(
+                'message.nativeEvent.data'
+            );
+        }
+    }
+
     render() {
+        const jsCode = "window.postMessage(document.getElementByClassName(\"pre\").textContent)"
         return (
             <WebView 
                 source={{uri: 'http://daltonding.com/horizantestform/'}}
                 startInLoadingState
                 scalesPageToFit
                 javaScriptEnabled
+                onMessage={this._onMessage}
+                injectedJavaScript={jsCode}
                 style={{ flex: 1 }}
             />
         );

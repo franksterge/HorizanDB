@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const deviceWidth = Dimensions.get('window').width;
 
 export default styles = StyleSheet.create({
     container: {
@@ -52,7 +54,6 @@ export default styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      width: 191,
-      height: 46,
+      width: deviceWidth / 1.2,
       resizeMode: 'contain' }
   });

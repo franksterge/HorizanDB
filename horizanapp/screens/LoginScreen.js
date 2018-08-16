@@ -48,7 +48,7 @@ export default class LoginScreen extends Component {
        // androidStandaloneAppClientId: '<ANDROID_CLIENT_ID>',
        // iosStandaloneAppClientId: '<IOS_CLIENT_ID>',
         androidClientId: '7107222998-j63jutpdimj4u5m9str4opk79olqmhee.apps.googleusercontent.com',
-        iosClientId: '',
+        iosClientId: '7107222998-qcmpffaqdkfo0cse1i10gf0t48n2t4go.apps.googleusercontent.com',
         scopes: ['profile', 'email']
       });
 
@@ -88,10 +88,10 @@ export default class LoginScreen extends Component {
   render() {
     return (
         <View style={{backgroundColor: 'white', flex: 1, flexDirection: 'column', justifyContent: 'flex-end'}}>
-            <Text style={[styles.para, {flex: 0, marginBottom: 40}]}>
+            <Text style={[styles.para, {flex: 0, marginBottom: 40, marginTop: 10}]}>
                 Log into your Horizan Account
             </Text>
-            <ScrollView contentContainerStyle={{flex: 1, paddingLeft: 10, paddingRight: 10}}>
+            <ScrollView scrollEnabled={false} contentContainerStyle={{flex: 1, paddingLeft: 10, paddingRight: 10}}>
                 <TextField style={{marginBottom: 20}} label={'Email'} baseColor={'#00BCD4'} keyboardType={'email-address'}/>
                 <TextField secureTextEntry={true} label={'Password'} baseColor={'#00BCD4'} />
                 <Touchable onPress={() => this.props.navigation.navigate('LoginScreen')} style={[styles.button, {marginTop: 20}]} >
@@ -104,7 +104,7 @@ export default class LoginScreen extends Component {
                             Register
                         </Text>
                 </Touchable>
-                <TouchableOpacity style={[styles.button, {backgroundColor: 'transparent', flex: 0, padding: 6, margin: 10, marginTop: 40}]} onPress={this._handleGoogleLogin}>
+                <TouchableOpacity style={[styles.button, {backgroundColor: 'transparent', padding: 6, margin: 10, marginTop: 40}]} onPress={this._handleGoogleLogin}>
                     <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
                         <Image style={mystyles.image} source={require('.././assets/images/google.png')} />
                     </View>

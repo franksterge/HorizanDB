@@ -17,15 +17,16 @@ export default class CallToAction extends React.Component {
     render() {
       return (
           <View style={{backgroundColor: 'white', flex: 1, flexDirection: 'column', justifyContent: 'flex-end'}}>
-          <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-          <Image style={styles.logoimage} source={require('.././assets/images/logo.png')} />  
+          <View style={{flex: 3, justifyContent: 'center', alignItems: 'center'}}>
+            <Image style={styles.logoimage} source={require('.././assets/images/logo.png')} />  
+            <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
             <Text style={[styles.para, { color: '#0400CF'}]}>
                     Take hold of tomorrow with
                   </Text>
             <Text style={[styles.title, { color: '#0400CF', fontSize: 75}]}>
                     Horizan
                   </Text>
-                
+            </View>
           </View>
           <Touchable onPress={() => this.props.navigation.navigate('LoginScreen')} style={[styles.button, {backgroundColor: '#000000'}]} >
                   <Text style={styles.whitetext}>

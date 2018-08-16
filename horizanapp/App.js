@@ -138,10 +138,6 @@ export default class App extends React.Component {
         // No user is signed in.
         out._storeLoggedIn('false');
         out.setState({ signedIn: false });
-        Alert.alert(
-          'Not logged in!',
-          `Please sign in`,
-      );
       }
     });
   }
@@ -164,7 +160,7 @@ export default class App extends React.Component {
   //render the StackNavigator
   render() {
     if(this.state.fontLoaded){
-
+      //this.state.signedIn
       if(this.state.signedIn){    //if signed in, skip directly to home screen
           return(<HomeStack />);
       }else{    //if not signed in, allow survey but require login after
