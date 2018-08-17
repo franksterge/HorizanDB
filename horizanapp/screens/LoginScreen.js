@@ -5,6 +5,8 @@ import styles from ".././assets/styles/styles";
 import Touchable from 'react-native-platform-touchable';
 import { TextField } from 'react-native-material-textfield';
 import { Ionicons } from '@expo/vector-icons';
+import {StackActions, NavigationActions} from 'react-navigation';
+import './global.js'
 
 import firebase from "@firebase/app"
 import "firebase/auth"
@@ -31,18 +33,37 @@ export default class LoginScreen extends Component {
       if (user) {
         // User is signed in.
         console.log(user);
-        Alert.alert(
+        global.user = user;
+/*         Alert.alert(
           'Got Data!',
           `Hi ${user.displayName}!`,
-      );
-        () => this.props.navigation.navigate('CallToAction');
+      ); */
+       // () => this.props.navigation.navigate('CallToAction');
       } else {
         // No user is signed in.
       }
     });
   }
 
+  handleLogout = () => {
+    const out = this;
+      firebase.auth().signOut()
+    .then(function() {
+      // Sign-out successful.
+      global.signedIn = false;
+      const resetAction = StackActions.reset({
+        index: 0,
+        actions: [NavigationActions.navigate({ routeName: 'CallToAction' })],
+      });
+      out.props.navigation.dispatch(resetAction);
+    })
+    .catch(function(error) {
+      // An error happened
+    });
+  }
+
   _handleGoogleLogin = async () => {
+    const out = this;
     try {
       const results = await Google.logInAsync({
        // androidStandaloneAppClientId: '<ANDROID_CLIENT_ID>',
@@ -52,14 +73,45 @@ export default class LoginScreen extends Component {
         scopes: ['profile', 'email']
       });
 
+      const origin = out.props.navigation.getParam('origin', '');
+      const containsData = (out.props.navigation.getParam('containsData', 'false') == 'true');
+
       switch (results.type) {
         case 'success': {
             const credential = firebase.auth.GoogleAuthProvider.credential(results.idToken, results.accessToken);
             firebase.auth().signInAndRetrieveDataWithCredential(credential);
-            Alert.alert(
+/*             Alert.alert(
                 'Logged in!',
                 `Hi ${results.user.name}!`,
-            );
+            ); */
+            global.signedIn = true;
+            if(containsData){
+              const data1 = out.props.navigation.getParam('data', '');
+
+              const resetAction = StackActions.reset({
+                index: 0,
+                actions: [NavigationActions.navigate({ routeName: origin, params: { hasData: 'true', data: data1}, })],
+              });
+
+              /* const pushAction = StackActions.push({
+                routeName: origin,
+                params: {
+                    hasData: 'true',
+                    data: data1
+                },
+              }); */
+              out.props.navigation.dispatch(resetAction);
+            }else{
+              const resetAction = StackActions.reset({
+                index: 0,
+                actions: [NavigationActions.navigate({ routeName: origin, params: { hasData: 'false'}, })],
+              });
+              //const pushAction = StackActions.push({routeName: origin});
+              out.props.navigation.dispatch(resetAction);
+            }
+
+            
+
             break;
         }
         case 'cancel': {
@@ -86,32 +138,65 @@ export default class LoginScreen extends Component {
   };
 //        <Image source={require('.././assets/images/logo.png')} />
   render() {
-    return (
-        <View style={{backgroundColor: 'white', flex: 1, flexDirection: 'column', justifyContent: 'flex-end'}}>
-            <Text style={[styles.para, {flex: 0, marginBottom: 40, marginTop: 10}]}>
-                Log into your Horizan Account
-            </Text>
-            <ScrollView scrollEnabled={false} contentContainerStyle={{flex: 1, paddingLeft: 10, paddingRight: 10}}>
-                <TextField style={{marginBottom: 20}} label={'Email'} baseColor={'#00BCD4'} keyboardType={'email-address'}/>
-                <TextField secureTextEntry={true} label={'Password'} baseColor={'#00BCD4'} />
-                <Touchable onPress={() => this.props.navigation.navigate('LoginScreen')} style={[styles.button, {marginTop: 20}]} >
-                        <Text style={styles.whitetext}>
-                            Log in
-                        </Text>
+    const origin = this.props.navigation.getParam('origin', '');
+    if(!global.signedIn){
+          return (
+            <View style={{backgroundColor: 'white', flex: 1, flexDirection: 'column', justifyContent: 'flex-end'}}>
+                <Text style={[styles.para, {flex: 0, marginBottom: 40, marginTop: 10}]}>
+                    Log into your Horizan Account
+                </Text>
+                <ScrollView scrollEnabled={false} contentContainerStyle={{flex: 1, paddingLeft: 10, paddingRight: 10}}>
+                    {/*<TextField style={{marginBottom: 20}} label={'Email'} baseColor={'#00BCD4'} keyboardType={'email-address'}/>
+                    <TextField secureTextEntry={true} label={'Password'} baseColor={'#00BCD4'} />
+                    <Touchable onPress={() => this.props.navigation.navigate('LoginScreen')} style={[styles.button, {marginTop: 20}]} >
+                            <Text style={styles.whitetext}>
+                                Log in
+                            </Text>
+                        </Touchable>
+                    <Touchable onPress={() => this.props.navigation.navigate('RegisterScreen')} style={[styles.button, {backgroundColor: 'black', marginTop: 10}]} >
+                            <Text style={styles.whitetext}>
+                                Register
+                            </Text>
                     </Touchable>
-                <Touchable onPress={() => this.props.navigation.navigate('RegisterScreen')} style={[styles.button, {backgroundColor: 'black', marginTop: 10}]} >
-                        <Text style={styles.whitetext}>
-                            Register
-                        </Text>
-                </Touchable>
-                <TouchableOpacity style={[styles.button, {backgroundColor: 'transparent', padding: 6, margin: 10, marginTop: 40}]} onPress={this._handleGoogleLogin}>
-                    <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-                        <Image style={mystyles.image} source={require('.././assets/images/google.png')} />
-                    </View>
-                </TouchableOpacity>
-            </ScrollView>
-      </View>
-    );
+                    */}
+                    <TouchableOpacity style={[styles.button, {backgroundColor: 'transparent', padding: 6, margin: 10, marginTop: 40}]} onPress={this._handleGoogleLogin}>
+                        <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+                            <Image style={mystyles.image} source={require('.././assets/images/google.png')} />
+                        </View>
+                    </TouchableOpacity>
+                </ScrollView>
+          </View>
+        );
+    }else{
+          return (
+            <View style={{backgroundColor: 'white', flex: 1, flexDirection: 'column', justifyContent: 'flex-end'}}>
+                <Text style={[styles.para, {flex: 0, marginBottom: 40, marginTop: 10}]}>
+                    Log out your Horizan Account
+                </Text>
+                <ScrollView scrollEnabled={false} contentContainerStyle={{flex: 1, paddingLeft: 10, paddingRight: 10}}>
+                    {/*<TextField style={{marginBottom: 20}} label={'Email'} baseColor={'#00BCD4'} keyboardType={'email-address'}/>
+                    <TextField secureTextEntry={true} label={'Password'} baseColor={'#00BCD4'} />
+                    <Touchable onPress={() => this.props.navigation.navigate('LoginScreen')} style={[styles.button, {marginTop: 20}]} >
+                            <Text style={styles.whitetext}>
+                                Log in
+                            </Text>
+                        </Touchable>
+                    <Touchable onPress={() => this.props.navigation.navigate('RegisterScreen')} style={[styles.button, {backgroundColor: 'black', marginTop: 10}]} >
+                            <Text style={styles.whitetext}>
+                                Register
+                            </Text>
+                    </Touchable>
+                    */}
+                    <Touchable onPress={this.handleLogout} style={[styles.button, {backgroundColor: 'red', marginTop: 10}]} >
+                            <Text style={styles.whitetext}>
+                                Log Out
+                            </Text>
+                    </Touchable>
+                </ScrollView>
+          </View>
+        );
+    }
+    
   }
 }
 

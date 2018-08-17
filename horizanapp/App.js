@@ -17,6 +17,10 @@ import LoginScreen from './screens/LoginScreen';
 import ResultsScreen from './screens/ResultsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import DetailsScreen from './screens/DetailsScreen';
+
+//global variables
+import './screens/global.js'
 
 //Configure Firebase Settings
 var config = {
@@ -43,7 +47,8 @@ const RootStack = createStackNavigator({
       FormScreen: { screen: FormScreen }, //the form
       LoginScreen: { screen: LoginScreen },  //login page
       RegisterScreen: { screen: RegisterScreen }, //Register page
-      ResultsScreen: { screen: ResultsScreen }  //show results
+      ResultsScreen: { screen: ResultsScreen },  //show results
+      DetailsScreen: { screen: DetailsScreen }
     })
   },
 },
@@ -118,7 +123,7 @@ export default class App extends React.Component {
     this._checkForUser();
 
   //set fonts loaded to true
-  this.setState({ fontLoaded: true });
+    this.setState({ fontLoaded: true });
   }
 
   _checkForUser = () => {
@@ -126,18 +131,21 @@ export default class App extends React.Component {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // User is signed in.
+        global.user = user;
         console.log(user);
-        Alert.alert(
-          'Got Data!',
+/*         Alert.alert(
+          'Welcome!',
           `Hi ${user.displayName}!`,
-      );
+      ); */
       //  () => this.props.navigation.navigate('HomeScreen');
       out.setState({ signedIn: true});
       out._storeLoggedIn('true');
+      global.signedIn = true;
       } else {
         // No user is signed in.
         out._storeLoggedIn('false');
         out.setState({ signedIn: false });
+        global.signedIn = false;
       }
     });
   }
@@ -154,6 +162,7 @@ export default class App extends React.Component {
       const value = await AsyncStorage.getItem('loggedInBefore');
       const s = JSON.parse(value);
       this.setState({signedIn: s });
+      global.signedIn = s;
     }catch(e){}
   }
 

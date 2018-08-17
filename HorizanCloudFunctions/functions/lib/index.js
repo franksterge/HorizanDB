@@ -90,8 +90,8 @@ const handleUserData = (ans, scoreArray) => {
         }
     }
     const matches2 = [];
-    const uSAT = parseInt(scoreArray[0], 10);
-    const uACT = parseInt(scoreArray[1], 10);
+    const uSAT = isNaN(scoreArray[0]) ? 1600 : parseInt(scoreArray[0], 10);
+    const uACT = isNaN(scoreArray[1]) ? 35 : parseInt(scoreArray[1], 10);
     const scaledSAT = uSAT / 1600;
     const scaledACT = uACT / 36;
     if (scaledSAT >= scaledACT) {
@@ -123,10 +123,6 @@ const handleUserData = (ans, scoreArray) => {
         }
     }
     return matches2;
-    /*
-        
-        
-        */
 };
 exports.getUserResults = functions.https.onRequest((request, response) => {
     const req = request.body;
@@ -145,5 +141,4 @@ exports.getUserResults = functions.https.onRequest((request, response) => {
     const tt = handleUserData(ansArray, scoreArray);
     response.send(tt);
 });
-//finally filter on SAT and ACT score, depending on which is better
 //# sourceMappingURL=index.js.map

@@ -28,9 +28,9 @@ export default class CallToAction extends React.Component {
                   </Text>
             </View>
           </View>
-          <Touchable onPress={() => this.props.navigation.navigate('LoginScreen')} style={[styles.button, {backgroundColor: '#000000'}]} >
+          <Touchable onPress={() => this.props.navigation.navigate('LoginScreen', {origin: 'CallToAction'})} style={[styles.button, {backgroundColor: '#000000'}]} >
                   <Text style={styles.whitetext}>
-                    Log in / Register
+                    {global.signedIn ? 'Log Out' : 'Log in / Register'}
                   </Text>
             </Touchable>
             <Touchable onPress={() => this.props.navigation.navigate('FormScreen')} style={[styles.button, {flex: 0}]} >

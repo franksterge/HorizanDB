@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { StackActions } from 'react-navigation';
-import { WebView, Alert, ActivityIndicator } from 'react-native';
+import { StackActions, NavigationActions } from 'react-navigation';
+import { WebView, KeyboardAvoidingView, ScrollView } from 'react-native';
 
 class FormScreen extends Component {
 
@@ -21,29 +21,33 @@ class FormScreen extends Component {
             const start = text.indexOf("[");
             const end = text.indexOf("]");
             text = text.substring(start, end+1);
-            const pushAction = StackActions.push({
+
+            const resetAction = StackActions.reset({
+                index: 0,
+                actions: [NavigationActions.navigate({ routeName: 'ResultsScreen', params: {
+                    results: text
+                } })],
+              });
+              out.props.navigation.dispatch(resetAction);
+
+            /* const pushAction = StackActions.push({
                 routeName: 'ResultsScreen',
                 params: {
                     results: text
                 },
               });
-            out.props.navigation.dispatch(pushAction);
+            out.props.navigation.dispatch(pushAction); */
         }
     }
 
-    renderLoading = () => {
-        return(<ActivityIndicator/>);
-    }
-
     render() {
-        //const jsCode = "window.postMessage(document.getElementByClassName(\"pre\"))"
         const jsCode = `
         function init() {
             postMessage(document.body.innerHTML);
         }
         function whenRNPostMessageReady(cb) {
             if (postMessage.length === 1) cb();
-            else setTimeout(function() { whenRNPostMessageReady(cb) }, 1000);
+            else setTimeout(function() { whenRNPostMessageReady(cb) }, 500);
         }
         if (document.readyState === 'complete') {
             if(window.location.href == 'https://us-central1-horizanapp-dae00.cloudfunctions.net/getUserResults'){
@@ -66,10 +70,7 @@ class FormScreen extends Component {
                 scalesPageToFit
                 javaScriptEnabled
                 injectedJavaScript={jsCode}
-                renderLoading={this.renderLoading.bind(this)}
                 onMessage={this._onMessage}
-                onShouldStartLoadWithRequest={this.renderLoading.bind(this)}
-                onNavigationStateChange = {this.renderLoading.bind(this)} 
                 style={{ flex: 1 }}
             />
         );

@@ -78,8 +78,8 @@ const handleUserData = (ans, scoreArray) => {
         }
     }
     const matches2 = []
-    const uSAT = parseInt(scoreArray[0], 10)
-    const uACT = parseInt(scoreArray[1], 10)
+    const uSAT = isNaN(scoreArray[0]) ? 1600 : parseInt(scoreArray[0], 10);
+    const uACT = isNaN(scoreArray[1]) ? 35 : parseInt(scoreArray[1], 10)
     const scaledSAT = uSAT/1600
     const scaledACT = uACT/36
 
