@@ -1,0 +1,19 @@
+[debug] [2018-08-29T02:47:08.022Z] ----------------------------------------------------------------------
+[debug] [2018-08-29T02:47:08.025Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\212708126\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy --only functions
+[debug] [2018-08-29T02:47:08.025Z] CLI Version:   4.2.0
+[debug] [2018-08-29T02:47:08.025Z] Platform:      win32
+[debug] [2018-08-29T02:47:08.025Z] Node Version:  v8.11.4
+[debug] [2018-08-29T02:47:08.026Z] Time:          Tue Aug 28 2018 21:47:08 GMT-0500 (Central Daylight Time)
+[debug] [2018-08-29T02:47:08.026Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-08-29T02:47:08.041Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-08-29T02:47:08.042Z] > authorizing via signed-in user
+[debug] [2018-08-29T02:47:08.044Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/horizanapp-dae00  
+ 
+[debug] [2018-08-29T02:47:08.432Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'horizanapp-dae00'...
+[info] 
+[info] i  deploying functions
+[info] Running command: npm --prefix "functions" run lint
+[info] Running command: npm --prefix "functions" run build

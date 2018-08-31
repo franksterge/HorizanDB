@@ -18,6 +18,7 @@ import ResultsScreen from './screens/ResultsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import DetailsScreen from './screens/DetailsScreen';
+import ResultsLoading from "./screens/ResultsLoading";
 
 //global variables
 import './screens/global.js'
@@ -48,7 +49,8 @@ const RootStack = createStackNavigator({
       LoginScreen: { screen: LoginScreen },  //login page
       RegisterScreen: { screen: RegisterScreen }, //Register page
       ResultsScreen: { screen: ResultsScreen },  //show results
-      DetailsScreen: { screen: DetailsScreen }
+      DetailsScreen: { screen: DetailsScreen },
+      ResultsLoading: { screen: ResultsLoading }
     })
   },
 },
@@ -159,8 +161,9 @@ export default class App extends React.Component {
 
   _checkLoggedInBefore = async () => {
     try {
-      const value = await AsyncStorage.getItem('loggedInBefore');
+      const value = await AsyncStorage.getItem('userid');
       const s = JSON.parse(value);
+      console.log(s)
       this.setState({signedIn: s });
       global.signedIn = s;
     }catch(e){}

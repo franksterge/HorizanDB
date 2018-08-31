@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Button, Alert, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Button, AsyncStorage, Alert, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { Constants, Google } from 'expo';
 import styles from ".././assets/styles/styles";
 import Touchable from 'react-native-platform-touchable';
@@ -7,6 +7,8 @@ import { TextField } from 'react-native-material-textfield';
 import { Ionicons } from '@expo/vector-icons';
 import {StackActions, NavigationActions} from 'react-navigation';
 import './global.js'
+import {Images} from '../Themes';
+
 
 import firebase from "@firebase/app"
 import "firebase/auth"
@@ -16,6 +18,8 @@ export default class LoginScreen extends Component {
 
     static navigationOptions = {
         tabBarLabel: '',
+        headerTitle:<Image style={{height:'70%',width:'70%',resizeMode:'contain'}} source={Images.logo_full}/>,
+
         headerStyle: {
           backgroundColor: 'white',
           elevation: 0,
@@ -32,7 +36,7 @@ export default class LoginScreen extends Component {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // User is signed in.
-        console.log(user);
+        // console.log(user);
         global.user = user;
 /*         Alert.alert(
           'Got Data!',
@@ -51,6 +55,8 @@ export default class LoginScreen extends Component {
     .then(function() {
       // Sign-out successful.
       global.signedIn = false;
+      AsyncStorage.setItem("userid",null)
+
       const resetAction = StackActions.reset({
         index: 0,
         actions: [NavigationActions.navigate({ routeName: 'CallToAction' })],
@@ -72,6 +78,7 @@ export default class LoginScreen extends Component {
         iosClientId: '7107222998-qcmpffaqdkfo0cse1i10gf0t48n2t4go.apps.googleusercontent.com',
         scopes: ['profile', 'email']
       });
+     
 
       const origin = out.props.navigation.getParam('origin', '');
       const containsData = (out.props.navigation.getParam('containsData', 'false') == 'true');
@@ -84,6 +91,7 @@ export default class LoginScreen extends Component {
                 'Logged in!',
                 `Hi ${results.user.name}!`,
             ); */
+            AsyncStorage.setItem("userid",results["user"]["email"])
             global.signedIn = true;
             if(containsData){
               const data1 = out.props.navigation.getParam('data', '');
@@ -161,7 +169,7 @@ export default class LoginScreen extends Component {
                     */}
                     <TouchableOpacity style={[styles.button, {backgroundColor: 'transparent', padding: 6, margin: 10, marginTop: 40}]} onPress={this._handleGoogleLogin}>
                         <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-                            <Image style={mystyles.image} source={require('.././assets/images/google.png')} />
+                            <Image style={mystyles.image} source={Images.google_login} />
                         </View>
                     </TouchableOpacity>
                 </ScrollView>
