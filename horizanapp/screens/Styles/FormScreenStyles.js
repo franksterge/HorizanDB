@@ -59,7 +59,7 @@ export default StyleSheet.create({
         
     },
     choiceText:{
-        fontSize:15,
+        fontSize:14,
         fontWeight:'bold',
     },
     questionText:{

@@ -14,16 +14,21 @@ class FormScreen extends Component {
         super(props)
         this.state = {
             failed_submit : false, 
+            bad_amounts_sat: false, 
+            bad_amounts_act: false, 
+            ans_array : [
+                "",//region
+                "",//urban
+                0,//sat*
+                0,//act*
+                "",//gender*
+                "",//pub/priv
+                "",//size
+                "",//in-state$
+                "",//out-state$
+            ]
 
-            answer_one : {1:false,2:false,3:false,4:false}, // region
-            answer_two: {1:false,2:false,3:false}, // urban
-            answer_three:0, // SAT * 
-            answer_four:0, // ACT * 
-            answer_five: {1:false,2:false,3:false}, //gender
-            answer_six: {1:false,2:false}, // pub/priv
-            answer_seven: {1:false,2:false,3:false}, //size
-            answer_eight: {1:false,2:false,3:false,4:false}, // in-state $
-            answer_nine: {1:false,2:false,3:false,4:false}, // out-state $,
+           
         }
         
     }
@@ -36,89 +41,56 @@ class FormScreen extends Component {
             elevation: 0,
             shadowOpacity: 0,
           },
-      };
-
-    // _onMessage = (message) => {
-    //     let text = message.nativeEvent.data;
-    //     const out = this;
-    //     console.log(text)
-    //     if(text.startsWith("<pre style")){
-    //         const start = text.indexOf("[");
-    //         const end = text.indexOf("]");
-    //         text = text.substring(start, end+1);
-
-    //         const resetAction = StackActions.reset({
-    //             index: 0,
-    //             actions: [NavigationActions.navigate({ routeName: 'ResultsScreen', params: {
-    //                 results: text
-    //             } })],
-    //           });
-    //           out.props.navigation.dispatch(resetAction);
-
-    //         /* const pushAction = StackActions.push({
-    //             routeName: 'ResultsScreen',
-    //             params: {
-    //                 results: text
-    //             },
-    //           });
-    //         out.props.navigation.dispatch(pushAction); */
-    //     }
-    // }
+        }
 
     render() {
 
         handleFormSubmit = () => {
-            if (this.state.answer_three == 0 || this.state.answer_four == 0){
-                this.setState({failed_submit: true})
-            } else {
-                this.props.navigation.navigate("ResultsLoading")
+            // if (if this.state.ans_array[2] == 0 || this.state.ans_array[2] == 0){
+                  // this.setState({failed_submit: true})
+            // } 
+            // if (parseInt(this.state.ans_array[2]) > 1600){
+            //         this.setState({  bad_amounts_sat: true})
+            // }
+            // if (parseInt(this.state.ans_array[3]) > 36){
+            //     this.setState({bad_amounts_act: true})
                 
-            }
+            // }
+            //     console.log(this.state.ans_array)
+            // if (this.state.failed_submit || this.state.bad_amounts_act || this.state.bad_amounts_sat ){
+            //     return 
+            // } else {
+                
+                this.props.navigation.navigate("ResultsLoading", {form_results : this.state.ans_array })
+                
+            //  }
 
         }
 
+        activate_answer = (index, value) => {
+
+        
+            answer = this.state.ans_array
+            if (answer[index].includes(value)){
+                console.log("found")
+                answer[index] = answer[index].replace(value,"")
+            } else {
+                    answer[index] += value
+                }
+                this.setState({ans_array:answer})
+            return
 
 
-        activate_one = (index) => {
-            answer_one = this.state.answer_one
-            answer_one[index] = !answer_one[index]
-            this.setState(answer_one)
-        }        
-        activate_two = (index) => {
-            answer_two = this.state.answer_two
-            answer_two[index] = !answer_two[index]
-            this.setState(answer_two)
         }
 
-        activate_five = (index) => {
-            answer_five = this.state.answer_five
-            answer_five[index] = !answer_five[index]
-            this.setState(answer_five)
-        }
-
-        activate_six = (index) => {
-            answer_six = this.state.answer_six
-            answer_six[index] = !answer_six[index]
-            this.setState(answer_six)
-        }
-        activate_seven = (index) => {
-            answer_seven = this.state.answer_seven
-            answer_seven[index] = !answer_seven[index]
-            this.setState(answer_seven)
-        }
-
-        activate_eight = (index) => {
-            answer_eight = this.state.answer_eight
-            answer_eight[index] = !answer_eight[index]
-            this.setState(answer_eight)
-        }
-        activate_nine = (index) => {
-            answer_nine = this.state.answer_nine
-            answer_nine[index] = !answer_nine[index]
-            this.setState(answer_nine)
+        changeNum = (index, val) => {
+            answer = this.state.ans_array
+            answer[index] = val
+            this.setState({ans_array:answer})
         }
 
 
+ 
 
         return (
          <View style={StyleSheet.absoluteFill}>
@@ -128,19 +100,19 @@ class FormScreen extends Component {
                 <View style={styles.question}>
                     <Text style={styles.questionText}> What region do you see yourself going to school? </Text>
                     <View style={styles.multiChoiceContainer}>
-                        <TouchableOpacity onPress = {()=>activate_one(1)} style={this.state.answer_one[1] ? styles.choiceBoxActive : styles.choiceBox}>
+                        <TouchableOpacity onPress = {()=> activate_answer(0,"A")} style={this.state.ans_array[0].includes("A") ? styles.choiceBoxActive : styles.choiceBox}>
                                 <Image source={Images.west_coast} style={styles.choiceBoxIcon}/>
-                                <Text style={styles.choiceText}> West Coast </Text>
+                                <Text style={styles.choiceText}> West Coast </Text> 
                         </TouchableOpacity>
-                        <TouchableOpacity onPress = {()=>activate_one(2)} style={this.state.answer_one[2] ? styles.choiceBoxActive : styles.choiceBox}>
+                        <TouchableOpacity onPress = {()=>activate_answer(0,"B")} style={this.state.ans_array[0].includes("B") ? styles.choiceBoxActive : styles.choiceBox}>
                             <Image source={Images.central} style={styles.choiceBoxIcon}/>
                             <Text style={styles.choiceText}> Central </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress = {()=>activate_one(3)} style={this.state.answer_one[3] ? styles.choiceBoxActive : styles.choiceBox}>
+                        <TouchableOpacity onPress = {()=>activate_answer(0,"C")} style={this.state.ans_array[0].includes("C") ? styles.choiceBoxActive : styles.choiceBox}>
                             <Image source={Images.north_east} style={styles.choiceBoxIcon}/>
                             <Text style={styles.choiceText}> Northeast </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress = {()=>activate_one(4)} style={this.state.answer_one[4] ? styles.choiceBoxActive : styles.choiceBox}>
+                        <TouchableOpacity onPress = {()=>activate_answer(0,"D")} style={this.state.ans_array[0].includes("D") ? styles.choiceBoxActive : styles.choiceBox}>
                             <Image source={Images.south_east} style={styles.choiceBoxIcon}/>
                             <Text style={styles.choiceText}> Southeast </Text>
                         </TouchableOpacity>
@@ -150,15 +122,15 @@ class FormScreen extends Component {
                  <View style={styles.question}>
                     <Text style={styles.questionText}> Of the following, which is your ideal environment? </Text>
                     <View style={styles.multiChoiceContainer}>
-                        <TouchableOpacity onPress = {()=>activate_two(1)} style={this.state.answer_two[1] ? styles.choiceBoxActive : styles.choiceBox}>
+                    <TouchableOpacity onPress = {()=>activate_answer(1,"A")} style={this.state.ans_array[1].includes("A") ? styles.choiceBoxActive : styles.choiceBox}>
                                 <Image source={Images.urban} style={styles.choiceBoxIcon}/>
                                 <Text style={styles.choiceText}> Urban </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress = {()=>activate_two(2)} style={this.state.answer_two[2] ? styles.choiceBoxActive : styles.choiceBox}>
+                        <TouchableOpacity onPress = {()=>activate_answer(1,"B")} style={this.state.ans_array[1].includes("B") ? styles.choiceBoxActive : styles.choiceBox}>
                             <Image source={Images.suburban} style={styles.choiceBoxIcon}/>
                             <Text style={styles.choiceText}> Suburban </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress = {()=>activate_two(3)} style={this.state.answer_two[3] ? styles.choiceBoxActive : styles.choiceBox}>
+                        <TouchableOpacity onPress = {()=>activate_answer(1,"C")} style={this.state.ans_array[1].includes("C") ? styles.choiceBoxActive : styles.choiceBox}>
                             <Image source={Images.rural} style={styles.choiceBoxIcon}/>
                             <Text style={styles.choiceText}> Rural </Text>
                         </TouchableOpacity>
@@ -172,10 +144,13 @@ class FormScreen extends Component {
                                 keyboardType={"numeric"}
                                 returnKeyType={"done"}
                                 maxLength={4}
-                                onChangeText={(answer_three) => this.setState({answer_three})}
+                                onChangeText={(num) => changeNum(2,num)}
                               />
                     { this.state.failed_submit && this.state.answer_three == 0 ? 
                         <Text style={[styles.questionText,{color:'red'}]}> This field is required </Text>
+                    : null}
+                    { this.state.bad_amounts_sat && this.state.answer_three == 0 ? 
+                        <Text style={[styles.questionText,{color:'red'}]}> The maximum score for the SAT is 1600 </Text>
                     : null}
 
                 </View>
@@ -185,10 +160,13 @@ class FormScreen extends Component {
                                 keyboardType={"numeric"}
                                 returnKeyType={"done"}
                                 maxLength={2}
-                                onChangeText={(answer_four) => this.setState({answer_four})}
+                                onChangeText={(num) => changeNum(3,num)}
                                 />
                     { this.state.failed_submit && this.state.answer_four == 0 ? 
                         <Text style={[styles.questionText,{color:'red'}]}> This field is required </Text>
+                    : null}
+                    { this.state.bad_amounts_act && this.state.answer_four == 0 ? 
+                        <Text style={[styles.questionText,{color:'red'}]}> The maximum score for the ACT is 36 </Text>
                     : null}
                 </View>
 
@@ -196,15 +174,15 @@ class FormScreen extends Component {
                 <View style={styles.question}>
                     <Text style={styles.questionText}>What is your preferred gender distribution? </Text>
                     <View style={styles.multiChoiceContainer}>
-                        <TouchableOpacity onPress = {()=>activate_five(1)} style={this.state.answer_five[1] ? styles.choiceBoxActive : styles.choiceBox}>
+                    <TouchableOpacity onPress = {()=>activate_answer(4,"A")} style={this.state.ans_array[4].includes("A") ? styles.choiceBoxActive : styles.choiceBox}>
                                 <Image source={Images.coed} style={styles.choiceBoxIcon}/>
                                 <Text style={styles.choiceText}> Coed </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress = {()=>activate_five(2)} style={this.state.answer_five[2] ? styles.choiceBoxActive : styles.choiceBox}>
+                        <TouchableOpacity onPress = {()=>activate_answer(4,"B")} style={this.state.ans_array[4].includes("B") ? styles.choiceBoxActive : styles.choiceBox}>
                             <Image source={Images.men_only} style={styles.choiceBoxIcon}/>
                             <Text style={styles.choiceText}> Men's only </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress = {()=>activate_five(3)} style={this.state.answer_five[3] ? styles.choiceBoxActive : styles.choiceBox}>
+                        <TouchableOpacity onPress = {()=>activate_answer(4,"C")} style={this.state.ans_array[4].includes("C") ? styles.choiceBoxActive : styles.choiceBox}>
                             <Image source={Images.women_only} style={styles.choiceBoxIcon}/>
                             <Text style={styles.choiceText}> Women's only </Text>
                         </TouchableOpacity>
@@ -214,11 +192,11 @@ class FormScreen extends Component {
                 <View style={styles.question}>
                     <Text style={styles.questionText}> Would you like to attend a public or private school?</Text>
                     <View style={styles.multiChoiceContainer}>
-                        <TouchableOpacity onPress = {()=>activate_six(1)} style={this.state.answer_six[1] ? styles.choiceBoxActive : styles.choiceBox}>
+                    <TouchableOpacity onPress = {()=>activate_answer(5,"A")} style={this.state.ans_array[5].includes("A") ? styles.choiceBoxActive : styles.choiceBox}>
                                 <Image source={Images.public} style={styles.choiceBoxIcon}/>
                                 <Text style={styles.choiceText}> Public </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress = {()=>activate_six(2)} style={this.state.answer_six[2] ? styles.choiceBoxActive : styles.choiceBox}>
+                        <TouchableOpacity onPress = {()=>activate_answer(5,"B")} style={this.state.ans_array[5].includes("B") ? styles.choiceBoxActive : styles.choiceBox}>
                             <Image source={Images.private} style={styles.choiceBoxIcon}/>
                             <Text style={styles.choiceText}> Private </Text>
                         </TouchableOpacity>
@@ -230,18 +208,18 @@ class FormScreen extends Component {
                     <Text style={styles.questionText}> What is your preferred school size?</Text>
                     <CheckBox
                         title='Small (1-5000 students)'
-                        checked={this.state.answer_seven[1]}
-                        onPress = {()=>activate_seven(1)}
+                        checked={this.state.ans_array[6].includes("A")}
+                        onPress = {()=>activate_answer(6,"A")}
                         />
                      <CheckBox
                         title='Medium (5001-10000 students)'
-                        checked={this.state.answer_seven[2]}
-                        onPress = {()=>activate_seven(2)}
+                        checked={this.state.ans_array[6].includes("B")}
+                        onPress = {()=>activate_answer(6,"B")}
                         />
                      <CheckBox
                         title='Large (10001 students +)'
-                        checked={this.state.answer_seven[3]}
-                        onPress = {()=>activate_seven(3)}
+                        checked={this.state.ans_array[6].includes("C")}
+                        onPress = {()=>activate_answer(6,"C")}
                         />
                 </View>
 
@@ -249,23 +227,23 @@ class FormScreen extends Component {
                     <Text style={styles.questionText}> What is the maximum you hope to spend on in-state tuition?</Text>
                     <CheckBox
                         title='$10000 or less'
-                        checked={this.state.answer_eight[1]}
-                        onPress = {()=>activate_eight(1)}
+                        checked={this.state.ans_array[7].includes("A")}
+                        onPress = {()=>activate_answer(7,"A")}
                         />
                      <CheckBox
                         title='$10001-$15000'
-                        checked={this.state.answer_eight[2]}
-                        onPress = {()=>activate_eight(2)}
+                        checked={this.state.ans_array[7].includes("B")}
+                        onPress = {()=>activate_answer(7,"B")}
                         />
                      <CheckBox
                         title='$15001-$20000'
-                        checked={this.state.answer_eight[3]}
-                        onPress = {()=>activate_eight(3)}
+                        checked={this.state.ans_array[7].includes("C")}
+                        onPress = {()=>activate_answer(7,"C")}
                         />
                     <CheckBox
                         title='$20001+'
-                        checked={this.state.answer_eight[4]}
-                        onPress = {()=>activate_eight(4)}
+                        checked={this.state.ans_array[7].includes("D")}
+                        onPress = {()=>activate_answer(7,"D")}
                         />
                 </View>
 
@@ -273,23 +251,23 @@ class FormScreen extends Component {
                     <Text style={styles.questionText}> What is the maximum you hope to spend on out-of-state/private tuition?</Text>
                     <CheckBox
                         title='$10000 or less'
-                        checked={this.state.answer_nine[1]}
-                        onPress = {()=>activate_nine(1)}
+                        checked={this.state.ans_array[8].includes("A")}
+                        onPress = {()=>activate_answer(8,"A")}
                         />
                      <CheckBox
                         title='$10001-$15000'
-                        checked={this.state.answer_nine[2]}
-                        onPress = {()=>activate_nine(2)}
+                        checked={this.state.ans_array[8].includes("B")}
+                        onPress = {()=>activate_answer(8,"B")}
                         />
                      <CheckBox
                         title='$15001-$20000'
-                        checked={this.state.answer_nine[3]}
-                        onPress = {()=>activate_nine(3)}
+                        checked={this.state.ans_array[8].includes("C")}
+                        onPress = {()=>activate_answer(8,"C")}
                         />
                     <CheckBox
                         title='$20001+'
-                        checked={this.state.answer_nine[4]}
-                        onPress = {()=>activate_nine(4)}
+                        checked={this.state.ans_array[8].includes("D")}
+                        onPress = {()=>activate_answer(8,"D")}
                         />
                 </View>
 
@@ -313,13 +291,7 @@ class FormScreen extends Component {
         );
     }
 }
-// //daltonding.com/horizantestform/
-// //old uri: 'https://horizanapp.typeform.com/to/T61uiD'
-// const styles = {
-//     typeformStyle: {
-//         padding: 100
-//     }
-// };
+
 
 
 export default FormScreen;
