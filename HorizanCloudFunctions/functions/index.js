@@ -13,6 +13,8 @@ const handleUserData = (ans, scoreArray) => {
     //let numArr = [];
     const ansArray = [];
     for (let i = 0; i < ans.length; i++) {
+        console.log(ans)
+        console.log(scoreArray)
         let line = ans[i];
         if (line != null) {
             if (Array.isArray(line)) { //if theres this then parse differently
@@ -34,7 +36,7 @@ const handleUserData = (ans, scoreArray) => {
             }
         }
         else {
-            console.log("undefined here");
+            console.log("undefi123ned here");
             ansArray.push([""]);
         }
     }
@@ -78,7 +80,7 @@ const handleUserData = (ans, scoreArray) => {
         let matchRate = 0;
         for (let i = 0; i < t.length; i++) {
             if (numArray[i].includes(t[i])) {
-                console.log("Matching!");
+                console.log("Mat123ching!");
                 matchRate++;
             }
         }
@@ -125,6 +127,8 @@ const handleUserData = (ans, scoreArray) => {
     return matches2;
 };
 exports.getUserResults = functions.https.onRequest((request, response) => {
+    console.log(request)
+    console.log(response)
     const req = request.body;
     //const test = this[formMappings.questions[0]];
     const ansArray = [];
