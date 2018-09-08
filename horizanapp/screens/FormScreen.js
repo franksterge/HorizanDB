@@ -26,12 +26,10 @@ class FormScreen extends Component {
                 "",//size
                 "",//in-state$
                 "",//out-state$
-            ]
-
-           
-        }
-        
+            ]  
+        }   
     }
+
 
     static navigationOptions = {
         tabBarLabel: '',
@@ -60,7 +58,9 @@ class FormScreen extends Component {
             // if (this.state.failed_submit || this.state.bad_amounts_act || this.state.bad_amounts_sat ){
             //     return 
             // } else {
-                
+                AsyncStorage.setItem("formCompleted","yes")
+                global.form_completed = true 
+                console.log("done")
                 this.props.navigation.navigate("ResultsLoading", {form_results : this.state.ans_array })
                 
             //  }

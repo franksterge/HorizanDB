@@ -50,13 +50,18 @@ export default class LoginScreen extends Component {
   }
 
   handleLogout = () => {
+
+
+    AsyncStorage.clear
     const out = this;
       firebase.auth().signOut()
     .then(function() {
       // Sign-out successful.
       global.signedIn = false;
-      AsyncStorage.setItem("userid",null)
+      global.form_completed = false
 
+      AsyncStorage.setItem("userid","none")
+      
       const resetAction = StackActions.reset({
         index: 0,
         actions: [NavigationActions.navigate({ routeName: 'CallToAction' })],
@@ -78,21 +83,29 @@ export default class LoginScreen extends Component {
         iosClientId: '7107222998-qcmpffaqdkfo0cse1i10gf0t48n2t4go.apps.googleusercontent.com',
         scopes: ['profile', 'email']
       });
-     
+
+      
 
       const origin = out.props.navigation.getParam('origin', '');
       const containsData = (out.props.navigation.getParam('containsData', 'false') == 'true');
 
       switch (results.type) {
         case 'success': {
+         
+          console.log(results.user.id)
+          // AsyncStorage.setItem("userid",results.user.id)
+          global.signedIn = true
+
+
             const credential = firebase.auth.GoogleAuthProvider.credential(results.idToken, results.accessToken);
             firebase.auth().signInAndRetrieveDataWithCredential(credential);
 /*             Alert.alert(
                 'Logged in!',
                 `Hi ${results.user.name}!`,
             ); */
-            AsyncStorage.setItem("userid",results["user"]["email"])
-            global.signedIn = true;
+            console.log("====")
+            console.log(user)
+            console.log("=====")
             if(containsData){
               const data1 = out.props.navigation.getParam('data', '');
 

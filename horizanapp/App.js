@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation';
 import { Constants, Font } from 'expo';
 import { StyleSheet, Text, View, Alert, AsyncStorage} from 'react-native';
 
@@ -50,7 +50,7 @@ const RootStack = createStackNavigator({
       RegisterScreen: { screen: RegisterScreen }, //Register page
       ResultsScreen: { screen: ResultsScreen },  //show results
       DetailsScreen: { screen: DetailsScreen },
-      ResultsLoading: { screen: ResultsLoading }
+      ResultsLoading: { screen: ResultsLoading },
     })
   },
 },
@@ -118,6 +118,15 @@ export default class App extends React.Component {
       'mainFontBold': require('./assets/fonts/Poppins-Bold.ttf'),
       'mainFont': require('./assets/fonts/Poppins-Medium.ttf'),
     });
+    AsyncStorage.getItem('userid', (error, result) => {
+      if(error) console.error('Something went wrong!');
+      else if(result) console.log('Getting key was successfull', result);
+      else if(result === null) AsyncStorage.setItem('userid',Math.random().toString(36).substr(2, 9))
+    });
+
+
+    
+    
 
     //check cache if they logged in before
     this._checkLoggedInBefore();
@@ -142,6 +151,7 @@ export default class App extends React.Component {
       //  () => this.props.navigation.navigate('HomeScreen');
       out.setState({ signedIn: true});
       out._storeLoggedIn('true');
+      global.form_completed = true;
       global.signedIn = true;
       } else {
         // No user is signed in.
@@ -162,10 +172,16 @@ export default class App extends React.Component {
   _checkLoggedInBefore = async () => {
     try {
       const value = await AsyncStorage.getItem('userid');
+      
       const s = JSON.parse(value);
       console.log(s)
       this.setState({signedIn: s });
-      global.signedIn = s;
+      if (s == "none"){
+        global.signedIn = false;
+      } else {
+        global.form_completed = true
+        global.signedIn = true;
+      }
     }catch(e){}
   }
 

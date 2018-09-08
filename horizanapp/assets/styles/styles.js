@@ -17,7 +17,7 @@ export default styles = StyleSheet.create({
     },
     para: {
       textAlign: 'center',
-      fontSize: 20,
+      fontSize: 15,
       marginBottom: 0,
       fontFamily: 'mainFont',
     },
