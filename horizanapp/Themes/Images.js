@@ -14,6 +14,8 @@ const images = {
     logo: require("../assets/images/logo.png"),
     google_login: require("../assets/images/google.png"),
     logo_full:require("../assets/images/logo_full.png"),
+    adelphi_university: require("../assets/images/adelphi_university.png"),
+    
 
 }
 export default images
