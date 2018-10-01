@@ -186,6 +186,7 @@ const images = {
     university_of_miami: require("../assets/images/university_of_miami.png"),
     university_of_michigan_ann_arbor: require("../assets/images/university_of_michigan_ann_arbor.png"),
     university_of_minnesota_twin_cities: require("../assets/images/university_of_minnesota_twin_cities.png"),
+    university_of_mississippi: require("../assets/images/university_of_mississippi.png"),
     university_of_missouri: require("../assets/images/university_of_missouri.png"),
     university_of_missouri_kansas_city: require("../assets/images/university_of_missouri_kansas_city.png"),
     university_of_missouri_st_louis: require("../assets/images/university_of_missouri_st_louis.png"),
