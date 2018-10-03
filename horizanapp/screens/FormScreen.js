@@ -7,25 +7,21 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview'
 import { CheckBox } from 'react-native-elements';
 import ResultsLoading from './ResultsLoading';
 
-
-
 class FormScreen extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            failed_submit : false, 
-            bad_amounts_sat: false, 
-            bad_amounts_act: false, 
+            
             ans_array : [
-                "",//region
-                "",//urban
-                0,//sat*
-                0,//act*
-                "",//gender*
-                "",//pub/priv
-                "",//size
-                "",//in-state$
-                "",//out-state$
+                "Z",//region
+                "Z",//urban
+                1601,//sat
+                37,//act
+                "Z",//gender*
+                "Z",//pub/priv
+                "Z",//size
+                "Z",//in-state$
+                "Z",//out-state$
             ]  
         }   
     }
@@ -68,19 +64,20 @@ class FormScreen extends Component {
         }
 
         activate_answer = (index, value) => {
-
-        
             answer = this.state.ans_array
-            if (answer[index].includes(value)){
+            if(answer[index] == "Z"){
+                answer[index] = value
+            } else if (answer[index].includes(value)){
                 console.log("found")
                 answer[index] = answer[index].replace(value,"")
             } else {
                     answer[index] += value
                 }
+            if (answer[index] == ''){
+                answer[index] = "Z"
+            }
                 this.setState({ans_array:answer})
             return
-
-
         }
 
         changeNum = (index, val) => {
@@ -139,35 +136,25 @@ class FormScreen extends Component {
 
             
                 <View style={styles.question}>
-                    <Text style={styles.questionText}> What is your SAT score? <Text style={{color:'red'}}> * </Text> </Text>
+                    <Text style={styles.questionText}> What is your SAT score? </Text>
                     <TextInput style={styles.questionInput}
                                 keyboardType={"numeric"}
                                 returnKeyType={"done"}
                                 maxLength={4}
                                 onChangeText={(num) => changeNum(2,num)}
                               />
-                    { this.state.failed_submit && this.state.answer_three == 0 ? 
-                        <Text style={[styles.questionText,{color:'red'}]}> This field is required </Text>
-                    : null}
-                    { this.state.bad_amounts_sat && this.state.answer_three == 0 ? 
-                        <Text style={[styles.questionText,{color:'red'}]}> The maximum score for the SAT is 1600 </Text>
-                    : null}
+                    
 
                 </View>
                 <View style={styles.question}>
-                    <Text style={styles.questionText}> What is your ACT score? <Text style={{color:'red'}}> * </Text> </Text>
+                    <Text style={styles.questionText}> What is your ACT score? </Text>
                     <TextInput style={styles.questionInput}
                                 keyboardType={"numeric"}
                                 returnKeyType={"done"}
                                 maxLength={2}
                                 onChangeText={(num) => changeNum(3,num)}
                                 />
-                    { this.state.failed_submit && this.state.answer_four == 0 ? 
-                        <Text style={[styles.questionText,{color:'red'}]}> This field is required </Text>
-                    : null}
-                    { this.state.bad_amounts_act && this.state.answer_four == 0 ? 
-                        <Text style={[styles.questionText,{color:'red'}]}> The maximum score for the ACT is 36 </Text>
-                    : null}
+                    
                 </View>
 
 

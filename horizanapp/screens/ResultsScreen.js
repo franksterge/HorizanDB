@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity,HeaderBackButton , Text, View, AsyncStorage, FlatList, Dimensions } from 'react-native';
-import styles from ".././assets/styles/styles";
+import { StyleSheet, TouchableOpacity, HeaderBackButton , Text, View, AsyncStorage, FlatList, Dimensions } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 import { NavigationActions, StackActions } from 'react-navigation';
 import './global.js'
 import Swiper from 'react-native-swiper';
 import { BlurView } from 'expo';
+import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-tab-view';
 
 
 
@@ -21,6 +21,7 @@ export default class ResultsScreen extends React.PureComponent {
     signedIn: false,
     stored: false,
     user: "test",
+    ascending:true, 
     loading:true,
     school_list:null,
     swiper_index:0
@@ -89,6 +90,17 @@ export default class ResultsScreen extends React.PureComponent {
     }
   }
 
+  sort(key){
+    let data = this.state.school_array.slice()
+    if (key == "ACT" || key == "SAT"){
+      
+      return data.sort(function(a,b){
+        return ((parseInt(b[key].split("-")[0])+parseInt(b[key].split("-")[1]))/2) - ((parseInt(a[key].split("-")[0])+parseInt(a[key].split("-")[1]))/2)
+      })
+    }
+    return data.sort(function(a, b){return b[key] - a[key]})
+  }
+
   render() {
    
   if (this.state.loading){
@@ -104,91 +116,115 @@ export default class ResultsScreen extends React.PureComponent {
         
         
         <View style={{backgroundColor: 'white',flex:1,}} >
-        <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-around',height:50}}>
-        <TouchableOpacity onPress={() => this.swiper.scrollBy(this.adjust(0))} style={[this.state.swiper_index == 0 ? {borderBottomWidth:2, borderBottomColor:'blue'}: null, {height:50, alignItems:'center', justifyContent:'center',flex:1}]}>
-          <Text style={{fontSize:20}}> Overall </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.swiper.scrollBy(this.adjust(1))} style={[this.state.swiper_index == 1 ? {borderBottomWidth:2, borderBottomColor:'blue'}: null, {height:50, alignItems:'center', justifyContent:'center',flex:1}]}>
-        <Text style={{fontSize:20}}> ACT </Text>
-        </TouchableOpacity> 
-        <TouchableOpacity onPress={() => this.swiper.scrollBy(this.adjust(2))} style={[this.state.swiper_index == 2 ? {borderBottomWidth:2, borderBottomColor:'blue'}: null, {height:50, alignItems:'center', justifyContent:'center',flex:1}]}>
-        <Text style={{fontSize:20}}> SAT </Text>
-        </TouchableOpacity>
-
-
-        </View>
         
 
-        {global.signedIn ? null : 
-        <BlurView
-        style={{height:"75%", borderRadius:10, justifyContent:'center', alignItems:'center',position:'absolute',bottom:0,width:"100%",zIndex:5}}
-          tint={"dark"}
-          intensity={98}
-        >
-        <View style={{flexDirection:'column', justifyContent:'center',alignItems:'center',}}>
-          <Text stye={{fontSize:20, color:"white"}}>
-            Create an account to see the rest of your matches!
-          </Text>
-          <TouchableOpacity onPress={()=> this.props.navigation.navigate("LoginScreen")}  style={{ backgroundColor: 'purple', justifyContent:'center', alignItems:'center', borderRadius:10, marginTop:20, padding:15,height:50}}>
-            <Text style={{fontSize:15, color: "white"}}> Create an Account </Text>
-          </TouchableOpacity>
-
-          
-
-        </View>
-        </BlurView>}
-
-
         <View style={{flex:1}}>
-      <Swiper style={mystyles.wrapper} 
-              showsButtons={false}
-              loop={false}
-              showsPagination={false}
-              ref={component => (this.swiper = component)}
-              onIndexChanged={index => { this.swiperIndexChanged(index); }}
-              paginationStyle={{top:0}}
-              >
-      <FlatList
+        <ScrollableTabView
+            style={{marginTop:0, }}
+            initialPage={0}
+            renderTabBar={() => <ScrollableTabBar />}
+          >
+            <FlatList
+              tabLabel="Overall Match"
               style={{backgroundColor: 'white'}}
-              data={this.state.school_array.sort(function(a, b){return b["overall_match"] - a["overall_match"]})}
+              data={this.sort("overall_match")}
               showsVerticalScrollIndicator={false}
-              keyExtractor={(item, index) => item.school}
+              keyExtractor={(item, index) => item.Schools}
               renderItem={({item}) =>
-              <View style={styles.flatview}>
+              <View style={styles.resultBox}>
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
-                    <Text style={[styles.para, {position:'absolute',left:20}]}>{item["school"]}</Text><Text style={[styles.para,{width:55, right:20, position:'absolute'}]}> {(item.overall_match*100).toFixed(2)}% </Text>
-                </TouchableOpacity>
-              </View>
-              }
-            />
-        <FlatList
-              style={{backgroundColor: 'white'}}
-              data={this.state.school_array.sort(function(a, b){return b["act_ratio"] - a["act_ratio"]})}
-              showsVerticalScrollIndicator={false}
-              keyExtractor={(item, index) => item.school}
-              renderItem={({item}) =>
-              <View style={styles.flatview}>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
-                    <Text style={[styles.para, {position:'absolute',left:20}]}>{item.school}</Text><Text style={[styles.para,{width:55, right:20, position:'absolute'}]}> {(item.act_ratio*100).toFixed(2)}% </Text>
+                    <Text style={[styles.left]}>{item["Schools"]}</Text><Text style={[styles.right]}> {(item.overall_match*100).toFixed(2)}% </Text>
                 </TouchableOpacity>
               </View>
               }
             />
             <FlatList
+              tabLabel="University Quality"
               style={{backgroundColor: 'white'}}
-              data={this.state.school_array.sort(function(a, b){return b["sat_ratio"] - a["sat_ratio"]})}
+              data={this.sort("Overall")}
               showsVerticalScrollIndicator={false}
-              keyExtractor={(item, index) => item.school}
+              keyExtractor={(item, index) => item.Schools}
               renderItem={({item}) =>
               <View style={styles.flatview}>
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
-                    <Text style={[styles.para, {position:'absolute',left:20}]}>{item.school}</Text><Text style={[styles.para,{width:55, right:20, position:'absolute'}]}> {(item.sat_ratio*100).toFixed(2)}% </Text>
+                    <Text style={[styles.left]}>{item["Schools"]}</Text><Text style={[styles.right]}> {item.Overall} </Text>
                 </TouchableOpacity>
               </View>
               }
             />
-       
-          </Swiper>
+            <FlatList
+              tabLabel="ACT"
+              style={{backgroundColor: 'white'}}
+              data={this.sort("ACT")}
+              showsVerticalScrollIndicator={false}
+              keyExtractor={(item, index) => item.Schools}
+              renderItem={({item}) =>
+              <View style={styles.flatview}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
+                    <Text style={[styles.left]}>{item["Schools"]}</Text><Text style={[styles.right]}> {item.ACT} </Text>
+                </TouchableOpacity>
+              </View>
+              }
+            />
+            <FlatList
+              tabLabel="SAT"
+              style={{backgroundColor: 'white'}}
+              data={this.sort("SAT")}
+              showsVerticalScrollIndicator={false}
+              keyExtractor={(item, index) => item.Schools}
+              renderItem={({item}) =>
+              <View style={styles.flatview}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
+                    <Text style={[styles.left]}>{item["Schools"]}</Text><Text style={[styles.right]}> {item.SAT} </Text>
+                </TouchableOpacity>
+              </View>
+              }
+            />
+            <FlatList
+              tabLabel="Community"
+              style={{backgroundColor: 'white'}}
+              data={this.sort("Community")}
+              showsVerticalScrollIndicator={false}
+              keyExtractor={(item, index) => item.Schools}
+              renderItem={({item}) =>
+              <View style={styles.flatview}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
+                    <Text style={[styles.left]}>{item["Schools"]}</Text><Text style={[styles.right]}> {item.Community} </Text>
+                </TouchableOpacity>
+              </View>
+              }
+            />
+            <FlatList
+              tabLabel="Internships"
+              style={{backgroundColor: 'white'}}
+              data={this.sort("Internships")}
+              showsVerticalScrollIndicator={false}
+              keyExtractor={(item, index) => item.Schools}
+              renderItem={({item}) =>
+              <View style={styles.flatview}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
+                    <Text style={[styles.left]}>{item["Schools"]}</Text><Text style={[styles.right]}> {item.Internships} </Text>
+                </TouchableOpacity>
+              </View>
+              }
+            />
+            <FlatList
+              tabLabel="Crime"
+              style={{backgroundColor: 'white'}}
+              data={this.sort("Crime")}
+              showsVerticalScrollIndicator={false}
+              keyExtractor={(item, index) => item.Schools}
+              renderItem={({item}) =>
+              <View style={styles.flatview}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
+                    <Text style={[styles.left]}>{item["Schools"]}</Text><Text style={[styles.right]}> {item.Crime} </Text>
+                </TouchableOpacity>
+              </View>
+              }
+            />
+
+
+          </ScrollableTabView>
           </View>
         </View>
       );
@@ -199,8 +235,29 @@ export default class ResultsScreen extends React.PureComponent {
 
 
 
-const mystyles = StyleSheet.create({
-  wrapper:{}
+const styles = StyleSheet.create({
+  wrapper:{},
+  right: {
+    textAlign: 'center',
+    fontSize: 15,
+    flex:0.3,
+    marginBottom: 0,
+    fontFamily: 'mainFont',
+  },
+  left:{
+    textAlign: 'center',
+    fontSize: 15,
+    flex:0.7,
+    marginBottom: 0,
+    fontFamily: 'mainFont',
+  },
+  button: {
+    backgroundColor: '#0400CF',
+    height: 66,
+    flexDirection:'row',
+    justifyContent: 'center'
+  },
+  
   
 });
 

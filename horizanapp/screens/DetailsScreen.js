@@ -1,10 +1,63 @@
 import React from 'react';
-import { StyleSheet, Image, Text, View, TouchableOpacity, WebView } from 'react-native';
+import { StyleSheet, Image, Text, Dimensions, Linking, View, TouchableOpacity, WebView } from 'react-native';
+import * as firebase from "firebase/app"
+import Swiper from 'react-native-swiper';
+
+// import ans_map from "../assets"
+
 import {Images} from '../Themes';
 
 
 export default class SettingsScreen extends React.Component {
-    
+    constructor(props) {
+        super(props)
+        this.state = {
+            loading:true,
+            school_info:null,
+        
+            ans_map : {
+            "Location": {
+                "A": "West Coast",
+                "B": "Central",
+                "C":"Northeast",
+                "D":"Southeast"
+            },
+            "Environment": {
+                "A": "Urban",
+                "B": "Suburban",
+                "C":"Rural",
+            },
+            "Gender": {
+                "A": "Coed",
+                "B": "Men's only",
+                "C":"Women's only",
+            },
+            "PublicPrivate":{
+                "A":"Public",
+                "B":"Private"
+            },
+            "School size":{
+                "A":"Small (1-5000 students)",
+                "B":"Medium (5001-10000 students)",
+                "C":"Large (10001 students +)"
+            },
+            "Out state Cost":{
+                "A":"$10000 or less",
+                "B":"$10001-$15000",
+                "C":"$15001-$20000",
+                "D":"$20001+"
+            },
+            "In state Cost":{
+                "A":"$10000 or less",
+                "B":"$10001-$15000",
+                "C":"$15001-$20000",
+                "D":"$20001+"
+            }
+        
+        }}
+    }
+
+
     static navigationOptions = {
         tabBarLabel: '',
         headerStyle: {
@@ -14,36 +67,109 @@ export default class SettingsScreen extends React.Component {
           }
       };
 
+      componentDidMount(){
+        let univ = this.props.navigation.getParam('university', '');
+        console.log(univ.school)
+        let data = firebase.database().ref('universities/' + univ.Schools.replace("_","."))
+        data.once('value').then(snapshot => {
+            
+            
+            this.setState({
+                loading:false,
+                school_info: snapshot.val(),
+            })
+        })
+
+      }
+
+      handleClick = () => {
+        let site_addr = this.state.school_info["Websites"]
+        Linking.canOpenURL(site_addr).then(supported => {
+          if (supported) {
+            Linking.openURL(site_addr);
+          } else {
+            console.log("Internal Error with URI: " + site_addr);
+          }
+        });
+      };
+
       render() {
-        const univ = this.props.navigation.getParam('university', '');
+          
+
+
+        if (this.state.loading == false){
+    
+            let img_name = this.state.school_info["Schools"].toLowerCase().split(" ").join("_")
+            console.log(img_name)
         return (
             <View style={styles.container}>
 
              <View style={styles.univ_img_cont}>
-                <Image source={Images.public} style={styles.univ_img}/>
+                <Image source={Images[img_name.replace("-","")]} style={styles.univ_img}/>
 
                 </View>
                 <View style={styles.header}>
                     <Text style={{fontSize:25, fontWeight:'bold', textAlign:'center',}}>
-                        {univ.school}
+                        {this.state.school_info.Schools}
+                    </Text>
+                </View>
+                <Swiper
+                    showsButtons={true}
+                    paginationStyle={{bottom:-10}}
+                    loop={false}
+                >
+                <View style={styles.infoBox}>
+                    <Text style={styles.infoText}>
+                        Type: {this.state.ans_map["School size"][this.state.school_info["School size"]]}
+                    </Text>
+                    <Text style={styles.infoText}>
+                        Average SAT: {this.state.school_info["SAT"]}
+                    </Text>
+                    <Text style={styles.infoText}>
+                        Average ACT: {this.state.school_info["ACT"]}
+                    </Text>
+                    <Text style={styles.infoText}>
+                        Location: {this.state.ans_map["Location"][this.state.school_info["Location"]]}
+                    </Text>
+                    <Text style={styles.infoText}>
+                        Environment: {this.state.ans_map["Environment"][this.state.school_info["Environment"]]}
+                    </Text>
+                        
+                </View>
+                <View style={styles.infoBox}>
+                    <Text style={styles.infoText}>
+                        School Size: {this.state.ans_map["School size"][this.state.school_info["School size"]]}
+                    </Text>
+                    <Text style={styles.infoText}>
+                        Gender: {this.state.ans_map["Gender"][this.state.school_info["Gender"]]}
+                    </Text>
+                    <Text style={styles.infoText}>
+                        In state cost: {this.state.school_info["In state Cost"] != undefined ? "N/A" : this.state.ans_map["In state Cost"][this.state.school_info["In state Cost"]]}
+                    </Text>
+                    <Text style={styles.infoText}>
+                        Out of state cost: {this.state.ans_map["Out state Cost"][this.state.school_info["Out state Cost"]]}
                     </Text>
                 </View>
                 <View style={styles.infoBox}>
                     <Text style={styles.infoText}>
-                        School Size:
+                        Overall: {this.state.school_info["Overall"]}
                     </Text>
                     <Text style={styles.infoText}>
-                        Gender:
+                        Community: {this.state.school_info["Community"]}
                     </Text>
                     <Text style={styles.infoText}>
-                        In state cost:
+                        Internships: {this.state.school_info["Internships"]}
                     </Text>
                     <Text style={styles.infoText}>
-                        Out of state cost:
+                        Campus: {this.state.school_info["Campus"]}
                     </Text>
-                        
+                    <Text style={styles.infoText}>
+                        Crime: {this.state.school_info["Crime"]}
+                    </Text>
                 </View>
-                <TouchableOpacity onPress={()=>alert("direct me to school site")} style={{width:'75%', marginTop:50, borderRadius:15, height:50, justifyContent:'center',alignItems:'center',backgroundColor:'blue'}}>
+                    
+                </Swiper>
+                <TouchableOpacity onPress={this.handleClick} style={{width:'75%', marginBottom:50, marginTop:50, borderRadius:15, height:50, justifyContent:'center',alignItems:'center',backgroundColor:'blue'}}>
                     <Text style={{color:'white',fontSize:20}}>
                         Visit Website
                     </Text>
@@ -52,7 +178,10 @@ export default class SettingsScreen extends React.Component {
 
             </View>
         );
+    } else {
+        return <View/>
     }
+} 
 }
 
 const styles = StyleSheet.create({
@@ -62,21 +191,31 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
+  wrapper: {
+      
+    },
   infoBox:{
-    marginTop:50,
-    height:'20%',
-    width:'75%',
+    marginTop:25,
+    height:'80%',
+    width:'100%',
+    paddingLeft:'10%',
     flexDirection:'column',
     justifyContent:'space-between',
     alignItems:'flex-start',
 
   },
-  univ_img:{
-    height:250,
-    resizeMode:'contain',
+  infoText:{
+    textAlign:'left'
+  },    
+  univ_img: {
+    marginBottom:25,
+    flex:1,
+    width:Dimensions.get('window').width,
+    resizeMode:'cover',
 
   },
   univ_img_cont:{
+      flex:1,
       justifyContent:'center',
       alignItems:'center',
   }

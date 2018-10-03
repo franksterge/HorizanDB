@@ -8,6 +8,7 @@
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
+    "facebookScheme":"fb123456",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
@@ -23,5 +24,6 @@
     "ios": {
       "supportsTablet": true
     }
+    
   }
 }
