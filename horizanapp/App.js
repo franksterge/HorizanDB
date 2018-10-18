@@ -1,7 +1,15 @@
 import React from 'react';
-import { createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator, createMaterialTopTabNavigator } from 'react-navigation';
 import { Constants, Font } from 'expo';
 import { StyleSheet, Text, View, Alert, AsyncStorage} from 'react-native';
+
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import store from "./redux/store/index"
+import thunk from 'redux-thunk';
+import rootReducer from './redux/reducers/index';
+
+
 
 //There's an expo glitch right now that breaks back button when firebase is imported regularly
 //This is a workaround feel free to change later
@@ -13,15 +21,22 @@ import "firebase/database"
 import CallToAction from './screens/CallToAction';
 import FormScreen from './screens/FormScreen';
 import HomeScreen from './screens/HomeScreen';
+import FavoritesScreen from './screens/FavoritesScreen'
 import LoginScreen from './screens/LoginScreen';
 import ResultsScreen from './screens/ResultsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import DetailsScreen from './screens/DetailsScreen';
 import ResultsLoading from "./screens/ResultsLoading";
+import InitialLoading from "./screens/InitialLoadingScreen"
+import DeadlinesScreen from "./screens/DeadlinesScreen"
+
 
 //global variables
 import './screens/global.js'
+
+
+AsyncStorage.clear();
 
 //Configure Firebase Settings
 var config = {
@@ -44,13 +59,26 @@ try {
 const RootStack = createStackNavigator({
   LoginFlow: {
     screen: createStackNavigator({
+      InitialLoading: { screen: InitialLoading },
+
       CallToAction: { screen: CallToAction }, //welcome
       FormScreen: { screen: FormScreen }, //the form
       LoginScreen: { screen: LoginScreen },  //login page
       RegisterScreen: { screen: RegisterScreen }, //Register page
-      ResultsScreen: { screen: ResultsScreen },  //show results
-      DetailsScreen: { screen: DetailsScreen },
       ResultsLoading: { screen: ResultsLoading },
+      DetailsScreen: { screen: DetailsScreen },
+
+      FavoritesTab: { screen: createBottomTabNavigator({
+        FavoritesScreen: { screen: FavoritesScreen }, 
+        Deadlines: { screen: DeadlinesScreen },
+        ResultsScreen: { screen: ResultsScreen },  //show results
+
+
+      }) 
+    },
+
+        
+       
     })
   },
 },
@@ -87,103 +115,104 @@ export default class App extends React.Component {
     };
 
   //Google Authentication
-  signIn = async () => {
-    try {
-      const result = await Expo.Google.logInAsync({
-        androidClientId: 7107222998-j63jutpdimj4u5m9str4opk79olqmhee.apps.googleusercontent.com,
-        iosClientId: YOUR_CLIENT_ID_HERE,
-        scopes: ['profile', 'email'],
-      });
+//   signIn = async () => {
+//     try {
+//       const result = await Expo.Google.logInAsync({
+//         androidClientId: 7107222998-j63jutpdimj4u5m9str4opk79olqmhee.apps.googleusercontent.com,
+//         iosClientId: YOUR_CLIENT_ID_HERE,
+//         scopes: ['profile', 'email'],
+//       });
 
-      if (result.type === 'success') {
-        //return result.accessToken;
-        this.setState({
-          signedIn: true,
-          name: result.user.name,
-          photoUrl: results.user.photoUrl
-        })
-      } else {
-        console.log("cancelled")
-        //return {cancelled: true};
-      }
-    } catch(e) {
-      console.log("error")
-      //return {error: true};
-    }
-}
+//       if (result.type === 'success') {
+//         //return result.accessToken;
+//         this.setState({
+//           signedIn: true,
+//           name: result.user.name,
+//           photoUrl: results.user.photoUrl
+//         })
+//       } else {
+//         console.log("cancelled")
+//         //return {cancelled: true};
+//       }
+//     } catch(e) {
+//       console.log("error")
+//       //return {error: true};
+//     }
+// }
 
-  //load font
+//   //load font
   async componentDidMount() {
     await Font.loadAsync({
       'mainFontBold': require('./assets/fonts/Poppins-Bold.ttf'),
       'mainFont': require('./assets/fonts/Poppins-Medium.ttf'),
     });
-    AsyncStorage.getItem('userid', (error, result) => {
-      if(error) console.error('Something went wrong!');
-      else if(result) console.log('Getting key was successfull', result);
-      else if(result === null) AsyncStorage.setItem('userid',Math.random().toString(36).substr(2, 9))
-    });
+    // AsyncStorage.getItem('userid', (error, result) => {
+    //   if(error) console.error('Something went wrong!');
+    //   else if(result) console.log('Getting key was successfull', result);
+    //   else if(result === null) AsyncStorage.setItem('userid',Math.random().toString(36).substr(2, 9))
+    // });
 
+  
 
     
     
 
-    //check cache if they logged in before
-    this._checkLoggedInBefore();
-    //But double check and go to login screen if their account got logged out for whatever reason
-    this._checkForUser();
+//     //check cache if they logged in before
+//     this._checkLoggedInBefore();
+//     //But double check and go to login screen if their account got logged out for whatever reason
+//     this._checkForUser();
 
-  //set fonts loaded to true
+//   //set fonts loaded to true
     this.setState({ fontLoaded: true });
   }
 
-  _checkForUser = () => {
-    const out = this;
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        // User is signed in.
-        global.user = user;
-        console.log(user);
-/*         Alert.alert(
-          'Welcome!',
-          `Hi ${user.displayName}!`,
-      ); */
-      //  () => this.props.navigation.navigate('HomeScreen');
-      out.setState({ signedIn: true});
-      out._storeLoggedIn('true');
-      global.form_completed = true;
-      global.signedIn = true;
-      } else {
-        // No user is signed in.
-        out._storeLoggedIn('false');
-        out.setState({ signedIn: false });
-        global.signedIn = false;
-      }
-    });
-  }
+//   _checkForUser = () => {
+//     const out = this;
+//     firebase.auth().onAuthStateChanged(function(user) {
+//       if (user) {
+//         // User is signed in.
+//         global.user = user;
+//         console.log(user);
+// /*         Alert.alert(
+//           'Welcome!',
+//           `Hi ${user.displayName}!`,
+//       ); */
+//       //  () => this.props.navigation.navigate('HomeScreen');
+//       out.setState({ signedIn: true});
+//       out._storeLoggedIn('true');
+//       global.form_completed = true;
+//       global.signedIn = true;
+//       } else {
+//         // No user is signed in.
+//         out._storeLoggedIn('false');
+//         out.setState({ signedIn: false });
+//         global.signedIn = false;
+//       }
+//     });
+//   }
 
-  _storeLoggedIn = async (value) => {
-    const out = this;
-    try{
-      await AsyncStorage.setItem('loggedInBefore', value);
-    } catch(e){}
-  }
+//   _storeLoggedIn = async (value) => {
+//     const out = this;
+//     try{
+//       await AsyncStorage.setItem('loggedInBefore', value);
+//     } catch(e){}
+//   }
 
-  _checkLoggedInBefore = async () => {
-    try {
-      const value = await AsyncStorage.getItem('userid');
+//   _checkLoggedInBefore = async () => {
+//     try {
+//       const value = await AsyncStorage.getItem('userid');
       
-      const s = JSON.parse(value);
-      console.log(s)
-      this.setState({signedIn: s });
-      if (s == "none"){
-        global.signedIn = false;
-      } else {
-        global.form_completed = true
-        global.signedIn = true;
-      }
-    }catch(e){}
-  }
+//       const s = JSON.parse(value);
+//       console.log(s)
+//       this.setState({signedIn: s });
+//       if (s == "none"){
+//         global.signedIn = false;
+//       } else {
+//         global.form_completed = true
+//         global.signedIn = true;
+//       }
+//     }catch(e){}
+//   }
 
   //render the StackNavigator
   render() {
@@ -193,7 +222,10 @@ export default class App extends React.Component {
           return(<HomeStack />);
       }else{    //if not signed in, allow survey but require login after
         return (
-          <RootStack />
+          <Provider store={ store }>
+            <RootStack />
+          </Provider>
+            
         );
       }
 

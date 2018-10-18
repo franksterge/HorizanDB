@@ -6,6 +6,13 @@ import {Images} from '../Themes';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview'
 import { CheckBox } from 'react-native-elements';
 import ResultsLoading from './ResultsLoading';
+import * as firebase from "firebase/app"
+
+
+import 'firebase/firestore'
+import 'firebase/functions'
+import 'firebase/database'
+
 
 class FormScreen extends Component {
     constructor(props) {
@@ -21,7 +28,7 @@ class FormScreen extends Component {
                 "Z",//pub/priv
                 "Z",//size
                 "Z",//in-state$
-                "Z",//out-state$
+                "Z",
             ]  
         }   
     }
@@ -39,7 +46,7 @@ class FormScreen extends Component {
 
     render() {
 
-        handleFormSubmit = () => {
+        const handleFormSubmit = () => {
             // if (if this.state.ans_array[2] == 0 || this.state.ans_array[2] == 0){
                   // this.setState({failed_submit: true})
             // } 
@@ -54,8 +61,7 @@ class FormScreen extends Component {
             // if (this.state.failed_submit || this.state.bad_amounts_act || this.state.bad_amounts_sat ){
             //     return 
             // } else {
-                AsyncStorage.setItem("formCompleted","yes")
-                global.form_completed = true 
+                AsyncStorage.setItem("form_completed","yes")
                 console.log("done")
                 this.props.navigation.navigate("ResultsLoading", {form_results : this.state.ans_array })
                 
@@ -63,8 +69,8 @@ class FormScreen extends Component {
 
         }
 
-        activate_answer = (index, value) => {
-            answer = this.state.ans_array
+        const activate_answer = (index, value) => {
+            let answer = this.state.ans_array
             if(answer[index] == "Z"){
                 answer[index] = value
             } else if (answer[index].includes(value)){
@@ -80,8 +86,8 @@ class FormScreen extends Component {
             return
         }
 
-        changeNum = (index, val) => {
-            answer = this.state.ans_array
+        const changeNum = (index, val) => {
+            let answer = this.state.ans_array
             answer[index] = val
             this.setState({ans_array:answer})
         }
@@ -210,51 +216,33 @@ class FormScreen extends Component {
                         />
                 </View>
 
+
                 <View style={styles.question}>
-                    <Text style={styles.questionText}> What is the maximum you hope to spend on in-state tuition?</Text>
+                    <Text style={styles.questionText}> What is your total family net income?</Text>
                     <CheckBox
-                        title='$10000 or less'
+                        title='$30000 or less'
                         checked={this.state.ans_array[7].includes("A")}
                         onPress = {()=>activate_answer(7,"A")}
                         />
                      <CheckBox
-                        title='$10001-$15000'
+                        title='$30001-$48000'
                         checked={this.state.ans_array[7].includes("B")}
                         onPress = {()=>activate_answer(7,"B")}
                         />
                      <CheckBox
-                        title='$15001-$20000'
+                        title='$48001-$75000'
                         checked={this.state.ans_array[7].includes("C")}
                         onPress = {()=>activate_answer(7,"C")}
                         />
                     <CheckBox
-                        title='$20001+'
+                        title='$75001-$110000'
                         checked={this.state.ans_array[7].includes("D")}
                         onPress = {()=>activate_answer(7,"D")}
-                        />
-                </View>
-
-                <View style={styles.question}>
-                    <Text style={styles.questionText}> What is the maximum you hope to spend on out-of-state/private tuition?</Text>
+                    />
                     <CheckBox
-                        title='$10000 or less'
-                        checked={this.state.ans_array[8].includes("A")}
-                        onPress = {()=>activate_answer(8,"A")}
-                        />
-                     <CheckBox
-                        title='$10001-$15000'
-                        checked={this.state.ans_array[8].includes("B")}
-                        onPress = {()=>activate_answer(8,"B")}
-                        />
-                     <CheckBox
-                        title='$15001-$20000'
-                        checked={this.state.ans_array[8].includes("C")}
-                        onPress = {()=>activate_answer(8,"C")}
-                        />
-                    <CheckBox
-                        title='$20001+'
-                        checked={this.state.ans_array[8].includes("D")}
-                        onPress = {()=>activate_answer(8,"D")}
+                        title='$110001+'
+                        checked={this.state.ans_array[7].includes("E")}
+                        onPress = {()=>activate_answer(7,"E")}
                         />
                 </View>
 

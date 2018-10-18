@@ -7,8 +7,14 @@ import Swiper from 'react-native-swiper';
 
 import {Images} from '../Themes';
 
+import { connect } from 'react-redux';
+import { addFavorite } from '../redux/actions/index'
+import { removeFavorite } from '../redux/actions/remove_favorite'
+import { Icon } from 'react-native-elements'
 
-export default class SettingsScreen extends React.Component {
+import { bindActionCreators } from 'redux';
+
+class SettingsScreen extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -93,6 +99,15 @@ export default class SettingsScreen extends React.Component {
         });
       };
 
+
+  handleButton(school){
+
+    { this.props.favorites.includes(school) ? 
+      this.props.removeFavorite(school)
+      :
+      this.props.addFavorite(school)
+    }
+  }
       render() {
           
 
@@ -110,8 +125,17 @@ export default class SettingsScreen extends React.Component {
                 </View>
                 <View style={styles.header}>
                     <Text style={{fontSize:25, fontWeight:'bold', textAlign:'center',}}>
-                        {this.state.school_info.Schools}
+                        {this.state.school_info.Schools} 
+                      
                     </Text>
+                    <Icon
+                    raised
+                    size={20}
+                    name='heart'
+                    type='font-awesome'
+                    color={this.props.favorites.indexOf(this.state.school_info) > -1 ? "#ff0000":"#000000"}
+                    onPress={()=>this.handleButton(this.state.school_info)}
+                  />
                 </View>
                 <Swiper
                     showsButtons={true}
@@ -150,24 +174,7 @@ export default class SettingsScreen extends React.Component {
                         Out of state cost: {this.state.ans_map["Out state Cost"][this.state.school_info["Out state Cost"]]}
                     </Text>
                 </View>
-                <View style={styles.infoBox}>
-                    <Text style={styles.infoText}>
-                        Overall: {this.state.school_info["Overall"]}
-                    </Text>
-                    <Text style={styles.infoText}>
-                        Community: {this.state.school_info["Community"]}
-                    </Text>
-                    <Text style={styles.infoText}>
-                        Internships: {this.state.school_info["Internships"]}
-                    </Text>
-                    <Text style={styles.infoText}>
-                        Campus: {this.state.school_info["Campus"]}
-                    </Text>
-                    <Text style={styles.infoText}>
-                        Crime: {this.state.school_info["Crime"]}
-                    </Text>
-                </View>
-                    
+
                 </Swiper>
                 <TouchableOpacity onPress={this.handleClick} style={{width:'75%', marginBottom:50, marginTop:50, borderRadius:15, height:50, justifyContent:'center',alignItems:'center',backgroundColor:'blue'}}>
                     <Text style={{color:'white',fontSize:20}}>
@@ -218,6 +225,23 @@ const styles = StyleSheet.create({
       flex:1,
       justifyContent:'center',
       alignItems:'center',
+  },
+  header:{
+      flexDirection:'row',
+      justifyContent:'center',
+      alignItems:'center',
   }
 
 });
+
+const mapStateToProps = state => {
+    return { favorites: state.favorites };
+  };
+  const mapDispatchToProps = dispatch => (
+    bindActionCreators({
+      addFavorite,
+      removeFavorite
+    }, dispatch)
+  );
+  export default connect(mapStateToProps, mapDispatchToProps)(SettingsScreen);
+  

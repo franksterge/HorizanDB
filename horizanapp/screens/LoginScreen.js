@@ -61,39 +61,24 @@ export default class LoginScreen extends Component {
 
   handleLogout = () => {
 
-
-    AsyncStorage.clear
+    AsyncStorage.clear()
     const out = this;
       firebase.auth().signOut()
-    .then(function() {
-      // Sign-out successful.
-      global.signedIn = false;
-      global.form_completed = false
-
-      AsyncStorage.setItem("userid","none")
-      
-      const resetAction = StackActions.reset({
-        index: 0,
-        actions: [NavigationActions.navigate({ routeName: 'CallToAction' })],
-      });
-      out.props.navigation.dispatch(resetAction);
-    })
-    .catch(function(error) {
-      // An error happened
-    });
+    
+      this.props.navigation.navigate("CallToAction",{logged_in:null})
+   
   }
 
   handleEmailSignin = () => {
+    // in progress
     let data = firebase.database().ref('/' + univ.Schools.replace("_","."))
         data.once('value').then(snapshot => {
-            
-            
+               
             this.setState({
                 loading:false,
                 school_info: snapshot.val(),
             })
         })
-
   }
 
   _handleGoogleLogin = async () => {
@@ -107,56 +92,53 @@ export default class LoginScreen extends Component {
         scopes: ['profile', 'email']
       });
 
-      
-
-      const origin = out.props.navigation.getParam('origin', '');
-      const containsData = (out.props.navigation.getParam('containsData', 'false') == 'true');
+      const origin = this.props.navigation.getParam('origin', '');
 
       switch (results.type) {
         case 'success': {
-         
-          console.log(results.user.id)
-          // AsyncStorage.setItem("userid",results.user.id)
-          global.signedIn = true
+          AsyncStorage.setItem("logged_in","yes")
+          let olduserid = ''
+          AsyncStorage.getItem('userid', (error3, userid) => {
+            olduserid = userid
+          })
+          console.log(results);
+          let newuserid = results["user"]["email"].replace(".","_")
+          
+          let oldData = firebase.database().ref('Users/' + olduserid)
+          oldData.once('value').then(snapshot => {
+            if (snapshot.val() == null){
+              firebase.database().ref('Users/' + [newuserid]).set({form:"yes"})
+              AsyncStorage.setItem("userid",newuserid)
 
+            } else {
+              firebase.database().ref('Users/' + [newuserid]).set(snapshot.val())
+              AsyncStorage.setItem("userid",newuserid)
+            }})
+          //     let tempData = firebase.database().ref('Users/' + olduserid)
+          //     tempData.once('value').then(snapshot2 => {
+          //       firebase.database().ref('Users/' + newuserid).set(snapshot2.val())
+          //     })
+          //     AsyncStorage.setItem("userid",newuserid)
 
-            const credential = firebase.auth.GoogleAuthProvider.credential(results.idToken, results.accessToken);
-            firebase.auth().signInAndRetrieveDataWithCredential(credential);
-/*             Alert.alert(
-                'Logged in!',
-                `Hi ${results.user.name}!`,
-            ); */
-            console.log("====")
-            console.log(user)
-            console.log("=====")
-            if(containsData){
-              const data1 = out.props.navigation.getParam('data', '');
+          //   }
+          // })
+          // firebase.database().ref('Users/' + [newuserid]).set(snapshot.val())
+          // AsyncStorage.setItem("userid",newuserid)
+          
+            console.log("test")
 
-              const resetAction = StackActions.reset({
-                index: 0,
-                actions: [NavigationActions.navigate({ routeName: origin, params: { hasData: 'true', data: data1}, })],
-              });
+          // const credential = firebase.auth.GoogleAuthProvider.credential(results.idToken, results.accessToken);
+          // firebase.auth().signInAndRetrieveDataWithCredential(credential);
 
-              /* const pushAction = StackActions.push({
-                routeName: origin,
-                params: {
-                    hasData: 'true',
-                    data: data1
-                },
-              }); */
-              out.props.navigation.dispatch(resetAction);
-            }else{
-              const resetAction = StackActions.reset({
-                index: 0,
-                actions: [NavigationActions.navigate({ routeName: origin, params: { hasData: 'false'}, })],
-              });
-              //const pushAction = StackActions.push({routeName: origin});
-              out.props.navigation.dispatch(resetAction);
-            }
-
+          if (origin == "resultsScreen"){
+            console.log("TeST")
+            this.props.navigation.navigate("ResultsScreen", {school_list:this.props.navigation.getParam('school_list', '')})
             
+          } else {
+            this.props.navigation.navigate("CallToAction", {userid:newuserid,logged_in:"yes"})
+          }
 
-            break;
+          break;
         }
         case 'cancel': {
           Alert.alert(
@@ -183,7 +165,8 @@ export default class LoginScreen extends Component {
 //        <Image source={require('.././assets/images/logo.png')} />
   render() {
     const origin = this.props.navigation.getParam('origin', '');
-    if(!global.signedIn){
+    let logged_in = this.props.navigation.getParam('logged_in', '');
+    if(!logged_in){
           return (
             <View style={{backgroundColor: 'white', flex: 1,}}>
         <Modal
@@ -228,7 +211,7 @@ export default class LoginScreen extends Component {
 
           </View>
           </Modal>
-              <Text style={[styles.para, {flex: 0, marginBottom: 40, marginTop: 10}]}>
+              <Text onPress={()=>AsyncStorage.clear()} style={[styles.para, {flex: 0, marginBottom: 40, marginTop: 10}]}>
                     Log into your Horizan Account
                 </Text>
             <View style={{flexDirection: 'column', justifyContent: 'center'}}>

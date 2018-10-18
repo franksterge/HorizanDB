@@ -3,6 +3,8 @@ import { StyleSheet, TouchableOpacity, Image, HeaderBackButton , Text, View, Asy
 import Touchable from 'react-native-platform-touchable';
 import { NavigationActions, StackActions } from 'react-navigation';
 import {Images} from '../Themes';
+import moment from 'moment';
+
 
 import './global.js'
 import Swiper from 'react-native-swiper';
@@ -18,15 +20,14 @@ import { bindActionCreators } from 'redux';
 import firebase from "@firebase/app"
 import "firebase/auth"
 import "firebase/database"
+import { deadlines }  from "../assets/deadlines"
 
-
-const dimensions = Dimensions.get('window');
-
-class ResultsScreen extends React.PureComponent {
+class DeadlinesScreen extends React.Component {
 
   state = {
     signedIn: false,
     stored: false,
+    deadlines:deadlines,
     favorites:[],
     user: "test",
     ascending:true, 
@@ -39,11 +40,10 @@ class ResultsScreen extends React.PureComponent {
   };
 
   static navigationOptions = {
-    style:({borderWidth:1}),
-    tabBarIcon: (<Image style={{width:50,tintColor:'black',resizeMode:'contain', height:20, alignSelf:'center',}} source={Images.check_icon}/>),
-
-    title:"Matches",
     tabBarLabel: '',
+    tabBarIcon: (<Image style={{width:50,tintColor:'black',resizeMode:'contain', height:20, alignSelf:'center',}} source={Images.clock_icon}/>),
+
+    Tile:"Deadlines",
     // headerLeft:( <HeaderBackButton onPress={()=>{this.props.navigation.navigate('CallToAction')}}/>),
 
     headerTitle: ( <Text style={{fontSize:20}}>Your Matches</Text>),
@@ -51,7 +51,7 @@ class ResultsScreen extends React.PureComponent {
 
   };
   componentDidMount(){
-    console.log(this.props.navigation.state);
+
     
 
     AsyncStorage.getItem('logged_in').then((token) => {
@@ -107,16 +107,24 @@ class ResultsScreen extends React.PureComponent {
     }
   }
 
-  sort(key){
+  sort(){
+          
     let data = this.state.school_array.slice()
+    
 
-    if (key == "ACT" || key == "SAT"){
+    // if (key == "ACT" || key == "SAT"){
       
       return data.sort(function(a,b){
-        return ((parseInt(b[key].split("-")[0])+parseInt(b[key].split("-")[1]))/2) - ((parseInt(a[key].split("-")[0])+parseInt(a[key].split("-")[1]))/2)
+        if(deadlines[b.Schools]["regularDecisionDeadline"] == "rolling"){
+          return -1;
+        } 
+        if(deadlines[a.Schools]["regularDecisionDeadline"] == "rolling"){
+          return 1;
+        }  
+        return Date.parse(deadlines[b.Schools]["regularDecisionDeadline"]) - Date.parse(deadlines[a.Schools]["regularDecisionDeadline"])
       })
-    }
-    return data.sort(function(a, b){return b[key] - a[key]})
+    
+    // return data.sort(function(a, b){return b[key] - a[key]})
   }
 
   handleButton(school){
@@ -138,6 +146,7 @@ class ResultsScreen extends React.PureComponent {
     // }
 
   }
+
 
   render() {
     
@@ -175,89 +184,28 @@ class ResultsScreen extends React.PureComponent {
         }
 
         <View style={{flex:1}}>
-        <ScrollableTabView
-            style={{marginTop:0, }}
-            initialPage={0}
-            renderTabBar={() => <ScrollableTabBar />}
-          >
+
 
             <FlatList
               scrollEnabled={this.state.logged_in}
               tabLabel="Overall Match"
               style={{backgroundColor: 'white'}}
-              data={this.sort("overall_match")}
+              data={this.sort()}
               showsVerticalScrollIndicator={false}
               keyExtractor={(item, index) => item.Schools}
               renderItem={({item}) =>
               <View style={styles.resultBox}>
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
-                    <Text style={[styles.left]}>{item["Schools"]}</Text><Text style={[styles.right]}> {(item.overall_match*100).toFixed(2)}% </Text>
-                    <Icon
-                    raised
-                    size={15}
-                    name='heart'
-                    type='font-awesome'
-                    color={this.props.favorites.indexOf(item) > -1 ? "#ff0000":"#000000"}
-                    onPress={()=>this.handleButton(item)}
-                  />
+                    <Text style={[styles.left]}>{item["Schools"]}</Text><Text style={[styles.right]}> {this.state.deadlines[item["Schools"]]["regularDecisionDeadline"] == "rolling" ? "rolling" : moment(this.state.deadlines[item["Schools"]]["regularDecisionDeadline"]).format('YYYY-MM-DD ')} </Text>
+             
                 </TouchableOpacity>
               </View>
               }
             />
-           
-            <FlatList
-              scrollEnabled={this.state.logged_in}
-              tabLabel="ACT"
-              style={{backgroundColor: 'white'}}
-              data={this.sort("ACT")}
-              showsVerticalScrollIndicator={false}
-              keyExtractor={(item, index) => item.Schools}
-              renderItem={({item}) =>
-              <View style={styles.flatview}>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
-                    <Text style={[styles.left]}>{item["Schools"]}</Text><Text style={[styles.right]}> {item.ACT} </Text>
-                    <Icon
-                    raised
-                    size={15}
-                    name='heart'
-                    type='font-awesome'
-                    color={this.props.favorites.indexOf(item) > -1 ? "#ff0000":"#000000"}
-                    onPress={()=>this.handleButton(item)}
-                  />
-                </TouchableOpacity>
-                
-              </View>
-              }
-            />
-            <FlatList
-              scrollEnabled={this.state.logged_in}
-              tabLabel="SAT"
-              style={{backgroundColor: 'white'}}
-              data={this.sort("SAT")}
-              showsVerticalScrollIndicator={false}
-              keyExtractor={(item, index) => item.Schools}
-              renderItem={({item}) =>
-              <View style={styles.flatview}>
-              <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
-                  <Text style={[styles.left]}>{item["Schools"]}</Text><Text style={[styles.right]}> {item["SAT"]} </Text>
-                  <TouchableOpacity style={styles.favorite}>
-                  <Icon
-                    raised
-                    size={15}
-                    name='heart'
-                    type='font-awesome'
-                    color={this.props.favorites.indexOf(item) > -1 ? "#ff0000":"#000000"}
-                    onPress={()=>this.handleButton(item)}
-                  />
-                  </TouchableOpacity>
-              </TouchableOpacity>
-            </View>
-              }
-            />
+       
 
           
 
-          </ScrollableTabView>
           </View>
         </View>
       );
@@ -334,5 +282,5 @@ const mapDispatchToProps = dispatch => (
   }, dispatch)
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(ResultsScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(DeadlinesScreen);
 

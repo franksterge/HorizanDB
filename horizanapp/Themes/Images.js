@@ -238,5 +238,8 @@ const images = {
     worcester_polytechnic_institute: require("../assets/images/worcester_polytechnic_institute.png"),
     yale_university: require("../assets/images/yale_university.png"),
     yeshiva_university: require("../assets/images/yeshiva_university.png"),
+    heart_icon: require("../assets/images/heart.png"),
+    clock_icon: require("../assets/images/clock.png"),
+    check_icon: require("../assets/images/check_mark.png")
 }
 export default images

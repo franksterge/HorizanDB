@@ -51,7 +51,6 @@ export default styles = StyleSheet.create({
       textAlign: 'center'
     },
     logoimage: {
-      flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
       width: deviceWidth / 1.2,
