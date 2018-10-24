@@ -3,7 +3,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 const deviceWidth = Dimensions.get('window').width;
 
-export default styles = StyleSheet.create({
+export default StyleSheet.create({
     container: {
       borderRadius: 4,
       borderWidth: 0.5,
