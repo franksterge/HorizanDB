@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { addFavorite } from '../redux/actions/index'
 import { removeFavorite } from '../redux/actions/remove_favorite'
 
+
 import { bindActionCreators } from 'redux';
 
 import { Icon } from 'react-native-elements'
@@ -26,6 +27,7 @@ class FavoritesScreen extends React.Component {
 
 
   static navigationOptions = {
+    header: null,
 
     tabBarLabel: '',
     title:"Favorites",
@@ -40,14 +42,15 @@ class FavoritesScreen extends React.Component {
   _renderItem (item) {
    return (
       
-      <View style={styles.favoritesCardContainer}>
+      <TouchableOpacity onPress={()=>{this.props.navigation.navigate("DetailsScreen",{university:item})}}
+        key={item.schools} style={styles.favoritesCardContainer}>
 
         <View style={styles.cardHeader}>
           <View style={styles.matchBox}>
-            <Text style={styles.matchText}> {item.overall_match*100}% Match</Text>
+            <Text style={styles.matchText}> {item.overall_match.toFixed(2)*100}% Match</Text>
           </View>
           <View style={styles.schoolBox}>
-            <Text style={styles.schoolText}> {item.Schools}</Text>
+            <Text style={styles.schoolText}> {item.schools}</Text>
           </View>
           <View style={styles.deadlineBox}>
             <Text style={styles.deadlineText}> Next deadline: January 12th, 2018</Text>
@@ -55,16 +58,14 @@ class FavoritesScreen extends React.Component {
         </View>
         
 
-          <Image source={Images[item["Schools"].toLowerCase().split(" ").join("_")]} style={styles.favoriteCardImage}/>
-      </View>
+          <Image source={Images[item["schools"].toLowerCase().split(" ").join("_").replace("&","").replace("-","")]} style={styles.favoriteCardImage}/>
+      </TouchableOpacity>
         
     );
     
 }
   
   render() {
-
-    console.log(this.props.favorites.length);
 
     var {height, width} = Dimensions.get('window');
     return (
@@ -91,7 +92,7 @@ class FavoritesScreen extends React.Component {
       </View>
       :
       
-        <Swiper
+        <Swiper 
                     showsButtons={false}
                     showsPagination={false}
                     loop={false}
@@ -107,19 +108,12 @@ class FavoritesScreen extends React.Component {
             </Text>
           </View>
           <ScrollView>
-            <Text style={{marginTop:15}}> Under Construction..</Text>
+            <Text style={{marginTop:15}}> Coming soon..</Text>
 
           </ScrollView>
         </View>
 
-          {/* <Carousel
-              ref={(c) => { this._carousel = c; }}
-              data={this.props.favorites}
-              renderItem={this._renderItem.bind(this)}
-              sliderWidth={width}
-              itemWidth={width*0.9}
-              sliderHeight={height*0.8}
-            /> */}
+        
       </View>
     );
   }
@@ -135,7 +129,7 @@ const styles = StyleSheet.create({
   },
   mightLikeBox:{
     width:'100%',
-    marginTop:25,
+    height:'20%',
     paddingLeft:30,
     justifyContent:'flex-start',
     alignItems:'flex-start',
@@ -194,13 +188,13 @@ const styles = StyleSheet.create({
     borderRadius:10,
     backgroundColor:'white',
 
-    height:350,
+    height:'80%',
    
   },
   favoriteCardImage:{
-    borderWidth:0,
     borderRadius:15,
     marginTop:0,
+    
     height:'85%', 
     width:Dimensions.get('window').width*.9,
     resizeMode:'cover',

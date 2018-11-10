@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+import { Ionicons } from '@expo/vector-icons';
+
 import { StackActions, NavigationActions } from 'react-navigation';
 import { WebView, AsyncStorage, TextInput, StyleSheet, TouchableOpacity, TouchableHighlight, Image,  View, Text, KeyboardAvoidingView, ScrollView } from 'react-native';
 import styles from './Styles/FormScreenStyles';
 import {Images} from '../Themes';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview'
-import { CheckBox } from 'react-native-elements';
 import ResultsLoading from './ResultsLoading';
 import * as firebase from "firebase/app"
+import { connect } from 'react-redux';
+import { formComplete } from '../redux/actions/form_complete'
+import { bindActionCreators } from 'redux';
+
 
 
 import 'firebase/firestore'
@@ -27,7 +32,7 @@ class FormScreen extends Component {
                 "Z",//gender*
                 "Z",//pub/priv
                 "Z",//size
-                "Z",//in-state$
+                "Z",//fam-income
                 "Z",
             ]  
         }   
@@ -61,8 +66,9 @@ class FormScreen extends Component {
             // if (this.state.failed_submit || this.state.bad_amounts_act || this.state.bad_amounts_sat ){
             //     return 
             // } else {
-                AsyncStorage.setItem("form_completed","yes")
-                console.log("done")
+                this.props.formComplete("yes")
+                firebase.database().ref('Users/' + this.props.auth.userid + "/forms").set({taken:true})
+                // console.log("done")
                 this.props.navigation.navigate("ResultsLoading", {form_results : this.state.ans_array })
                 
             //  }
@@ -74,7 +80,7 @@ class FormScreen extends Component {
             if(answer[index] == "Z"){
                 answer[index] = value
             } else if (answer[index].includes(value)){
-                console.log("found")
+                // console.log("found")
                 answer[index] = answer[index].replace(value,"")
             } else {
                     answer[index] += value
@@ -83,6 +89,14 @@ class FormScreen extends Component {
                 answer[index] = "Z"
             }
                 this.setState({ans_array:answer})
+            return
+        }
+
+
+        const activate_single_answer = (index, value) => {
+            let answer = this.state.ans_array
+            answer[index] = value
+            this.setState({ans_array:answer})
             return
         }
 
@@ -96,7 +110,7 @@ class FormScreen extends Component {
  
 
         return (
-         <View style={StyleSheet.absoluteFill}>
+         <View style={{flex:1,}}>
             <KeyboardAwareScrollView contentContainerStyle={{justifyContent:'space-around'}} style={styles.background}>
             
 
@@ -139,7 +153,6 @@ class FormScreen extends Component {
                         </TouchableOpacity>
                     </View>
                 </View>
-
             
                 <View style={styles.question}>
                     <Text style={styles.questionText}> What is your SAT score? </Text>
@@ -160,9 +173,7 @@ class FormScreen extends Component {
                                 maxLength={2}
                                 onChangeText={(num) => changeNum(3,num)}
                                 />
-                    
                 </View>
-
 
                 <View style={styles.question}>
                     <Text style={styles.questionText}>What is your preferred gender distribution? </Text>
@@ -198,52 +209,45 @@ class FormScreen extends Component {
                 </View>
 
                 <View style={styles.question}>
-                    <Text style={styles.questionText}> What is your preferred school size?</Text>
-                    <CheckBox
-                        title='Small (1-5000 students)'
-                        checked={this.state.ans_array[6].includes("A")}
-                        onPress = {()=>activate_answer(6,"A")}
-                        />
-                     <CheckBox
-                        title='Medium (5001-10000 students)'
-                        checked={this.state.ans_array[6].includes("B")}
-                        onPress = {()=>activate_answer(6,"B")}
-                        />
-                     <CheckBox
-                        title='Large (10001 students +)'
-                        checked={this.state.ans_array[6].includes("C")}
-                        onPress = {()=>activate_answer(6,"C")}
-                        />
+                    <Text style={styles.questionText}> What is your preferred school size? </Text>
+                <TouchableOpacity onPress = {()=>activate_answer(6,"A")} style={styles.checkBoxStyles}>
+                    <Ionicons style={{flex:.3}} name={ this.state.ans_array[6].includes("A") ? "md-checkmark-circle":"md-checkmark-circle-outline"} size={32} color="grey" />
+                    <Text style={{flex:1}}>Small (1-5000 students)</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress = {()=>activate_answer(6,"B")} style={styles.checkBoxStyles}>
+                    <Ionicons style={{flex:.3}} name={ this.state.ans_array[6].includes("B") ? "md-checkmark-circle":"md-checkmark-circle-outline"} size={32} color="grey" />
+                    <Text style={{flex:1}}>Medium (5001-10000 students) </Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress = {()=>activate_answer(6,"C")} style={styles.checkBoxStyles}>
+                    <Ionicons style={{flex:.3}} name={ this.state.ans_array[6].includes("C") ? "md-checkmark-circle":"md-checkmark-circle-outline"} size={32} color="grey" />
+                    <Text style={{flex:1}}> Large (10001 students +)</Text>
+                </TouchableOpacity>
+                    
                 </View>
 
 
                 <View style={styles.question}>
                     <Text style={styles.questionText}> What is your total family net income?</Text>
-                    <CheckBox
-                        title='$30000 or less'
-                        checked={this.state.ans_array[7].includes("A")}
-                        onPress = {()=>activate_answer(7,"A")}
-                        />
-                     <CheckBox
-                        title='$30001-$48000'
-                        checked={this.state.ans_array[7].includes("B")}
-                        onPress = {()=>activate_answer(7,"B")}
-                        />
-                     <CheckBox
-                        title='$48001-$75000'
-                        checked={this.state.ans_array[7].includes("C")}
-                        onPress = {()=>activate_answer(7,"C")}
-                        />
-                    <CheckBox
-                        title='$75001-$110000'
-                        checked={this.state.ans_array[7].includes("D")}
-                        onPress = {()=>activate_answer(7,"D")}
-                    />
-                    <CheckBox
-                        title='$110001+'
-                        checked={this.state.ans_array[7].includes("E")}
-                        onPress = {()=>activate_answer(7,"E")}
-                        />
+                <TouchableOpacity onPress = {()=>activate_single_answer(7,"A")} style={styles.checkBoxStyles}>
+                    <Ionicons style={{flex:.3}} name={ this.state.ans_array[7].includes("A") ? "md-checkmark-circle":"md-checkmark-circle-outline"} size={32} color="grey" />
+                    <Text style={{flex:1}}> $30000 or less </Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress = {()=>activate_single_answer(7,"B")} style={styles.checkBoxStyles}>
+                    <Ionicons style={{flex:.3}} name={ this.state.ans_array[7].includes("B") ? "md-checkmark-circle":"md-checkmark-circle-outline"} size={32} color="grey" />
+                    <Text style={{flex:1}}> $30001-$48000 </Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress = {()=>activate_single_answer(7,"C")} style={styles.checkBoxStyles}>
+                    <Ionicons style={{flex:.3}} name={ this.state.ans_array[7].includes("C") ? "md-checkmark-circle":"md-checkmark-circle-outline"} size={32} color="grey" />
+                    <Text style={{flex:1}}> $48001-$75000 </Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress = {()=>activate_single_answer(7,"D")} style={styles.checkBoxStyles}>
+                    <Ionicons style={{flex:.3}} name={ this.state.ans_array[7].includes("D") ? "md-checkmark-circle":"md-checkmark-circle-outline"} size={32} color="grey" />
+                    <Text style={{flex:1}}> $75001-$110000 </Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress = {()=>activate_single_answer(7,"E")} style={styles.checkBoxStyles}>
+                    <Ionicons style={{flex:.3}} name={ this.state.ans_array[7].includes("E") ? "md-checkmark-circle":"md-checkmark-circle-outline"} size={32} color="grey" />
+                    <Text style={{flex:1}}> $110001+ </Text>
+                </TouchableOpacity>
                 </View>
 
                 <TouchableOpacity style={styles.submitButton}
@@ -251,14 +255,6 @@ class FormScreen extends Component {
 
                     <Text style={styles.submitText}> Submit </Text>
                 </TouchableOpacity>
-
-
-
-
-
-
-
-
 
             </KeyboardAwareScrollView>
             </View>
@@ -268,5 +264,15 @@ class FormScreen extends Component {
 }
 
 
+  
 
-export default FormScreen;
+const mapStateToProps = state => {
+    return { auth: state.auth };
+  };
+  
+  const mapDispatchToProps = dispatch => (
+    bindActionCreators({
+      formComplete
+    }, dispatch)
+  );
+export default connect(mapStateToProps, mapDispatchToProps)(FormScreen);

@@ -5,6 +5,8 @@ import { NavigationActions, StackActions } from 'react-navigation';
 import {Images} from '../Themes';
 import moment from 'moment';
 
+import { Ionicons } from '@expo/vector-icons';
+
 
 import './global.js'
 import Swiper from 'react-native-swiper';
@@ -43,7 +45,7 @@ class DeadlinesScreen extends React.Component {
     tabBarLabel: '',
     tabBarIcon: (<Image style={{width:50,tintColor:'black',resizeMode:'contain', height:20, alignSelf:'center',}} source={Images.clock_icon}/>),
 
-    Tile:"Deadlines",
+    Title:"Deadlines",
     // headerLeft:( <HeaderBackButton onPress={()=>{this.props.navigation.navigate('CallToAction')}}/>),
 
     headerTitle: ( <Text style={{fontSize:20}}>Your Matches</Text>),
@@ -52,10 +54,8 @@ class DeadlinesScreen extends React.Component {
   };
   componentDidMount(){
 
-    
-
     AsyncStorage.getItem('logged_in').then((token) => {
-      console.log("DONE")
+      // console.log("DONE")
       // data = firebase.database().ref('Users/' + token + "/schools")
       // data.once('value').then(snapshot => {
       let logged_in = token=="yes";
@@ -63,7 +63,7 @@ class DeadlinesScreen extends React.Component {
       var gen_list = Object.keys(schools).map(function(key) {
         return {...schools[key]};
       });
-      console.log(token)
+      // console.log(token)
         this.setState({
           school_list:schools,
           logged_in:logged_in,
@@ -109,19 +109,19 @@ class DeadlinesScreen extends React.Component {
 
   sort(){
           
-    let data = this.state.school_array.slice()
-    
+    let data = this.props.school_list.filter(school=> Date.parse(deadlines[school.schools]["regularDecisionDeadline"]) > (new Date()) || deadlines[school.schools]["regularDecisionDeadline"] == "rolling").slice()
+
 
     // if (key == "ACT" || key == "SAT"){
       
       return data.sort(function(a,b){
-        if(deadlines[b.Schools]["regularDecisionDeadline"] == "rolling"){
+        if(deadlines[b.schools]["regularDecisionDeadline"] == "rolling"){
           return -1;
         } 
-        if(deadlines[a.Schools]["regularDecisionDeadline"] == "rolling"){
+        if(deadlines[a.schools]["regularDecisionDeadline"] == "rolling"){
           return 1;
         }  
-        return Date.parse(deadlines[b.Schools]["regularDecisionDeadline"]) - Date.parse(deadlines[a.Schools]["regularDecisionDeadline"])
+        return -Date.parse(deadlines[b.schools]["regularDecisionDeadline"]) + Date.parse(deadlines[a.schools]["regularDecisionDeadline"])
       })
     
     // return data.sort(function(a, b){return b[key] - a[key]})
@@ -154,7 +154,8 @@ class DeadlinesScreen extends React.Component {
     return <View/>
   } else {
       
-    console.log(this.props.favortes);
+    // console.log(this.props.favorites);
+    // console.log("TEST")
     // const hasData = (this.props.navigation.getParam('hasData', 'false') == 'true');
     // const results = hasData ? this.props.navigation.getParam('data', '{ "No results" : "" }') : this.props.navigation.getParam('results', '{ "No results" : "" }');
 
@@ -167,7 +168,7 @@ class DeadlinesScreen extends React.Component {
         
         
         <View style={{backgroundColor: 'white',flex:1,}} >
-        {this.state.logged_in ? null:
+        {this.props.auth.logged_in == "yes"? null:
           <BlurView
           style={styles.blur}
           viewRef={this.state.viewRef}
@@ -187,22 +188,24 @@ class DeadlinesScreen extends React.Component {
 
 
             <FlatList
-              scrollEnabled={this.state.logged_in}
-              tabLabel="Overall Match"
+              scrollEnabled={this.props.auth.logged_in == "yes"}
               style={{backgroundColor: 'white'}}
               data={this.sort()}
               showsVerticalScrollIndicator={false}
-              keyExtractor={(item, index) => item.Schools}
+              keyExtractor={(item, index) => item.schools}
               renderItem={({item}) =>
               <View style={styles.resultBox}>
+
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
-                    <Text style={[styles.left]}>{item["Schools"]}</Text><Text style={[styles.right]}> {this.state.deadlines[item["Schools"]]["regularDecisionDeadline"] == "rolling" ? "rolling" : moment(this.state.deadlines[item["Schools"]]["regularDecisionDeadline"]).format('YYYY-MM-DD ')} </Text>
-             
-                </TouchableOpacity>
+                  <Text style={[styles.left]}>{item["schools"]}</Text><Text style={[styles.right]}> {this.state.deadlines[item["schools"]]["regularDecisionDeadline"] == "rolling" ? "rolling" : moment(this.state.deadlines[item["schools"]]["regularDecisionDeadline"]).format('YYYY-MM-DD ')} </Text>
+                  <TouchableOpacity style={styles.favorite}  onPress={()=>this.handleButton(item)}>
+                  <Ionicons  name={ this.props.favorites.indexOf(item) > -1 ? "ios-star":"ios-star-outline"} size={32} color={this.props.favorites.indexOf(item) > -1 ?"yellow":"grey"} />
+
+                  </TouchableOpacity>
+              </TouchableOpacity>
               </View>
               }
-            />
-       
+            /> 
 
           
 
@@ -273,7 +276,7 @@ const styles = StyleSheet.create({
 
 
 const mapStateToProps = state => {
-  return { favorites: state.favorites };
+  return { favorites: state.favorites, school_list:state.school_list, auth:state.auth };
 };
 const mapDispatchToProps = dispatch => (
   bindActionCreators({

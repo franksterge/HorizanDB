@@ -2,12 +2,22 @@ import React from 'react';
 import { StyleSheet, Image, AsyncStorage, Text, View } from 'react-native';
 import {Images} from '../Themes';
 import styles from ".././assets/styles/styles";
-import * as Progress from 'react-native-progress';
+// import * as Progress from 'react-native-progress';
 import * as firebase from "firebase/app"
 import 'firebase/firestore'
 import 'firebase/functions'
 import 'firebase/database'
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { logIn } from '../redux/actions/log_in'
+import { addFavorite } from '../redux/actions/index'
+import { addSchools } from '../redux/actions/add_schools'
+import { formComplete } from '../redux/actions/form_complete'
+import { setIncome } from '../redux/actions/set_income'
+import * as Progress from 'react-native-progress';
+
+
+
 
 
 
@@ -39,96 +49,59 @@ class InitialLoadingScreen extends React.Component {
               photoUrl: results.user.photoUrl
             })
           } else {
-            console.log("cancelled")
+            // console.log("cancelled")
             //return {cancelled: true};
           }
         } catch(e) {
-          console.log("error")
+          // console.log("error")
           //return {error: true};
         }
     }
     
       //load font
       async componentDidMount() {
-        AsyncStorage.getItem('logged_in', (error, logged_in) => {
-            AsyncStorage.getItem('form_completed', (error2, form_completed) => {
-                AsyncStorage.getItem('userid', (error3, userid) => {
-                    if(error || error2 || error3){alert('Something went wrong!')}
-                    console.log(userid)
-                   
-                    if(userid === null){ 
-                        console.log("creating user id")
-                        let newUserId =  Math.random().toString(36).substr(2, 9)
-                        userid = newUserId
-                        console.log("setting");
-                        console.log(newUserId)
-                        AsyncStorage.setItem('userid',newUserId)
-                        firebase.database().ref('Users/' + newUserId + "/forms").set({taken:false})
-                    }
 
-                    
-                    if(form_completed == "yes"){
-                        let data = firebase.database().ref('Users/' + userid + "/schools")
-                        data.once('value').then(snapshot => {
+          // console.log("logged in? >" + this.props.auth.logged_in)
+          let userid = this.props.auth.userid
+          // console.log(userid);
+          let dataBody = firebase.database().ref('Users/' + userid)
+          dataBody.once('value').then(snapshot=>{
+            let data = snapshot.val()
+            if (data == null){
+              this.props.navigation.navigate("CallToAction", {userid:userid, logged_in:"no"} );
+              return 
+            }
+         
+            if (data["forms"]["taken"]){
+              this.props.formComplete("yes")
+             
+              
+              if(this.props.auth.logged_in=="yes"){
+                  // console.log("logged in and completed form")
+                  
+                  for (var school in data["favorites"]){
+                  
+                    this.props.addFavorite(data['favorites'][school]);
+                  }
+                  this.props.addSchools(data["schools"])
+                  this.props.setIncome(data["income"])
 
-                        
-                        if(logged_in){
 
-
-
-                            console.log("logged in and completed form")
-                            this.props.navigation.navigate("FavoritesTab", {school_list:snapshot.val()});
-                        } else {
-                            console.log("form completed not logged in")
-                            this.props.navigation.navigate("LoginScreen", {school_list:snapshot.val()});
-                        }    
-                      })
-                        
-                    } else {
-                        console.log("form not taken")
-                        this.props.navigation.navigate("CallToAction", {userid:userid, logged_in:logged_in} );
-                    }
-                })
-            })
-        })
+                  this.props.navigation.navigate("FavoritesTab");
+              } else {
+                  // console.log("form completed not logged in")
+                  this.props.navigation.navigate("LoginScreen");
+              }    
+              
+          } else {
+              // console.log("form not taken")
+              this.props.navigation.navigate("CallToAction", {userid:userid, logged_in:"yes"} );
+          }
+      })
     }
-
-
-            
-
-        
     
-    
+          
         
-  
-    //   _checkForUser = () => {
-    //     const out = this;
-    //     firebase.auth().onAuthStateChanged(function(user) {
-    //       if (user) {
-    //         // User is signed in.
-    //         global.user = user;
-    //         console.log(user);
-
-    //       out.setState({ signedIn: true});
-    //       out._storeLoggedIn('true');
-    //       global.form_completed = true;
-    //       global.signedIn = true;
-    //       } else {
-    //         // No user is signed in.
-    //         out._storeLoggedIn('false');
-    //         out.setState({ signedIn: false });
-    //         global.signedIn = false;
-    //       }
-    //     });
-    //   }
-
-      userIsLoggedIn(){
-        
-      }
-
-      userNotLoggedIn(){
-
-      }
     
       _storeLoggedIn = async (value) => {
         const out = this;
@@ -151,11 +124,9 @@ class InitialLoadingScreen extends React.Component {
         <Text style={[styles.para, { color: '#0400CF'}]}>
                 Take hold of tomorrow with
               </Text>
-        <Text style={[styles.title, { color: '#0400CF', fontSize: 75}]}>
+        <Text onPress={()=>AsyncStorage.clear()} style={[styles.title, { color: '#0400CF', fontSize: 75}]}>
                 Horizan
               </Text>
-
-        
         </View>
         <Text style={[styles.para, {fontSize:20, marginBottom:50,color: '#0400CF'}]}>
                 Now Loading...
@@ -165,11 +136,17 @@ class InitialLoadingScreen extends React.Component {
   }
 }
 
-
-
-const mapStateToProps = (state) => {
-  const { friends } = state
-  return { friends }
+const mapStateToProps = state => {
+  return { auth: state.auth, favorites:state.favorites, school_list:state.school_list };
 };
 
-export default connect(mapStateToProps)(InitialLoadingScreen);
+const mapDispatchToProps = dispatch => (
+  bindActionCreators({
+    logIn,
+    addFavorite,
+    addSchools,
+    formComplete,
+    setIncome
+  }, dispatch)
+);
+export default connect(mapStateToProps, mapDispatchToProps)(InitialLoadingScreen);

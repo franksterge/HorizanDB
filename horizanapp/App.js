@@ -1,13 +1,18 @@
 import React from 'react';
 import { createStackNavigator, createBottomTabNavigator, createMaterialTopTabNavigator } from 'react-navigation';
 import { Constants, Font } from 'expo';
-import { StyleSheet, Text, View, Alert, AsyncStorage} from 'react-native';
+import { StyleSheet,Image, Text, View, Alert, AsyncStorage} from 'react-native';
+import {Images} from './Themes';
+
 
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import store from "./redux/store/index"
+import { persistor, store } from './redux/store';
+
 import thunk from 'redux-thunk';
 import rootReducer from './redux/reducers/index';
+import { PersistGate } from 'redux-persist/integration/react'
+
 
 
 
@@ -34,6 +39,7 @@ import DeadlinesScreen from "./screens/DeadlinesScreen"
 
 //global variables
 import './screens/global.js'
+import InitialLoadingScreen from './screens/InitialLoadingScreen';
 
 
 AsyncStorage.clear();
@@ -51,9 +57,9 @@ var config = {
 //init firebase
 try {
   firebase.initializeApp(config);
-  console.log('initialized');
+  // console.log('initialized');
 } catch (e) {
-  console.log('App reloaded, so firebase did not re-initialize');
+  // console.log('App reloaded, so firebase did not re-initialize');
 }
 
 const RootStack = createStackNavigator({
@@ -72,20 +78,32 @@ const RootStack = createStackNavigator({
         FavoritesScreen: { screen: FavoritesScreen }, 
         Deadlines: { screen: DeadlinesScreen },
         ResultsScreen: { screen: ResultsScreen },  //show results
+        },{
+          navigationOptions: {
+            header:null,
+        }
+        })
+      }
+    }, {
+      headerMode: 'float',
 
-
-      }) 
-    },
-
-        
-       
-    })
+      navigationOptions: {
+        gesturesEnabled:false,
+        headerLeft:null,
+        tabBarLabel: '',
+        headerTitle:<Image style={{height:'70%',width:'70%',resizeMode:'contain'}} source={Images.logo_full}/>,
+        headerStyle: {
+          backgroundColor: 'white',
+          elevation: 0,
+          shadowOpacity: 0
+        }
+      }})
   },
+  
 },
 {
-  headerMode: 'none',
-  navigationOptions: {
-    headerVisible: false,
+    navigationOptions: {
+      header:null,
   }
  }
 );
@@ -223,7 +241,10 @@ export default class App extends React.Component {
       }else{    //if not signed in, allow survey but require login after
         return (
           <Provider store={ store }>
-            <RootStack />
+            <PersistGate loading={<View/>} persistor={persistor}>
+
+              <RootStack />
+            </PersistGate>
           </Provider>
             
         );

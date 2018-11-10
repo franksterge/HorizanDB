@@ -4,12 +4,12 @@
     "description": "This project is really great.",
     "slug": "horizanapp",
     "privacy": "public",
-    "sdkVersion": "29.0.0",
+    "sdkVersion": "31.0.0",
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "facebookScheme":"fb123456",
     "icon": "./assets/icon.png",
+    
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -22,8 +22,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "infoPlist": {
+        "LSApplicationQueriesSchemes":["com.googleusercontent.apps.7107222998-qcmpffaqdkfo0cse1i10gf0t48n2t4go"],
+        "CFBundleURLTypes": [
+         {
+            "CFBundleTypeRole": "Editor",
+            "CFBundleURLName": "GoogleSignIn",
+            "CFBundleURLSchemes": ["com.googleusercontent.apps.7107222998-qcmpffaqdkfo0cse1i10gf0t48n2t4go"]
+          }
+        ]
+      },
+      "supportsTablet": true,
+      "bundleIdentifier": "com.techlx.expogoogle",
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "7107222998-qcmpffaqdkfo0cse1i10gf0t48n2t4go.apps.googleusercontent.com"
+      }
     }
-    
+  }
+
   }
 }

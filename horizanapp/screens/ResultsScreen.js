@@ -3,12 +3,13 @@ import { StyleSheet, TouchableOpacity, Image, HeaderBackButton , Text, View, Asy
 import Touchable from 'react-native-platform-touchable';
 import { NavigationActions, StackActions } from 'react-navigation';
 import {Images} from '../Themes';
+import { Ionicons } from '@expo/vector-icons';
+
 
 import './global.js'
 import Swiper from 'react-native-swiper';
 import { BlurView } from 'expo';
 import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-tab-view';
-import { Icon } from 'react-native-elements'
 import { connect } from 'react-redux';
 import { addFavorite } from '../redux/actions/index'
 import { removeFavorite } from '../redux/actions/remove_favorite'
@@ -18,6 +19,7 @@ import { bindActionCreators } from 'redux';
 import firebase from "@firebase/app"
 import "firebase/auth"
 import "firebase/database"
+
 
 
 const dimensions = Dimensions.get('window');
@@ -30,7 +32,6 @@ class ResultsScreen extends React.PureComponent {
     favorites:[],
     user: "test",
     ascending:true, 
-    logged_in:false,
     loading:true,
     school_list:null,
     swiper_index:0
@@ -39,6 +40,9 @@ class ResultsScreen extends React.PureComponent {
   };
 
   static navigationOptions = {
+    header:null,
+    headerVisible:false,
+    headerLeft:null,
     style:({borderWidth:1}),
     tabBarIcon: (<Image style={{width:50,tintColor:'black',resizeMode:'contain', height:20, alignSelf:'center',}} source={Images.check_icon}/>),
 
@@ -51,26 +55,24 @@ class ResultsScreen extends React.PureComponent {
 
   };
   componentDidMount(){
-    console.log(this.props.navigation.state);
-    
-
-    AsyncStorage.getItem('logged_in').then((token) => {
-      console.log("DONE")
+    // console.log(this.props.auth)
       // data = firebase.database().ref('Users/' + token + "/schools")
       // data.once('value').then(snapshot => {
-      let logged_in = token=="yes";
-      let schools = this.props.navigation.getParam('school_list', '')
+      let schools = this.props.school_list
+      // console.log("===============")
+      // console.log(this.props.favorites);
+      // console.log("===============")
+
+      
       var gen_list = Object.keys(schools).map(function(key) {
         return {...schools[key]};
       });
-      console.log(token)
         this.setState({
           school_list:schools,
-          logged_in:logged_in,
-          user:this.props.navigation.getParam('userid', ''),
           school_array:gen_list,
+          favorites:this.props.favorites,
           loading:false
-        })
+        
       
       })          
       
@@ -108,7 +110,15 @@ class ResultsScreen extends React.PureComponent {
   }
 
   sort(key){
-    let data = this.state.school_array.slice()
+    let data = this.props.school_list.slice()
+    if (key.includes("average")){
+       
+      return data.sort(function(a,b){
+        // console.log(a)
+        // console.log(key);
+        return (parseInt(a[key].replace("$","").replace(",","")) - parseInt(b[key].replace("$","").replace(",","")))
+      })
+    }
 
     if (key == "ACT" || key == "SAT"){
       
@@ -121,11 +131,24 @@ class ResultsScreen extends React.PureComponent {
 
   handleButton(school){
 
-    { this.props.favorites.includes(school) ? 
+    
+   
+    if (this.props.favorites.includes(school)){ 
+      firebase.database().ref('Users/' + this.props.auth.userid + "/favorites/"+school["schools"].replace("_",".")).remove()
+      
       this.props.removeFavorite(school)
-      :
+    } else {
+      let ref = firebase.database().ref('Users/' + this.props.auth.userid + "/favorites")
+
+      let schoolname = school["schools"].replace("_",".")
+      ref.update({[schoolname]:school})
+      
+
       this.props.addFavorite(school)
+      // console.log(this.props.favorites)
+      // console.log(school);
     }
+
 
     // let favs = this.state.favorites
     // if (favs.includes(school)){
@@ -140,12 +163,14 @@ class ResultsScreen extends React.PureComponent {
   }
 
   render() {
+    // console.log("favorites below")
+    // console.log(this.props.favorites)
+    // console.log("favorites above");
     
   if (this.state.loading){
     return <View/>
   } else {
       
-    console.log(this.props.favortes);
     // const hasData = (this.props.navigation.getParam('hasData', 'false') == 'true');
     // const results = hasData ? this.props.navigation.getParam('data', '{ "No results" : "" }') : this.props.navigation.getParam('results', '{ "No results" : "" }');
 
@@ -154,11 +179,8 @@ class ResultsScreen extends React.PureComponent {
 
       return (
 
-        
-        
-        
         <View style={{backgroundColor: 'white',flex:1,}} >
-        {this.state.logged_in ? null:
+        {this.props.auth.logged_in == "yes" ? null:
           <BlurView
           style={styles.blur}
           viewRef={this.state.viewRef}
@@ -166,7 +188,7 @@ class ResultsScreen extends React.PureComponent {
           intensity={96}
         >
 
-          <TouchableOpacity onPress={()=>this.props.navigation.navigate("LoginScreen", {school_list: this.state.school_list,origin:"resultsScreen"})} style={styles.logInButton}>
+          <TouchableOpacity onPress={()=>this.props.navigation.navigate("LoginScreen",{origin:"resultsScreen"})} style={styles.logInButton}>
             <Text style={styles.loginText}>
               Log in to Horizan to see your results!
             </Text>
@@ -182,94 +204,101 @@ class ResultsScreen extends React.PureComponent {
           >
 
             <FlatList
-              scrollEnabled={this.state.logged_in}
+            extraData={this.props.favorites}
+            refreshing={true}
+              scrollEnabled={this.props.auth.logged_in == "yes"}
               tabLabel="Overall Match"
               style={{backgroundColor: 'white'}}
               data={this.sort("overall_match")}
               showsVerticalScrollIndicator={false}
-              keyExtractor={(item, index) => item.Schools}
+              keyExtractor={(item, index) => item.schools}
               renderItem={({item}) =>
-              <View style={styles.resultBox}>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
-                    <Text style={[styles.left]}>{item["Schools"]}</Text><Text style={[styles.right]}> {(item.overall_match*100).toFixed(2)}% </Text>
-                    <Icon
-                    raised
-                    size={15}
-                    name='heart'
-                    type='font-awesome'
-                    color={this.props.favorites.indexOf(item) > -1 ? "#ff0000":"#000000"}
-                    onPress={()=>this.handleButton(item)}
-                  />
-                </TouchableOpacity>
-              </View>
+              <View style={styles.flatview}>
+              <TouchableOpacity onPress={() => {this.props.navigation.navigate('DetailsScreen', { university: item })}} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
+                  <Text style={[styles.left]}>{item["schools"]}</Text><Text style={[styles.right]}> {(item.overall_match*100).toFixed(2)}% </Text>
+                  <TouchableOpacity style={styles.favorite}  onPress={()=>this.handleButton(item)}>
+                  <Ionicons  name={this.props.favorites.some(e => e.schools == item.schools) ? "ios-star":"ios-star-outline"} size={32} color={this.props.favorites.some(e => e.schools == item.schools) ?"yellow":"grey"} />
+                  </TouchableOpacity>
+              </TouchableOpacity>
+            </View>
               }
             />
            
             <FlatList
-              scrollEnabled={this.state.logged_in}
+              scrollEnabled={this.props.auth.logged_in == "yes"}
               tabLabel="ACT"
               style={{backgroundColor: 'white'}}
-              data={this.sort("ACT")}
+              data={this.sort("act")}
               showsVerticalScrollIndicator={false}
-              keyExtractor={(item, index) => item.Schools}
-              renderItem={({item}) =>
-              <View style={styles.flatview}>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
-                    <Text style={[styles.left]}>{item["Schools"]}</Text><Text style={[styles.right]}> {item.ACT} </Text>
-                    <Icon
-                    raised
-                    size={15}
-                    name='heart'
-                    type='font-awesome'
-                    color={this.props.favorites.indexOf(item) > -1 ? "#ff0000":"#000000"}
-                    onPress={()=>this.handleButton(item)}
-                  />
-                </TouchableOpacity>
-                
-              </View>
-              }
-            />
-            <FlatList
-              scrollEnabled={this.state.logged_in}
-              tabLabel="SAT"
-              style={{backgroundColor: 'white'}}
-              data={this.sort("SAT")}
-              showsVerticalScrollIndicator={false}
-              keyExtractor={(item, index) => item.Schools}
+              keyExtractor={(item, index) => item.schools}
               renderItem={({item}) =>
               <View style={styles.flatview}>
               <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
-                  <Text style={[styles.left]}>{item["Schools"]}</Text><Text style={[styles.right]}> {item["SAT"]} </Text>
-                  <TouchableOpacity style={styles.favorite}>
-                  <Icon
-                    raised
-                    size={15}
-                    name='heart'
-                    type='font-awesome'
-                    color={this.props.favorites.indexOf(item) > -1 ? "#ff0000":"#000000"}
-                    onPress={()=>this.handleButton(item)}
-                  />
+                  <Text style={[styles.left]}>{item["schools"]}</Text><Text style={[styles.right]}> {item["act"]} </Text>
+                  <TouchableOpacity style={styles.favorite}  onPress={()=>this.handleButton(item)}>
+                  <Ionicons  name={this.props.favorites.some(e => e.schools == item.schools) ? "ios-star":"ios-star-outline"} size={32} color={this.props.favorites.some(e => e.schools == item.schools) ?"yellow":"grey"} />
+                  </TouchableOpacity>
+              </TouchableOpacity>
+            </View>
+              }
+            />
+            <FlatList
+              scrollEnabled={this.props.auth.logged_in == "yes"}
+              tabLabel="SAT"
+              style={{backgroundColor: 'white'}}
+              data={this.sort("sat")}
+              showsVerticalScrollIndicator={false}
+              keyExtractor={(item, index) => item.schools}
+              renderItem={({item}) =>
+              <View style={styles.flatview}>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
+                  <Text style={[styles.left]}>{item["schools"]}</Text><Text style={[styles.right]}> {item["sat"]} </Text>
+                  <TouchableOpacity style={styles.favorite}  onPress={()=>this.handleButton(item)}>
+                  <Ionicons  name={ this.props.favorites.some(e => e.schools == item.schools) ? "ios-star":"ios-star-outline"} size={32} color={this.props.favorites.some(e => e.schools == item.schools)?"yellow":"grey"} />
+
                   </TouchableOpacity>
               </TouchableOpacity>
             </View>
               }
             />
 
-          
+            {this.props.auth.income_bracket == "all" ? null :
+              <FlatList
+              scrollEnabled={this.props.auth.logged_in == "yes"}
+              tabLabel="Cost"
+              style={{backgroundColor: 'white'}}
+              data={this.sort(this.props.auth.income_bracket)}
+              showsVerticalScrollIndicator={false}
+              keyExtractor={(item, index) => item.schools}
+              renderItem={({item}) =>
+              <View style={styles.flatview}>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailsScreen', { university: item })} style={[styles.button, { alignItems:'center',flexDirection:'row',justifyContent:'space-around',backgroundColor: '#e0e0e0', margin: 5}]} >
+                  <Text style={[styles.left]}>{item["schools"]}</Text><Text style={[styles.right]}> {item[this.props.auth.income_bracket]} </Text>
+                  <TouchableOpacity style={styles.favorite}  onPress={()=>this.handleButton(item)}>
+                  <Ionicons  name={ this.props.favorites.some(e => e.schools == item.schools) ? "ios-star":"ios-star-outline"} size={32} color={this.props.favorites.some(e => e.schools == item.schools) ?"yellow":"grey"} />
+
+                  </TouchableOpacity>
+              </TouchableOpacity>
+            </View>
+              }
+            />
+            }
 
           </ScrollableTabView>
           </View>
         </View>
       );
-  
   }
 }
 }
 
 
-
-
 const styles = StyleSheet.create({
+  favorite:{
+  
+    justifyContent:'center',
+    alignItems:'center',
+  },
   wrapper:{},
   right: {
     textAlign: 'center',
@@ -325,7 +354,7 @@ const styles = StyleSheet.create({
 
 
 const mapStateToProps = state => {
-  return { favorites: state.favorites };
+  return { favorites: state.favorites, auth:state.auth, school_list:state.school_list};
 };
 const mapDispatchToProps = dispatch => (
   bindActionCreators({

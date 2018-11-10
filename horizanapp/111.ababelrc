@@ -1,0 +1,9 @@
+{
+  "presets": ["env","react","babel-preset-expo"],
+  "plugins": ["transform-object-rest-spread"],
+  "env": {
+    "development": {
+      "plugins": ["transform-react-jsx-source"]
+    }
+  }
+}

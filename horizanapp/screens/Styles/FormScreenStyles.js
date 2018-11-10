@@ -96,6 +96,18 @@ export default StyleSheet.create({
     submitText:{
         fontSize:16, 
         color:'white',
+    },
+    checkBoxStyles:{
+        paddingLeft:20,
+        paddingRight:20,
+        margin:5,
+        borderRadius:5,
+        borderColor:'grey',
+        flexDirection:"row", 
+        justifyContent:'space-between',
+        alignItems:'center', 
+        borderWidth:1,
+        width:"90%",
     }
 
 })

@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, Image, Text, Dimensions, Linking, View, TouchableOpacity, WebView } from 'react-native';
-import * as firebase from "firebase/app"
+import { StyleSheet,Button, Image, Text, Dimensions, Linking, View, TouchableOpacity, WebView } from 'react-native';
 import Swiper from 'react-native-swiper';
+import { Ionicons } from '@expo/vector-icons';
+
 
 // import ans_map from "../assets"
 
@@ -10,9 +11,13 @@ import {Images} from '../Themes';
 import { connect } from 'react-redux';
 import { addFavorite } from '../redux/actions/index'
 import { removeFavorite } from '../redux/actions/remove_favorite'
-import { Icon } from 'react-native-elements'
+
 
 import { bindActionCreators } from 'redux';
+
+import firebase from "@firebase/app"
+import "firebase/auth"
+import "firebase/database"
 
 class SettingsScreen extends React.Component {
     constructor(props) {
@@ -62,39 +67,32 @@ class SettingsScreen extends React.Component {
         
         }}
     }
+   
 
 
-    static navigationOptions = {
-        tabBarLabel: '',
-        headerStyle: {
-            backgroundColor: 'white',
-            elevation: 0,
-            shadowOpacity: 0,
-          }
-      };
+      static navigationOptions = ({ navigation, screenProps }) => ({
+        title: "My Profile!",
+        headerLeft: <Button title="Back" onPress={()=>{ navigation.goBack(); }} />,
+      });
 
       componentDidMount(){
-        let univ = this.props.navigation.getParam('university', '');
-        console.log(univ.school)
-        let data = firebase.database().ref('universities/' + univ.Schools.replace("_","."))
-        data.once('value').then(snapshot => {
-            
-            
+      
             this.setState({
                 loading:false,
-                school_info: snapshot.val(),
+                school_info: this.props.navigation.getParam('university', ''),
             })
-        })
+        
 
       }
 
       handleClick = () => {
-        let site_addr = this.state.school_info["Websites"]
+        // console.log(this.state.school_info);
+        let site_addr = this.state.school_info["websites"]
         Linking.canOpenURL(site_addr).then(supported => {
           if (supported) {
             Linking.openURL(site_addr);
           } else {
-            console.log("Internal Error with URI: " + site_addr);
+            // console.log("Internal Error with URI: " + site_addr);
           }
         });
       };
@@ -102,20 +100,29 @@ class SettingsScreen extends React.Component {
 
   handleButton(school){
 
-    { this.props.favorites.includes(school) ? 
-      this.props.removeFavorite(school)
-      :
-      this.props.addFavorite(school)
-    }
+    if (this.props.favorites.includes(school)){ 
+        firebase.database().ref('Users/' + this.props.auth.userid + "/favorites/"+school["schools"].replace("_",".")).remove()
+        
+        this.props.removeFavorite(school)
+      } else {
+        let ref = firebase.database().ref('Users/' + this.props.auth.userid + "/favorites")
+  
+        let schoolname = school["schools"].replace("_",".")
+        ref.update({[schoolname]:school})
+        
+  
+        this.props.addFavorite(school)
+      }
+  
   }
       render() {
-          
+        //   console.log(this.state.school_info)
 
 
         if (this.state.loading == false){
     
-            let img_name = this.state.school_info["Schools"].toLowerCase().split(" ").join("_")
-            console.log(img_name)
+            let img_name = this.state.school_info["schools"].toLowerCase().split(" ").join("_")
+            // console.log(img_name)
         return (
             <View style={styles.container}>
 
@@ -125,58 +132,117 @@ class SettingsScreen extends React.Component {
                 </View>
                 <View style={styles.header}>
                     <Text style={{fontSize:25, fontWeight:'bold', textAlign:'center',}}>
-                        {this.state.school_info.Schools} 
+                        {this.state.school_info.schools} 
                       
                     </Text>
-                    <Icon
-                    raised
-                    size={20}
-                    name='heart'
-                    type='font-awesome'
-                    color={this.props.favorites.indexOf(this.state.school_info) > -1 ? "#ff0000":"#000000"}
-                    onPress={()=>this.handleButton(this.state.school_info)}
-                  />
+                    <TouchableOpacity style={{margin:10,borderRadius:10,borderColor:'grey',backgroundColor:this.props.favorites.indexOf(this.state.school_info) > -1 ? "grey":"white",borderWidth:1,padding:10,flexDirection:'row',alignItems:'center',}}
+                                                    onPress={()=>this.handleButton(this.state.school_info)}>
+                                                    
+                        <Text style={{fontSize:15,}}>{ this.props.favorites.indexOf(this.state.school_info) > -1 ? "Remove from ":"Add to "}favorites </Text>
+                        <Ionicons  name={ this.props.favorites.indexOf(this.state.school_info) > -1 ? "ios-star":"ios-star-outline"} 
+                                size={20} 
+                                color={this.props.favorites.indexOf(this.state.school_info) > -1 ?"yellow":"grey"} 
+                                onPress={()=>this.handleButton(this.state.school_info)}/>
+                    </TouchableOpacity> 
+                   
                 </View>
+                {this.props.auth.income_bracket == "all" ? 
                 <Swiper
                     showsButtons={true}
                     paginationStyle={{bottom:-10}}
                     loop={false}
                 >
+
                 <View style={styles.infoBox}>
                     <Text style={styles.infoText}>
-                        Type: {this.state.ans_map["School size"][this.state.school_info["School size"]]}
+                        Type: {this.state.ans_map["School size"][this.state.school_info["schoolSize"]]}
                     </Text>
                     <Text style={styles.infoText}>
-                        Average SAT: {this.state.school_info["SAT"]}
+                        Average SAT: {this.state.school_info["sat"]}
                     </Text>
                     <Text style={styles.infoText}>
-                        Average ACT: {this.state.school_info["ACT"]}
+                        Average ACT: {this.state.school_info["act"]}
                     </Text>
                     <Text style={styles.infoText}>
-                        Location: {this.state.ans_map["Location"][this.state.school_info["Location"]]}
+                        Location: {this.state.ans_map["Location"][this.state.school_info["location"]]}
                     </Text>
                     <Text style={styles.infoText}>
-                        Environment: {this.state.ans_map["Environment"][this.state.school_info["Environment"]]}
+                        Environment: {this.state.ans_map["Environment"][this.state.school_info["environment"]]}
+                    </Text>
+                    <Text style={styles.infoText}>
+                        School Size: {this.state.ans_map["School size"][this.state.school_info["schoolSize"]]}
+                    </Text>
+                    <Text style={styles.infoText}>
+                        Gender: {this.state.ans_map["Gender"][this.state.school_info["gender"]]}
                     </Text>
                         
                 </View>
-                <View style={styles.infoBox}>
-                    <Text style={styles.infoText}>
-                        School Size: {this.state.ans_map["School size"][this.state.school_info["School size"]]}
-                    </Text>
-                    <Text style={styles.infoText}>
-                        Gender: {this.state.ans_map["Gender"][this.state.school_info["Gender"]]}
-                    </Text>
-                    <Text style={styles.infoText}>
-                        In state cost: {this.state.school_info["In state Cost"] != undefined ? "N/A" : this.state.ans_map["In state Cost"][this.state.school_info["In state Cost"]]}
-                    </Text>
-                    <Text style={styles.infoText}>
-                        Out of state cost: {this.state.ans_map["Out state Cost"][this.state.school_info["Out state Cost"]]}
-                    </Text>
-                </View>
+                <View style={{flex:1,}}>
+                <Text style={{alignSelf:'center',}}> Adjusted costs by income bracket</Text>
 
+                    <View style={styles.infoBox}>
+                        <Text style={styles.infoText}>
+                            $0-$30,000: {[this.state.school_info["averageNetPricePerIncome030000"]]}
+                        </Text>
+                    
+                        <Text style={styles.infoText}>
+                            $0-$30,000: {[this.state.school_info["averageNetPricePerIncome3000148000"]]}
+                        </Text>
+                        <Text style={styles.infoText}>
+                            $0-$30,000: {[this.state.school_info["averageNetPricePerIncome4800175000"]]}
+                        </Text>
+                        <Text style={styles.infoText}>
+                            $0-$30,000: {[this.state.school_info["averageNetPricePerIncome75001110000"]]}
+                        </Text>
+
+
+                        <Text style={styles.infoText}>
+                            $0-$30,000: {[this.state.school_info["averageNetPricePerIncome110001"]]}
+                        </Text>
+                </View>
+                </View>
                 </Swiper>
-                <TouchableOpacity onPress={this.handleClick} style={{width:'75%', marginBottom:50, marginTop:50, borderRadius:15, height:50, justifyContent:'center',alignItems:'center',backgroundColor:'blue'}}>
+                :
+                <Swiper
+                showsButtons={true}
+                paginationStyle={{bottom:-10}}
+                loop={false}
+            >
+
+            <View style={styles.infoBox}>
+                <Text style={styles.infoText}>
+                    Type: {this.state.ans_map["School size"][this.state.school_info["schoolSize"]]}
+                </Text>
+                <Text style={styles.infoText}>
+                    Average SAT: {this.state.school_info["sat"]}
+                </Text>
+                <Text style={styles.infoText}>
+                    Average ACT: {this.state.school_info["act"]}
+                </Text>
+                <Text style={styles.infoText}>
+                    Location: {this.state.ans_map["Location"][this.state.school_info["location"]]}
+                </Text>
+                 
+            </View>
+            <View style={styles.infoBox}>
+                    <Text style={styles.infoText}>
+                            Environment: {this.state.ans_map["Environment"][this.state.school_info["environment"]]}
+                    </Text>
+                    <Text style={styles.infoText}>
+                        School Size: {this.state.ans_map["School size"][this.state.school_info["schoolSize"]]}
+                    </Text>
+                    <Text style={styles.infoText}>
+                        Gender: {this.state.ans_map["Gender"][this.state.school_info["gender"]]}
+                    </Text>
+                    <Text style={styles.infoText}>
+                        Adjusted Estimated Cost: {[this.state.school_info[this.props.auth.income_bracket]]}
+                    </Text>
+                    
+                </View>
+            </Swiper>
+
+                }
+                <TouchableOpacity onPress={this.handleClick} style={{width:'75%', marginBottom:25, marginTop:25, borderRadius:15, height:30, justifyContent:'center',alignItems:'center',backgroundColor:'blue'}}>
                     <Text style={{color:'white',fontSize:20}}>
                         Visit Website
                     </Text>
@@ -202,8 +268,8 @@ const styles = StyleSheet.create({
       
     },
   infoBox:{
-    marginTop:25,
-    height:'80%',
+    marginTop:10,
+    height:'100%',
     width:'100%',
     paddingLeft:'10%',
     flexDirection:'column',
@@ -212,6 +278,8 @@ const styles = StyleSheet.create({
 
   },
   infoText:{
+      flex:1,
+      
     textAlign:'left'
   },    
   univ_img: {
@@ -227,7 +295,7 @@ const styles = StyleSheet.create({
       alignItems:'center',
   },
   header:{
-      flexDirection:'row',
+      flexDirection:'column',
       justifyContent:'center',
       alignItems:'center',
   }
@@ -235,7 +303,7 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => {
-    return { favorites: state.favorites };
+    return { favorites: state.favorites, auth: state.auth };
   };
   const mapDispatchToProps = dispatch => (
     bindActionCreators({

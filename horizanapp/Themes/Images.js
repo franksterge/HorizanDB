@@ -43,7 +43,7 @@ const images = {
     clemson_university: require("../assets/images/clemson_university.png"),
     colarado_school_of_mines: require("../assets/images/colarado_school_of_mines.png"),
     colarado_state_university: require("../assets/images/colarado_state_university.png"),
-    college_of_william_and_mary: require("../assets/images/college_of_william_and_mary.png"),
+    college_of_william__mary: require("../assets/images/college_of_william_and_mary.png"),
     columbia_university: require("../assets/images/columbia_university.png"),
     cornell_university: require("../assets/images/cornell_university.png"),
     dallas_baptist_university: require("../assets/images/dallas_baptist_university.png"),

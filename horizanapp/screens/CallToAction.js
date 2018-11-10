@@ -4,6 +4,11 @@ import styles from ".././assets/styles/styles";
 import Touchable from 'react-native-platform-touchable';
 import {Images} from '../Themes/';
 import { BlurView } from 'expo';
+import { persistor, store } from '../redux/store';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { logOut } from '../redux/actions/log_out'
+
 
 import * as firebase from "firebase/app"
 
@@ -12,7 +17,7 @@ import 'firebase/firestore'
 import 'firebase/functions'
 import 'firebase/database'
 
-export default class CallToAction extends React.Component {
+class CallToAction extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -33,16 +38,17 @@ export default class CallToAction extends React.Component {
   };
 
     componentDidMount(){
-      let userid = this.props.navigation.getParam('userid', '')
-      let logged_in = this.props.navigation.getParam('logged_in', '')
-      console.log("userid: " + userid)
-      console.log("logged_in: " + logged_in)
+      // console.log(this.props)
+      let userid = this.props.auth.userid
+      let logged_in = this.props.auth.logged_in
+      // console.log("userid: " + userid)
+      // console.log("logged_in: " + logged_in)
       this.setState({userid, logged_in});
 
     }
     
     handleLog(logged_in){
-      if(logged_in != null){
+      if(logged_in == "yes"){
         this.setState({modalVisible:true});
       } else {
         this.props.navigation.navigate("LoginScreen", {origin:"CallToAction"});
@@ -51,12 +57,11 @@ export default class CallToAction extends React.Component {
 
     signOut(){
       AsyncStorage.clear();
-      let newUserId =  Math.random().toString(36).substr(2, 9)
-      AsyncStorage.setItem('userid',newUserId)
-      firebase.database().ref('Users/' + newUserId + "/forms").set({taken:false})
+      this.props.logOut(Math.random().toString(36).substr(2, 9))
+
+      firebase.database().ref('Users/' + this.props.auth.userid + "/forms").set({taken:false})
 
       this.setState({
-        userid:newUserId,
         modalVisible:false,
         logged_in:false,
 
@@ -108,7 +113,7 @@ export default class CallToAction extends React.Component {
             <Text style={[styles.para, { color: '#0400CF'}]}>
                     Take hold of tomorrow with
                   </Text>
-            <Text style={[styles.title, { color: '#0400CF', fontSize: 75}]}>
+            <Text onPress={()=>AsyncStorage.clear()} style={[styles.title, { color: '#0400CF', fontSize: 75}]}>
                     Horizan
                   </Text>
             </View>
@@ -119,9 +124,9 @@ export default class CallToAction extends React.Component {
                   </Text>
             </Touchable>
             
-            <Touchable onPress={()=>this.handleLog(this.state.logged_in)} style={[styles.button,{ margin:50,justifyContent:'center', backgroundColor:'black', alignItems:'center', height:40, width:'60%', alignSelf:'center', borderRadius:15}]} >
+            <Touchable onPress={()=>this.handleLog(this.props.auth.logged_in)} style={[styles.button,{ margin:50,justifyContent:'center', backgroundColor:'black', alignItems:'center', height:40, width:'60%', alignSelf:'center', borderRadius:15}]} >
                   <Text style={{fontSize:16, color:'white',}}>
-                    {this.props.navigation.getParam('logged_in', '')!=null ? "Log Out" : 'Log in / Register'}
+                    {this.state.logged_in == "yes" ? "Log Out" : 'Log in / Register'}
                   </Text>
             </Touchable>
 
@@ -153,3 +158,14 @@ export default class CallToAction extends React.Component {
     },
 
   })
+
+const mapStateToProps = state => {
+  return { auth: state.auth };
+};
+
+const mapDispatchToProps = dispatch => (
+  bindActionCreators({
+    logOut
+  }, dispatch)
+);
+export default connect(mapStateToProps, mapDispatchToProps)(CallToAction);

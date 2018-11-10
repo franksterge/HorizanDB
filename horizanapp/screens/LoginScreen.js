@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, TextInput, Button, Modal, AsyncStorage, Alert, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { Text, View, StyleSheet,HeaderBackButton, TextInput, Button, Modal, AsyncStorage, Alert, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { Constants, Google } from 'expo';
 import styles from ".././assets/styles/styles";
 import Touchable from 'react-native-platform-touchable';
@@ -8,38 +8,38 @@ import { Ionicons } from '@expo/vector-icons';
 import {StackActions, NavigationActions} from 'react-navigation';
 import './global.js'
 import {Images} from '../Themes';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { logIn } from '../redux/actions/log_in'
+import { addFavorite } from '../redux/actions/index'
+import { addSchools } from '../redux/actions/add_schools'
+import { setIncome } from '../redux/actions/set_income'
+import * as Progress from 'react-native-progress';
 
 
 import firebase from "@firebase/app"
 import "firebase/auth"
 import "firebase/database"
 
-export default class LoginScreen extends Component {
+class LoginScreen extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
       modalVisible:false,
+      loading:false,
       email:'',
       password1:'',
       password2:'',
     }
   }
-
-    static navigationOptions = {
-        tabBarLabel: '',
-        headerTitle:<Image style={{height:'70%',width:'70%',resizeMode:'contain'}} source={Images.logo_full}/>,
-
-        headerStyle: {
-          backgroundColor: 'white',
-          elevation: 0,
-          shadowOpacity: 0
-        }
-      };
+  static navigationOptions = ({ navigation, screenProps }) => ({
+    title: "My Profile!",
+    headerLeft: <Button title="Back" onPress={()=>{ navigation.goBack(); }} />,
+  });
 
     componentDidMount(){
         //Constantly check for login, then upload info to firebase
-        this._checkForUser();
     }
 
   _checkForUser = () => {
@@ -47,7 +47,6 @@ export default class LoginScreen extends Component {
       if (user) {
         // User is signed in.
         // console.log(user);
-        global.user = user;
 /*         Alert.alert(
           'Got Data!',
           `Hi ${user.displayName}!`,
@@ -85,59 +84,95 @@ export default class LoginScreen extends Component {
     const out = this;
     try {
       const results = await Google.logInAsync({
+        behavior:'web',
        // androidStandaloneAppClientId: '<ANDROID_CLIENT_ID>',
        // iosStandaloneAppClientId: '<IOS_CLIENT_ID>',
-        androidClientId: '7107222998-j63jutpdimj4u5m9str4opk79olqmhee.apps.googleusercontent.com',
+        //androidClientId: '7107222998-j63jutpdimj4u5m9str4opk79olqmhee.apps.googleusercontent.com',
+        // iosClientId: "697630274134-299bvmv4rlnais3gfk4pnudimii6dpn3.apps.googleusercontent.com",
         iosClientId: '7107222998-qcmpffaqdkfo0cse1i10gf0t48n2t4go.apps.googleusercontent.com',
         scopes: ['profile', 'email']
       });
 
-      const origin = this.props.navigation.getParam('origin', '');
 
       switch (results.type) {
         case 'success': {
-          AsyncStorage.setItem("logged_in","yes")
-          let olduserid = ''
-          AsyncStorage.getItem('userid', (error3, userid) => {
-            olduserid = userid
-          })
-          console.log(results);
-          let newuserid = results["user"]["email"].replace(".","_")
+          this.setState({loading:true})
+          // this.props.navigation.navigate('LoginLoading', {results:results})
+          // console.log(this.props)
+          let olduserid = this.props.auth.userid
+          this.props.logIn(results["user"]["email"].replace(".","_"))
+
+          // console.log(results);
+          // console.log('Users/' + olduserid);
+          // console.log(this.props)
+          let newuserid = this.props.auth.userid
+
+          let data_raw = firebase.database().ref('Users/'+newuserid)
+          data_raw.once('value').then(snapshot=>{
+            let data = snapshot.val();
+            if (data != null && data["schools"] != null){
+              this.props.setIncome(data["income"])
+
+              this.props.addSchools(data["schools"])
+              // console.log("retrieving existing data")
+              if (data["favorites"] != null){
+                for (var school in data['favorites']){
+                  this.props.addFavorite(data['favorites'][school])
+                }
+              }
+              // console.log(data["income"])
+             
+
+              this.props.navigation.navigate("ResultsScreen")
           
-          let oldData = firebase.database().ref('Users/' + olduserid)
-          oldData.once('value').then(snapshot => {
-            if (snapshot.val() == null){
-              firebase.database().ref('Users/' + [newuserid]).set({form:"yes"})
-              AsyncStorage.setItem("userid",newuserid)
 
             } else {
-              firebase.database().ref('Users/' + [newuserid]).set(snapshot.val())
-              AsyncStorage.setItem("userid",newuserid)
-            }})
-          //     let tempData = firebase.database().ref('Users/' + olduserid)
-          //     tempData.once('value').then(snapshot2 => {
-          //       firebase.database().ref('Users/' + newuserid).set(snapshot2.val())
-          //     })
-          //     AsyncStorage.setItem("userid",newuserid)
+                // console.log("transferring data")
+               
+                let oldDataRaw = firebase.database().ref('Users/' + olduserid);
+                oldDataRaw.once('value').then(oldsnapshot => {
+                  
+                  let oldData = oldsnapshot.val()
+                  this.props.setIncome(oldData["income"])
+                  this.props.addSchools(oldData["schools"])
+                  if (oldData["schools"] != null){
+                    // console.log("form taken in temp user")
+                    if (oldData != null && oldData["schools"] != null){
+                      if (oldData["favorites"] != null){
+                        for (var school in oldData['favorites']){
+                          this.props.addFavorite(oldData['favorites'][school])
+                        }
+                      }
+                      
 
-          //   }
+                    firebase.database().ref('Users/' + [newuserid]).set(oldData)
+                    this.props.navigation.navigate("ResultsScreen")
+                  } else {
+                    // console.log("form not taken")
+                    if (snapshot.val() == null){
+                      firebase.database().ref('Users/' + [newuserid]+"/forms").set({taken:false})
+                      this.props.navigation.navigate("CallToAction", {userid:newuserid,logged_in:"yes"})
+  
+                    } 
+                  }
+                }})
+            }
+          })
+
+
+          // // case when user is logging in and has before
+          // let newdata = firebase.database().ref('Users/' + newuserid)
+          // newdata.once('value').then(snapshot => {
+          //   console.log("entering check")
+          //   let data = snapshot.val()
+          //   if (data != null && data["schools"] != null){
+          //     this.props.addSchools(data["schools"])
+          //     console.log("form taken logged in ")
+          //     this.props.navigation.navigate("ResultsScreen", {school_list:snapshot.val()})
+
+          //   } 
           // })
-          // firebase.database().ref('Users/' + [newuserid]).set(snapshot.val())
-          // AsyncStorage.setItem("userid",newuserid)
-          
-            console.log("test")
-
-          // const credential = firebase.auth.GoogleAuthProvider.credential(results.idToken, results.accessToken);
-          // firebase.auth().signInAndRetrieveDataWithCredential(credential);
-
-          if (origin == "resultsScreen"){
-            console.log("TeST")
-            this.props.navigation.navigate("ResultsScreen", {school_list:this.props.navigation.getParam('school_list', '')})
-            
-          } else {
-            this.props.navigation.navigate("CallToAction", {userid:newuserid,logged_in:"yes"})
-          }
-
+     
           break;
         }
         case 'cancel': {
@@ -245,6 +280,28 @@ export default class LoginScreen extends Component {
           </View>
         );
     }else{
+      if (this.state.loading){
+        return (
+          <View style={{flex: 1, justifyContent: 'space-around', alignItems: 'center'}}>
+          <View style={{flex:0, justifyContent:'center',alignItems:'center',height:150, width:150, }}>
+              <Progress.CircleSnail spinDuration={5000} style={{position:'absolute',}} size={100} color={"#FFDA6B"} thickness={25} indeterminate={true} />
+              <Progress.CircleSnail spinDuration={5000} style={{position:'absolute',}} size={150} color={"#56B0F2"}  thickness={25} indeterminate={true} />
+              <Progress.CircleSnail spinDuration={5000} style={{position:'absolute',}} size={200} color={"#0400CF"}  thickness={25} indeterminate={true} />
+          </View>
+          <View style={{flex: 0, justifyContent: 'center', alignItems: 'center'}}>
+          <Text style={[styles.para, { color: '#0400CF'}]}>
+                  Take hold of tomorrow with
+                </Text>
+          <Text onPress={()=>AsyncStorage.clear()} style={[styles.title, { color: '#0400CF', fontSize: 75}]}>
+                  Horizan
+                </Text>
+          </View>
+          <Text style={[styles.para, {fontSize:20, marginBottom:50,color: '#0400CF'}]}>
+                  Now Loading...
+                </Text>
+        </View>
+        )
+      } else {
           return (
             <View style={{backgroundColor: 'white', flex: 1, flexDirection: 'column', justifyContent: 'flex-end'}}>
            
@@ -274,9 +331,26 @@ export default class LoginScreen extends Component {
           </View>
         );
     }
+  }
     
   }
 }
+
+
+const mapStateToProps = state => {
+  return { auth: state.auth, favorites:state.favorites,school_list:state.school_list };
+};
+
+const mapDispatchToProps = dispatch => (
+  bindActionCreators({
+    logIn,
+    addFavorite, 
+    addSchools,
+    setIncome
+  }, dispatch)
+);
+export default connect(mapStateToProps,mapDispatchToProps)(LoginScreen);
+
 
 const mystyles = StyleSheet.create({
   
