@@ -5,6 +5,7 @@ import { StyleSheet,Image, Text, View, Alert, AsyncStorage} from 'react-native';
 import {Images} from './Themes';
 
 
+
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { persistor, store } from './redux/store';
@@ -42,7 +43,13 @@ import './screens/global.js'
 import InitialLoadingScreen from './screens/InitialLoadingScreen';
 
 
-AsyncStorage.clear();
+import Sentry from 'sentry-expo';
+
+// Remove this once Sentry is correctly setup.
+Sentry.enableInExpoDevelopment = true;
+
+Sentry.config('https://c216f4692225444e88ff0f34500f877a@sentry.io/1321346').install();
+
 
 //Configure Firebase Settings
 var config = {

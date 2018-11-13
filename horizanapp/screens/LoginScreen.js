@@ -60,7 +60,7 @@ class LoginScreen extends Component {
 
   handleLogout = () => {
 
-    AsyncStorage.clear()
+   
     const out = this;
       firebase.auth().signOut()
     
@@ -246,7 +246,7 @@ class LoginScreen extends Component {
 
           </View>
           </Modal>
-              <Text onPress={()=>AsyncStorage.clear()} style={[styles.para, {flex: 0, marginBottom: 40, marginTop: 10}]}>
+              <Text style={[styles.para, {flex: 0, marginBottom: 40, marginTop: 10}]}>
                     Log into your Horizan Account
                 </Text>
             <View style={{flexDirection: 'column', justifyContent: 'center'}}>
@@ -292,7 +292,7 @@ class LoginScreen extends Component {
           <Text style={[styles.para, { color: '#0400CF'}]}>
                   Take hold of tomorrow with
                 </Text>
-          <Text onPress={()=>AsyncStorage.clear()} style={[styles.title, { color: '#0400CF', fontSize: 75}]}>
+          <Text style={[styles.title, { color: '#0400CF', fontSize: 75}]}>
                   Horizan
                 </Text>
           </View>

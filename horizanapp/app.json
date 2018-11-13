@@ -6,10 +6,8 @@
     "privacy": "public",
     "sdkVersion": "31.0.0",
     "platforms": ["ios", "android"],
-    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -23,7 +21,6 @@
     ],
     "ios": {
       "infoPlist": {
-        "LSApplicationQueriesSchemes":["com.googleusercontent.apps.7107222998-qcmpffaqdkfo0cse1i10gf0t48n2t4go"],
         "CFBundleURLTypes": [
          {
             "CFBundleTypeRole": "Editor",
@@ -39,6 +36,18 @@
           "reservedClientId": "7107222998-qcmpffaqdkfo0cse1i10gf0t48n2t4go.apps.googleusercontent.com"
       }
     }
+  },
+  "hooks": {
+    "postPublish": [
+      {
+        "file": "sentry-expo/upload-sourcemaps",
+        "config": {
+          "organization": "horizan",
+          "project": "horizan",
+          "authToken": "0f8513b3a08247319b3af67b222d2a17a1534ee6d98045c4827bc958fdf4008f"
+        }
+      }
+    ]
   }
 
   }

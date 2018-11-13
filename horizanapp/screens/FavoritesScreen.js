@@ -72,7 +72,7 @@ class FavoritesScreen extends React.Component {
       <View style={styles.container}>
         <View style={styles.headerContainer}>
           <View style={{borderBottomWidth:1}}>
-            <Text style={styles.headerText} onPress={()=>AsyncStorage.clear()}>
+            <Text style={styles.headerText}>
               Favorites
             </Text>
           </View>

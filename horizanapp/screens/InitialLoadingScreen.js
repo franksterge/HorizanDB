@@ -124,7 +124,7 @@ class InitialLoadingScreen extends React.Component {
         <Text style={[styles.para, { color: '#0400CF'}]}>
                 Take hold of tomorrow with
               </Text>
-        <Text onPress={()=>AsyncStorage.clear()} style={[styles.title, { color: '#0400CF', fontSize: 75}]}>
+        <Text style={[styles.title, { color: '#0400CF', fontSize: 75}]}>
                 Horizan
               </Text>
         </View>

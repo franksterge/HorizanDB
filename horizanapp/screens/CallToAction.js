@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image, Modal, StyleSheet, TouchableOpacity, AsyncStorage } from 'react-native';
+import { Text, View, Button, Image, Modal, StyleSheet, TouchableOpacity, AsyncStorage } from 'react-native';
 import styles from ".././assets/styles/styles";
 import Touchable from 'react-native-platform-touchable';
 import {Images} from '../Themes/';
@@ -8,6 +8,7 @@ import { persistor, store } from '../redux/store';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { logOut } from '../redux/actions/log_out'
+
 
 
 import * as firebase from "firebase/app"
@@ -56,7 +57,7 @@ class CallToAction extends React.Component {
     }
 
     signOut(){
-      AsyncStorage.clear();
+      AsyncStorage.getAllKeys().then(AsyncStorage.multiRemove)
       this.props.logOut(Math.random().toString(36).substr(2, 9))
 
       firebase.database().ref('Users/' + this.props.auth.userid + "/forms").set({taken:false})
@@ -113,7 +114,7 @@ class CallToAction extends React.Component {
             <Text style={[styles.para, { color: '#0400CF'}]}>
                     Take hold of tomorrow with
                   </Text>
-            <Text onPress={()=>AsyncStorage.clear()} style={[styles.title, { color: '#0400CF', fontSize: 75}]}>
+            <Text style={[styles.title, { color: '#0400CF', fontSize: 75}]}>
                     Horizan
                   </Text>
             </View>
