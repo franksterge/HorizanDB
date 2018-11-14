@@ -46,7 +46,7 @@ import InitialLoadingScreen from './screens/InitialLoadingScreen';
 import Sentry from 'sentry-expo';
 
 // Remove this once Sentry is correctly setup.
-Sentry.enableInExpoDevelopment = true;
+// Sentry.enableInExpoDevelopment = true;
 
 Sentry.config('https://c216f4692225444e88ff0f34500f877a@sentry.io/1321346').install();
 
