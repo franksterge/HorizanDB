@@ -108,10 +108,16 @@ class DeadlinesScreen extends React.Component {
   }
 
   sort(){
-          
+    
+    // this.props.school_list.forEach(school => {
+    //   console.log(deadlines[school.schools]["regularDecisionDeadline"])
+    //   console.log(Date.parse(deadlines[school.schools]["regularDecisionDeadline"]))
+    //   console.log("==")
+    // });
+
     let data = this.props.school_list.filter(school=> Date.parse(deadlines[school.schools]["regularDecisionDeadline"]) > (new Date()) || deadlines[school.schools]["regularDecisionDeadline"] == "rolling").slice()
 
-
+    
     // if (key == "ACT" || key == "SAT"){
       
       return data.sort(function(a,b){

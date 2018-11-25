@@ -18,6 +18,7 @@
     "eslint": "^5.8.0",
     "expo": "^31.0.5",
     "expo-cli": "^2.3.8",
+    "expo-mixpanel-analytics": "0.0.7",
     "firebase": "^5.5.8",
     "for": "^0.1.0",
     "lodash": "^4.17.11",

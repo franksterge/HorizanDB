@@ -1,6 +1,6 @@
 import React from 'react';
 // import * as Progress from 'react-native-progress';
-import { StyleSheet, Text, View, AsyncStorage, Image} from 'react-native';
+import { StyleSheet, Text, View, AsyncStorage, Image, NetInfo} from 'react-native';
 import styles from './Styles/ResultsLoadingStyle';
 import {Images} from '../Themes';
 import * as firebase from "firebase/app"
@@ -31,9 +31,7 @@ class ResultsLoading extends React.Component {
     }
   }
 
-  shouldComponentUpdate(){
-    return false;
-  }
+ 
 
   componentDidMount(){
       // console.log("getting data")
@@ -79,6 +77,11 @@ class ResultsLoading extends React.Component {
     if (this.state.done){
       return <View/>
     } else {
+      NetInfo.getConnectionInfo().then((connectionInfo) => {
+        if (connectionInfo.type == "none"){
+          this.props.navigation.navigate("NetworkErrorScreen", {form_results: this.props.navigation.state.params.form_results, last_screen: "ResultsLoading"});
+        } else {
+     
 
     const incomeDataMap={
       "A":"averageNetPricePerIncome030000",
@@ -97,6 +100,8 @@ class ResultsLoading extends React.Component {
     //const test = this[formMappings.questions[0]];
     const ansArray = [];
     const scoreArray = [];
+    
+    
     firebase.database().ref('Users/' + this.props.auth.userid +"/income").set(incomeDataMap[req[7]])
     
     ansArray.push(req[0]); //Location
@@ -116,7 +121,7 @@ class ResultsLoading extends React.Component {
         body:JSON.stringify([ansArray,scoreArray])
         
     }).then(res=>res.json()).then(res => this.writeUserData(res, req[7]));
-
+ }});
 
 
     return (
@@ -127,12 +132,12 @@ class ResultsLoading extends React.Component {
             <Text style={styles.headerText}> Fetching your matches now... </Text>
             <Progress.Circle size={100} indeterminate={true} />
         </View>
-        
-
-
       </View>
     );
+      
+  
   }
+  
 }
 }
 

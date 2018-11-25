@@ -24,6 +24,7 @@ import "firebase/auth"
 import "firebase/database"
 
 //screens
+import NetworkErrorScreen from './screens/NetworkErrorScreen';
 import CallToAction from './screens/CallToAction';
 import FormScreen from './screens/FormScreen';
 import HomeScreen from './screens/HomeScreen';
@@ -36,6 +37,7 @@ import DetailsScreen from './screens/DetailsScreen';
 import ResultsLoading from "./screens/ResultsLoading";
 import InitialLoading from "./screens/InitialLoadingScreen"
 import DeadlinesScreen from "./screens/DeadlinesScreen"
+import PrivacyPolicyScreen from "./screens/PrivacyPolicyScreen"
 
 
 //global variables
@@ -73,13 +75,14 @@ const RootStack = createStackNavigator({
   LoginFlow: {
     screen: createStackNavigator({
       InitialLoading: { screen: InitialLoading },
-
+      NetworkErrorScreen: {screen: NetworkErrorScreen},
       CallToAction: { screen: CallToAction }, //welcome
       FormScreen: { screen: FormScreen }, //the form
       LoginScreen: { screen: LoginScreen },  //login page
       RegisterScreen: { screen: RegisterScreen }, //Register page
       ResultsLoading: { screen: ResultsLoading },
       DetailsScreen: { screen: DetailsScreen },
+      PrivacyPolicyScreen: {screen:PrivacyPolicyScreen},
 
       FavoritesTab: { screen: createBottomTabNavigator({
         FavoritesScreen: { screen: FavoritesScreen }, 

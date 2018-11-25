@@ -35,10 +35,11 @@ class LoginScreen extends Component {
   }
   static navigationOptions = ({ navigation, screenProps }) => ({
     title: "My Profile!",
-    headerLeft: <Button title="Back" onPress={()=>{ navigation.goBack(); }} />,
+    headerLeft: navigation.getParam("last", "") == "loader" ? null : <Button title="Back" onPress={()=>{ navigation.goBack(); }} />,
   });
 
     componentDidMount(){
+      
         //Constantly check for login, then upload info to firebase
     }
 
@@ -204,7 +205,7 @@ class LoginScreen extends Component {
     if(!logged_in){
           return (
             <View style={{backgroundColor: 'white', flex: 1,}}>
-        <Modal
+        {/* <Modal
             animationType="slide"
             transparent={false}
             visible={this.state.modalVisible}
@@ -245,7 +246,7 @@ class LoginScreen extends Component {
             </View>
 
           </View>
-          </Modal>
+          </Modal> */}
               <Text style={[styles.para, {flex: 0, marginBottom: 40, marginTop: 10}]}>
                     Log into your Horizan Account
                 </Text>
@@ -275,8 +276,12 @@ class LoginScreen extends Component {
                         </View>
                     </TouchableOpacity>
                     
+                    
           </View>
-          
+          <View style={mystyles.privacy}>
+              <Text style={{fontSize:12}}>By logging in, you agree to our </Text>
+              <Text onPress={()=>this.props.navigation.navigate("PrivacyPolicyScreen")} style={{fontSize:12, color:'blue'}}>Privacy Policy</Text>
+          </View>
           </View>
         );
     }else{
@@ -363,6 +368,12 @@ const mystyles = StyleSheet.create({
   },
   fieldText:{
     color:'white',
+  },
+  privacy:{
+    flexDirection:'row',
+    position:'absolute',
+    bottom:10,
+    alignSelf:'center',
   },
   submitButton:{
     width:150,

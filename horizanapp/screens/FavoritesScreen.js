@@ -2,10 +2,14 @@ import React from 'react';
 import { StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions, AsyncStorage, Text, View } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import {Images} from '../Themes';
+import moment from 'moment';
+
 
 import { connect } from 'react-redux';
 import { addFavorite } from '../redux/actions/index'
 import { removeFavorite } from '../redux/actions/remove_favorite'
+import { deadlines }  from "../assets/deadlines"
+
 
 
 import { bindActionCreators } from 'redux';
@@ -40,6 +44,7 @@ class FavoritesScreen extends React.Component {
   };
 
   _renderItem (item) {
+
    return (
       
       <TouchableOpacity onPress={()=>{this.props.navigation.navigate("DetailsScreen",{university:item})}}
@@ -53,12 +58,11 @@ class FavoritesScreen extends React.Component {
             <Text style={styles.schoolText}> {item.schools}</Text>
           </View>
           <View style={styles.deadlineBox}>
-            <Text style={styles.deadlineText}> Next deadline: January 12th, 2018</Text>
+            <Text style={styles.deadlineText}> Next deadline: {deadlines[item.schools]["regularDecisionDeadline"] == "rolling" ? "Rolling" : moment(deadlines[item.schools]["regularDecisionDeadline"]).format("LL")}</Text>
           </View>
         </View>
         
-
-          <Image source={Images[item["schools"].toLowerCase().split(" ").join("_").replace("&","").replace("-","")]} style={styles.favoriteCardImage}/>
+          <Image source={Images[item["schools"].toLowerCase().replace(".","").split(" ").join("_").replace("&","")]} style={styles.favoriteCardImage}/>
       </TouchableOpacity>
         
     );
@@ -66,13 +70,12 @@ class FavoritesScreen extends React.Component {
 }
   
   render() {
-
     var {height, width} = Dimensions.get('window');
     return (
       <View style={styles.container}>
         <View style={styles.headerContainer}>
           <View style={{borderBottomWidth:1}}>
-            <Text style={styles.headerText}>
+            <Text onPress={()=>{AsyncStorage.clear()}} style={styles.headerText}>
               Favorites
             </Text>
           </View>
@@ -100,6 +103,10 @@ class FavoritesScreen extends React.Component {
         {this.props.favorites.map(school => this._renderItem(school))}
         </Swiper>
         }
+         <TouchableOpacity style={styles.retakeButton} onPress={()=>this.props.navigation.navigate("FormScreen")}>
+            <Text>Retake Questionnaire</Text>
+        
+          </TouchableOpacity>
 
         <View style={styles.mightLikeBox}>
           <View style={{ alignSelf:'flex-start',borderBottomWidth:1}}>
@@ -107,6 +114,7 @@ class FavoritesScreen extends React.Component {
               Schools you may like
             </Text>
           </View>
+         
           <ScrollView>
             <Text style={{marginTop:15}}> Coming soon..</Text>
 
@@ -152,8 +160,20 @@ const styles = StyleSheet.create({
     borderRadius:10,
 
   },
-  matchBox:{
 
+  retakeButton:{
+    height:'8%',
+    alignItems:'center',
+    justifyContent:'center',
+    backgroundColor:'#D3D3D3',
+    borderColor:'grey',
+    margin:10,
+    width:'80%',
+    borderRadius:10,
+
+  },
+  matchBox:{
+    
   },
   matchText:{
     color:'#38ACEC',
@@ -183,12 +203,14 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
   },
   favoritesCardContainer:{
+    padding:8,
+    flex:1,
     justifyContent:'center',
     alignItems:'center',
     borderRadius:10,
     backgroundColor:'white',
 
-    height:'80%',
+    height:'75%',
    
   },
   favoriteCardImage:{

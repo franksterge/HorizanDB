@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Image, AsyncStorage, Text, View } from 'react-native';
+import { StyleSheet, NetInfo, Image, AsyncStorage, Text, View } from 'react-native';
 import {Images} from '../Themes';
 import styles from ".././assets/styles/styles";
 // import * as Progress from 'react-native-progress';
@@ -60,6 +60,13 @@ class InitialLoadingScreen extends React.Component {
     
       //load font
       async componentDidMount() {
+        NetInfo.getConnectionInfo().then((connectionInfo) => {
+          if (connectionInfo.type == "none"){
+            this.props.navigation.navigate("NetworkErrorScreen", {last_screen: "InitialLoadingScreen"});
+          } else {
+       
+        
+        
 
           // console.log("logged in? >" + this.props.auth.logged_in)
           let userid = this.props.auth.userid
@@ -75,7 +82,6 @@ class InitialLoadingScreen extends React.Component {
             if (data["forms"]["taken"]){
               this.props.formComplete("yes")
              
-              
               if(this.props.auth.logged_in=="yes"){
                   // console.log("logged in and completed form")
                   
@@ -90,7 +96,7 @@ class InitialLoadingScreen extends React.Component {
                   this.props.navigation.navigate("FavoritesTab");
               } else {
                   // console.log("form completed not logged in")
-                  this.props.navigation.navigate("LoginScreen");
+                  this.props.navigation.navigate("LoginScreen", {last:"loader"});
               }    
               
           } else {
@@ -98,6 +104,7 @@ class InitialLoadingScreen extends React.Component {
               this.props.navigation.navigate("CallToAction", {userid:userid, logged_in:"yes"} );
           }
       })
+    }});
     }
     
           

@@ -92,7 +92,7 @@ class SettingsScreen extends React.Component {
           if (supported) {
             Linking.openURL(site_addr);
           } else {
-            // console.log("Internal Error with URI: " + site_addr);
+            console.log("Internal Error with URI: " + site_addr);
           }
         });
       };

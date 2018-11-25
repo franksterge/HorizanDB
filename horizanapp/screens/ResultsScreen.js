@@ -114,14 +114,24 @@ class ResultsScreen extends React.PureComponent {
     if (key.includes("average")){
        
       return data.sort(function(a,b){
+        // console.l
         // console.log(a)
         // console.log(key);
         return (parseInt(a[key].replace("$","").replace(",","")) - parseInt(b[key].replace("$","").replace(",","")))
       })
     }
 
-    if (key == "ACT" || key == "SAT"){
-      
+    if (key == "act" || key == "sat"){
+      // console.log(data)
+
+      if (key == "sat"){
+        // console.log(data.sat_ratio)
+        data = data.filter(data => data.sat_ratio > 1);
+      }
+      if (key == "act"){
+        data = data.filter(data => data.act_ratio > 1);
+      }
+      // console.log(data);
       return data.sort(function(a,b){
         return ((parseInt(b[key].split("-")[0])+parseInt(b[key].split("-")[1]))/2) - ((parseInt(a[key].split("-")[0])+parseInt(a[key].split("-")[1]))/2)
       })
@@ -129,18 +139,17 @@ class ResultsScreen extends React.PureComponent {
     return data.sort(function(a, b){return b[key] - a[key]})
   }
 
-  handleButton(school){
-
-    
+  handleButton(school){   
    
     if (this.props.favorites.includes(school)){ 
-      firebase.database().ref('Users/' + this.props.auth.userid + "/favorites/"+school["schools"].replace("_",".")).remove()
+      firebase.database().ref('Users/' + this.props.auth.userid + "/favorites/"+school["schools"].replace(".","_")).remove()
       
       this.props.removeFavorite(school)
     } else {
       let ref = firebase.database().ref('Users/' + this.props.auth.userid + "/favorites")
 
-      let schoolname = school["schools"].replace("_",".")
+      let schoolname = school["schools"].replace(".","_")
+
       ref.update({[schoolname]:school})
       
 
@@ -162,6 +171,8 @@ class ResultsScreen extends React.PureComponent {
 
   }
 
+  
+
   render() {
     // console.log("favorites below")
     // console.log(this.props.favorites)
@@ -175,7 +186,6 @@ class ResultsScreen extends React.PureComponent {
     // const results = hasData ? this.props.navigation.getParam('data', '{ "No results" : "" }') : this.props.navigation.getParam('results', '{ "No results" : "" }');
 
       //store to user account
-
 
       return (
 
@@ -223,7 +233,7 @@ class ResultsScreen extends React.PureComponent {
             </View>
               }
             />
-           
+           {this.props.school_list.slice().filter(item => item.act_ratio > 1).length > 0 ? 
             <FlatList
               scrollEnabled={this.props.auth.logged_in == "yes"}
               tabLabel="ACT"
@@ -242,6 +252,15 @@ class ResultsScreen extends React.PureComponent {
             </View>
               }
             />
+            : 
+            <View tabLabel="ACT" style={{justifyContent:'center', alignItems:'center', padding:20, flex:1}}>
+               <Text style={{textAlign:'center',fontSize:20}}>
+                  You ACT score is too low to match with any schools..
+               </Text>
+
+            </View>
+            }
+             {this.props.school_list.slice().filter(item => item.sat_ratio > 1).length > 0 ? 
             <FlatList
               scrollEnabled={this.props.auth.logged_in == "yes"}
               tabLabel="SAT"
@@ -261,6 +280,14 @@ class ResultsScreen extends React.PureComponent {
             </View>
               }
             />
+            : 
+            <View tabLabel="SAT" style={{justifyContent:'center', alignItems:'center', padding:20, flex:1}}>
+               <Text style={{textAlign:'center',fontSize:20}}>
+                  You SAT score is too low to match with any schools..
+               </Text>
+
+            </View>
+            }
 
             {this.props.auth.income_bracket == "all" ? null :
               <FlatList

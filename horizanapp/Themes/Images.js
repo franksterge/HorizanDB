@@ -82,7 +82,7 @@ const images = {
     louisiana_tech_university: require("../assets/images/louisiana_tech_university.png"),
     loyola_university_chicago: require("../assets/images/loyola_university_chicago.png"),
     marquette_university: require("../assets/images/marquette_university.png"),
-    maryville_university_of_stlouis: require("../assets/images/maryville_university_of_stlouis.png"),
+    maryville_university_of_st_louis: require("../assets/images/maryville_university_of_stlouis.png"),
     massachusetts_institute_of_technology: require("../assets/images/massachusetts_institute_of_technology.png"),
     mercer_university: require("../assets/images/mercer_university.png"),
     miami_university_oxford: require("../assets/images/miami_university_oxford.png"),
