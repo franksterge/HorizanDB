@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "horizanapp",
+    "name": "Horizan",
     "description": "This project is really great.",
     "slug": "horizanapp",
     "privacy": "public",
@@ -36,10 +36,10 @@
         ]
       },
       "supportsTablet": true,
-      "bundleIdentifier": "com.techlx.expogoogle",
+      "bundleIdentifier": "com.horizan.horizan",
       "config": {
         "googleSignIn": {
-          "reservedClientId": "7107222998-qcmpffaqdkfo0cse1i10gf0t48n2t4go.apps.googleusercontent.com"
+          "reservedClientId": "com.googleusercontent.apps.7107222998-qcmpffaqdkfo0cse1i10gf0t48n2t4go"
         }
       }
     },

@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator, createBottomTabNavigator, createMaterialTopTabNavigator } from 'react-navigation';
 import { Constants, Font } from 'expo';
-import { StyleSheet,Image, Text, View, Alert, AsyncStorage} from 'react-native';
+import { StyleSheet,Image, Button, Text, View, Alert, AsyncStorage} from 'react-native';
 import {Images} from './Themes';
 
 
@@ -88,9 +88,10 @@ const RootStack = createStackNavigator({
         FavoritesScreen: { screen: FavoritesScreen }, 
         Deadlines: { screen: DeadlinesScreen },
         ResultsScreen: { screen: ResultsScreen },  //show results
+        SettingsScreen: { screen : SettingsScreen}
         },{
           navigationOptions: {
-            header:null,
+            
         }
         })
       }

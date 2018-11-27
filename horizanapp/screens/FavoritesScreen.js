@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions, AsyncStorage, Text, View } from 'react-native';
+import { StyleSheet, Image, Button, ScrollView, TouchableOpacity, Dimensions, AsyncStorage, Text, View } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import {Images} from '../Themes';
 import moment from 'moment';
@@ -31,7 +31,6 @@ class FavoritesScreen extends React.Component {
 
 
   static navigationOptions = {
-    header: null,
 
     tabBarLabel: '',
     title:"Favorites",
@@ -39,6 +38,7 @@ class FavoritesScreen extends React.Component {
     // headerLeft:( <HeaderBackButton onPress={()=>{this.props.navigation.navigate('CallToAction')}}/>),
 
     headerTitle: ( <Text style={{fontSize:20}}>Your Matches</Text>),
+    headerRight: <Button title="Back" onPress={()=>{ navigation.goBack(); }} />
     //headerTitleStyle: {flex: 1, textAlign: 'center'},
 
   };
@@ -75,7 +75,7 @@ class FavoritesScreen extends React.Component {
       <View style={styles.container}>
         <View style={styles.headerContainer}>
           <View style={{borderBottomWidth:1}}>
-            <Text onPress={()=>{AsyncStorage.clear()}} style={styles.headerText}>
+            <Text style={styles.headerText}>
               Favorites
             </Text>
           </View>

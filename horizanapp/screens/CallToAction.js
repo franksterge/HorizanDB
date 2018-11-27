@@ -96,9 +96,8 @@ class CallToAction extends React.Component {
                   <Text style={{ color:'white',fontSize:20, fontWeight:'bold',}}>
                     Sign out of Horizan
                   </Text>
-                </TouchableOpacity>>
-                
-
+                </TouchableOpacity>
+          
                   <TouchableOpacity onPress={()=>this.setState({modalVisible:false})}>
                     <Text style={mystyles.fieldText}>Close</Text>
                   </TouchableOpacity>
@@ -127,7 +126,7 @@ class CallToAction extends React.Component {
             
             <Touchable onPress={()=>this.handleLog(this.props.auth.logged_in)} style={[styles.button,{ margin:50,justifyContent:'center', backgroundColor:'black', alignItems:'center', height:40, width:'60%', alignSelf:'center', borderRadius:15}]} >
                   <Text style={{fontSize:16, color:'white',}}>
-                    {this.state.logged_in == "yes" ? "Log Out" : 'Log in / Register'}
+                    {this.props.auth.logged_in == "yes" ? "Log Out" : 'Log in / Register'}
                   </Text>
             </Touchable>
 

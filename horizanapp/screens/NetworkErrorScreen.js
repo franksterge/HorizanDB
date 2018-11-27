@@ -12,8 +12,8 @@ export default class NetworkErrorScreen extends React.Component {
           console.log("entering")
         if (this.props.navigation.state.params.last_screen == "ResultsLoading"){
             this.props.navigation.navigate("ResultsLoading",{form_results: this.props.navigation.state.params.form_results});
-        } else if (this.props.navigation.state.params.last_screen == "InitialLoadingScreen"){
-            this.props.navigation.navigate("InitialLoadingScreen");
+        } else if (this.props.navigation.state.params.last_screen == "InitialLoading"){
+            this.props.navigation.navigate("InitialLoading");
         }
       }
   render() {

@@ -19,7 +19,7 @@ import firebase from "@firebase/app"
 import "firebase/auth"
 import "firebase/database"
 
-class SettingsScreen extends React.Component {
+class DetailsScreen extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -311,5 +311,5 @@ const mapStateToProps = state => {
       removeFavorite
     }, dispatch)
   );
-  export default connect(mapStateToProps, mapDispatchToProps)(SettingsScreen);
+  export default connect(mapStateToProps, mapDispatchToProps)(DetailsScreen);
   
