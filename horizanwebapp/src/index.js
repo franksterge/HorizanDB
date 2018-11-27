@@ -16,7 +16,7 @@ import initializeStore from './state/store/initializeStore';
 
 initializeStore(error => {
 	if (error) {
-		console.log('Error occurred while initializing app.');
+		// console.log('Error occurred while initializing app.');
 		throw error;
 	}
 

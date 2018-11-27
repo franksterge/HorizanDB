@@ -111,7 +111,7 @@ export function* logOut() {
 		yield fork([actions, actions.requestLogOut]);
 	} catch (e) {
 		// - upon success, dispatch types.LOGIN_FAILER
-		console.log('error in loginUser:catch', e);
+		// console.log('error in loginUser:catch', e);
 	}
 }
 
@@ -139,7 +139,7 @@ export function* getUserProfile(action) {
 
 		yield put(actions.profileReadSuccess( userProfile.val() ));
 	} catch (e) {
-		console.log('Profile read error: ', e);
+		// console.log('Profile read error: ', e);
 	}
 }
 
