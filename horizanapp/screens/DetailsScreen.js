@@ -101,13 +101,13 @@ class DetailsScreen extends React.Component {
   handleButton(school){
 
     if (this.props.favorites.includes(school)){ 
-        firebase.database().ref('Users/' + this.props.auth.userid + "/favorites/"+school["schools"].replace("_",".")).remove()
+        firebase.database().ref('Users/' + this.props.auth.userid + "/favorites/"+school["schools"].replace(/_/g,".")).remove()
         
         this.props.removeFavorite(school)
       } else {
         let ref = firebase.database().ref('Users/' + this.props.auth.userid + "/favorites")
   
-        let schoolname = school["schools"].replace("_",".")
+        let schoolname = school["schools"].replace(/_/g,".")
         ref.update({[schoolname]:school})
         
   
@@ -127,7 +127,7 @@ class DetailsScreen extends React.Component {
             <View style={styles.container}>
 
              <View style={styles.univ_img_cont}>
-                <Image source={Images[img_name.replace("-","")]} style={styles.univ_img}/>
+                <Image source={Images[img_name.replace(/-/g,"")]} style={styles.univ_img}/>
 
                 </View>
                 <View style={styles.header}>

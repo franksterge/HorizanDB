@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 
 import { StackActions, NavigationActions } from 'react-navigation';
-import { WebView, AsyncStorage, TextInput, StyleSheet, TouchableOpacity, TouchableHighlight, Image,  View, Text, KeyboardAvoidingView, ScrollView } from 'react-native';
+import { WebView, AsyncStorage, TextInput, StyleSheet, TouchableOpacity, Button, TouchableHighlight, Image,  View, Text, KeyboardAvoidingView, ScrollView } from 'react-native';
 import styles from './Styles/FormScreenStyles';
 import {Images} from '../Themes';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview'
@@ -39,15 +39,16 @@ class FormScreen extends Component {
     }
 
 
-    static navigationOptions = {
+    static navigationOptions = ({ navigation, screenProps }) => ({
         tabBarLabel: '',
+        headerLeft: <Button title="Back" onPress={()=>{ navigation.goBack(); }} />,
         headerTitle:<Image style={{height:'70%',width:'70%',resizeMode:'contain'}} source={Images.logo_full}/>,
         headerStyle: {
             backgroundColor: 'white',
             elevation: 0,
             shadowOpacity: 0,
           },
-        }
+        })
 
     render() {
 
@@ -67,7 +68,8 @@ class FormScreen extends Component {
             //     return 
             // } else {
                 this.props.formComplete("yes")
-                firebase.database().ref('Users/' + this.props.auth.userid + "/forms").set({taken:true})
+                console.log(this.state.ans_array)
+                firebase.database().ref('Users/' + this.props.auth.userid + "/forms").set({taken:true, results:this.state.ans_array})
                 // console.log("done")
                 this.props.navigation.navigate("ResultsLoading", {form_results : this.state.ans_array })
                 

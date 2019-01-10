@@ -44,7 +44,8 @@ class FavoritesScreen extends React.Component {
   };
 
   _renderItem (item) {
-
+    // console.log(item)
+    console.log(item["schools"].toLowerCase().replace(/\./g,""))
    return (
       
       <TouchableOpacity onPress={()=>{this.props.navigation.navigate("DetailsScreen",{university:item})}}
@@ -62,7 +63,7 @@ class FavoritesScreen extends React.Component {
           </View>
         </View>
         
-          <Image source={Images[item["schools"].toLowerCase().replace(".","").split(" ").join("_").replace("&","")]} style={styles.favoriteCardImage}/>
+          <Image source={Images[item["schools"].toLowerCase().replace(/\./g,"").split(" ").join("_").replace(/&/g,"")]} style={styles.favoriteCardImage}/>
       </TouchableOpacity>
         
     );

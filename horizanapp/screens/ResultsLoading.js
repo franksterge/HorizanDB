@@ -54,7 +54,7 @@ class ResultsLoading extends React.Component {
     //  console.log(userid)
       if(userid){ 
         // console.log('Getting key was successfull', userid); 
-        firebase.database().ref('Users/' + userid + "/forms").set({taken:true})
+        // firebase.database().ref('Users/' + userid + "/forms").set({taken:true})
         this.props.setIncome(incomeDataMap[inc]);
         this.props.addSchools(schools);
         var db = firebase.database().ref('Users/' + userid+"/schools")

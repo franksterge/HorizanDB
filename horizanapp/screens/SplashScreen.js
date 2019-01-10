@@ -67,9 +67,11 @@ const styles = {
         fontSize: 60,
         color: '#0400CF',
         fontWeight: 'bold',
+        fontFamily: 'mainFont',
         position: 'absolute'
     },
     subheaderTextStyle: {
+        fontFamily: 'mainFont',
         fontSize: 20,
         color: '#0400CF',
         position: 'absolute'

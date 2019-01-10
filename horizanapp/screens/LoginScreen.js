@@ -71,7 +71,7 @@ class LoginScreen extends Component {
 
   handleEmailSignin = () => {
     // in progress
-    let data = firebase.database().ref('/' + univ.Schools.replace("_","."))
+    let data = firebase.database().ref('/' + univ.Schools.replace(/_/g,"."))
         data.once('value').then(snapshot => {
                
             this.setState({
@@ -89,8 +89,8 @@ class LoginScreen extends Component {
        // androidStandaloneAppClientId: '<ANDROID_CLIENT_ID>',
        // iosStandaloneAppClientId: '<IOS_CLIENT_ID>',
         //androidClientId: '7107222998-j63jutpdimj4u5m9str4opk79olqmhee.apps.googleusercontent.com',
-        // iosClientId: "697630274134-299bvmv4rlnais3gfk4pnudimii6dpn3.apps.googleusercontent.com",
-        iosClientId: '7107222998-qcmpffaqdkfo0cse1i10gf0t48n2t4go.apps.googleusercontent.com',
+        iosClientId: "697630274134-299bvmv4rlnais3gfk4pnudimii6dpn3.apps.googleusercontent.com", // DEVELOPMENT LOGIN
+        // iosStandaloneAppClientId: '7107222998-qru5qiajvb7kpkc6flr5mgrogisokvtn.apps.googleusercontent.com', // PRODUCTION LOGIN
         scopes: ['profile', 'email']
       });
 
@@ -101,7 +101,7 @@ class LoginScreen extends Component {
           // this.props.navigation.navigate('LoginLoading', {results:results})
           // console.log(this.props)
           let olduserid = this.props.auth.userid
-          this.props.logIn(results["user"]["email"].replace(".","_"))
+          this.props.logIn(results["user"]["email"].replace(/\./g,"_"))
 
           // console.log(results);
           // console.log('Users/' + olduserid);
@@ -113,6 +113,7 @@ class LoginScreen extends Component {
             let data = snapshot.val();
             if (data != null && data["schools"] != null){
               this.props.setIncome(data["income"])
+             
 
               this.props.addSchools(data["schools"])
               // console.log("retrieving existing data")
