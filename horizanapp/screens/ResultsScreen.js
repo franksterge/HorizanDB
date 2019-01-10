@@ -117,7 +117,7 @@ class ResultsScreen extends React.PureComponent {
         // console.l
         // console.log(a)
         // console.log(key);
-        return (parseInt(a[key].replace("$","").replace(",","")) - parseInt(b[key].replace("$","").replace(",","")))
+        return (parseInt(a[key].replace(/$/g,"").replace(/,/g,"")) - parseInt(b[key].replace(/$/g,"").replace(/,/g,"")))
       })
     }
 
@@ -142,13 +142,13 @@ class ResultsScreen extends React.PureComponent {
   handleButton(school){   
    
     if (this.props.favorites.includes(school)){ 
-      firebase.database().ref('Users/' + this.props.auth.userid + "/favorites/"+school["schools"].replace(".","_")).remove()
+      firebase.database().ref('Users/' + this.props.auth.userid + "/favorites/"+school["schools"].replace(/\./g,"_")).remove()
       
       this.props.removeFavorite(school)
     } else {
       let ref = firebase.database().ref('Users/' + this.props.auth.userid + "/favorites")
 
-      let schoolname = school["schools"].replace(".","_")
+      let schoolname = school["schools"].replace(/\./g,"_")
 
       ref.update({[schoolname]:school})
       

@@ -10,7 +10,7 @@
       "android"
     ],
     "orientation": "portrait",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
@@ -30,7 +30,7 @@
             "CFBundleTypeRole": "Editor",
             "CFBundleURLName": "GoogleSignIn",
             "CFBundleURLSchemes": [
-              "com.googleusercontent.apps.7107222998-qcmpffaqdkfo0cse1i10gf0t48n2t4go"
+              "com.googleusercontent.apps.7107222998-qru5qiajvb7kpkc6flr5mgrogisokvtn"
             ]
           }
         ]
@@ -39,7 +39,7 @@
       "bundleIdentifier": "com.horizan.horizan",
       "config": {
         "googleSignIn": {
-          "reservedClientId": "com.googleusercontent.apps.7107222998-qcmpffaqdkfo0cse1i10gf0t48n2t4go"
+          "reservedClientId": "com.googleusercontent.apps.7107222998-qru5qiajvb7kpkc6flr5mgrogisokvtn"
         }
       }
     },

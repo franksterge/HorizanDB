@@ -59,10 +59,12 @@ export default StyleSheet.create({
         
     },
     choiceText:{
+        fontFamily: 'mainFont',
         fontSize:14,
         fontWeight:'bold',
     },
     questionText:{
+        fontFamily: 'mainFont',
         flex:1,
         alignSelf:'center',
         color:'grey',
@@ -94,6 +96,7 @@ export default StyleSheet.create({
     },
     
     submitText:{
+        fontFamily: 'mainFont',
         fontSize:16, 
         color:'white',
     },

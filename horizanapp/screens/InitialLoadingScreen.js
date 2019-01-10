@@ -73,15 +73,16 @@ class InitialLoadingScreen extends React.Component {
           // console.log(userid);
           let dataBody = firebase.database().ref('Users/' + userid)
           dataBody.once('value').then(snapshot=>{
+            
             let data = snapshot.val()
             if (data == null){
               this.props.navigation.navigate("CallToAction", {userid:userid, logged_in:"no"} );
               return 
             }
-         
-            if (data["forms"]["taken"]){
+
+            if (data["forms"]["taken"] || this.props.auth.form_complete == "yes"){
               this.props.formComplete("yes")
-             
+              
               if(this.props.auth.logged_in=="yes"){
                   // console.log("logged in and completed form")
                   
