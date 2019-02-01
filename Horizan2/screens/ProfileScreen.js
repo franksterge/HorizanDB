@@ -1,12 +1,15 @@
 import React from 'react';
-import { ScrollView, Dimensions, StyleSheet, View, Text, Button, FlatList, Image} from 'react-native';
+import { ScrollView, Dimensions, StyleSheet, View, Text, Button, FlatList, Image, TouchableOpacity} from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
+
+import Ionicons from "react-native-vector-icons/Ionicons";
+//import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 import styles from '../styles.js'
 
 const {height, width} = Dimensions.get('window');
 
-export default class SettingsScreen extends React.Component {
+export default class ProfileScreen extends React.Component {
 
   constructor(props){
       super(props)
@@ -47,7 +50,17 @@ export default class SettingsScreen extends React.Component {
   }
 
   static navigationOptions = {
-    header: null
+    title: '',
+    headerRight: (
+      <TouchableOpacity onPress={() => alert('This is a button!')} color="#000">
+        <Ionicons name='md-add' size={30} style={{ marginRight:10, padding:5, color: "#000" }} />
+      </TouchableOpacity>
+    ),
+    headerStyle: { 
+      backgroundColor: 'white', 
+      borderBottomColor: 'white',
+      elevation: 0  
+    }
   };
 
   render() {

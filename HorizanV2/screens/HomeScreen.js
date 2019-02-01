@@ -17,6 +17,8 @@ import { MonoText } from '../components/StyledText';
 
 import Swiper from 'react-native-swiper';
 
+import Touchable from 'react-native-platform-touchable';
+
 import styles from '../styles.js'
 
 const {height, width} = Dimensions.get('window');
@@ -74,14 +76,14 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
-        <ScrollView style={styles.container} showsVerticalScrollIndicator={false} scrollEnabled={true} contentContainerStyle={{flexGrow: 1, marginTop: 5, paddingBottom: 20}}>
+        <ScrollView style={styles.container} showsVerticalScrollIndicator={false} scrollEnabled={true} contentContainerStyle={{flexGrow: 1, marginTop: 5, paddingBottom: -20}}>
         <View style={styles.welcomeContainer}>
               <Text style={styles.headingText}>Horizan Home</Text>
           </View>
-          <Swiper style={styles.cardContainer} >
+          <Swiper style={styles.cardContainer} autoplay={true} autoplayTimeout={6}>
           {this.state.tips.map((item, key) => {
             return (
-              <View key={key} style={styles.cardContainer}>
+              <Touchable key={key} style={styles.cardContainer} activeOpacity={0.5}>
                         <View style={styles.card}>
                         <View style={styles.imgContainer}>
                             <Image 
@@ -98,7 +100,7 @@ export default class HomeScreen extends React.Component {
                             </Text>
                           </View>
                         </View>
-                      </View>
+                      </Touchable>
             )
           })}
           </Swiper>
@@ -107,7 +109,7 @@ export default class HomeScreen extends React.Component {
           </Text>
           {
             this.state.recColleges.map((item, key) => (
-              <View key={key} style={styles.cardContainer}>
+              <Touchable key={key} style={styles.cardContainer} activeOpacity={0.5}>
               <View style={styles.cardInList}>
                 <View style={styles.imgContainer}>
                     <Image 
@@ -124,17 +126,15 @@ export default class HomeScreen extends React.Component {
                     </Text>
                   </View>
               </View>
-            </View>
+            </Touchable>
             ))
           }
           <View style={styles.cardContainerMore}>
-              <View style={styles.moreCard}>
-                <View style={styles.cardTextContainer}>
-                  <Text style={[styles.cardTitle, {fontSize: 18, color: 'white', textAlign: 'center'}]}>
+                <Touchable style={styles.cardTextContainer}>
+                  <Text style={[styles.cardTitle, {fontSize: 18, paddingTop: 10, color: 'blue', textAlign: 'center'}]}>
                     View all
                     </Text>
-                  </View>
-              </View>
+                  </Touchable>
             </View>
         </ScrollView>
 
