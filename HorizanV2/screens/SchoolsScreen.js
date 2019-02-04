@@ -5,6 +5,8 @@ import { SearchBar } from 'react-native-elements'
 
 import styles from '../styles.js'
 
+import Touchable from 'react-native-platform-touchable';
+
 import Ionicons from "react-native-vector-icons/Ionicons";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
@@ -17,33 +19,43 @@ export default class SchoolsScreen extends React.Component {
 
       this.state = {
 
+        filterOptions:
+          {
+            // -1 = low to high, 0 = disabled, 1 = high to low
+            az: 0,
+            favorites: 0, //1 means enabled
+            gpa: 0,
+            popularity: 0,
+            cost: 0
+          },
+
         userschools: [
         {
           imgUrl: require('../assets/images/harvard.jpg'),
           title: "A University",
           para: "95% Match\n",
-          header: 0
+          isFavorite: false,
         },
         {
           imgUrl: require('../assets/images/harvard.jpg'),
           title: "B University",
           para: "95% Match",
-          header: 0
+          isFavorite: true,
         },
         {
           imgUrl: require('../assets/images/harvard.jpg'),
           title: "C University",
           para: "95% Match",
-          header: 0
+          isFavorite: false,
         },
         {
           imgUrl: require('../assets/images/harvard.jpg'),
           title: "D University",
           para: "95% Match",
-          header: 0
+          isFavorite: false,
         }]
       }
-
+      this.originalData = this.state.userschools.slice();
       this.arrayholder = this.state.userschools;
   }
 
@@ -66,11 +78,49 @@ export default class SchoolsScreen extends React.Component {
     }
   };
 
-  searchFilterFunction = text => {    
+  onFilterUpdate = filterOptions => {
+    //Update the filters without mutating the state directly
+    this.setState({userschools: newData, filterOptions: filterOptions});
+
+    newData = this.arrayholder = this.originalData.slice();    
+    if(this.state.filterOptions.az == 1){
+      newData = newData.sort((a, b) => a.title.localeCompare(b.title))
+    }
+    if(this.state.filterOptions.az == -1){
+      newData = newData.sort((a, b) => b.title.localeCompare(a.title))
+    }
+    if(this.state.filterOptions.gpa == 1){
+      newData = newData.sort((a, b) => a.gpa > b.gpa)
+    }
+    if(this.state.filterOptions.gpa == -1){
+      newData = newData.sort((a, b) => b.gpa > a.gpa)
+    }
+    if(this.state.filterOptions.popularity == 1){
+      newData = newData.sort((a, b) => a.popularity > b.popularity)
+    }
+    if(this.state.filterOptions.popularity == -1){
+      newData = newData.sort((a, b) => b.popularity > a.popularity)
+    }
+    if(this.state.filterOptions.cost == 1){
+      newData = newData.sort((a, b) => a.cost > b.cost)
+    }
+    if(this.state.filterOptions.cost == -1){
+      newData = newData.sort((a, b) => b.cost > a.cost)
+    }
+    if(this.state.filterOptions.favorites == 1){
+      newData = newData.filter(item => {
+        return item.isFavorite;
+      })
+    }
+    this.setState({userschools: newData, filterOptions: filterOptions});
+  }
+
+  searchFilterFunction = text => {
+    
     const newData = this.arrayholder.filter(item => {      
       const itemData = `${item.title.toUpperCase()}`;
-       const textData = text.toUpperCase();
-       return itemData.indexOf(textData) > -1;    
+      const textData = text.toUpperCase();
+      return itemData.indexOf(textData) > -1;    
     });    
     this.setState({ userschools: newData, textValue: text });  
   };
@@ -83,7 +133,7 @@ export default class SchoolsScreen extends React.Component {
         </View>
         <SearchBar
           lightTheme
-          platform = {Platform.OS === 'ios' ? 'ios' : 'android'}
+          platform = {Platform.OS === 'ios' ? 'ios' : 'ios'}
           containerStyle={{flex: 1, marginLeft: 7, marginRight: 7, backgroundColor: 'transparent', borderTopColor: 'transparent', borderBottomColor: 'transparent'}}
           onChangeText={text => this.searchFilterFunction(text)}
           value={this.state.textValue}
@@ -101,7 +151,7 @@ export default class SchoolsScreen extends React.Component {
         keyExtractor={item => item.title}
         renderItem={({ item, key }) => {
             return(
-              <View key={key} style={{height: height/5, marginBottom: 10,}}>
+              <Touchable key={key} style={{height: height/5, marginBottom: 10,}}>
               <View style={[styles.cardInListNS, {flexDirection: 'row'}]}>
                 <View style={[styles.imgContainer2, {margin: 10}]}>
                     <Image 
@@ -118,16 +168,11 @@ export default class SchoolsScreen extends React.Component {
                     </Text>
                   </View>
               </View>
-            </View>
+            </Touchable>
             );
           }
         }
       />
-      /*<ScrollView style={styles.container} showsVerticalScrollIndicator={false} scrollEnabled={true} contentContainerStyle={{flexGrow: 1, paddingBottom: 20}}>
-        <View style={styles.welcomeContainer}>
-              <Text style={styles.headingText}>My Schools</Text>
-          </View>
-      </ScrollView>*/
     );
   }
 }

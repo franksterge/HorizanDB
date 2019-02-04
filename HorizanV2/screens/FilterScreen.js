@@ -15,35 +15,28 @@ export default class FilterScreen extends React.Component {
 
       this.state = {
 
-        userschools: [
+        filters: [
         {
-          title: "header placeholder",
-          header: 1
+          title: "Alphabetical",
+          sortOption: 0
         },
         {
-          imgUrl: require('../assets/images/harvard.jpg'),
-          title: "A University",
-          para: "95% Match\n",
-          header: 0
+          title: "GPA",
+          sortOption: 0
         },
         {
-          imgUrl: require('../assets/images/harvard.jpg'),
-          title: "B University",
-          para: "95% Match",
-          header: 0
+          title: "Favorites",
+          sortOption: 0
         },
         {
-          imgUrl: require('../assets/images/harvard.jpg'),
-          title: "C University",
-          para: "95% Match",
-          header: 0
+          title: "Popularity",
+          sortOption: 0
         },
         {
-          imgUrl: require('../assets/images/harvard.jpg'),
-          title: "D University",
-          para: "95% Match",
-          header: 0
-        }]
+          title: "GPA",
+          sortOption: 0
+        },
+        ]
       
       }
   }
@@ -69,13 +62,6 @@ export default class FilterScreen extends React.Component {
         style={styles.container} showsVerticalScrollIndicator={false} scrollEnabled={true} contentContainerStyle={{flexGrow: 1, paddingBottom: 20}}
         keyExtractor={item => item.title}
         renderItem={({ item, key }) => {
-          if(item.header == 1) {
-            return(
-            <View style={styles.welcomeContainer}>
-                <Text style={styles.headingText}>My Surveys</Text>
-              </View>
-              );
-          }else{
             return(
               <View key={key} style={{height: height/5, marginBottom: 10,}}>
               <View style={[styles.cardInListNS, {flexDirection: 'row'}]}>
@@ -97,7 +83,7 @@ export default class FilterScreen extends React.Component {
             </View>
             );
           }
-        }}
+        }
       />
       /*<ScrollView style={styles.container} showsVerticalScrollIndicator={false} scrollEnabled={true} contentContainerStyle={{flexGrow: 1, paddingBottom: 20}}>
         <View style={styles.welcomeContainer}>
