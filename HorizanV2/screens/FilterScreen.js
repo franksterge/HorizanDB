@@ -1,6 +1,8 @@
 import React from 'react';
 import { ScrollView, Dimensions, StyleSheet, View, Text, Button, FlatList, Image, TouchableOpacity} from 'react-native';
 
+import { ButtonGroup, colors } from 'react-native-elements';
+
 import Ionicons from "react-native-vector-icons/Ionicons";
 //import FontAwesome from "react-native-vector-icons/FontAwesome";
 
@@ -13,9 +15,15 @@ export default class FilterScreen extends React.Component {
   constructor(props){
       super(props)
 
+      this.navigation = this.props.navigation;
+
       this.state = {
 
-        filters: [
+        currentIndex: 0,
+
+        selectedIndexes: [0, 0, 0, 0, 0],
+
+        filterOptions: [
         {
           title: "Alphabetical",
           sortOption: 0
@@ -33,19 +41,75 @@ export default class FilterScreen extends React.Component {
           sortOption: 0
         },
         {
-          title: "GPA",
+          title: "Cost",
           sortOption: 0
         },
         ]
       
       }
+
+      this.updateIndex = this.updateIndex.bind(this)
+      this.workaround = this.workaround.bind(this)
+      this.handleSave = this.handleSave.bind(this)
   }
 
-  static navigationOptions = {
+  workaround() {
+
+    temparray = [];
+    for(i = 0; i < this.state.filterOptions.length; i++){
+      temparray.push({title: this.state.filterOptions[i].title, sortOption: this.userFilters[i]})
+      
+    }
+    this.setState({filterOptions: temparray}, () => {
+      selectedIndexes1 = [];
+      for(i = 0; i < this.state.filterOptions.length; i++){
+        selectedIndexes1.push(this.state.filterOptions[i].sortOption);
+      }
+        this.setState({selectedIndexes: selectedIndexes1})
+    })
+
+/*       this.setState({filterOptions: [
+        {
+          title: "Alphabetical",
+          sortOption: this.userFilters.az
+        },
+        {
+          title: "GPA",
+          sortOption: this.userFilters.gpa
+        },
+        {
+          title: "Favorites",
+          sortOption: this.userFilters.favorites
+        },
+        {
+          title: "Popularity",
+          sortOption: this.userFilters.popularity
+        },
+        ]},  */
+        
+        
+        
+  }
+
+  handleSave = () => {
+    const { navigation } = this.props;
+    const { routeName, key } = navigation.getParam('returntoroute');
+    console.log("Handle Save")
+    console.log(this.state.selectedIndexes)
+    navigation.navigate({ routeName, key, params: {newFilters: this.state.selectedIndexes} });
+    //test(this.state.selectedIndexes);
+  }
+
+  static navigationOptions = ({navigation}) =>  ({
     title: 'Filter',
     headerRight: (
-      <TouchableOpacity onPress={() => alert('This is a button!')} color="#000">
-        <Ionicons name='md-add' size={30} style={{ marginRight:10, padding:5, color: "#000" }} />
+      <TouchableOpacity onPress={navigation.getParam('handleSave')} color="#000">
+        <Text style={{fontSize: 18, marginRight: 10}}>Save</Text>
+      </TouchableOpacity>
+    ),
+    headerLeft: (
+      <TouchableOpacity onPress={() => navigation.goBack()} color="#000">
+        <Text style={{fontSize: 18, marginLeft: 10}}>Cancel</Text>
       </TouchableOpacity>
     ),
     headerStyle: { 
@@ -53,17 +117,33 @@ export default class FilterScreen extends React.Component {
       borderBottomColor: 'white',
       elevation: 0 
     }
-  };
+  });
+
+  componentDidMount() {
+    this.userFilters = this.navigation.getParam('filterOptions', '')
+    this.onFilterUpdate = this.navigation.getParam('onFilterUpdate', {})
+    this.props.navigation.setParams({ handleSave: this.handleSave });
+    this.workaround()
+  }
+
+  updateIndex = (selectedIndex, index) => {
+    let options = this.state.selectedIndexes.slice()
+    options[selectedIndex] = index
+    this.setState({selectedIndexes: options})
+  }
 
   render() {
+    const buttons = ['Descending', 'Off', 'Ascending']
+    const selectedIndexes = this.state.selectedIndexes
+
     return (
       <FlatList
-        data={this.state.userschools}
+        data={this.state.filterOptions}
         style={styles.container} showsVerticalScrollIndicator={false} scrollEnabled={true} contentContainerStyle={{flexGrow: 1, paddingBottom: 20}}
         keyExtractor={item => item.title}
-        renderItem={({ item, key }) => {
+        renderItem={({ item, index }) => {
             return(
-              <View key={key} style={{height: height/5, marginBottom: 10,}}>
+              <View style={{height: height/5, marginBottom: 10,}}>
               <View style={[styles.cardInListNS, {flexDirection: 'row'}]}>
                 <View style={[styles.imgContainer2, {margin: 10}]}>
                     <Image 
@@ -75,8 +155,14 @@ export default class FilterScreen extends React.Component {
                   <Text style={styles.cardTitle}>
                     {item.title}
                     </Text>
+                    <ButtonGroup
+                      onPress={this.updateIndex.bind(this, index)}
+                      selectedIndex={selectedIndexes[index]}
+                      buttons={buttons}
+                      containerStyle={{height: 100}}
+                    />
                     <Text style={styles.cardPara}>
-                    {item.para}
+                    {item.sortOption == 0 ? 'OFF' : item.sortOption == 1 ? 'Ascending' : 'Descending'}
                     </Text>
                   </View>
               </View>

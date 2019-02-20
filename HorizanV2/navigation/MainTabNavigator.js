@@ -7,6 +7,7 @@ import HomeScreen from '../screens/HomeScreen';
 import SchoolsScreen from '../screens/SchoolsScreen';
 import SurveysScreen from '../screens/SurveysScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import FilterScreen from '../screens/FilterScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -28,6 +29,10 @@ HomeStack.navigationOptions = {
 
 const SchoolsStack = createStackNavigator({
   Schools: SchoolsScreen,
+  Filters: FilterScreen
+},
+{
+  mode: 'modal',
 });
 
 SchoolsStack.navigationOptions = {

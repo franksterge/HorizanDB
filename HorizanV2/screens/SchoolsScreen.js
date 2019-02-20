@@ -14,20 +14,24 @@ const {height, width} = Dimensions.get('window');
 
 export default class SchoolsScreen extends React.Component {
 
+  static filterOps = null;
+
   constructor(props){
       super(props)
 
       this.state = {
 
-        filterOptions:
-          {
-            // -1 = low to high, 0 = disabled, 1 = high to low
-            az: 0,
-            favorites: 0, //1 means enabled
-            gpa: 0,
-            popularity: 0,
-            cost: 0
-          },
+        filterOptions: [0, 0, 0, 1, 0],
+
+        filterOptions1:
+        {
+          // -1 = low to high, 0 = disabled, 1 = high to low
+          az: 0,
+          favorites: 1, //1 means enabled
+          gpa: 0,
+          popularity: 1,
+          cost: 0
+        },
 
         userschools: [
         {
@@ -57,9 +61,16 @@ export default class SchoolsScreen extends React.Component {
       }
       this.originalData = this.state.userschools.slice();
       this.arrayholder = this.state.userschools;
+      this.handleFilterScreen = this.handleFilterScreen.bind(this)
+      filterOps = this.state.filterOptions;
   }
 
-  static navigationOptions = {
+  handleFilterScreen = () => {
+    const { navigation } = this.props;
+    navigation.navigate('Filters', { returntoroute: navigation.state, filterOptions: this.state.filterOptions})
+  }
+
+  static navigationOptions = ({navigation}) => ({
     title: '',
     headerRight: (
       <TouchableOpacity onPress={() => alert('This is a button!')} color="#000">
@@ -67,7 +78,7 @@ export default class SchoolsScreen extends React.Component {
       </TouchableOpacity>
     ),
     headerLeft: (
-      <TouchableOpacity onPress={() => alert('This is a button!')} color="#000">
+      <TouchableOpacity onPress={navigation.getParam('handleFilterScreen')} color="#000">
         <MaterialIcons name='filter-list' size={25} style={{ marginLeft:10, padding:5, color: "#000" }} />
       </TouchableOpacity>
     ),
@@ -76,43 +87,46 @@ export default class SchoolsScreen extends React.Component {
       borderBottomColor: 'white',
       elevation: 0 
     }
-  };
+  });
 
-  onFilterUpdate = filterOptions => {
+  onFilterUpdate = filterOptions2 => {
     //Update the filters without mutating the state directly
-    this.setState({userschools: newData, filterOptions: filterOptions});
-
-    newData = this.arrayholder = this.originalData.slice();    
-    if(this.state.filterOptions.az == 1){
-      newData = newData.sort((a, b) => a.title.localeCompare(b.title))
-    }
-    if(this.state.filterOptions.az == -1){
-      newData = newData.sort((a, b) => b.title.localeCompare(a.title))
-    }
-    if(this.state.filterOptions.gpa == 1){
-      newData = newData.sort((a, b) => a.gpa > b.gpa)
-    }
-    if(this.state.filterOptions.gpa == -1){
-      newData = newData.sort((a, b) => b.gpa > a.gpa)
-    }
-    if(this.state.filterOptions.popularity == 1){
-      newData = newData.sort((a, b) => a.popularity > b.popularity)
-    }
-    if(this.state.filterOptions.popularity == -1){
-      newData = newData.sort((a, b) => b.popularity > a.popularity)
-    }
-    if(this.state.filterOptions.cost == 1){
-      newData = newData.sort((a, b) => a.cost > b.cost)
-    }
-    if(this.state.filterOptions.cost == -1){
-      newData = newData.sort((a, b) => b.cost > a.cost)
-    }
-    if(this.state.filterOptions.favorites == 1){
-      newData = newData.filter(item => {
-        return item.isFavorite;
-      })
-    }
-    this.setState({userschools: newData, filterOptions: filterOptions});
+    console.log("onFilterUpdate")
+    console.log(filterOptions2)
+    this.setState({filterOptions: filterOptions2}, () => {
+      newData = this.arrayholder = this.originalData.slice();    
+      if(this.state.filterOptions[0] == 2){
+        newData = newData.sort((a, b) => a.title.localeCompare(b.title))
+      }
+      if(this.state.filterOptions[0] == 0){
+        newData = newData.sort((a, b) => b.title.localeCompare(a.title))
+      }
+      if(this.state.filterOptions[2] == 2){
+        newData = newData.sort((a, b) => a.gpa > b.gpa)
+      }
+      if(this.state.filterOptions[2] == 0){
+        newData = newData.sort((a, b) => b.gpa > a.gpa)
+      }
+      if(this.state.filterOptions[3] == 2){
+        newData = newData.sort((a, b) => a.popularity > b.popularity)
+      }
+      if(this.state.filterOptions[3] == 0){
+        newData = newData.sort((a, b) => b.popularity > a.popularity)
+      }
+      if(this.state.filterOptions[4] == 2){
+        newData = newData.sort((a, b) => a.cost > b.cost)
+      }
+      if(this.state.filterOptions[4] == 0){
+        newData = newData.sort((a, b) => b.cost > a.cost)
+      }
+      if(this.state.filterOptions[1] == 1){
+        newData = newData.filter(item => {
+          return item.isFavorite;
+        })
+      }
+      this.setState({userschools: newData});
+    });
+    
   }
 
   searchFilterFunction = text => {
@@ -142,7 +156,34 @@ export default class SchoolsScreen extends React.Component {
       );
   };
 
+  componentWillReceiveProps(){
+   /*  const { navigation } = this.props;
+    let newFilters = navigation.getParam('newFilters', undefined);
+    console.log("componentWillReceiveProps")
+    console.log(newFilters)
+    if(newFilters != undefined){
+      this.onFilterUpdate(newFilters)
+    } */
+    console.log('test')
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { navigation } = this.props;
+    let newFilters = navigation.getParam('newFilters', undefined);
+    console.log("componentWillReceiveProps")
+    console.log(newFilters)
+    if(newFilters !== prevState.filterOptions && newFilters !== undefined){
+      this.onFilterUpdate(newFilters)
+    }
+  }
+
+  componentDidMount() {
+    
+    this.props.navigation.setParams({ handleFilterScreen: this.handleFilterScreen });
+  }
+
   render() {
+
     return (
       <FlatList
         data={this.state.userschools}
