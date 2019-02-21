@@ -17,6 +17,8 @@ import { MonoText } from '../components/StyledText';
 
 import Swiper from 'react-native-swiper';
 
+import { NavigationActions } from 'react-navigation';
+
 import Touchable from 'react-native-platform-touchable';
 
 import styles from '../styles.js'
@@ -130,7 +132,7 @@ export default class HomeScreen extends React.Component {
             ))
           }
           <View style={styles.cardContainerMore}>
-                <Touchable style={styles.cardTextContainer}>
+                <Touchable style={styles.cardTextContainer}  onPress={() => this.props.navigation.navigate('SchoolsStack', {}, NavigationActions.navigate({ routeName: 'SchoolsScreen' }))}>
                   <Text style={[styles.cardTitle, {fontSize: 18, paddingTop: 10, color: 'blue', textAlign: 'center'}]}>
                     View all
                     </Text>

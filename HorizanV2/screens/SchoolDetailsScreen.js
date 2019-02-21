@@ -14,16 +14,6 @@ const {height, width} = Dimensions.get('window');
 
 export default class SchoolsScreen extends React.Component {
 
-  static filterDict = {
-    'favorites': 0,
-    'az': 1,
-    'gpa': 2,
-    'popularity': 3,
-    'cost': 4
-};
-
-  static defaultFilters = [0, 1, 1, 1, 1];
-
   static filterOps = null;
 
   constructor(props){
@@ -31,7 +21,17 @@ export default class SchoolsScreen extends React.Component {
 
       this.state = {
 
-        filterOptions: [0, 1, 1, 1, 1],
+        filterOptions: [0, 0, 0, 1, 0],
+
+        filterOptions1:
+        {
+          // -1 = low to high, 0 = disabled, 1 = high to low
+          az: 0,
+          favorites: 1, //1 means enabled
+          gpa: 0,
+          popularity: 1,
+          cost: 0
+        },
 
         userschools: [
         {
@@ -91,45 +91,40 @@ export default class SchoolsScreen extends React.Component {
 
   onFilterUpdate = filterOptions2 => {
     //Update the filters without mutating the state directly
-    filterDict = SchoolsScreen.filterDict
     console.log("onFilterUpdate")
     console.log(filterOptions2)
     this.setState({filterOptions: filterOptions2}, () => {
-      newData = this.originalData.slice(); 
-      if(this.state.filterOptions[filterDict['favorites']] == 2){
+      newData = this.arrayholder = this.originalData.slice();    
+      if(this.state.filterOptions[0] == 0){
+        newData = newData.sort((a, b) => a.title.localeCompare(b.title))
+      }
+      if(this.state.filterOptions[0] == 2){
+        newData = newData.sort((a, b) => b.title.localeCompare(a.title))
+      }
+      if(this.state.filterOptions[2] == 2){
+        newData = newData.sort((a, b) => a.gpa > b.gpa)
+      }
+      if(this.state.filterOptions[2] == 0){
+        newData = newData.sort((a, b) => b.gpa > a.gpa)
+      }
+      if(this.state.filterOptions[3] == 2){
+        newData = newData.sort((a, b) => a.popularity > b.popularity)
+      }
+      if(this.state.filterOptions[3] == 0){
+        newData = newData.sort((a, b) => b.popularity > a.popularity)
+      }
+      if(this.state.filterOptions[4] == 2){
+        newData = newData.sort((a, b) => a.cost > b.cost)
+      }
+      if(this.state.filterOptions[4] == 0){
+        newData = newData.sort((a, b) => b.cost > a.cost)
+      }
+      if(this.state.filterOptions[1] == 1){
         newData = newData.filter(item => {
           return item.isFavorite;
         })
-      } 
-      if(this.state.filterOptions[filterDict['az']] == 0){
-        newData = newData.sort((a, b) => a.title.localeCompare(b.title))
       }
-      if(this.state.filterOptions[filterDict['az']] == 2){
-        newData = newData.sort((a, b) => b.title.localeCompare(a.title))
-      }
-      if(this.state.filterOptions[filterDict['gpa']] == 2){
-        newData = newData.sort((a, b) => a.gpa > b.gpa)
-      }
-      if(this.state.filterOptions[filterDict['gpa']] == 0){
-        newData = newData.sort((a, b) => b.gpa > a.gpa)
-      }
-      if(this.state.filterOptions[filterDict['popularity']] == 2){
-        newData = newData.sort((a, b) => a.popularity > b.popularity)
-      }
-      if(this.state.filterOptions[filterDict['popularity']] == 0){
-        newData = newData.sort((a, b) => b.popularity > a.popularity)
-      }
-      if(this.state.filterOptions[filterDict['cost']] == 2){
-        newData = newData.sort((a, b) => a.cost > b.cost)
-      }
-      if(this.state.filterOptions[filterDict['cost']] == 0){
-        newData = newData.sort((a, b) => b.cost > a.cost)
-      }
-
-      this.setState({userschools: newData}, () => {
-        this.arrayholder = this.state.userschools;
-      });
-      
+      this.setState({userschools: newData});
     });
     
   }

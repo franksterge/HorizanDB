@@ -1,12 +1,13 @@
 import React from 'react';
-import { ScrollView, Dimensions, StyleSheet, View, Text, Button, FlatList, Image, TouchableOpacity} from 'react-native';
+import { ScrollView, Dimensions, StyleSheet, View, Text, FlatList, Image, TouchableOpacity} from 'react-native';
 
-import { ButtonGroup, colors } from 'react-native-elements';
+import { ButtonGroup, colors, Button } from 'react-native-elements';
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 //import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 import styles from '../styles.js'
+import SchoolsScreen from './SchoolsScreen.js';
 
 const {height, width} = Dimensions.get('window');
 
@@ -25,24 +26,29 @@ export default class FilterScreen extends React.Component {
 
         filterOptions: [
         {
+          title: "Favorites",
+          sortOption: 1,
+          type: 2
+        },
+        {
           title: "Alphabetical",
-          sortOption: 0
+          sortOption: 1,
+          type: 3
         },
         {
           title: "GPA",
-          sortOption: 0
-        },
-        {
-          title: "Favorites",
-          sortOption: 0
+          sortOption: 1,
+          type: 3
         },
         {
           title: "Popularity",
-          sortOption: 0
+          sortOption: 1,
+          type: 3
         },
         {
           title: "Cost",
-          sortOption: 0
+          sortOption: 1,
+          type: 3
         },
         ]
       
@@ -57,7 +63,7 @@ export default class FilterScreen extends React.Component {
 
     temparray = [];
     for(i = 0; i < this.state.filterOptions.length; i++){
-      temparray.push({title: this.state.filterOptions[i].title, sortOption: this.userFilters[i]})
+      temparray.push({title: this.state.filterOptions[i].title, sortOption: this.userFilters[i], type: this.state.filterOptions[i].type})
       
     }
     this.setState({filterOptions: temparray}, () => {
@@ -133,41 +139,55 @@ export default class FilterScreen extends React.Component {
   }
 
   render() {
-    const buttons = ['Descending', 'Off', 'Ascending']
+    const buttons3 = ['Descending', 'Off', 'Ascending']
+    const buttons2 = ['Off', 'On']
     const selectedIndexes = this.state.selectedIndexes
 
     return (
       <FlatList
         data={this.state.filterOptions}
+        ListFooterComponent={() => <Button title='Reset to Default' onPress={() => this.setState({selectedIndexes: SchoolsScreen.defaultFilters})} buttonStyle={{margin: 20, backgroundColor: '#ff6659'}} />}
         style={styles.container} showsVerticalScrollIndicator={false} scrollEnabled={true} contentContainerStyle={{flexGrow: 1, paddingBottom: 20}}
         keyExtractor={item => item.title}
         renderItem={({ item, index }) => {
+          if(item.type == 2){
             return(
-              <View style={{height: height/5, marginBottom: 10,}}>
+              <View style={{height: height/5, marginBottom: -30}}>
               <View style={[styles.cardInListNS, {flexDirection: 'row'}]}>
-                <View style={[styles.imgContainer2, {margin: 10}]}>
-                    <Image 
-                    style={styles.canvasThumb}
-                    resizeMode="cover"
-                    source={item.imgUrl}/>
-                </View>
-                <View style={[styles.cardTextContainer, {flex: 2}]}>
+                <View style={[styles.cardTextContainer, {flex: 1, justifyContent: 'flex-end'}]}>
                   <Text style={styles.cardTitle}>
                     {item.title}
-                    </Text>
-                    <ButtonGroup
+                  </Text>
+                </View>
+                  <ButtonGroup
                       onPress={this.updateIndex.bind(this, index)}
                       selectedIndex={selectedIndexes[index]}
-                      buttons={buttons}
-                      containerStyle={{height: 100}}
+                      buttons={buttons2}
+                      containerStyle={{height: 50, flex: 1}}
                     />
-                    <Text style={styles.cardPara}>
-                    {item.sortOption == 0 ? 'OFF' : item.sortOption == 1 ? 'Ascending' : 'Descending'}
-                    </Text>
-                  </View>
               </View>
             </View>
             );
+          }else if(item.type == 3){
+            return(
+              <View style={{height: height/5, marginBottom: -30}}>
+              <View style={[styles.cardInListNS, {flexDirection: 'row'}]}>
+                <View style={[styles.cardTextContainer, {flex: 1, justifyContent: 'flex-end'}]}>
+                  <Text style={styles.cardTitle}>
+                    {item.title}
+                  </Text>
+                </View>
+                  <ButtonGroup
+                      onPress={this.updateIndex.bind(this, index)}
+                      selectedIndex={selectedIndexes[index]}
+                      buttons={buttons3}
+                      containerStyle={{height: 50, flex: 1}}
+                    />
+              </View>
+            </View>
+            );
+          }
+            
           }
         }
       />
