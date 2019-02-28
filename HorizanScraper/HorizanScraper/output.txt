@@ -1,1 +1,0 @@
-[{"name":"Princeton University","avgACT":"31-35","avgSAT":"1430-1570"}]

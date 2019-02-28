@@ -1,5 +1,0 @@
-[42920:47468:0808/103115.996:ERROR:preg_parser.cc(281)] Bad policy file C:\WINDOWS\System32\GroupPolicy\Machine\Registry.pol
-[42920:38272:0808/103116.013:ERROR:google_update_settings.cc(260)] Failed opening key Software\Google\Update\ClientStateMedium\{8A69D345-D564-463c-AFF1-A69D9E530F96} to set usagestats; result: 5
-[42920:47468:0808/103116.075:WARNING:extension_service.cc(472)] Loading extension specified by --load-component-extension as a regular extension. Extensions specified by --load-component-extension will not be loaded starting in M58. Use --load-extension or --disable-extensions-except.
-[42920:38272:0808/103116.198:ERROR:preg_parser.cc(281)] Bad policy file C:\WINDOWS\System32\GroupPolicy\Machine\Registry.pol
-[42920:47468:0808/103117.634:INFO:CONSOLE(8)] "SW registered", source: https://www.google.com/_/chrome/newtab?espv=2&ie=UTF-8 (8)
