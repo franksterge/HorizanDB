@@ -9,7 +9,7 @@ Table SchoolDetail (
   SchoolID int AUTO_INCREMENT primary key not null,
   SchoolName nVarCHar(255) not null,
   SchoolWebsite nVarChar(255) not null,
-  PhoneNumber nVarChar(14) not null CHECK (PhoneNumber Like '([0-9][0-9][0-9]) [0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'),
+  PhoneNumber nVarChar(14) not null,
   SchoolSize int not null,
   GenderRestriction nVarChar(100) not null default 'Co-de',
   SchoolType nVarChar(100) not null,
