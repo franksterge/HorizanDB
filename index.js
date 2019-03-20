@@ -4,7 +4,6 @@ const createCSVWriter = require('csv-writer').createObjectCsvWriter;
 
 var csvHeaders = [];
 var data = [];
-// var rowCount = 0;
 var regex = /(\d*),(\d*)/gi;
 
 fs.createReadStream('SchoolDetailPreprocessed.csv')
@@ -22,10 +21,8 @@ fs.createReadStream('SchoolDetailPreprocessed.csv')
             }
             i += 1;
             line[key] = value; 
-            // console.log(object);
         }
         data.push(line);
-        // schoolSize = schoolSize.parseInt();
     })
     .on('end', ()=>{
         console.log(data);
@@ -38,8 +35,3 @@ fs.createReadStream('SchoolDetailPreprocessed.csv')
             .writeRecords(data)
             
     });
-console.log("1")
-// csvWriter._c
-
-// fs.createWriteStream('SchoolDetail.csv')
-//     .pipe(csv)

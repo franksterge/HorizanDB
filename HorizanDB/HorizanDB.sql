@@ -11,7 +11,7 @@ Table SchoolDetail (
   SchoolWebsite nVarChar(255) not null,
   PhoneNumber nVarChar(14) not null,
   SchoolSize int not null,
-  GenderRestriction nVarChar(100) not null default 'Co-de',
+  GenderRestriction nVarChar(100) not null default 'Co-ed',
   SchoolType nVarChar(100) not null,
   SchoolLocation nVarChar(100) not null,
   SchoolEnvironment nVarChar(100) not null,
