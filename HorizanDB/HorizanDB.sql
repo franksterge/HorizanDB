@@ -3,7 +3,7 @@ Create Database HorizanDB;
 
 Use HorizanDB;
 
-# create tables
+--  create tables
 Create
 Table SchoolDetail (
   SchoolID int AUTO_INCREMENT primary key not null,
@@ -21,122 +21,92 @@ Table SchoolDetail (
 
 Create
 Table SchoolTag (
-  TagID int AUTO_INCREMENT primary key not null,
+  SchoolTagID int AUTO_INCREMENT primary key not null,
   SchoolID int not null REFERENCES SchoolDetail(SchoolID),
-  TagDesc nVarChar(100) not null
+  TagsID int not null REFERENCES Tag(TagID)
+);
+
+Create 
+Table Tags (
+  TagID int AUTO_INCREMENT primary key not null,
+  TagName nVarChar(50) not null,
+  TagDesc nVarChar(100) not null 
+);
+
+Create
+Table SchoolTest(
+  SchoolTestID int AUTO_INCREMENT primary key not null,
+  SchoolID int not null REFERENCES SchoolDetail(SchoolID),
+  TestID int not null REFERENCES TestDetail(TestID),
+  ScoreUpBound int null,
+  ScoreLowerBound int not null
 );
 
 Create
 Table TestDetail (
   TestID int AUTO_INCREMENT primary key not null,
-  SchoolID int not null REFERENCES SchoolDetail(SchoolID),
-  TestName nVarChar(100) not null,
-  ScoreUpperBound int null,
-  ScoreLowerBound int not null
+  TestName nVarChar(50) not null,
+  TestDesc nVarChar(100) null
 );
 
-# if application is not presented on the table then it's unavailable
+Create
+Table SchoolApplication(
+  SchoolApplicationID int AUTO_INCREMENT primary key not null,
+  SchoolID int not null REFERENCES SchoolDetail(SchoolID),
+  ApplicationID int not null REFERENCES ApplicationDetail(ApplicationID),
+  DueDate date not null
+);
+--  if application is not presented on the table then it's unavailable
 Create
 Table ApplicationDetail (
   ApplicationID int AUTO_INCREMENT primary key not null,
-  SchoolID int not null REFERENCES SchoolDetail(SchoolID),
-  ApplicationName nVarChar(100) not null,
-  ApplicationDate date not null
+  ApplicationName nVarChar(50) not null,
+  ApplicationDesc nVarChar(100) not null
 );
 
+Create
+Table SchoolTuition(
+  SchoolTuitionID int AUTO_INCREMENT primary key not null,
+  SchoolID int not null REFERENCES SchoolDetail(SchoolID),
+  TuitionID int not null REFERENCES TuitionDetail(TuitionID),
+  TuitionAmount int not null
+);
+/*
+  tuition name: general/in-state/out-state
+  tuition type: general/income-specific
+*/
 Create
 Table TuitionDetail (
   TuitionID int AUTO_INCREMENT primary key not null,
+  TuitionName nVarChar(50) not null, 
+  TuitionType nVarChar(50) not null, 
+  IncomeRangeUpperBound int null,
+  IncomeRangeLowerBound int not null default 0
+);
+
+Create 
+Table SchoolMajorRankingSource(
+  SchoolMajorRankingSourceID int AUTO_INCREMENT primary key not null,
   SchoolID int not null REFERENCES SchoolDetail(SchoolID),
-  InStateCost int not null,
-  OutStateCost int null
+  MajorRankingID int not null REFERENCES MajorRanking(MajorRankingID),
+  SourceID int not null REFERENCES RankingSource(SourceID),
+  MajorRanking int not null,
+  SourceLink nVarChar(100) not null
+);
+
+Create 
+Table MajorRanking(
+  MajorRankingID int AUTO_INCREMENT primary key not null,
+  MajorRankingName nVarChar(50) not null,
+  MajorRankingDescription nVarChar(100) null
 );
 
 Create
-Table TuitionToIncome (
-  IncomeID int AUTO_INCREMENT primary key not null,
-  SchoolID int not null REFERENCES SchoolDetail(SchoolID),
-  Tuition int not null,
-  RangeUpperBound int null,
-  RangeLowerBound int not null
+Table RankingSource(
+  SourceID int AUTO_INCREMENT primary key not null,
+  SourceName nVarChar(50) not null,
+  SourceLink nVarChar(100) not null
 );
 
-Create
-Table SchoolRanking(
-  RankingID int auto_increment primary key not null,
-  SchoolID int not null REFERENCES SchoolDetail(SchoolID),
-  MajorName nVarChar(100) not null,
-  MajorRanking int not null
-);
 
-# Create Views
-Create
-View vSchoolDetail
-as
-  Select SchoolID,
-         SchoolName,
-         SchoolWebsite,
-         PhoneNumber,
-         SchoolSize,
-         GenderRestriction,
-         SchoolType,
-         SchoolLocation,
-         SchoolEnvironment,
-         StudentFacultyRatio,
-         AcceptanceRate
-  From SchoolDetail;
-
-Create
-View vSchoolTag
-as
-  Select TagID,
-         SchoolID,
-         TagDesc
-  From SchoolTag;
-
-Create
-View vTestDetail
-as
-  Select TestID,
-         SchoolID,
-         TestName,
-         ScoreLowerBound,
-         ScoreUpperBound
-  From TestDetail;
-
-Create
-View vApplicationDetail
-as
-  Select ApplicationID,
-         SchoolID,
-         ApplicationName
-  From ApplicationDetail;
-
-Create
-View vTuitionDetail
-as
-  Select TuitionID,
-         SchoolID,
-         InStateCost,
-         OutStateCost
-  From TuitionDetail;
-
-Create
-View vTuitionToIncome
-as
-  Select IncomeID,
-         SchoolID,
-         RangeLowerBound,
-         RangeUpperBound,
-         Tuition
-  From TuitionToIncome;
-
-Create
-View vSchoolRanking
-as
-  Select RankingID,
-         SchoolID,
-         MajorName,
-         MajorRanking
-  From SchoolRanking;
-
+-- # Create Views
