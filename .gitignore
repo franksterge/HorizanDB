@@ -1,3 +1,6 @@
 .DS_Store
 horizanwebapp/node_modules
 horizanCloudFunctions/node_modules
+node_modules/
+RawData/
+LocalFiles/*
