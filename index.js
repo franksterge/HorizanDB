@@ -33,7 +33,7 @@ new Promise((resolve, reject) => {
 })
 .then(context => {
     return new Promise((resolve, reject) => {
-        fs.createReadStream('./LocalFiles/RawData/CollegeDataPre-parsing.csv')
+        fs.createReadStream('./LocalFiles/RawData/NLPDataSanitized.csv')
         .pipe(csv())
         .on('data', (row) => {
             // var testScore = [];
@@ -45,6 +45,7 @@ new Promise((resolve, reject) => {
             var appNames = ["Common App", "Coalition App"];
             let SourceName = "Horizan Readjusted";
             let MajorName = ["Business", "Communication", "Computer Science", "Biology", "Psychology", "Engineering"]
+            let nlpCategories = ["Reputation", "Facilities", "Happiness", "Clubs", "Location", "Food", "Social", "Opportunites", "Safety", "Internet"];
             let iValue = [12, 13, 14, 15, 16, 17];
             for (key in row) {
                 let value = row[key];
@@ -66,11 +67,16 @@ new Promise((resolve, reject) => {
                     if (parameters.indexOf(schoolName) == -1 && schoolName) {
                         parameters.push(schoolName);
                     }
-                } else if (iValue.indexOf(i) != -1) {
-                    parameters.push(MajorName[i - 12]);
-                    parameters.push(SourceName);
-                    parameters.push(value);
+                } else {
+                    let nlpCategory = nlpCategories[i - 1];
+                    parameters.push(nlpCategory);
+                    parameters.push(value)
                 }
+                // else if (iValue.indexOf(i) != -1) {
+                //     parameters.push(MajorName[i - 12]);
+                //     parameters.push(SourceName);
+                //     parameters.push(value);
+                // }
                 /*ins test script */
                 // else if (i > 0 && i <= 2) {
                 //     if (value != "N/A" && value != "") {
@@ -155,8 +161,8 @@ new Promise((resolve, reject) => {
                 //     parameters.push(tuitionType);
                 //     parameters.push(tuitionAmount);
                 
-                    if (parameters.length == 4) {
-                        var SQLQuery = getSQLQuery("pInsSchoolMajorRankingSource", parameters);
+                    if (parameters.length == 3) {
+                        var SQLQuery = getSQLQuery("pInsSchoolNLPData", parameters);
                         console.log(SQLQuery);
                         parameters = [];
                         parameters.push(schoolName);
@@ -205,7 +211,7 @@ function getSQLQuery(procedureName, parameters) {
     var query = 'Call ' + procedureName + '("' + parameters[0] + '"';
     for (let i = 1; i < parameters.length; i++) {
         var parameter;
-        if (i < 3) {
+        if (i == 1) {
             parameter = '"' + parameters[i] + '"';
         } else {
             parameter = parameters[i];

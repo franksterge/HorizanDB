@@ -124,6 +124,21 @@ Table SchoolMajorRankingSource(
 );
 
 
+use HorizanDB;
+Select count(*) from SchoolNLP;
+Create 
+Table SchoolNLP(
+  SchoolNLPID int AUTO_INCREMENT primary key not null,
+  SchoolID int not null REFERENCES SchoolDetail(SchoolID),
+  NLPID int not null REFERENCES NLPData(NLPID),
+  NLPRating float not null
+);
+
+Create
+Table NLPData(
+  NLPID int AUTO_INCREMENT primary key not null,
+  NLPCategory VarChar(20) not null
+);
 
 /*
 --Create stored procedure to lookup+insert data
@@ -402,6 +417,51 @@ Begin
   Then
     Rollback;
   Else 
+    Commit;
+  End if;
+End;
+Create 
+Procedure pGetNLP(
+  In NLP_Category VarChar(20),
+  Out NLP_ID int)
+Begin
+  Set NLP_ID = (
+    Select NLPID From NLPData
+    Where NLPCategory = NLP_Category
+  );
+End;
+Use HorizanDB;
+Create 
+Procedure pInsSchoolNLPData(
+  School_Name VarChar(255),
+  NLP_Category VarChar(20),
+  NLP_Rating float
+)
+Begin
+  Declare School_ID int;
+  Declare NLP_ID int;
+
+  Call pGetSchool(School_Name, School_ID);
+  If School_ID is null
+  then
+    SIGNAL SQLSTATE '45000'
+    Set MESSAGE_TEXT = 'Invalid School name';
+  End if;
+
+  Call pGetNLP(NLP_Category, NLP_ID);
+  If NLP_ID is null
+  then 
+    SIGNAL SQLSTATE '45000'
+    Set MESSAGE_TEXT = 'Invalid NLP Category';
+  End if;
+
+  Start TRANSACTION;
+  Insert Into SchoolNLP(SchoolID, NLPID, NLPRating)
+  Values (School_ID, NLP_ID, NLP_Rating);
+  If @@error_count <> 0
+  Then 
+    Rollback;
+  Else
     Commit;
   End if;
 End;

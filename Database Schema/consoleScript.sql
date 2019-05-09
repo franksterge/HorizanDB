@@ -46,6 +46,9 @@ insert into SchoolApplication (SchoolID, ApplicationID, DueDate)
 values (1,1, '01/01/2020');
 delete from TestDetail;
 use HorizanDB;
-Select * from SchoolMajorRankingSource;
+Select * from SchoolDetail;
 Call pInsSchoolTuition("Yale University", 'general', 'high', 35873);
 FLUSH HOSTS;
+
+Use HorizanDB;
+Select SchoolID from SchoolNLP;
