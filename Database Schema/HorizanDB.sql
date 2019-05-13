@@ -130,16 +130,145 @@ Create
 Table SchoolNLP(
   SchoolNLPID int AUTO_INCREMENT primary key not null,
   SchoolID int not null REFERENCES SchoolDetail(SchoolID),
-  NLPID int not null REFERENCES NLPData(NLPID),
+  NLPID int not null REFERSENCES NLPData(NLPID),
   NLPRating float not null
 );
+use HorizanDB;
+alter table SchoolNLP
+add constraint Foreign Key (SchoolID) REFERENCES SchoolDetail(SchoolID);
+alter table SchoolNLP
+add constraint Foreign Key (NLPID) REFERENCES NLPData(NLPID)
 
 Create
 Table NLPData(
   NLPID int AUTO_INCREMENT primary key not null,
   NLPCategory VarChar(20) not null
 );
+use HorizanDB;
+Create 
+Table ImageDetail(
+  ImageID int AUTO_INCREMENT primary key not null,
+  ImageName varChar(50) not null,
+  ImageType varChar(20) not null,
+  ImagePath varChar(2000) not null
+);
 
+use HorizanDB;
+alter table ImageDetail add column ImageType VarChar(20) not null;
+drop table ImageDetail;
+Create 
+Table SchoolImage(
+  SchoolImageID int AUTO_INCREMENT primary key not null,
+  SchoolID int not null,
+  ImageID int not null,
+  Foreign key (SchoolID) REFERENCES SchoolDetail(SchoolID),
+  Foreign key (ImageID) REFERENCES ImageDetail(ImageID)
+);
+
+use HorizanDB;
+Create 
+Table UserDetail (
+  UserID int AUTO_INCREMENT primary key not null,
+  UserFirstName varChar(20) not null,
+  UserLastName varChar(20) not null,
+  UserEmail varChar(100) not null
+);
+
+
+use HorizanDB;
+Create 
+Table UserTest(
+  UserTestID int AUTO_INCREMENT primary key not null,
+  UserID int not null,
+  TestID int not null,
+  Score int not null,
+  EntryDate Date not null default Now(),
+  Foreign Key (UserID) REFERENCES UserDetail(UserID),
+  Foreign key (TestID) REFERENCES TestDetail(TestID)
+);
+use HorizanDB;
+alter table UserTest add column EntryDate Date not null default Now();
+
+Use HorizanDB;
+Drop table CollectionDetail;
+Create 
+Table CollectionDetail(
+  CollectionID int AUTO_INCREMENT primary key not null,
+  CollectionName varChar(20) not null,
+  CollectionDesc varChar(2000) null
+);
+Use HorizanDB;
+
+Create 
+Table UserSchoolCollection(
+  UserSchoolCollectionID int AUTO_INCREMENT primary key not null,
+  UserID int not null,
+  SchoolID int not null,
+  CollectionID int not null,
+  MatchPercentage int null,
+  Foreign Key (UserID) REFERENCES UserDetail(UserID),
+  Foreign key (SchoolID) REFERENCES SchoolDetail(SchoolID),
+  Foreign Key (CollectionID) REFERENCES CollectionDetail(CollectionID)
+);
+
+use HorizanDB;
+Create 
+Table Tips(
+  TipID int AUTO_INCREMENT primary key not null,
+  TipTitle varChar(50) not null,
+  TipDetail VarChar(2000) not null,
+  ImageID int not null,
+  Foreign Key (ImageID) REFERENCES ImageDetail(ImageID)
+);
+
+Use HorizanDB;
+Create 
+Table Status(
+  StatusID int AUTO_INCREMENT primary key not null,
+  StatusName VarChar(10) not null
+);
+
+Create 
+Table UserApplication(
+  UserApplicationID int AUTO_INCREMENT primary key not null,
+  UserID int not null,
+  SchoolApplicationID int not null,
+  StatusID int not null,
+  ApplyDate date not null,
+  Foreign Key (UserID) REFERENCES UserDetail(UserID),
+  Foreign Key (SchoolApplicationID) REFERENCES SchoolApplication(SchoolApplicationID),
+  Foreign Key (StatusID) REFERENCES Status(StatusID)
+);
+
+Use HorizanDB;
+Create 
+Table UserServey(
+  UserServeyID int AUTO_INCREMENT primary key not null,
+  UserID int not null,
+  ServeyID int not null,
+  EntryDate date not null default Now(),
+  Foreign key (UserID) REFERENCES UserDetail(UserID),
+  Foreign Key (ServeyID) REFERENCES ServeyDetail(ServeyID)
+);
+
+use HorizanDB;
+Create 
+Table ServeyDetail(
+  ServeyID int AUTO_INCREMENT primary Key not null,
+  ServeyName varChar(100) not null
+);
+Use HorizanDB;
+alter table ServeyDetail add column ServeyName varChar(100) not null;
+Use HorizanDB;
+Create
+Table ServeyData(
+  ServeyDataID int AUTO_INCREMENT primary Key not null,
+  ServeyID int not null,
+  NLPID int not null,
+  Score float not null,
+  Foreign key (ServeyID) REFERENCES ServeyDetail(ServeyID),
+  Foreign Key (NLPID) REFERENCES NLPData(NLPID)
+);
 /*
 --Create stored procedure to lookup+insert data
 */
@@ -228,6 +357,25 @@ Begin
     From TuitionDetail
     Where TuitionName = TName
     And TuitionType = TType
+  );
+End;
+
+use HorizanDB;
+
+Create
+Procedure pGetUser(
+  In UFName VarChar(20),
+  In ULName VarCHar(20),
+  In UEmail VarChar(100),
+  Out User_ID int
+)
+Begin 
+  Set User_ID = (
+    Select UserID 
+    From UserDetail
+    Where UserFirstName = UFName
+    And UserLastName = ULName
+    And UserEmail = UEmail
   );
 End;
 

@@ -27,6 +27,8 @@ use HorizanDB;
 insert into MajorRanking (MajorRankingName) values ('Business'), ('Communication'), ('Computer Science'), ('Biology'), ('Psychology'), ('Engineering')
 use HorizanDB;
 
+Select * from TuitionDetail;
+
 
 /*
   tuition name: general/in-state/out-state
