@@ -174,6 +174,21 @@ Table UserDetail (
   UserEmail varChar(100) not null
 );
 
+Use HorizanDB;
+Create 
+Table UserCollege(
+  UserSchoolID int AUTO_INCREMENT primary key not null,
+  UserID int not null,
+  SchoolID int not null,
+  MatchPercentage int not null,
+  Foreign Key (UserID) REFERENCES UserDetail(UserID),
+  Foreign Key (SchoolID) REFERENCES SchoolDetail(SchoolID)
+);
+
+
+use HorizanDB;
+alter table UserDetail
+add unique (UserEmail);
 
 use HorizanDB;
 Create 
@@ -194,23 +209,24 @@ Drop table CollectionDetail;
 Create 
 Table CollectionDetail(
   CollectionID int AUTO_INCREMENT primary key not null,
-  CollectionName varChar(20) not null,
+  CollectionName varChar(100) not null,
   CollectionDesc varChar(2000) null
 );
-Use HorizanDB;
 
 Create 
 Table UserSchoolCollection(
   UserSchoolCollectionID int AUTO_INCREMENT primary key not null,
   UserID int not null,
-  SchoolID int not null,
+  SchoolID int null,
   CollectionID int not null,
-  MatchPercentage int null,
   Foreign Key (UserID) REFERENCES UserDetail(UserID),
   Foreign key (SchoolID) REFERENCES SchoolDetail(SchoolID),
   Foreign Key (CollectionID) REFERENCES CollectionDetail(CollectionID)
 );
-
+use HorizanDB;
+alter table UserSchoolCollection drop column MatchPercentage;
+alter table UserSchoolCollection modify SchoolID int null;
+--delete matchpercentage, change schoolID to null
 use HorizanDB;
 Create 
 Table Tips(
@@ -380,6 +396,61 @@ Begin
 End;
 
 Use HorizanDB;
+Create 
+Procedure pGetCollection(
+  Collection_Name VarChar(100),
+  Out Collection_ID int
+)
+Begin 
+  Set Collection_ID = (
+    Select CollectionID 
+    From CollectionDetail
+    Where CollectionName = Collection_Name
+  );
+End;
+
+Use HorizanDB;
+Create 
+Procedure pGetServey(
+  In Servey_Name VarChar(100),
+  Out Servey_ID int 
+)
+Begin
+  Set Servey_ID = (
+    Select ServeyID 
+    From ServeyDetail
+    Where ServeyName = Servey_Name
+  );
+end;
+
+Use HorizanDB;
+Create 
+Procedure pGetServeyData(
+  In Servey_ID int,
+  In NLP_ID int,
+  Out Servey_Data_ID int
+)
+Begin
+  Set Servey_Data_ID = (
+      Select ServeyDataID
+      From ServeyData
+      Where ServeyID = Servey_ID 
+      and NLPID = NLP_ID
+  );
+End;
+
+Create 
+Procedure pGetNLP(
+  In NLP_Category VarChar(20),
+  Out NLP_ID int)
+Begin
+  Set NLP_ID = (
+    Select NLPID From NLPData
+    Where NLPCategory = NLP_Category
+  );
+End;
+
+Use HorizanDB;
 drop procedure pInsSchoolMajorRankingSource;
 Create
 Procedure pInsSchoolMajorRankingSource(
@@ -463,6 +534,9 @@ Begin
     Commit;
   End if;
 End;
+
+
+
 
 Create 
 Procedure pInsSchoolTag(
@@ -568,16 +642,10 @@ Begin
     Commit;
   End if;
 End;
-Create 
-Procedure pGetNLP(
-  In NLP_Category VarChar(20),
-  Out NLP_ID int)
-Begin
-  Set NLP_ID = (
-    Select NLPID From NLPData
-    Where NLPCategory = NLP_Category
-  );
-End;
+
+
+
+
 Use HorizanDB;
 Create 
 Procedure pInsSchoolNLPData(

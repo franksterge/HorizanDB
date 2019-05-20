@@ -18,7 +18,7 @@ var smallDollarAmount = /\$(\d*)/gi;
 new Promise((resolve, reject) => {
     const connection = mysql.createConnection({
         host: "18.191.72.163",
-        user: "master_user",
+        user: "root",
         port: 3306,
         database: "HorizanDB"
     });

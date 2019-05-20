@@ -54,3 +54,8 @@ FLUSH HOSTS;
 
 Use HorizanDB;
 Select SchoolID from SchoolNLP;
+
+use HorizanDB;
+call pInsUserDetail('test', 'User', 'helloworld@gmail.com');
+use HorizanDB;
+call pInsUserCollection('test', 'User', 'helloworld@gmail.com', 'My List');
