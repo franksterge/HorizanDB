@@ -520,6 +520,7 @@ End;
         call pInsUserServey(UserFirstName, UserLastName, UserEmail, Servey_Name)
 */
 Use HorizanDB;
+drop procedure pInsUserServey;
 Create 
 Procedure pInsUserServey(
     User_First_Name VarChar(20),

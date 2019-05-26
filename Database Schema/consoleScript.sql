@@ -56,6 +56,6 @@ Use HorizanDB;
 Select SchoolID from SchoolNLP;
 
 use HorizanDB;
-call pInsUserDetail('test', 'User', 'helloworld@gmail.com');
+call pInsUserDetail('test', 'User1', 'helloworld1@gmail.com');
 use HorizanDB;
-call pInsUserCollection('test', 'User', 'helloworld@gmail.com', 'My List');
+call pInsUserCollection('test', 'User', 'helloworld@gmail.com', 'My List1');
