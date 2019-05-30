@@ -573,14 +573,14 @@ begin
 
     if @@error_count = 0
     then
-    create temporary table tempRanking(
-        Select s.SchoolName, sms.MajorRanking, m.MajorRankingName
-        from SchoolDetail s
-        join SchoolMajorRankingSource sms on s.SchoolID = sms.SchoolID
-        join MajorRanking m on sms.MajorRankingID = m.MajorRankingID
-        where s.SchoolID = School_ID
-    );
-    Select * from tempRanking;
+        create temporary table tempRanking(
+            Select s.SchoolName, sms.MajorRanking, m.MajorRankingName
+            from SchoolDetail s
+            join SchoolMajorRankingSource sms on s.SchoolID = sms.SchoolID
+            join MajorRanking m on sms.MajorRankingID = m.MajorRankingID
+            where s.SchoolID = School_ID
+        );
+        Select * from tempRanking;
     drop table tempRanking;
     end if;
 end;

@@ -686,9 +686,9 @@ use HorizanDB;
 drop view vAllSchoolData;
 create
 View vAllSchoolData as (
-  Select s.SchoolName, s.AcceptanceRate, s.SchoolLocation, 
-  s.SchoolWebsite, s.SchoolEnvironment, s.SchoolSize, s.StudentFacultyRatio,
-  s.PhoneNumber, s.SchoolType, n.NLPCategory, sn.NLPRating,  a.ApplicationName,
+  Select s.SchoolName,  s.SchoolLocation, 
+   s.SchoolEnvironment, s.SchoolSize, s.StudentFacultyRatio,
+  s.SchoolType, n.NLPCategory, sn.NLPRating,  a.ApplicationName,
   st.TuitionAmount, t.TuitionName, t.TuitionType, ste.ScoreUpBound, ste.ScoreLowerBound,
   te.TestName, sms.MajorRanking, m.MajorRankingName
   from SchoolDetail s 
