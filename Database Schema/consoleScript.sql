@@ -59,3 +59,14 @@ use HorizanDB;
 call pInsUserDetail('test', 'User1', 'helloworld1@gmail.com');
 use HorizanDB;
 call pInsUserCollection('test', 'User', 'helloworld@gmail.com', 'My List1');
+
+use HorizanDB;
+select * from vTips;
+use HorizanDB;
+
+call pGetSchoolMajorRanking('University of Washington');
+
+select * from tempRanking;
+
+use HorizanDB;
+select * from vAllSchoolData;

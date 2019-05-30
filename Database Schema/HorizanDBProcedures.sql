@@ -18,6 +18,7 @@ View vTips as (
     school location, match percentage, thumbnail image path and image name
 */
 Use HorizanDB;
+drop procedure pGetHomePageFavorites;
 Create
 Procedure pGetHomePageFavorites(
     User_First_Name VarChar(20),
@@ -33,20 +34,19 @@ Begin
         Set MESSAGE_TEXT = 'User not registered';
     end if;
 
-    Start Transaction;
-    Select s.SchoolName, s.AcceptanceRate, s.SchoolLocation, usc.MatchPercentage, i.ImagePath, i.ImageName
-    from SchoolDetail s 
-    join UserSchoolCollection usc on  s.SchoolID = usc.SchoolID
-    join CollectionDetail c on s.CollectionID = c.CollectionID
-    join SchoolImage si on s.SchoolID = si.SchoolID
-    join ImageDetail i on i.ImageID = si.ImageID
-    join UserDetail u on u.UserID = usc.UserID
-    where c.CollectionName = 'Favorite'and u.UserID = User_ID and i.ImageType = "ThumbNail";
-    if @@error_count <> 0
-        Then 
-        Rollback;
-        else 
-        Commit;
+    if @@error_count = 0
+    then 
+    create temporary table tempHome(
+        Select s.SchoolName, s.AcceptanceRate, s.SchoolLocation, usc.MatchPercentage, i.ImagePath, i.ImageName
+        from SchoolDetail s 
+        join UserSchoolCollection usc on  s.SchoolID = usc.SchoolID
+        join CollectionDetail c on s.CollectionID = c.CollectionID
+        join SchoolImage si on s.SchoolID = si.SchoolID
+        join ImageDetail i on i.ImageID = si.ImageID
+        join UserDetail u on u.UserID = usc.UserID
+        where c.CollectionName = 'Favorite'and u.UserID = User_ID and i.ImageType = "ThumbNail"
+    );
+    select * from tempHome;
     end if;
 end;
 
@@ -73,20 +73,19 @@ Begin
         Set MESSAGE_TEXT = 'User not registered';
     end if;
 
-    Start Transaction;
-    Select s.SchoolName, s.AcceptanceRate, s.SchoolLocation, usc.MatchPercentage, i.ImagePath, i.ImageName
-    from SchoolDetail s 
-    join UserSchoolCollection usc on  s.SchoolID = usc.SchoolID
-    join CollectionDetail c on s.CollectionID = c.CollectionID
-    join SchoolImage si on s.SchoolID = si.SchoolID
-    join ImageDetail i on i.ImageID = si.ImageID
-    join UserDetail u on u.UserID = usc.UserID
-    where u.UserID = User_ID and i.ImageType = "ThumbNail";
-    if @@error_count <> 0
-        Then 
-        Rollback;
-        else 
-        Commit;
+    if @@error_count = 0
+    then 
+    create temporary table tempSchoolList(
+        Select s.SchoolName, s.AcceptanceRate, s.SchoolLocation, usc.MatchPercentage, i.ImagePath, i.ImageName
+        from SchoolDetail s 
+        join UserSchoolCollection usc on  s.SchoolID = usc.SchoolID
+        join CollectionDetail c on s.CollectionID = c.CollectionID
+        join SchoolImage si on s.SchoolID = si.SchoolID
+        join ImageDetail i on i.ImageID = si.ImageID
+        join UserDetail u on u.UserID = usc.UserID
+        where u.UserID = User_ID and i.ImageType = "ThumbNail"
+    );
+    select * from tempSchoolList;
     end if;
 End
 
@@ -112,17 +111,16 @@ Begin
         Set MESSAGE_TEXT = 'User not registered';
     end if;
 
-    Start Transaction;
-    Select s.ServeyName, su.EntryDate
-    from ServeyDetail s 
-    join ServeyUser su on s.ServeyID = su.ServeyID
-    join UserDetail u on u.UserID = su.UserID
-    where u.UserID = User_ID;
-    if @@error_count <> 0
-        Then 
-        Rollback;
-        else 
-        Commit;
+    if @@error_count = 0
+    then 
+    create temporary table tempServeyList(
+        Select s.ServeyName, su.EntryDate
+        from ServeyDetail s 
+        join ServeyUser su on s.ServeyID = su.ServeyID
+        join UserDetail u on u.UserID = su.UserID
+        where u.UserID = User_ID
+    );
+    select * from tempServeyList;
     end if;
 End;
 
@@ -134,6 +132,7 @@ End;
 */
 
 Use HorizanDB;
+drop procedure pGetUserProfile;
 Create 
 Procedure pGetUserProfile(
     In User_First_Name VarChar(20),
@@ -149,18 +148,16 @@ Begin
         Set MESSAGE_TEXT = 'User not registered';
     end if;
 
-    Start Transaction;
-    Select u.UserFirstName, u.UserLastName, Max(ut.score), ut.EntryDate, t.TestName
-    from UserDetail u 
-    join UserTest ut on u.UserID = ut.UserID
-    join TestDetail t on ut.TestID = t.TestID
-    Where u.UserID = User_ID 
-    Group by t.TestID;
-    if @@error_count <> 0
-        Then 
-        Rollback;
-        else 
-        Commit;
+    if @@error_count = 0
+    then 
+    create temporary table tempUserProfile(
+        Select u.UserFirstName, u.UserLastName, Max(ut.score), ut.EntryDate, t.TestName
+        from UserDetail u 
+        join UserTest ut on u.UserID = ut.UserID
+        join TestDetail t on ut.TestID = t.TestID
+        Where u.UserID = User_ID
+    );
+    select * from tempUserProfile;
     end if;
 End;
 
@@ -188,22 +185,21 @@ Begin
         Set MESSAGE_TEXT = 'User not registered';
     end if;
 
-    Start Transaction;
-    Select s.SchoolName, s.AcceptanceRate, s.SchoolLocation, uc.MatchPercentage,
-    c.CollectionName, i.ImagePath, i.ImageName
-    from SchoolDetail s 
-    join UserCollege uc on uc.SchoolID = s.School_ID
-    join UserSchoolCollection usc on  s.SchoolID = usc.SchoolID
-    join CollectionDetail c on s.CollectionID = c.CollectionID
-    join SchoolImage si on s.SchoolID = si.SchoolID
-    join ImageDetail i on i.ImageID = si.ImageID
-    join UserDetail u on u.UserID = usc.UserID
-    where u.UserID = User_ID and i.ImageType = "ThumbNail";
-    if @@error_count <> 0
-        Then 
-        Rollback;
-        else 
-        Commit;
+    if @@error_count = 0
+    then 
+    create temporary table tempAllList(
+        Select s.SchoolName, s.AcceptanceRate, s.SchoolLocation, uc.MatchPercentage,
+        c.CollectionName, i.ImagePath, i.ImageName
+        from SchoolDetail s 
+        join UserCollege uc on uc.SchoolID = s.School_ID
+        join UserSchoolCollection usc on  s.SchoolID = usc.SchoolID
+        join CollectionDetail c on s.CollectionID = c.CollectionID
+        join SchoolImage si on s.SchoolID = si.SchoolID
+        join ImageDetail i on i.ImageID = si.ImageID
+        join UserDetail u on u.UserID = usc.UserID
+        where u.UserID = User_ID and i.ImageType = "ThumbNail"
+    );
+    select * from tempAllList;
     end if;
 end;
 
@@ -212,7 +208,9 @@ end;
   usage:
     call pGetSchoolInfo(userFirstName, userLastName, UserEmail, SchoolName)  
 */
+--rewrite
 Use HorizanDB;
+drop procedure pGetSchoolInfo;
 Create
 Procedure pGetSchoolInfo(
     User_First_Name VarChar(20),
@@ -237,37 +235,36 @@ Begin
         SET MESSAGE_TEXT = 'Invalid School name';
     End if;
 
-    Start Transaction;
-    Select s.SchoolName, s.AcceptanceRate, s.SchoolLocation, 
-    uc.MatchPercentage, c.CollectionName, i.ImagePath, i.ImageName,
-    s.SchoolWebsite, s.SchoolEnvironment, s.SchoolSize, s.StudentFacultyRatio, 
-    s.PhoneNumber, s.SchoolType, sn.NLPRating, n.NLPCategory, a.ApplicationName,
-    st.TuitionAmount, t.TuitionName, t.TuitionType, ste.ScoreUpBound, ste.ScoreLowerBound,
-    te.TestName, sms.MajorRanking, m.MajorRankingName
-    from SchoolDetail s 
-    join UserCollege uc on s.SchoolID = uc.SchoolID
-    join UserSchoolCollection usc on  s.SchoolID = usc.SchoolID
-    join CollectionDetail c on usc.CollectionID = c.CollectionID
-    join SchoolImage si on s.SchoolID = si.SchoolID
-    join ImageDetail i on i.ImageID = si.ImageID
-    join UserDetail u on u.UserID = usc.UserID
-    join SchoolNLP sn on sn.SchoolID = s.SchoolID
-    join NLPData n on n.NLPID = sn.NLPID
-    join SchoolApplication sa on sa.SchoolID = sa.SchoolID
-    join ApplicationDetail a on a.ApplicationID = sa.ApplicationID
-    join SchoolTuition st on st.SchoolID = s.SchoolID
-    join TuitionDetail t on t.TuitionID = st.TuitionID
-    join SchoolTest ste on ste.SchoolID = s.SchoolID
-    join TestDetail te on te.TestID = ste.TestID
-    join SchoolMajorRankingSource sms on sms.SchoolID = s.SchoolID
-    join MajorRanking m on m.MajorRankingID = sms.MajorRankingID
-    where u.UserID = User_ID and t.TuitionName in ('in-state', 'out-state')
-    and s.SchoolID = School_ID;
-    if @@error_count <> 0
-        Then 
-        Rollback;
-        else 
-        Commit;
+    if @@error_count = 0
+    then 
+    create temporary table tempSchoolInfo(
+        Select s.SchoolName, s.AcceptanceRate, s.SchoolLocation, 
+        uc.MatchPercentage, c.CollectionName, i.ImagePath, i.ImageName,
+        s.SchoolWebsite, s.SchoolEnvironment, s.SchoolSize, s.StudentFacultyRatio, 
+        s.PhoneNumber, s.SchoolType, sn.NLPRating, n.NLPCategory, a.ApplicationName,
+        st.TuitionAmount, t.TuitionName, t.TuitionType, ste.ScoreUpBound, ste.ScoreLowerBound,
+        te.TestName, sms.MajorRanking, m.MajorRankingName
+        from SchoolDetail s 
+        join UserCollege uc on s.SchoolID = uc.SchoolID
+        join UserSchoolCollection usc on  s.SchoolID = usc.SchoolID
+        join CollectionDetail c on usc.CollectionID = c.CollectionID
+        join SchoolImage si on s.SchoolID = si.SchoolID
+        join ImageDetail i on i.ImageID = si.ImageID
+        join UserDetail u on u.UserID = usc.UserID
+        join SchoolNLP sn on sn.SchoolID = s.SchoolID
+        join NLPData n on n.NLPID = sn.NLPID
+        join SchoolApplication sa on sa.SchoolID = sa.SchoolID
+        join ApplicationDetail a on a.ApplicationID = sa.ApplicationID
+        join SchoolTuition st on st.SchoolID = s.SchoolID
+        join TuitionDetail t on t.TuitionID = st.TuitionID
+        join SchoolTest ste on ste.SchoolID = s.SchoolID
+        join TestDetail te on te.TestID = ste.TestID
+        join SchoolMajorRankingSource sms on sms.SchoolID = s.SchoolID
+        join MajorRanking m on m.MajorRankingID = sms.MajorRankingID
+        where u.UserID = User_ID and t.TuitionName in ('in-state', 'out-state')
+        and s.SchoolID = School_ID
+    );
+    select * from tempSchoolInfo;
     end if;
 end;
 
@@ -555,5 +552,35 @@ Begin
         Rollback;
     else 
         commit;
+    end if;
+end;
+
+/**/
+use HorizanDB;
+drop procedure pGetSchoolMajorRanking;
+Create
+Procedure pGetSchoolMajorRanking(
+    School_Name VarChar(255)
+)
+begin
+    Declare School_ID int;
+    Call pGetSchool (School_Name, School_ID);
+    if School_ID is null
+    then
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'School not found';
+    end if;
+
+    if @@error_count = 0
+    then
+    create temporary table tempRanking(
+        Select s.SchoolName, sms.MajorRanking, m.MajorRankingName
+        from SchoolDetail s
+        join SchoolMajorRankingSource sms on s.SchoolID = sms.SchoolID
+        join MajorRanking m on sms.MajorRankingID = m.MajorRankingID
+        where s.SchoolID = School_ID
+    );
+    Select * from tempRanking;
+    drop table tempRanking;
     end if;
 end;

@@ -681,3 +681,27 @@ Begin
     Commit;
   End if;
 End;
+
+use HorizanDB;
+drop view vAllSchoolData;
+create
+View vAllSchoolData as (
+  Select s.SchoolName, s.AcceptanceRate, s.SchoolLocation, 
+  s.SchoolWebsite, s.SchoolEnvironment, s.SchoolSize, s.StudentFacultyRatio,
+  s.PhoneNumber, s.SchoolType, n.NLPCategory, sn.NLPRating,  a.ApplicationName,
+  st.TuitionAmount, t.TuitionName, t.TuitionType, ste.ScoreUpBound, ste.ScoreLowerBound,
+  te.TestName, sms.MajorRanking, m.MajorRankingName
+  from SchoolDetail s 
+  join SchoolNLP sn on sn.SchoolID = s.SchoolID
+  join NLPData n on n.NLPID = sn.NLPID
+  join SchoolApplication sa on s.SchoolID = sa.SchoolID
+  join ApplicationDetail a on a.ApplicationID = sa.ApplicationID
+  join SchoolTuition st on st.SchoolID = s.SchoolID
+  join TuitionDetail t on t.TuitionID = st.TuitionID
+  join SchoolTest ste on ste.SchoolID = s.SchoolID
+  join TestDetail te on te.TestID = ste.TestID
+  join SchoolMajorRankingSource sms on sms.SchoolID = s.SchoolID
+  join MajorRanking m on m.MajorRankingID = sms.MajorRankingID
+  where t.TuitionName in ('in-state', 'out-state')
+);
+
