@@ -17,8 +17,9 @@ var smallDollarAmount = /\$(\d*)/gi;
 
 new Promise((resolve, reject) => {
     const connection = mysql.createConnection({
-        host: "18.191.72.163",
-        user: "root",
+        host: "horizandb.c0c5mdj3ouo6.us-east-2.rds.amazonaws.com",
+        user: "Horizan",
+        password: "horizansql",
         port: 3306,
         database: "HorizanDB"
     });
@@ -33,10 +34,10 @@ new Promise((resolve, reject) => {
 })
 .then(context => {
     return new Promise((resolve, reject) => {
-        fs.createReadStream('./LocalFiles/RawData/NLPDataSanitized.csv')
+        fs.createReadStream('/Users/Frank/OneDrive/Horizan/LocalFiles/RawData/CollegeDataPre-parsing.csv')
         .pipe(csv())
         .on('data', (row) => {
-            // var testScore = [];
+            var testScore = [];
             var i = 0;
             var schoolName;
             var tuitionName;
@@ -44,7 +45,7 @@ new Promise((resolve, reject) => {
             var parameters = [];
             var appNames = ["Common App", "Coalition App"];
             let SourceName = "Horizan Readjusted";
-            let MajorName = ["Business", "Communication", "Computer Science", "Biology", "Psychology", "Engineering"]
+            let majorNames = ["Business", "Communication", "Computer Science", "Biology", "Psychology", "Engineering"]
             let nlpCategories = ["Reputation", "Facilities", "Happiness", "Clubs", "Location", "Food", "Social", "Opportunites", "Safety", "Internet"];
             let iValue = [12, 13, 14, 15, 16, 17];
             for (key in row) {
@@ -52,26 +53,22 @@ new Promise((resolve, reject) => {
                 var testType;
                 var testLowBound;
                 var testHighBound;
-                //handle test scores
-                // if (i == 0) {
-                //     testScore.push({'SchoolName': value});
-                //     schoolName = value;
-                // } else if (i <= 2) {
-                //     let testValue = value.split("-");
-                //     let testType = ['SAT', 'ACT'];
-                //     testScore.push({[testType[i - 1] + 'Upper']: testValue[0]});
-                //     testScore.push({[testType[i - 1] + 'Lower']:testValue[1]});
-                // } else 
                 if (i == 0) {
                     schoolName = value;
-                    if (parameters.indexOf(schoolName) == -1 && schoolName) {
-                        parameters.push(schoolName);
-                    }
-                } else {
-                    let nlpCategory = nlpCategories[i - 1];
-                    parameters.push(nlpCategory);
-                    parameters.push(value)
-                }
+                    parameters.push(schoolName);
+                    // console.log(schoolName);
+                } 
+                //else 
+                // if (i == 0) {
+                //     schoolName = value;
+                //     if (parameters.indexOf(schoolName) == -1 && schoolName) {
+                //         parameters.push(schoolName);
+                //     }
+                // } else {
+                //     let nlpCategory = nlpCategories[i - 1];
+                //     parameters.push(nlpCategory);
+                //     parameters.push(value)
+                // }
                 // else if (iValue.indexOf(i) != -1) {
                 //     parameters.push(MajorName[i - 12]);
                 //     parameters.push(SourceName);
@@ -80,21 +77,15 @@ new Promise((resolve, reject) => {
                 /*ins test script */
                 // else if (i > 0 && i <= 2) {
                 //     if (value != "N/A" && value != "") {
-                //         var testType = "SAT";
-                //         if (parameters.indexOf(testType) == -1) {parameters.push(testType);}
-                //         switch (i) {
-                //             case 1:
-                //                 // if (value != "N/A") {
-                //                     testLowBound = value;
-                //                     parameters.push(testLowBound);
-                //                 // }
-                //                 break;
-                //             case 2: 
-                //                 testHighBound = value;
-                //                 parameters.push(testHighBound);
-                //         }
-                //     }
-                // } else {
+                //         var testTypes = ["SAT", "ACT"];
+                //         var testType = testTypes[i - 1];
+                //         parameters.push(testType);
+                //         var scores = value.split("-");
+                //         parameters.push(scores[0]);
+                //         parameters.push(scores[1]);
+                    // }
+                // } 
+                // else {
                 //     if (value != "N/A" && value != ""){
                 //         var testType = "ACT";
                 //         if (parameters.indexOf(testType) == -1) {parameters.push(testType);}
@@ -111,81 +102,89 @@ new Promise((resolve, reject) => {
                 //     }
                 // } 
                 /**tuition scrit */
-                // if (i >= 3 && i <= 9) {
-                //     var dollarAmountRegex;
-                //     var parsingComponents;
-                //     if (value.length > 4) {
-                //         dollarAmountRegex = bigDollarAmount;
-                //         parsingComponents = '$1$2';
-                //     } else {
-                //         dollarAmountRegex = smallDollarAmount;
-                //         parsingComponents = '$1';
-                //     }
-                //     let tuitionAmount = value.replace(dollarAmountRegex, parsingComponents);
-                //     switch (i) {
-                //         case 3:
-                //             tuitionName = "in-state";
-                //             tuitionType = "general";
-                //             break;
-                //         case 4:
-                //             tuitionName = "out-state";
-                //             tuitionType = "general";
-                //             break;
-                //         case 5:
-                //             tuitionName = "general";
-                //             tuitionType = "low";
-                //             break;
-                //         case 6:
-                //             tuitionName = "general";
-                //             tuitionType = "medium-low";
-                //             break;
-                //         case 7:
-                //             tuitionName = "general";
-                //             tuitionType = "medium";
-                //             break;
-                //         case 8:
-                //             tuitionName = "general";
-                //             tuitionType = "medium-high";
-                //             break;
-                //         case 9:
-                //             tuitionName = "general";
-                //             tuitionType = "high";
-                //             break;
-                //         default:
-                //             break;
-                //     }
-                //     if (tuitionAmount == "N/A") {
-                //         tuitionAmount = null;
-                //     } 
-                //     parameters.push(tuitionName);
-                //     parameters.push(tuitionType);
-                //     parameters.push(tuitionAmount);
-                
-                    if (parameters.length == 3) {
-                        var SQLQuery = getSQLQuery("pInsSchoolNLPData", parameters);
-                        console.log(SQLQuery);
-                        parameters = [];
-                        parameters.push(schoolName);
-                        context.query(SQLQuery, function (error, results){
-                            if (error){
-                                console.error('error: ' + error.stack);
-                                reject(error);
-                            }
-                        });
-                    } else if (parameters > 4) {
-                        parameters = [];
-                        parameters.push(schoolName);
-                    }
-                // }
-                //handle 
-                i += 1;
+            //     if (i >= 3 && i <= 9) {
+            //         var dollarAmountRegex;
+            //         var parsingComponents;
+            //         if (value != "N/A") {
+            //             if (value.length > 4) {
+            //                 dollarAmountRegex = bigDollarAmount;
+            //                 parsingComponents = '$1$2';
+            //             } else {
+            //                 dollarAmountRegex = smallDollarAmount;
+            //                 parsingComponents = '$1';
+            //             }
+            //             let tuitionAmount = value.replace(dollarAmountRegex, parsingComponents);
+            //             switch (i) {
+            //                 case 3:
+            //                     tuitionName = "in-state";
+            //                     tuitionType = "general";
+            //                     break;
+            //                 case 4:
+            //                     tuitionName = "out-state";
+            //                     tuitionType = "general";
+            //                     break;
+            //                 case 5:
+            //                     tuitionName = "general";
+            //                     tuitionType = "low";
+            //                     break;
+            //                 case 6:
+            //                     tuitionName = "general";
+            //                     tuitionType = "medium-low";
+            //                     break;
+            //                 case 7:
+            //                     tuitionName = "general";
+            //                     tuitionType = "medium";
+            //                     break;
+            //                 case 8:
+            //                     tuitionName = "general";
+            //                     tuitionType = "medium-high";
+            //                     break;
+            //                 case 9:
+            //                     tuitionName = "general";
+            //                     tuitionType = "high";
+            //                     break;
+            //                 default:
+            //                     break;
+            //             }
+            //             parameters.push(tuitionName);
+            //             parameters.push(tuitionType);
+            //             parameters.push(tuitionAmount);
+            //         }
+            // }
+            // else if (i > 9 && i < 12) {
+            //     if (value != "N/A") {
+            //         var appName = appNames[i - 10];
+            //         // console.log(appName);
+            //         parameters.push(appName);
+            //     }
+            // }
+            else if (i >= 12) {
+                var majorName = majorNames[i - 12];
+                var sourceName = "Horizan Readjusted";
+                var majorRanking = value;
+                parameters.push(majorName, sourceName, majorRanking);
             }
-            // var testObject = {'SchoolName': testScore[0]['SchoolName'],
-            //                 'SATUpper': testScore[1]['SATUpper'],
-            //                 'SATLower': testScore[2]['SATLower'],
-            //                 'ACTUpper': testScore[3]['ACTUpper'],
-            //                 'ACTLower': testScore[4]['ACTLower']};
-            // TestData.push(testObject);
+            // console.log(testScore);
+            // console.log(parameters);
+            if (parameters.length == 4) {
+                var SQLQuery = getSQLQuery("pInsSchoolMajorRankingSource", parameters);
+                console.log(SQLQuery);
+                parameters = [];
+                parameters.push(schoolName);
+                context.query(SQLQuery, function (error, results){
+                    if (error){
+                        console.error('error: ' + error.stack);
+                        reject(error);
+                    }
+                });
+            } else if (parameters > 4) {
+                parameters = [];
+                parameters.push(schoolName);
+            }
+            // }
+            //handle 
+            i += 1;
+            }
         });
         // .on('end', ()=>{
         //     const csvWriter = createCSVWriter({
@@ -200,7 +199,7 @@ new Promise((resolve, reject) => {
         resolve(context);
     });
 })
-// .then(context => {context.end();})
+.then(context => {console.log("finished");})
 .catch(err => {console.error(err.stack); });
 //sanitize Test scores
 
@@ -211,7 +210,7 @@ function getSQLQuery(procedureName, parameters) {
     var query = 'Call ' + procedureName + '("' + parameters[0] + '"';
     for (let i = 1; i < parameters.length; i++) {
         var parameter;
-        if (i == 1) {
+        if (i == 1 || i == 2) {
             parameter = '"' + parameters[i] + '"';
         } else {
             parameter = parameters[i];
