@@ -13,7 +13,10 @@ var tuitionNames = ["general", "in-state", "out-state"];
 var tuitionTypes = ["general", "low", "medium-low", "medium", "medium-high", "high"];
 var bigDollarAmount = /\$(\d*),(\d*)/gi;
 var smallDollarAmount = /\$(\d*)/gi;
-
+var s3Bucket = "https://horizan-images.s3.us-east-2.amazonaws.com/";
+var s3UniversityImage = s3Bucket + "Univerisity/";
+// var schoolName = /([a-zA-Z_-,'\.]*)(logo.png)/gi;
+var logoBucket = s3UniversityImage + "SchoolLogos/";
 
 new Promise((resolve, reject) => {
     const connection = mysql.createConnection({
@@ -34,37 +37,46 @@ new Promise((resolve, reject) => {
 })
 .then(context => {
     return new Promise((resolve, reject) => {
-        fs.createReadStream('/Users/Frank/OneDrive/Horizan/LocalFiles/RawData/CollegeDataPre-parsing.csv')
+        fs.createReadStream('/Users/Frank/OneDrive/Horizan/LocalFiles/RawData/schoolLogo.csv')
         .pipe(csv())
         .on('data', (row) => {
-            var testScore = [];
+            // var testScore = [];
             var i = 0;
             var schoolName;
-            var tuitionName;
-            var tuitionType;
+            // var tuitionName;
+            // var tuitionType;
             var parameters = [];
-            var appNames = ["Common App", "Coalition App"];
-            let SourceName = "Horizan Readjusted";
-            let majorNames = ["Business", "Communication", "Computer Science", "Biology", "Psychology", "Engineering"]
-            let nlpCategories = ["Reputation", "Facilities", "Happiness", "Clubs", "Location", "Food", "Social", "Opportunites", "Safety", "Internet"];
-            let iValue = [12, 13, 14, 15, 16, 17];
+            // var appNames = ["Common App", "Coalition App"];
+            // let SourceName = "Horizan Readjusted";
+            // let majorNames = ["Business", "Communication", "Computer Science", "Biology", "Psychology", "Engineering"]
+            // let nlpCategories = ["Reputation", "Facilities", "Happiness", "Clubs", "Location", "Food", "Social", "Opportunites", "Safety", "Internet"];
+            // let iValue = [12, 13, 14, 15, 16, 17];
             for (key in row) {
                 let value = row[key];
-                var testType;
-                var testLowBound;
-                var testHighBound;
-                if (i == 0) {
-                    schoolName = value;
-                    parameters.push(schoolName);
-                    // console.log(schoolName);
-                } 
+                var imgLink = logoBucket + value;
+                // console.log(imgLink);
+                schoolName = value.substring(0, value.length - 8);
+                schoolName = schoolName.replace(/_/gi, " ");
+                parameters.push(schoolName);
+                parameters.push(schoolName + " Logo");
+                parameters.push("Logo");
+                parameters.push(imgLink);
+                // var testType;
+                // var testLowBound;
+                // var testHighBound;
+                // if (i == 0) {
+                //     schoolName = value;
+                //     parameters.push(schoolName);
+                //     // console.log(schoolName);
+                // } 
                 //else 
                 // if (i == 0) {
                 //     schoolName = value;
                 //     if (parameters.indexOf(schoolName) == -1 && schoolName) {
                 //         parameters.push(schoolName);
                 //     }
-                // } else {
+                // // } 
+                // else {
                 //     let nlpCategory = nlpCategories[i - 1];
                 //     parameters.push(nlpCategory);
                 //     parameters.push(value)
@@ -158,30 +170,30 @@ new Promise((resolve, reject) => {
             //         parameters.push(appName);
             //     }
             // }
-            else if (i >= 12) {
-                var majorName = majorNames[i - 12];
-                var sourceName = "Horizan Readjusted";
-                var majorRanking = value;
-                parameters.push(majorName, sourceName, majorRanking);
-            }
+            // else if (i >= 12) {
+            //     var majorName = majorNames[i - 12];
+            //     var sourceName = "Horizan Readjusted";
+            //     var majorRanking = value;
+            //     parameters.push(majorName, sourceName, majorRanking);
+            // }
             // console.log(testScore);
             // console.log(parameters);
             if (parameters.length == 4) {
-                var SQLQuery = getSQLQuery("pInsSchoolMajorRankingSource", parameters);
+                var SQLQuery = getSQLQuery("pInsSchoolImage", parameters);
                 console.log(SQLQuery);
                 parameters = [];
                 parameters.push(schoolName);
                 context.query(SQLQuery, function (error, results){
                     if (error){
+                        console.log(schoolName);
                         console.error('error: ' + error.stack);
                         reject(error);
                     }
                 });
-            } else if (parameters > 4) {
+            } else if (parameters > 3) {
                 parameters = [];
                 parameters.push(schoolName);
             }
-            // }
             //handle 
             i += 1;
             }
@@ -210,11 +222,11 @@ function getSQLQuery(procedureName, parameters) {
     var query = 'Call ' + procedureName + '("' + parameters[0] + '"';
     for (let i = 1; i < parameters.length; i++) {
         var parameter;
-        if (i == 1 || i == 2) {
+        // if (i == 1) {
             parameter = '"' + parameters[i] + '"';
-        } else {
-            parameter = parameters[i];
-        }
+        // } else {
+            // parameter = parameters[i];
+        // }
         query += (', ' + parameter);
     }
     query += ');';

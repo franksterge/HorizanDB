@@ -391,13 +391,69 @@ Begin
   End if;
 End;
 
+Use HorizanDB;
+Create 
+Procedure pInsSchoolImage(
+  School_Name VarChar(255),
+  Image_Name varChar(50),
+  Image_Type varChar(20),
+  Image_Path VarChar(2000)
+)
+Begin
+  Declare School_ID int;
+  Declare Image_ID int;
+
+  Call pGetSchool(School_Name, School_ID);
+  If School_ID is null 
+  then 
+    SIGNAL SQLSTATE '45000'
+    SET MESSAGE_TEXT = 'Invalid School name';
+  End if;
+
+  Start Transaction;
+  Insert into ImageDetail (ImageName, ImageType, ImagePath)
+  values (Image_Name, Image_Type, Image_Path);
+  Set Image_ID = LAST_INSERT_ID();
+  Insert into SchoolImage (SchoolID, ImageID)
+  values (School_ID, Image_ID);
+  if @@error_count <> 0
+  then 
+    rollback;
+  else 
+    commit;
+  end if;
+end;
 use HorizanDB;
+drop view vAllSchoolData;
 create
 View vAllSchoolData as (
   Select s.SchoolName,  s.SchoolLocation, 
    s.SchoolEnvironment, s.SchoolSize, s.StudentFacultyRatio,
   s.SchoolType, n.NLPCategory, sn.NLPRating,  a.ApplicationName,
-  st.TuitionAmount, t.TuitionName, t.TuitionType, ste.ScoreUpBound, ste.ScoreLowerBound,
+  st.TuitionAmount, t.TuitionName, t.TuitionType, t. IncomeRangeUpperBound, t. IncomeRangeLowerBound, 
+  ste.ScoreUpperBound, ste.ScoreLowerBound,
+  te.TestName, sms.MajorRanking, m.MajorRankingName
+  from SchoolDetail s 
+  left join SchoolNLP sn on sn.SchoolID = s.SchoolID
+  left join NLPData n on n.NLPID = sn.NLPID
+  left join SchoolApplication sa on s.SchoolID = sa.SchoolID
+  left join ApplicationDetail a on a.ApplicationID = sa.ApplicationID
+  left join SchoolTuition st on st.SchoolID = s.SchoolID
+  left join TuitionDetail t on t.TuitionID = st.TuitionID
+  left join SchoolTest ste on ste.SchoolID = s.SchoolID
+  left join TestDetail te on te.TestID = ste.TestID
+  left join SchoolMajorRankingSource sms on sms.SchoolID = s.SchoolID
+  left join MajorRanking m on m.MajorRankingID = sms.MajorRankingID
+);
+use HorizanDB;
+
+create
+View vAllLeftSchoolData as (
+  Select s.SchoolName,  s.SchoolLocation, 
+   s.SchoolEnvironment, s.SchoolSize, s.StudentFacultyRatio,
+  s.SchoolType, n.NLPCategory, sn.NLPRating,  a.ApplicationName,
+  st.TuitionAmount, t.TuitionName, t.TuitionType, t. IncomeRangeUpperBound, t. IncomeRangeLowerBound, 
+  ste.ScoreUpperBound, ste.ScoreLowerBound,
   te.TestName, sms.MajorRanking, m.MajorRankingName
   from SchoolDetail s 
   join SchoolNLP sn on sn.SchoolID = s.SchoolID
@@ -410,6 +466,4 @@ View vAllSchoolData as (
   join TestDetail te on te.TestID = ste.TestID
   join SchoolMajorRankingSource sms on sms.SchoolID = s.SchoolID
   join MajorRanking m on m.MajorRankingID = sms.MajorRankingID
-  where t.TuitionName in ('in-state', 'out-state')
 );
-

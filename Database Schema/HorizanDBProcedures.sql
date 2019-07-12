@@ -18,7 +18,7 @@ View vTips as (
     school location, match percentage, thumbnail image path and image name
 */
 Use HorizanDB;
-drop procedure pGetHomePageFavorites;
+drop Procedure pGetHomePageFavorites;
 Create
 Procedure pGetHomePageFavorites(
     User_First_Name VarChar(20),
@@ -58,6 +58,7 @@ end;
     school location, match percentage, thumbnail image path and image name
 */
 Use HorizanDB;
+drop Procedure pGetMySchoolList;
 Create 
 Procedure pGetMySchoolList (
     User_First_Name VarChar(20),
@@ -96,6 +97,7 @@ End
     returns a tabel with user's servey names and the date it's takey
 */
 Use HorizanDB;
+drop Procedure pGetServeyList;
 Create 
 Procedure pGetServeyList (
     In User_First_Name VarChar(20),
@@ -132,7 +134,6 @@ End;
 */
 
 Use HorizanDB;
-drop procedure pGetUserProfile;
 Create 
 Procedure pGetUserProfile(
     In User_First_Name VarChar(20),
@@ -169,7 +170,6 @@ End;
     school location, match percentage, thumbnail image path and image name
 */
 Use HorizanDB;
-drop procedure pGetAllLists;
 Create
 Procedure pGetAllLists(
     User_First_Name VarChar(20),
@@ -210,7 +210,6 @@ end;
 */
 --rewrite
 Use HorizanDB;
-drop procedure pGetSchoolInfo;
 Create
 Procedure pGetSchoolInfo(
     User_First_Name VarChar(20),
@@ -311,7 +310,6 @@ end;
         call pInsUserCollction(UserFirstName, UserLastName, UserEmail, CollectionName)
 */
 Use HorizanDB;
-drop procedure pInsUserCollection;
 Create 
 Procedure pInsUserCollection(
     User_First_Name VarChar(20),
@@ -517,7 +515,6 @@ End;
         call pInsUserServey(UserFirstName, UserLastName, UserEmail, Servey_Name)
 */
 Use HorizanDB;
-drop procedure pInsUserServey;
 Create 
 Procedure pInsUserServey(
     User_First_Name VarChar(20),
@@ -555,9 +552,9 @@ Begin
     end if;
 end;
 
-/**/
+--TODO:run this
+drop Procedure pGetSchoolMajorRanking;
 use HorizanDB;
-drop procedure pGetSchoolMajorRanking;
 Create
 Procedure pGetSchoolMajorRanking(
     School_Name VarChar(255)
@@ -581,6 +578,64 @@ begin
             where s.SchoolID = School_ID
         );
         Select * from tempRanking;
-    drop table tempRanking;
     end if;
 end;
+
+--TODO:run this
+drop Procedure pGetSchoolDetail;
+use HorizanDB;
+Create
+Procedure pGetSchoolDetail(
+    School_Name VarChar(255)
+)
+begin
+    Declare School_ID int;
+    Call pGetSchool (School_Name, School_ID);
+    if School_ID is null
+    then
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'School not found';
+    end if;
+
+    if @@error_count = 0
+    then
+        create temporary table tempDetail(
+            Select SchoolName, SchoolWebsite, PhoneNumber, 
+            SchoolSize, GenderRestriction, SchoolType, 
+            SchoolLocation, SchoolEnvironment, StudentFacultyRatio, 
+            AcceptanceRate
+            from SchoolDetail 
+            where SchoolID = School_ID
+        );
+        Select * from tempDetail;
+    end if;
+end;
+
+--TODO: implement schooltest and run create statement
+/* drop Procedure pGetSchoolTest; */
+use HorizanDB;
+Create
+Procedure pGetSchoolTest(
+    School_Name VarChar(255)
+)
+begin
+    Declare School_ID int;
+    Call pGetSchool (School_Name, School_ID);
+    if School_ID is null
+    then
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'School not found';
+    end if;
+
+    if @@error_count = 0
+    then
+        create temporary table tempTest(
+            Select s.SchoolName, t.ScoreUpBound, t.ScoreLowerBound
+            from SchoolDetail 
+            where SchoolID = School_ID
+        );
+        Select * from tempDetail;
+    end if;
+end;
+
+

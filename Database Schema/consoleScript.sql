@@ -33,7 +33,12 @@ insert into TestDetail (TestName, TestDec) values ('SAT', 'SAT Test by Collegebo
 use HorizanDB;
 insert into MajorRanking (MajorRankingName) values ('Business'), ('Communication'), ('Computer Science'), ('Biology'), ('Psychology'), ('Engineering')
 use HorizanDB;
-Select * from SchoolMajorRankingSource;
+select * from SchoolTest;
+alter table SchoolTest change column ScoreLowerBounds ScoreLowerBound int;
+
+select count(*) from NLPData n join SchoolNLP sn on n.NLPID = sn.NLPID order by sn.SchoolID;
+insert into NLPData (NLPCategory) values ('Reputation'), ('Facilities'), ('Happiness'), ('Clubs'), ('Location'), ('Food'), ('Social'), ('Opportunites'), ('Safety'), ('Internet');
+Select * from SchoolDetail;
 Select * from TuitionDetail;
 
 
@@ -79,7 +84,46 @@ call pGetSchoolMajorRanking('University of Washington');
 select * from tempRanking;
 
 use HorizanDB;
-select * from SchoolDetail;
+Select * from SchoolDetail s left join SchoolImage si on s.SchoolID = si.SchoolID
+left join ImageDetail i on si.ImageID = i.ImageID where i.ImageID is null;
+use HorizanDB;
+select * from SchoolDetail where SchoolName = "University of Maryland College Park";
 show procedure status where Db = 'HorizanDB';
 show tables;
+/*
+TODO: insert logos for following schools with the correct name 
+*/
+use HorizanDB;
+Call pInsSchoolImage("Louisiana State University- Baton Rogue", "Louisiana State University- Baton Rogue Logo", "Logo", "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Louisiana_State_University-_Baton_Rougelogo.png");
+Call pInsSchoolImage("North Carolina State University- Raleigh", "North Carolina State University- Raleigh Logo", "Logo", "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/North_Carolina_State_University-_Raleighlogo.png");
+Call pInsSchoolImage("Purdue University-West Lafayette", "Purdue University-West Lafayette Logo", "Logo", "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Purdue_University-_West_Lafayettelogo.png");
+Call pInsSchoolImage("Rensselaer Polytechnic Institute", "Rensselaer Polytechnic Institute Logo", "Logo", "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Rennsselaer_Polytechnic_Institutelogo.png");
+Call pInsSchoolImage("Rutgers University- Newark", "Rutgers University- Newark Logo", "Logo", "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Rutgers_University_Newarklogo.png");
+Call pInsSchoolImage("St. John's University", "St. John's University Logo", "Logo", "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/St._John's_Universitylogo.png");
+Call pInsSchoolImage("Texas A&M University- College Station", "Texas A&M University- College Station Logo", "Logo", "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Texas_A&M_University-_College_Stationlogo.png");
+Call pInsSchoolImage("University of Alabama- Birmingham", "University of Alabama- Birmingham Logo", "Logo", "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Alabama_Birminghamlogo.png");
+Call pInsSchoolImage("University of Illinois- Urbana Champaign", "University of Illinois- Urbana Champaign Logo", "Logo", "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Illinois-_Urbana_Champaignlogo.png");
+Call pInsSchoolImage("University of Maryland College Park", "University of Maryland College Park Logo", "Logo", "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Maryland-_College_Parklogo.png");
+Call pInsSchoolImage("University of Missouri- St. Louis", "University of Missouri- St. Louis Logo", "Logo", "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Missouri-_St._Louislogo.png");
+
+
+
+use HorizanDB;
+select * from vAllSchoolData;
+Select distinct SchoolName from vAllSchoolData;
+select distinct SchoolName from vAllLeftSchoolData;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
