@@ -552,7 +552,9 @@ Begin
     end if;
 end;
 
---TODO:run this
+/* 
+    get major rankings of the given school
+ */
 drop Procedure pGetSchoolMajorRanking;
 use HorizanDB;
 Create
@@ -581,9 +583,11 @@ begin
     end if;
 end;
 
---TODO:run this
-drop Procedure pGetSchoolDetail;
+/* 
+    get all school detail information
+*/
 use HorizanDB;
+drop Procedure pGetSchoolDetail;
 Create
 Procedure pGetSchoolDetail(
     School_Name VarChar(255)
@@ -600,20 +604,21 @@ begin
     if @@error_count = 0
     then
         create temporary table tempDetail(
-            Select SchoolName, SchoolWebsite, PhoneNumber, 
-            SchoolSize, GenderRestriction, SchoolType, 
-            SchoolLocation, SchoolEnvironment, StudentFacultyRatio, 
-            AcceptanceRate
+            Select  SchoolID, SchoolName, SchoolLocation, SchoolEnvironment,
+            SchoolSize, StudentFacultyRatio, SchoolType
             from SchoolDetail 
             where SchoolID = School_ID
         );
         Select * from tempDetail;
+        drop table tempDetail;
     end if;
 end;
 
---TODO: implement schooltest and run create statement
-/* drop Procedure pGetSchoolTest; */
+/* 
+get test info of given school
+ */
 use HorizanDB;
+drop procedure pGetSchoolTest;
 Create
 Procedure pGetSchoolTest(
     School_Name VarChar(255)
@@ -630,12 +635,74 @@ begin
     if @@error_count = 0
     then
         create temporary table tempTest(
-            Select s.SchoolName, t.ScoreUpBound, t.ScoreLowerBound
-            from SchoolDetail 
+            Select s.SchoolName, st.ScoreUpperBound, st.ScoreLowerBound, t.TestName
+            from SchoolDetail s
+            join SchoolTest st on s.SchoolID = st.SchoolID
+            join TestDetail t on t.TestID = st.TestID
             where SchoolID = School_ID
         );
-        Select * from tempDetail;
+        Select * from tempTest;
+        
     end if;
 end;
 
 
+--TODO:ADD SCHOOL APPLICATION PROCEDURE
+/* 
+    get application info of given school
+ */
+use HorizanDB;
+drop procedure pGetSchoolApplication;
+Create
+Procedure pGetSchoolApplication(
+    School_Name VarChar(255)
+)
+begin
+    Declare School_ID int;
+    Call pGetSchool (School_Name, School_ID);
+    if School_ID is null
+    then
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'School not found';
+    end if;
+
+    if @@error_count = 0
+    then
+        create temporary table tempApp(
+            Select s.SchoolName, a.ApplicationName, a.ApplicationLink, t.TestName
+            from SchoolDetail s
+            join SchoolTest st on s.SchoolID = st.SchoolID
+            join TestDetail t on t.TestID = st.TestID
+            where SchoolID = School_ID
+        );
+        Select * from tempApp;
+    end if;
+end;
+
+drop procedure pGetSchoolNLP;
+use HorizanDB;
+Create
+Procedure pGetSchoolNLP(
+    School_Name VarChar(255)
+)
+begin
+    Declare School_ID int;
+    Call pGetSchool (School_Name, School_ID);
+    if School_ID is null
+    then
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'School not found';
+    end if;
+
+    if @@error_count = 0
+    then
+        create temporary table tempnlp(
+            Select s.SchoolName, sn.NLPRating, n.NLPCategory
+            from SchoolDetail s
+            join SchoolNLP sn on s.SchoolID = sn.SchoolID
+            join NLPData n on n.NLPID = sn.NLPID
+            where SchoolID = School_ID
+        );
+        Select * from tempnlp;
+    end if;
+end;

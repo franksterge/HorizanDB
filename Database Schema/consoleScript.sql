@@ -109,6 +109,8 @@ Call pInsSchoolImage("University of Missouri- St. Louis", "University of Missour
 
 
 use HorizanDB;
+Select distinct SchoolName from SchoolDetail;
+select DATE(concat(Year(now()), "-", "01-01"));
 select * from vAllSchoolData;
 Select distinct SchoolName from vAllSchoolData;
 select distinct SchoolName from vAllLeftSchoolData;
