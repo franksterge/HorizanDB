@@ -44,7 +44,7 @@ Table SchoolTest(
   SchoolTestID int AUTO_INCREMENT primary key not null,
   SchoolID int not null,
   TestID int not null,
-  ScoreUpBound int null,
+  ScoreUpperBound int null,
   ScoreLowerBound int not null,
   Foreign Key (SchoolID) REFERENCES SchoolDetail(SchoolID),
   Foreign Key (TestID) REFERENCES TestDetail(TestID)
