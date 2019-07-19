@@ -58,7 +58,10 @@ Table ApplicationDetail (
   ApplicationDesc VarChar(100) not null,
   ApplicationLink VarChar(500) not null
 );
+--TODO: find out how to get date
 use HorizanDB;
+alter table SchoolApplication 
+add DueDate date not null default DATE(concat(Year(now()), "-", "01-01"));
 /* drop table SchoolApplication; */
 Create
 Table SchoolApplication(
