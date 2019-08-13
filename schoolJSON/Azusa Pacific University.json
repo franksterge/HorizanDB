@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1282,
+   "SchoolName": "Azusa Pacific University",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 5671,
+   "StudentFacultyRatio": 10,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.63114,
+      "Facilities": 3.31598,
+      "Happiness": 3.19391,
+      "Clubs": 3.36674,
+      "Location": 3.27512,
+      "Food": 2.82622,
+      "Social": 3.10239,
+      "Opportunites": 3.52356,
+      "Safety": 3.41735,
+      "Internet": 3.17267
+   },
+   "Tuition": {
+      "out-state": 36926
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 21
+      },
+      "SAT": {
+         "SATUpperBound": 1220,
+         "SATLowerBound": 990
+      }
+   },
+   "Major": {
+      "Business": 190,
+      "Communication": 163,
+      "Computer Science": 201,
+      "Biology": 167,
+      "Psychology": 145,
+      "Engineering": 186
+   }
+}

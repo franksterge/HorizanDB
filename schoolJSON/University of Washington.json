@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1488,
+   "SchoolName": "University of Washington",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 31358,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.10817,
+      "Facilities": 3.89166,
+      "Happiness": 3.87735,
+      "Clubs": 3.80911,
+      "Location": 3.79059,
+      "Food": 3.32624,
+      "Social": 3.70931,
+      "Opportunites": 4.0083,
+      "Safety": 3.97377,
+      "Internet": 3.68963
+   },
+   "Tuition": {
+      "in-state": 9909,
+      "out-state": 34473
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1260,
+         "SATLowerBound": 1080
+      }
+   },
+   "Major": {
+      "Business": 49,
+      "Communication": 11,
+      "Computer Science": 17,
+      "Biology": 26,
+      "Psychology": 38,
+      "Engineering": 34
+   }
+}

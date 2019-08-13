@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1358,
+   "SchoolName": "North Carolina State University- Raleigh",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 24150,
+   "StudentFacultyRatio": 13,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.15272,
+      "Facilities": 3.92598,
+      "Happiness": 3.92166,
+      "Clubs": 3.86011,
+      "Location": 3.84274,
+      "Food": 3.35012,
+      "Social": 3.73624,
+      "Opportunites": 4.06334,
+      "Safety": 3.99218,
+      "Internet": 3.66907
+   },
+   "Tuition": {
+      "in-state": 6535,
+      "out-state": 24883
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 26
+      },
+      "SAT": {
+         "SATUpperBound": 1390,
+         "SATLowerBound": 1230
+      }
+   },
+   "Major": {
+      "Business": 68,
+      "Communication": 150,
+      "Computer Science": 44,
+      "Biology": 44,
+      "Psychology": 116,
+      "Engineering": 29
+   }
+}

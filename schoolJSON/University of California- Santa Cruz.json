@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1421,
+   "SchoolName": "University of California- Santa Cruz",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 7375,
+   "StudentFacultyRatio": 20,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.79459,
+      "Facilities": 3.52406,
+      "Happiness": 3.42291,
+      "Clubs": 3.47095,
+      "Location": 3.42748,
+      "Food": 3.03187,
+      "Social": 3.35308,
+      "Opportunites": 3.64197,
+      "Safety": 3.65853,
+      "Internet": 3.3697
+   },
+   "Tuition": {
+      "in-state": 11502,
+      "out-state": 39516
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 26
+      },
+      "SAT": {
+         "SATUpperBound": 1340,
+         "SATLowerBound": 1160
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 177,
+      "Computer Science": 108,
+      "Biology": 140,
+      "Psychology": 183,
+      "Engineering": 39
+   }
+}

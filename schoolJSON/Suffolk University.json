@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1393,
+   "SchoolName": "Suffolk University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 3123,
+   "StudentFacultyRatio": 10,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.23127,
+      "Facilities": 4.03322,
+      "Happiness": 4.05822,
+      "Clubs": 3.94407,
+      "Location": 3.93093,
+      "Food": 3.44223,
+      "Social": 3.85703,
+      "Opportunites": 4.15024,
+      "Safety": 4.0929,
+      "Internet": 3.7567
+   },
+   "Tuition": {
+      "out-state": 37128
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 26,
+         "ACTLowerBound": 21
+      },
+      "SAT": {
+         "SATUpperBound": 1180,
+         "SATLowerBound": 1000
+      }
+   },
+   "Major": {
+      "Business": 75,
+      "Communication": 154,
+      "Computer Science": 63,
+      "Biology": 176,
+      "Psychology": 163,
+      "Engineering": 188
+   }
+}

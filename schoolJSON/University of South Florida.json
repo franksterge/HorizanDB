@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1476,
+   "SchoolName": "University of South Florida",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 6845,
+   "StudentFacultyRatio": 13,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.17764,
+      "Facilities": 3.97308,
+      "Happiness": 3.97548,
+      "Clubs": 3.88479,
+      "Location": 3.86823,
+      "Food": 3.39126,
+      "Social": 3.79134,
+      "Opportunites": 4.0878,
+      "Safety": 4.03961,
+      "Internet": 3.70751
+   },
+   "Tuition": {
+      "in-state": 4559,
+      "out-state": 15473
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1310,
+         "SATLowerBound": 1150
+      }
+   },
+   "Major": {
+      "Business": 59,
+      "Communication": 33,
+      "Computer Science": 90,
+      "Biology": 67,
+      "Psychology": 62,
+      "Engineering": 104
+   }
+}

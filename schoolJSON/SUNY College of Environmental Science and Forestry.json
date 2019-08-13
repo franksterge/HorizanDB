@@ -1,0 +1,32 @@
+{
+   "SchoolID": 1394,
+   "SchoolName": "SUNY College of Environmental Science and Forestry",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 17364,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {},
+   "Tuition": {
+      "in-state": 6670,
+      "out-state": 24180
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 28,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1300,
+         "SATLowerBound": 1150
+      }
+   },
+   "Major": {
+      "Business": 195,
+      "Communication": 177,
+      "Computer Science": 193,
+      "Biology": 133,
+      "Psychology": 208,
+      "Engineering": 147
+   }
+}

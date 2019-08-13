@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1313,
+   "SchoolName": "Duquesne University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 6696,
+   "StudentFacultyRatio": 7,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.95463,
+      "Facilities": 3.68491,
+      "Happiness": 3.62961,
+      "Clubs": 3.67493,
+      "Location": 3.627,
+      "Food": 3.14085,
+      "Social": 3.48224,
+      "Opportunites": 3.85893,
+      "Safety": 3.75989,
+      "Internet": 3.47057
+   },
+   "Tuition": {
+      "out-state": 36394
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1270,
+         "SATLowerBound": 1120
+      }
+   },
+   "Major": {
+      "Business": 140,
+      "Communication": 165,
+      "Computer Science": 201,
+      "Biology": 190,
+      "Psychology": 196,
+      "Engineering": 175
+   }
+}

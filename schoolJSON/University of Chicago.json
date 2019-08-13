@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1423,
+   "SchoolName": "University of Chicago",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 28587,
+   "StudentFacultyRatio": 19,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.83729,
+      "Facilities": 3.55999,
+      "Happiness": 3.46103,
+      "Clubs": 3.50218,
+      "Location": 3.46615,
+      "Food": 3.06062,
+      "Social": 3.38814,
+      "Opportunites": 3.67964,
+      "Safety": 3.69991,
+      "Internet": 3.40288
+   },
+   "Tuition": {
+      "out-state": 53292
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 35,
+         "ACTLowerBound": 32
+      },
+      "SAT": {
+         "SATUpperBound": 1580,
+         "SATLowerBound": 1480
+      }
+   },
+   "Major": {
+      "Business": 24,
+      "Communication": 177,
+      "Computer Science": 11,
+      "Biology": 17,
+      "Psychology": 14,
+      "Engineering": 135
+   }
+}

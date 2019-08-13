@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1306,
+   "SchoolName": "Columbia University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 25523,
+   "StudentFacultyRatio": 16,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.90693,
+      "Facilities": 3.62825,
+      "Happiness": 3.5604,
+      "Clubs": 3.62603,
+      "Location": 3.57132,
+      "Food": 3.09364,
+      "Social": 3.42409,
+      "Opportunites": 3.80266,
+      "Safety": 3.71013,
+      "Internet": 3.42756
+   },
+   "Tuition": {
+      "out-state": 54504
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 23
+      },
+      "SAT": {
+         "SATUpperBound": 1350,
+         "SATLowerBound": 1120
+      }
+   },
+   "Major": {
+      "Business": 17,
+      "Communication": 2,
+      "Computer Science": 8,
+      "Biology": 10,
+      "Psychology": 34,
+      "Engineering": 20
+   }
+}

@@ -1,0 +1,32 @@
+{
+   "SchoolID": 1487,
+   "SchoolName": "University of Virginia",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 31331,
+   "StudentFacultyRatio": 19,
+   "SchoolType": "Public",
+   "NLP": {},
+   "Tuition": {
+      "in-state": 14121,
+      "out-state": 43859
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 33,
+         "ACTLowerBound": 29
+      },
+      "SAT": {
+         "SATUpperBound": 1500,
+         "SATLowerBound": 1310
+      }
+   },
+   "Major": {
+      "Business": 43,
+      "Communication": 84,
+      "Computer Science": 36,
+      "Biology": 27,
+      "Psychology": 30,
+      "Engineering": 38
+   }
+}

@@ -1,0 +1,31 @@
+{
+   "SchoolID": 1338,
+   "SchoolName": "Lesley University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 5075,
+   "StudentFacultyRatio": 9,
+   "SchoolType": "Private",
+   "NLP": {},
+   "Tuition": {
+      "out-state": 26300
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 20
+      },
+      "SAT": {
+         "SATUpperBound": 1210,
+         "SATLowerBound": 1020
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 177,
+      "Computer Science": 201,
+      "Biology": 215,
+      "Psychology": 208,
+      "Engineering": 188
+   }
+}

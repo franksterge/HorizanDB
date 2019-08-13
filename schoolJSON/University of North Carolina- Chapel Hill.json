@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1461,
+   "SchoolName": "University of North Carolina- Chapel Hill",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 20954,
+   "StudentFacultyRatio": 21,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.03583,
+      "Facilities": 3.78171,
+      "Happiness": 3.73952,
+      "Clubs": 3.73981,
+      "Location": 3.70817,
+      "Food": 3.22731,
+      "Social": 3.58464,
+      "Opportunites": 3.9327,
+      "Safety": 3.86114,
+      "Internet": 3.5542
+   },
+   "Tuition": {
+      "in-state": 7019,
+      "out-state": 32602
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 33,
+         "ACTLowerBound": 28
+      },
+      "SAT": {
+         "SATUpperBound": 1460,
+         "SATLowerBound": 1270
+      }
+   },
+   "Major": {
+      "Business": 20,
+      "Communication": 6,
+      "Computer Science": 25,
+      "Biology": 20,
+      "Psychology": 8,
+      "Engineering": 68
+   }
+}

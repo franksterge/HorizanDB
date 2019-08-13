@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1391,
+   "SchoolName": "Stevens Institute of Technology",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 16761,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.17985,
+      "Facilities": 3.96457,
+      "Happiness": 3.97021,
+      "Clubs": 3.88653,
+      "Location": 3.87053,
+      "Food": 3.38424,
+      "Social": 3.78159,
+      "Opportunites": 4.08717,
+      "Safety": 4.03216,
+      "Internet": 3.70356
+   },
+   "Tuition": {
+      "out-state": 48784
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 33,
+         "ACTLowerBound": 29
+      },
+      "SAT": {
+         "SATUpperBound": 1470,
+         "SATLowerBound": 1320
+      }
+   },
+   "Major": {
+      "Business": 61,
+      "Communication": 177,
+      "Computer Science": 76,
+      "Biology": 174,
+      "Psychology": 208,
+      "Engineering": 66
+   }
+}

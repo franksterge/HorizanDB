@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1297,
+   "SchoolName": "Carnegie Mellon University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 6533,
+   "StudentFacultyRatio": 10,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.81529,
+      "Facilities": 3.52555,
+      "Happiness": 3.43929,
+      "Clubs": 3.53553,
+      "Location": 3.47387,
+      "Food": 3.00875,
+      "Social": 3.32213,
+      "Opportunites": 3.71076,
+      "Safety": 3.61963,
+      "Internet": 3.345
+   },
+   "Tuition": {
+      "out-state": 52732
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 35,
+         "ACTLowerBound": 32
+      },
+      "SAT": {
+         "SATUpperBound": 1560,
+         "SATLowerBound": 1430
+      }
+   },
+   "Major": {
+      "Business": 79,
+      "Communication": 177,
+      "Computer Science": 1,
+      "Biology": 52,
+      "Psychology": 18,
+      "Engineering": 15
+   }
+}

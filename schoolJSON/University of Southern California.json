@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1477,
+   "SchoolName": "University of Southern California",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 26362,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.10672,
+      "Facilities": 3.86959,
+      "Happiness": 3.85166,
+      "Clubs": 3.81469,
+      "Location": 3.7902,
+      "Food": 3.30107,
+      "Social": 3.6779,
+      "Opportunites": 4.01365,
+      "Safety": 3.93927,
+      "Internet": 3.62304
+   },
+   "Tuition": {
+      "out-state": 53448
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 34,
+         "ACTLowerBound": 30
+      },
+      "SAT": {
+         "SATUpperBound": 1500,
+         "SATLowerBound": 1300
+      }
+   },
+   "Major": {
+      "Business": 10,
+      "Communication": 1,
+      "Computer Science": 4,
+      "Biology": 15,
+      "Psychology": 9,
+      "Engineering": 28
+   }
+}

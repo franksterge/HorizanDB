@@ -1,0 +1,31 @@
+{
+   "SchoolID": 1404,
+   "SchoolName": "Union University",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 9323,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Private",
+   "NLP": {},
+   "Tuition": {
+      "out-state": 30480
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 25,
+         "ACTLowerBound": 20
+      },
+      "SAT": {
+         "SATUpperBound": 1200,
+         "SATLowerBound": 980
+      }
+   },
+   "Major": {
+      "Business": 148,
+      "Communication": 133,
+      "Computer Science": 201,
+      "Biology": 198,
+      "Psychology": 185,
+      "Engineering": 188
+   }
+}

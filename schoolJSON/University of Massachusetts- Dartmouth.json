@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1448,
+   "SchoolName": "University of Massachusetts- Dartmouth",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 11234,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.04856,
+      "Facilities": 3.79261,
+      "Happiness": 3.75108,
+      "Clubs": 3.75429,
+      "Location": 3.72017,
+      "Food": 3.2351,
+      "Social": 3.59374,
+      "Opportunites": 3.94473,
+      "Safety": 3.86705,
+      "Internet": 3.56259
+   },
+   "Tuition": {
+      "in-state": 13166,
+      "out-state": 27880
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 26,
+         "ACTLowerBound": 19
+      },
+      "SAT": {
+         "SATUpperBound": 1190,
+         "SATLowerBound": 1000
+      }
+   },
+   "Major": {
+      "Business": 49,
+      "Communication": 177,
+      "Computer Science": 137,
+      "Biology": 137,
+      "Psychology": 127,
+      "Engineering": 150
+   }
+}

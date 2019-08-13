@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1372,
+   "SchoolName": "Princeton University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 5394,
+   "StudentFacultyRatio": 5,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.16114,
+      "Facilities": 3.93388,
+      "Happiness": 3.92741,
+      "Clubs": 3.86373,
+      "Location": 3.84673,
+      "Food": 3.35764,
+      "Social": 3.74399,
+      "Opportunites": 4.06398,
+      "Safety": 4.00321,
+      "Internet": 3.67886
+   },
+   "Tuition": {
+      "out-state": 47140
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 35,
+         "ACTLowerBound": 31
+      },
+      "SAT": {
+         "SATUpperBound": 1570,
+         "SATLowerBound": 1430
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 41,
+      "Computer Science": 31,
+      "Biology": 21,
+      "Psychology": 35,
+      "Engineering": 24
+   }
+}

@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1469,
+   "SchoolName": "University of Pittsburgh",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 22032,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.0669,
+      "Facilities": 3.82398,
+      "Happiness": 3.79712,
+      "Clubs": 3.77616,
+      "Location": 3.7488,
+      "Food": 3.26224,
+      "Social": 3.63016,
+      "Opportunites": 3.97332,
+      "Safety": 3.89819,
+      "Internet": 3.58547
+   },
+   "Tuition": {
+      "in-state": 18130,
+      "out-state": 29692
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 32,
+         "ACTLowerBound": 27
+      },
+      "SAT": {
+         "SATUpperBound": 1418,
+         "SATLowerBound": 1240
+      }
+   },
+   "Major": {
+      "Business": 61,
+      "Communication": 122,
+      "Computer Science": 53,
+      "Biology": 28,
+      "Psychology": 26,
+      "Engineering": 60
+   }
+}

@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1413,
+   "SchoolName": "University of California- Berkeley",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 7090,
+   "StudentFacultyRatio": 16,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.09294,
+      "Facilities": 3.86432,
+      "Happiness": 3.8423,
+      "Clubs": 3.79109,
+      "Location": 3.77064,
+      "Food": 3.30275,
+      "Social": 3.67839,
+      "Opportunites": 3.98976,
+      "Safety": 3.94854,
+      "Internet": 3.62585
+   },
+   "Tuition": {
+      "in-state": 11502,
+      "out-state": 39516
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 34,
+         "ACTLowerBound": 30
+      },
+      "SAT": {
+         "SATUpperBound": 1480,
+         "SATLowerBound": 1260
+      }
+   },
+   "Major": {
+      "Business": 16,
+      "Communication": 18,
+      "Computer Science": 23,
+      "Biology": 23,
+      "Psychology": 9,
+      "Engineering": 6
+   }
+}

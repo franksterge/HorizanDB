@@ -1,0 +1,24 @@
+{
+   "SchoolID": 1504,
+   "SchoolName": "Yeshiva University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 2757,
+   "StudentFacultyRatio": 7,
+   "SchoolType": "Private",
+   "NLP": {},
+   "Tuition": {
+      "out-state": 40000
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 23
+      },
+      "SAT": {
+         "SATUpperBound": 1420,
+         "SATLowerBound": 1160
+      }
+   },
+   "Major": {}
+}

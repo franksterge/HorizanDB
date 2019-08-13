@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1277,
+   "SchoolName": "American University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 8123,
+   "StudentFacultyRatio": 11,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.08746,
+      "Facilities": 3.85093,
+      "Happiness": 3.81922,
+      "Clubs": 3.77565,
+      "Location": 3.75515,
+      "Food": 3.29252,
+      "Social": 3.66614,
+      "Opportunites": 3.97518,
+      "Safety": 3.94003,
+      "Internet": 3.61771
+   },
+   "Tuition": {
+      "out-state": 45808
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 30,
+         "ACTLowerBound": 26
+      },
+      "SAT": {
+         "SATUpperBound": 1350,
+         "SATLowerBound": 1180
+      }
+   },
+   "Major": {
+      "Business": 32,
+      "Communication": 8,
+      "Computer Science": 201,
+      "Biology": 163,
+      "Psychology": 101,
+      "Engineering": 188
+   }
+}

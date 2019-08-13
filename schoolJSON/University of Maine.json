@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1443,
+   "SchoolName": "University of Maine",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 19338,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.16522,
+      "Facilities": 3.92824,
+      "Happiness": 3.9182,
+      "Clubs": 3.87409,
+      "Location": 3.84942,
+      "Food": 3.34644,
+      "Social": 3.72885,
+      "Opportunites": 4.07105,
+      "Safety": 3.9835,
+      "Internet": 3.66912
+   },
+   "Tuition": {
+      "in-state": 8580,
+      "out-state": 27960
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1250,
+         "SATLowerBound": 1050
+      }
+   },
+   "Major": {
+      "Business": 151,
+      "Communication": 166,
+      "Computer Science": 141,
+      "Biology": 102,
+      "Psychology": 144,
+      "Engineering": 126
+   }
+}

@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1456,
+   "SchoolName": "University of Missouri- St. Louis",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 35433,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.14018,
+      "Facilities": 3.92843,
+      "Happiness": 3.92296,
+      "Clubs": 3.84267,
+      "Location": 3.82704,
+      "Food": 3.35583,
+      "Social": 3.74965,
+      "Opportunites": 4.044,
+      "Safety": 4.00744,
+      "Internet": 3.67554
+   },
+   "Tuition": {
+      "in-state": 9590,
+      "out-state": 25505
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1225,
+         "SATLowerBound": 1065
+      }
+   },
+   "Major": {
+      "Business": 181,
+      "Communication": 161,
+      "Computer Science": 143,
+      "Biology": 122,
+      "Psychology": 136,
+      "Engineering": 170
+   }
+}

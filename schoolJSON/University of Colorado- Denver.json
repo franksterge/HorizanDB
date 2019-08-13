@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1425,
+   "SchoolName": "University of Colorado- Denver",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 17577,
+   "StudentFacultyRatio": 19,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.03704,
+      "Facilities": 3.80919,
+      "Happiness": 3.77801,
+      "Clubs": 3.73315,
+      "Location": 3.71078,
+      "Food": 3.26088,
+      "Social": 3.62677,
+      "Opportunites": 3.92908,
+      "Safety": 3.90419,
+      "Internet": 3.58403
+   },
+   "Tuition": {
+      "in-state": 7776,
+      "out-state": 23928
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 21
+      },
+      "SAT": {
+         "SATUpperBound": 1280,
+         "SATLowerBound": 1060
+      }
+   },
+   "Major": {
+      "Business": 155,
+      "Communication": 144,
+      "Computer Science": 166,
+      "Biology": 141,
+      "Psychology": 152,
+      "Engineering": 155
+   }
+}

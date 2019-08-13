@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1276,
+   "SchoolName": "Adelphi University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 5266,
+   "StudentFacultyRatio": 11,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.89882,
+      "Facilities": 3.60048,
+      "Happiness": 3.5182,
+      "Clubs": 3.62924,
+      "Location": 3.55503,
+      "Food": 3.04627,
+      "Social": 3.35031,
+      "Opportunites": 3.81096,
+      "Safety": 3.637,
+      "Internet": 3.38656
+   },
+   "Tuition": {
+      "out-state": 35430
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1240,
+         "SATLowerBound": 1060
+      }
+   },
+   "Major": {
+      "Business": 191,
+      "Communication": 155,
+      "Computer Science": 201,
+      "Biology": 214,
+      "Psychology": 192,
+      "Engineering": 188
+   }
+}

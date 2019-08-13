@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1462,
+   "SchoolName": "University of North Carolina- Charlotte",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 13005,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.1132,
+      "Facilities": 3.87369,
+      "Happiness": 3.85376,
+      "Clubs": 3.81939,
+      "Location": 3.79481,
+      "Food": 3.30387,
+      "Social": 3.68077,
+      "Opportunites": 4.02063,
+      "Safety": 3.9406,
+      "Internet": 3.62563
+   },
+   "Tuition": {
+      "in-state": 3812,
+      "out-state": 17246
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 26,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1270,
+         "SATLowerBound": 1110
+      }
+   },
+   "Major": {
+      "Business": 191,
+      "Communication": 134,
+      "Computer Science": 111,
+      "Biology": 141,
+      "Psychology": 149,
+      "Engineering": 142
+   }
+}

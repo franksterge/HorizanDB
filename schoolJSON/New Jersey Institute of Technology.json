@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1354,
+   "SchoolName": "New Jersey Institute of Technology",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 16852,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.12831,
+      "Facilities": 3.8909,
+      "Happiness": 3.87462,
+      "Clubs": 3.83006,
+      "Location": 3.80923,
+      "Food": 3.32155,
+      "Social": 3.6991,
+      "Opportunites": 4.03234,
+      "Safety": 3.96125,
+      "Internet": 3.64377
+   },
+   "Tuition": {
+      "in-state": 13906,
+      "out-state": 28926
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 30,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1370,
+         "SATLowerBound": 1190
+      }
+   },
+   "Major": {
+      "Business": 181,
+      "Communication": 177,
+      "Computer Science": 80,
+      "Biology": 148,
+      "Psychology": 208,
+      "Engineering": 37
+   }
+}

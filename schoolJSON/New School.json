@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1356,
+   "SchoolName": "New School",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 11713,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.14471,
+      "Facilities": 3.92043,
+      "Happiness": 3.92529,
+      "Clubs": 3.85334,
+      "Location": 3.83709,
+      "Food": 3.34866,
+      "Social": 3.73539,
+      "Opportunites": 4.05103,
+      "Safety": 3.99452,
+      "Internet": 3.66954
+   },
+   "Tuition": {
+      "out-state": 46176
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 28,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1310,
+         "SATLowerBound": 1100
+      }
+   },
+   "Major": {
+      "Business": 133,
+      "Communication": 116,
+      "Computer Science": 195,
+      "Biology": 215,
+      "Psychology": 189,
+      "Engineering": 185
+   }
+}

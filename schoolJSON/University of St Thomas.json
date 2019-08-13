@@ -1,0 +1,32 @@
+{
+   "SchoolID": 1479,
+   "SchoolName": "University of St Thomas",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 31772,
+   "StudentFacultyRatio": 22,
+   "SchoolType": "Public",
+   "NLP": {},
+   "Tuition": {
+      "in-state": 7697,
+      "out-state": 32100
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 21
+      },
+      "SAT": {
+         "SATUpperBound": 1235,
+         "SATLowerBound": 1070
+      }
+   },
+   "Major": {
+      "Business": 120,
+      "Communication": 120,
+      "Computer Science": 200,
+      "Biology": 179,
+      "Psychology": 155,
+      "Engineering": 183
+   }
+}

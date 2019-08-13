@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1351,
+   "SchoolName": "Missouri University of Science & Technology",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 18312,
+   "StudentFacultyRatio": 20,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.26671,
+      "Facilities": 4.05877,
+      "Happiness": 4.07953,
+      "Clubs": 3.97661,
+      "Location": 3.96352,
+      "Food": 3.45726,
+      "Social": 3.86629,
+      "Opportunites": 4.18189,
+      "Safety": 4.10492,
+      "Internet": 3.774
+   },
+   "Tuition": {
+      "in-state": 7896,
+      "out-state": 24568
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 25
+      },
+      "SAT": {
+         "SATUpperBound": 1340,
+         "SATLowerBound": 1100
+      }
+   },
+   "Major": {
+      "Business": 94,
+      "Communication": 131,
+      "Computer Science": 72,
+      "Biology": 199,
+      "Psychology": 207,
+      "Engineering": 77
+   }
+}

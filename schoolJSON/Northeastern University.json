@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1360,
+   "SchoolName": "Northeastern University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 13825,
+   "StudentFacultyRatio": 14,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.16166,
+      "Facilities": 3.93521,
+      "Happiness": 3.92963,
+      "Clubs": 3.86706,
+      "Location": 3.84973,
+      "Food": 3.35686,
+      "Social": 3.74608,
+      "Opportunites": 4.07077,
+      "Safety": 4.00068,
+      "Internet": 3.67595
+   },
+   "Tuition": {
+      "out-state": 48560
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 19,
+         "ACTLowerBound": 15
+      },
+      "SAT": {
+         "SATUpperBound": 1041,
+         "SATLowerBound": 910
+      }
+   },
+   "Major": {
+      "Business": 38,
+      "Communication": 39,
+      "Computer Science": 21,
+      "Biology": 43,
+      "Psychology": 36,
+      "Engineering": 44
+   }
+}

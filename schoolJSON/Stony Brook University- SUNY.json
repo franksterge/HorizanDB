@@ -1,0 +1,32 @@
+{
+   "SchoolID": 1392,
+   "SchoolName": "Stony Brook University- SUNY",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 7064,
+   "StudentFacultyRatio": 12,
+   "SchoolType": "Public",
+   "NLP": {},
+   "Tuition": {
+      "in-state": 7191,
+      "out-state": 7191
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 26
+      },
+      "SAT": {
+         "SATUpperBound": 1410,
+         "SATLowerBound": 1210
+      }
+   },
+   "Major": {
+      "Business": 132,
+      "Communication": 140,
+      "Computer Science": 67,
+      "Biology": 76,
+      "Psychology": 63,
+      "Engineering": 134
+   }
+}

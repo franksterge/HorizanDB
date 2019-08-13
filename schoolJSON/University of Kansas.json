@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1439,
+   "SchoolName": "University of Kansas",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 9885,
+   "StudentFacultyRatio": 14,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.10182,
+      "Facilities": 3.85972,
+      "Happiness": 3.84092,
+      "Clubs": 3.81047,
+      "Location": 3.78734,
+      "Food": 3.29222,
+      "Social": 3.66608,
+      "Opportunites": 4.01816,
+      "Safety": 3.92508,
+      "Internet": 3.61205
+   },
+   "Tuition": {
+      "in-state": 9818,
+      "out-state": 25586
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 23
+      },
+      "SAT": {
+         "SATUpperBound": 1280,
+         "SATLowerBound": 1110
+      }
+   },
+   "Major": {
+      "Business": 98,
+      "Communication": 73,
+      "Computer Science": 128,
+      "Biology": 66,
+      "Psychology": 69,
+      "Engineering": 113
+   }
+}

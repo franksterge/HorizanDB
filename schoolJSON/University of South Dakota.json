@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1475,
+   "SchoolName": "University of South Dakota",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 5774,
+   "StudentFacultyRatio": 14,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.12908,
+      "Facilities": 3.91824,
+      "Happiness": 3.91916,
+      "Clubs": 3.83278,
+      "Location": 3.81688,
+      "Food": 3.34812,
+      "Social": 3.74485,
+      "Opportunites": 4.03937,
+      "Safety": 3.99596,
+      "Internet": 3.66665
+   },
+   "Tuition": {
+      "in-state": 7191,
+      "out-state": 10438
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 25,
+         "ACTLowerBound": 20
+      },
+      "SAT": {
+         "SATUpperBound": 1230,
+         "SATLowerBound": 1010
+      }
+   },
+   "Major": {
+      "Business": 183,
+      "Communication": 143,
+      "Computer Science": 163,
+      "Biology": 179,
+      "Psychology": 178,
+      "Engineering": 163
+   }
+}

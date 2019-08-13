@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1409,
+   "SchoolName": "University of Alabama- Huntsville",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 7871,
+   "StudentFacultyRatio": 8,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.16363,
+      "Facilities": 3.94019,
+      "Happiness": 3.93998,
+      "Clubs": 3.8611,
+      "Location": 3.84486,
+      "Food": 3.36752,
+      "Social": 3.75418,
+      "Opportunites": 4.06028,
+      "Safety": 4.01518,
+      "Internet": 3.69125
+   },
+   "Tuition": {
+      "in-state": 9356,
+      "out-state": 20556
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 25
+      },
+      "SAT": {
+         "SATUpperBound": 1370,
+         "SATLowerBound": 1080
+      }
+   },
+   "Major": {
+      "Business": 84,
+      "Communication": 126,
+      "Computer Science": 42,
+      "Biology": 187,
+      "Psychology": 140,
+      "Engineering": 72
+   }
+}

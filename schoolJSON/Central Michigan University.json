@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1299,
+   "SchoolName": "Central Michigan University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 3315,
+   "StudentFacultyRatio": 7,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.92762,
+      "Facilities": 3.6756,
+      "Happiness": 3.61097,
+      "Clubs": 3.61668,
+      "Location": 3.58357,
+      "Food": 3.15035,
+      "Social": 3.48686,
+      "Opportunites": 3.79888,
+      "Safety": 3.79063,
+      "Internet": 3.48355
+   },
+   "Tuition": {
+      "in-state": 12510,
+      "out-state": 23670
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 20
+      },
+      "SAT": {
+         "SATUpperBound": 1200,
+         "SATLowerBound": 1010
+      }
+   },
+   "Major": {
+      "Business": 137,
+      "Communication": 48,
+      "Computer Science": 183,
+      "Biology": 205,
+      "Psychology": 146,
+      "Engineering": 178
+   }
+}

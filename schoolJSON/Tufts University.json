@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1402,
+   "SchoolName": "Tufts University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 7125,
+   "StudentFacultyRatio": 10,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.1363,
+      "Facilities": 3.91241,
+      "Happiness": 3.90353,
+      "Clubs": 3.83846,
+      "Location": 3.8216,
+      "Food": 3.34076,
+      "Social": 3.72339,
+      "Opportunites": 4.03957,
+      "Safety": 3.98797,
+      "Internet": 3.6623
+   },
+   "Tuition": {
+      "out-state": 53152
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 34,
+         "ACTLowerBound": 31
+      },
+      "SAT": {
+         "SATUpperBound": 1540,
+         "SATLowerBound": 1410
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 113,
+      "Computer Science": 48,
+      "Biology": 19,
+      "Psychology": 13,
+      "Engineering": 59
+   }
+}

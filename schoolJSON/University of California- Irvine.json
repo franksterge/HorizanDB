@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1415,
+   "SchoolName": "University of California- Irvine",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 34101,
+   "StudentFacultyRatio": 15,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.13947,
+      "Facilities": 3.94085,
+      "Happiness": 3.94625,
+      "Clubs": 3.8502,
+      "Location": 3.83437,
+      "Food": 3.36645,
+      "Social": 3.76689,
+      "Opportunites": 4.05577,
+      "Safety": 4.01511,
+      "Internet": 3.68155
+   },
+   "Tuition": {
+      "in-state": 11502,
+      "out-state": 39516
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 32,
+         "ACTLowerBound": 25
+      },
+      "SAT": {
+         "SATUpperBound": 1350,
+         "SATLowerBound": 1170
+      }
+   },
+   "Major": {
+      "Business": 81,
+      "Communication": 177,
+      "Computer Science": 44,
+      "Biology": 56,
+      "Psychology": 79,
+      "Engineering": 84
+   }
+}

@@ -310,6 +310,7 @@ end;
         call pInsUserCollction(UserFirstName, UserLastName, UserEmail, CollectionName)
 */
 Use HorizanDB;
+drop procedure pInsUserCollection;
 Create 
 Procedure pInsUserCollection(
     User_First_Name VarChar(20),
@@ -327,15 +328,7 @@ Begin
         Set MESSAGE_TEXT = 'User not found';
     end if;
 
-
-    if (Select CollectionID 
-        from CollectionDetail 
-        where CollectionName = Collection_Name) is not NULL
-    then 
-        SIGNAL SQLSTATE '45000'
-        Set MESSAGE_TEXT = 'Duplicated Collection Name';
-    end if;
-
+    Call pGetCollection(Collection_Name, Collection_ID);
     Start Transaction;
     if Collection_ID is null
     then 
@@ -359,6 +352,7 @@ End;
         call pinsSchoolToUserCollection(UserFirstName, UserLastName, UserEmail, CollectionName, school name);
 */
 Use HorizanDB;
+drop procedure pInsSchoolToUserCollection;
 Create 
 Procedure pInsSchoolToUserCollection(
     User_First_Name VarChar(20),
@@ -382,8 +376,7 @@ Begin
     Call pGetCollection(Collection_Name, Collection_ID);
     if Collection_ID is null 
     then 
-        SIGNAL SQLSTATE '45000'
-        Set MESSAGE_TEXT = 'Collection not found';
+        Call pInsUserCollection(User_First_Name, User_Last_Name, User_Email, Collection_Name);
     end if;
 
     Call pGetSchool(School_Name, SchooL_ID);
@@ -555,8 +548,8 @@ end;
 /* 
     get major rankings of the given school
  */
-drop Procedure pGetSchoolMajorRanking;
 use HorizanDB;
+drop Procedure pGetSchoolMajorRanking;
 Create
 Procedure pGetSchoolMajorRanking(
     School_Name VarChar(255)
@@ -573,13 +566,14 @@ begin
     if @@error_count = 0
     then
         create temporary table tempRanking(
-            Select s.SchoolName, sms.MajorRanking, m.MajorRankingName
+            Select m.MajorRankingName, sms.MajorRanking
             from SchoolDetail s
             join SchoolMajorRankingSource sms on s.SchoolID = sms.SchoolID
             join MajorRanking m on sms.MajorRankingID = m.MajorRankingID
             where s.SchoolID = School_ID
         );
         Select * from tempRanking;
+        drop table tempRanking;
     end if;
 end;
 
@@ -607,7 +601,7 @@ begin
             Select  SchoolID, SchoolName, SchoolLocation, SchoolEnvironment,
             SchoolSize, StudentFacultyRatio, SchoolType
             from SchoolDetail 
-            where SchoolID = School_ID
+            where s.SchoolID = School_ID
         );
         Select * from tempDetail;
         drop table tempDetail;
@@ -635,14 +629,14 @@ begin
     if @@error_count = 0
     then
         create temporary table tempTest(
-            Select s.SchoolName, st.ScoreUpperBound, st.ScoreLowerBound, t.TestName
+            Select t.TestName, st.ScoreUpperBound, st.ScoreLowerBound
             from SchoolDetail s
             join SchoolTest st on s.SchoolID = st.SchoolID
             join TestDetail t on t.TestID = st.TestID
-            where SchoolID = School_ID
+            where s.SchoolID = School_ID
         );
         Select * from tempTest;
-        
+        drop table tempTest;
     end if;
 end;
 
@@ -669,18 +663,19 @@ begin
     if @@error_count = 0
     then
         create temporary table tempApp(
-            Select s.SchoolName, a.ApplicationName, a.ApplicationLink, t.TestName
+            Select a.ApplicationName
             from SchoolDetail s
-            join SchoolTest st on s.SchoolID = st.SchoolID
-            join TestDetail t on t.TestID = st.TestID
-            where SchoolID = School_ID
+            join SchoolApplication sa on s.SchoolID = sa.SchoolID
+            join ApplicationDetail a on a.ApplicationID = sa.ApplicationID
+            where s.SchoolID = School_ID
         );
         Select * from tempApp;
+        drop table tempApp;
     end if;
 end;
 
-drop procedure pGetSchoolNLP;
 use HorizanDB;
+drop procedure pGetSchoolNLP;
 Create
 Procedure pGetSchoolNLP(
     School_Name VarChar(255)
@@ -697,12 +692,43 @@ begin
     if @@error_count = 0
     then
         create temporary table tempnlp(
-            Select s.SchoolName, sn.NLPRating, n.NLPCategory
+            Select n.NLPCategory, sn.NLPRating
             from SchoolDetail s
             join SchoolNLP sn on s.SchoolID = sn.SchoolID
             join NLPData n on n.NLPID = sn.NLPID
-            where SchoolID = School_ID
+            where s.SchoolID = School_ID
         );
         Select * from tempnlp;
+        drop table tempnlp;
+    end if;
+end;
+
+use HorizanDB;
+drop procedure pGetSchoolTuition;
+Create
+Procedure pGetSchoolTuition(
+    School_Name VarChar(255)
+)
+begin
+    Declare School_ID int;
+    Call pGetSchool (School_Name, School_ID);
+    if School_ID is null
+    then
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'School not found';
+    end if;
+
+    if @@error_count = 0
+    then
+        create temporary table tempTuition(
+            Select t.TuitionName, st.TuitionAmount
+            from SchoolDetail s
+            join SchoolTuition st on s.SchoolID = st.SchoolID
+            join TuitionDetail t on t.TuitionID = st.TuitionID
+            where s.SchoolID = School_ID 
+            and t.TuitionName in ('in-state', 'out-state')
+        );
+        Select * from tempTuition;
+        drop table tempTuition;
     end if;
 end;

@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1361,
+   "SchoolName": "Northern Illinois University",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 13457,
+   "StudentFacultyRatio": 16,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.05642,
+      "Facilities": 3.81259,
+      "Happiness": 3.77936,
+      "Clubs": 3.7552,
+      "Location": 3.72988,
+      "Food": 3.2574,
+      "Social": 3.62133,
+      "Opportunites": 3.95109,
+      "Safety": 3.89801,
+      "Internet": 3.58337
+   },
+   "Tuition": {
+      "in-state": 9465,
+      "out-state": 18931
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 24,
+         "ACTLowerBound": 19
+      },
+      "SAT": {
+         "SATUpperBound": 1190,
+         "SATLowerBound": 980
+      }
+   },
+   "Major": {
+      "Business": 127,
+      "Communication": 177,
+      "Computer Science": 146,
+      "Biology": 166,
+      "Psychology": 97,
+      "Engineering": 164
+   }
+}

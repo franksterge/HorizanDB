@@ -115,17 +115,11 @@ select * from vAllSchoolData;
 Select distinct SchoolName from vAllSchoolData;
 select distinct SchoolName from vAllLeftSchoolData;
 
+use HorizanDB;
+Select * from UserDetail;
 
+use HorizanDB;
+select * from SchoolImages;
 
-
-
-
-
-
-
-
-
-
-
-
-
+select * from SchoolDetail;
+Select * from SchoolNLP;

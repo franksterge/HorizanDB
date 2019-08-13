@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1449,
+   "SchoolName": "University of Massachusetts- Lowell",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 29868,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.12593,
+      "Facilities": 3.89825,
+      "Happiness": 3.87677,
+      "Clubs": 3.8212,
+      "Location": 3.79725,
+      "Food": 3.33079,
+      "Social": 3.71522,
+      "Opportunites": 4.01287,
+      "Safety": 3.97889,
+      "Internet": 3.65655
+   },
+   "Tuition": {
+      "in-state": 14350,
+      "out-state": 31415
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1310,
+         "SATLowerBound": 1130
+      }
+   },
+   "Major": {
+      "Business": 135,
+      "Communication": 118,
+      "Computer Science": 117,
+      "Biology": 211,
+      "Psychology": 142,
+      "Engineering": 123
+   }
+}

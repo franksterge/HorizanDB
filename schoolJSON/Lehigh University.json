@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1337,
+   "SchoolName": "Lehigh University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 23178,
+   "StudentFacultyRatio": 20,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.11989,
+      "Facilities": 3.88986,
+      "Happiness": 3.88498,
+      "Clubs": 3.84439,
+      "Location": 3.81798,
+      "Food": 3.31222,
+      "Social": 3.6988,
+      "Opportunites": 4.04879,
+      "Safety": 3.9442,
+      "Internet": 3.62846
+   },
+   "Tuition": {
+      "out-state": 50320
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 32,
+         "ACTLowerBound": 29
+      },
+      "SAT": {
+         "SATUpperBound": 1430,
+         "SATLowerBound": 1270
+      }
+   },
+   "Major": {
+      "Business": 77,
+      "Communication": 90,
+      "Computer Science": 86,
+      "Biology": 106,
+      "Psychology": 103,
+      "Engineering": 65
+   }
+}

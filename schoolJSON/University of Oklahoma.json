@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1466,
+   "SchoolName": "University of Oklahoma",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 16439,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.20877,
+      "Facilities": 3.9918,
+      "Happiness": 4.00424,
+      "Clubs": 3.92604,
+      "Location": 3.91116,
+      "Food": 3.3994,
+      "Social": 3.80087,
+      "Opportunites": 4.13883,
+      "Safety": 4.039,
+      "Internet": 3.71258
+   },
+   "Tuition": {
+      "in-state": 4788,
+      "out-state": 20169
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 23
+      },
+      "SAT": {
+         "SATUpperBound": 1380,
+         "SATLowerBound": 1150
+      }
+   },
+   "Major": {
+      "Business": 125,
+      "Communication": 38,
+      "Computer Science": 117,
+      "Biology": 75,
+      "Psychology": 110,
+      "Engineering": 96
+   }
+}

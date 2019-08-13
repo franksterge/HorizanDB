@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1333,
+   "SchoolName": "Iowa State University",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 21610,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.08318,
+      "Facilities": 3.83924,
+      "Happiness": 3.81592,
+      "Clubs": 3.80227,
+      "Location": 3.76909,
+      "Food": 3.27009,
+      "Social": 3.64226,
+      "Opportunites": 3.9959,
+      "Safety": 3.90052,
+      "Internet": 3.59261
+   },
+   "Tuition": {
+      "in-state": 7456,
+      "out-state": 21292
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 28,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1410,
+         "SATLowerBound": 1160
+      }
+   },
+   "Major": {
+      "Business": 40,
+      "Communication": 87,
+      "Computer Science": 76,
+      "Biology": 71,
+      "Psychology": 148,
+      "Engineering": 50
+   }
+}

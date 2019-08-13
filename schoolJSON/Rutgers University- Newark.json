@@ -1,0 +1,39 @@
+{
+   "SchoolID": 1379,
+   "SchoolName": "Rutgers University- Newark",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 8551,
+   "StudentFacultyRatio": 15,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.78723,
+      "Facilities": 3.48096,
+      "Happiness": 3.35608,
+      "Clubs": 3.44994,
+      "Location": 3.40477,
+      "Food": 2.99333,
+      "Social": 3.27844,
+      "Opportunites": 3.61565,
+      "Safety": 3.63057,
+      "Internet": 3.34443
+   },
+   "Tuition": {
+      "in-state": 11619,
+      "out-state": 27560
+   },
+   "Test": {
+      "SAT": {
+         "SATUpperBound": 1110,
+         "SATLowerBound": 910
+      }
+   },
+   "Major": {
+      "Business": 103,
+      "Communication": 177,
+      "Computer Science": 157,
+      "Biology": 206,
+      "Psychology": 152,
+      "Engineering": 177
+   }
+}

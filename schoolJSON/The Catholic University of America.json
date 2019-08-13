@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1401,
+   "SchoolName": "The Catholic University of America",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 30737,
+   "StudentFacultyRatio": 20,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.14613,
+      "Facilities": 3.93452,
+      "Happiness": 3.93409,
+      "Clubs": 3.86071,
+      "Location": 3.83686,
+      "Food": 3.36014,
+      "Social": 3.74658,
+      "Opportunites": 4.05243,
+      "Safety": 3.99741,
+      "Internet": 3.67724
+   },
+   "Tuition": {
+      "out-state": 43300
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 28,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1230,
+         "SATLowerBound": 1040
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 177,
+      "Computer Science": 201,
+      "Biology": 138,
+      "Psychology": 114,
+      "Engineering": 167
+   }
+}

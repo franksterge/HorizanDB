@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1312,
+   "SchoolName": "Duke University",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 15534,
+   "StudentFacultyRatio": 11,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.1281,
+      "Facilities": 3.89952,
+      "Happiness": 3.88568,
+      "Clubs": 3.82632,
+      "Location": 3.80688,
+      "Food": 3.33174,
+      "Social": 3.7137,
+      "Opportunites": 4.02659,
+      "Safety": 3.97652,
+      "Internet": 3.65429
+   },
+   "Tuition": {
+      "out-state": 51720
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 35,
+         "ACTLowerBound": 31
+      },
+      "SAT": {
+         "SATUpperBound": 1540,
+         "SATLowerBound": 1380
+      }
+   },
+   "Major": {
+      "Business": 29,
+      "Communication": 177,
+      "Computer Science": 39,
+      "Biology": 5,
+      "Psychology": 16,
+      "Engineering": 10
+   }
+}

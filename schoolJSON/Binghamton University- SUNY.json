@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1286,
+   "SchoolName": "Binghamton University- SUNY",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 13737,
+   "StudentFacultyRatio": 19,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.51554,
+      "Facilities": 3.17927,
+      "Happiness": 3.02703,
+      "Clubs": 3.24527,
+      "Location": 3.14413,
+      "Food": 2.71796,
+      "Social": 2.96891,
+      "Opportunites": 3.38836,
+      "Safety": 3.30661,
+      "Internet": 3.07197
+   },
+   "Tuition": {
+      "in-state": 6670,
+      "out-state": 21550
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 28
+      },
+      "SAT": {
+         "SATUpperBound": 1431,
+         "SATLowerBound": 1290
+      }
+   },
+   "Major": {
+      "Business": 81,
+      "Communication": 48,
+      "Computer Science": 85,
+      "Biology": 136,
+      "Psychology": 45,
+      "Engineering": 126
+   }
+}

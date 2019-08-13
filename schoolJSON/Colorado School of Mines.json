@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1304,
+   "SchoolName": "Colorado School of Mines",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 6285,
+   "StudentFacultyRatio": 11,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.68267,
+      "Facilities": 3.36409,
+      "Happiness": 3.23827,
+      "Clubs": 3.39223,
+      "Location": 3.31742,
+      "Food": 2.87728,
+      "Social": 3.15602,
+      "Opportunites": 3.55379,
+      "Safety": 3.48231,
+      "Internet": 3.22436
+   },
+   "Tuition": {
+      "in-state": 16170,
+      "out-state": 35220
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 32,
+         "ACTLowerBound": 28
+      },
+      "SAT": {
+         "SATUpperBound": 1450,
+         "SATLowerBound": 1310
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 139,
+      "Computer Science": 142,
+      "Biology": 215,
+      "Psychology": 208,
+      "Engineering": 47
+   }
+}

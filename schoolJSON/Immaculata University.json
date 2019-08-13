@@ -1,0 +1,31 @@
+{
+   "SchoolID": 1330,
+   "SchoolName": "Immaculata University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 18330,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Private",
+   "NLP": {},
+   "Tuition": {
+      "out-state": 26500
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 23,
+         "ACTLowerBound": 17
+      },
+      "SAT": {
+         "SATUpperBound": 1170,
+         "SATLowerBound": 950
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 177,
+      "Computer Science": 201,
+      "Biology": 215,
+      "Psychology": 208,
+      "Engineering": 188
+   }
+}

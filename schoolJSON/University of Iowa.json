@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1438,
+   "SchoolName": "University of Iowa",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 37215,
+   "StudentFacultyRatio": 22,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.01946,
+      "Facilities": 3.7632,
+      "Happiness": 3.72064,
+      "Clubs": 3.72698,
+      "Location": 3.69071,
+      "Food": 3.21106,
+      "Social": 3.56486,
+      "Opportunites": 3.91678,
+      "Safety": 3.8415,
+      "Internet": 3.53953
+   },
+   "Tuition": {
+      "in-state": 7486,
+      "out-state": 29130
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 28,
+         "ACTLowerBound": 23
+      },
+      "SAT": {
+         "SATUpperBound": 1370,
+         "SATLowerBound": 1140
+      }
+   },
+   "Major": {
+      "Business": 69,
+      "Communication": 28,
+      "Computer Science": 147,
+      "Biology": 60,
+      "Psychology": 71,
+      "Engineering": 64
+   }
+}

@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1310,
+   "SchoolName": "DePaul University",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 4410,
+   "StudentFacultyRatio": 7,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.35488,
+      "Facilities": 4.14158,
+      "Happiness": 4.18108,
+      "Clubs": 4.08174,
+      "Location": 4.06342,
+      "Food": 3.51639,
+      "Social": 3.93777,
+      "Opportunites": 4.28682,
+      "Safety": 4.15107,
+      "Internet": 3.8302
+   },
+   "Tuition": {
+      "out-state": 38410
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 28,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1290,
+         "SATLowerBound": 1080
+      }
+   },
+   "Major": {
+      "Business": 109,
+      "Communication": 91,
+      "Computer Science": 92,
+      "Biology": 202,
+      "Psychology": 98,
+      "Engineering": 188
+   }
+}

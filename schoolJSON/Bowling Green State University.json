@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1290,
+   "SchoolName": "Bowling Green State University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 14680,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.63332,
+      "Facilities": 3.32042,
+      "Happiness": 3.20081,
+      "Clubs": 3.36871,
+      "Location": 3.27869,
+      "Food": 2.83353,
+      "Social": 3.1132,
+      "Opportunites": 3.52031,
+      "Safety": 3.42896,
+      "Internet": 3.18011
+   },
+   "Tuition": {
+      "in-state": 9096,
+      "out-state": 16632
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 24,
+         "ACTLowerBound": 19
+      },
+      "SAT": {
+         "SATUpperBound": 1230,
+         "SATLowerBound": 990
+      }
+   },
+   "Major": {
+      "Business": 122,
+      "Communication": 175,
+      "Computer Science": 162,
+      "Biology": 146,
+      "Psychology": 115,
+      "Engineering": 188
+   }
+}

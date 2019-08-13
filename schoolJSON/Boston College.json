@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1288,
+   "SchoolName": "Boston College",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 9921,
+   "StudentFacultyRatio": 13,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.59945,
+      "Facilities": 3.27104,
+      "Happiness": 3.13173,
+      "Clubs": 3.32482,
+      "Location": 3.23147,
+      "Food": 2.79336,
+      "Social": 3.05826,
+      "Opportunites": 3.4758,
+      "Safety": 3.38542,
+      "Internet": 3.14415
+   },
+   "Tuition": {
+      "out-state": 52500
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 33,
+         "ACTLowerBound": 31
+      },
+      "SAT": {
+         "SATUpperBound": 1490,
+         "SATLowerBound": 1320
+      }
+   },
+   "Major": {
+      "Business": 13,
+      "Communication": 64,
+      "Computer Science": 104,
+      "Biology": 52,
+      "Psychology": 43,
+      "Engineering": 188
+   }
+}

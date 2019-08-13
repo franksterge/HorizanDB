@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1319,
+   "SchoolName": "Fordham University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 33008,
+   "StudentFacultyRatio": 22,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.0116,
+      "Facilities": 3.75273,
+      "Happiness": 3.71535,
+      "Clubs": 3.72954,
+      "Location": 3.6905,
+      "Food": 3.19791,
+      "Social": 3.55279,
+      "Opportunites": 3.92442,
+      "Safety": 3.82023,
+      "Internet": 3.52331
+   },
+   "Tuition": {
+      "out-state": 49645
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 27
+      },
+      "SAT": {
+         "SATUpperBound": 1410,
+         "SATLowerBound": 1230
+      }
+   },
+   "Major": {
+      "Business": 37,
+      "Communication": 42,
+      "Computer Science": 163,
+      "Biology": 124,
+      "Psychology": 58,
+      "Engineering": 188
+   }
+}

@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1311,
+   "SchoolName": "Drexel University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 14816,
+   "StudentFacultyRatio": 16,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.93685,
+      "Facilities": 3.66371,
+      "Happiness": 3.6021,
+      "Clubs": 3.65482,
+      "Location": 3.60451,
+      "Food": 3.12323,
+      "Social": 3.46097,
+      "Opportunites": 3.83664,
+      "Safety": 3.74194,
+      "Internet": 3.45455
+   },
+   "Tuition": {
+      "out-state": 49632
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 30,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1360,
+         "SATLowerBound": 1160
+      }
+   },
+   "Major": {
+      "Business": 140,
+      "Communication": 134,
+      "Computer Science": 89,
+      "Biology": 81,
+      "Psychology": 126,
+      "Engineering": 85
+   }
+}

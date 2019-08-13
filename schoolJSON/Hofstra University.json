@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1326,
+   "SchoolName": "Hofstra University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 9965,
+   "StudentFacultyRatio": 7,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.96842,
+      "Facilities": 3.70306,
+      "Happiness": 3.64948,
+      "Clubs": 3.68243,
+      "Location": 3.6389,
+      "Food": 3.15846,
+      "Social": 3.505,
+      "Opportunites": 3.86711,
+      "Safety": 3.78346,
+      "Internet": 3.48772
+   },
+   "Tuition": {
+      "out-state": 42900
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1310,
+         "SATLowerBound": 1130
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 138,
+      "Computer Science": 194,
+      "Biology": 172,
+      "Psychology": 201,
+      "Engineering": 188
+   }
+}

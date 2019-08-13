@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1412,
+   "SchoolName": "University of Arkansas",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 13134,
+   "StudentFacultyRatio": 19,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.1374,
+      "Facilities": 3.9329,
+      "Happiness": 3.93415,
+      "Clubs": 3.8454,
+      "Location": 3.82897,
+      "Food": 3.35949,
+      "Social": 3.75872,
+      "Opportunites": 4.05031,
+      "Safety": 4.00852,
+      "Internet": 3.67606
+   },
+   "Tuition": {
+      "in-state": 7384,
+      "out-state": 22630
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 23
+      },
+      "SAT": {
+         "SATUpperBound": 1280,
+         "SATLowerBound": 1110
+      }
+   },
+   "Major": {
+      "Business": 34,
+      "Communication": 121,
+      "Computer Science": 181,
+      "Biology": 126,
+      "Psychology": 142,
+      "Engineering": 92
+   }
+}

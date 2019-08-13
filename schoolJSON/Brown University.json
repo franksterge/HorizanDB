@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1293,
+   "SchoolName": "Brown University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 6988,
+   "StudentFacultyRatio": 7,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.83294,
+      "Facilities": 3.55231,
+      "Happiness": 3.48131,
+      "Clubs": 3.56645,
+      "Location": 3.5031,
+      "Food": 3.02693,
+      "Social": 3.34713,
+      "Opportunites": 3.7398,
+      "Safety": 3.63592,
+      "Internet": 3.36117
+   },
+   "Tuition": {
+      "out-state": 52231
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 35,
+         "ACTLowerBound": 31
+      },
+      "SAT": {
+         "SATUpperBound": 1570,
+         "SATLowerBound": 1405
+      }
+   },
+   "Major": {
+      "Business": 55,
+      "Communication": 69,
+      "Computer Science": 13,
+      "Biology": 29,
+      "Psychology": 20,
+      "Engineering": 48
+   }
+}

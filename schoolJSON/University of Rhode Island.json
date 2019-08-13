@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1470,
+   "SchoolName": "University of Rhode Island",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 19340,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.12352,
+      "Facilities": 3.88775,
+      "Happiness": 3.86987,
+      "Clubs": 3.83174,
+      "Location": 3.81072,
+      "Food": 3.31389,
+      "Social": 3.69308,
+      "Opportunites": 4.03791,
+      "Safety": 3.95153,
+      "Internet": 3.63293
+   },
+   "Tuition": {
+      "in-state": 12002,
+      "out-state": 28252
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1230,
+         "SATLowerBound": 1050
+      }
+   },
+   "Major": {
+      "Business": 126,
+      "Communication": 57,
+      "Computer Science": 150,
+      "Biology": 97,
+      "Psychology": 100,
+      "Engineering": 152
+   }
+}

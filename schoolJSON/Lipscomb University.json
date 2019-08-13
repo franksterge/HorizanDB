@@ -1,0 +1,31 @@
+{
+   "SchoolID": 1339,
+   "SchoolName": "Lipscomb University",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 2096,
+   "StudentFacultyRatio": 10,
+   "SchoolType": "Private",
+   "NLP": {},
+   "Tuition": {
+      "out-state": 28556
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 23
+      },
+      "SAT": {
+         "SATUpperBound": 1330,
+         "SATLowerBound": 1060
+      }
+   },
+   "Major": {
+      "Business": 173,
+      "Communication": 119,
+      "Computer Science": 201,
+      "Biology": 193,
+      "Psychology": 206,
+      "Engineering": 188
+   }
+}

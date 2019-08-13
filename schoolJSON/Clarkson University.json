@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1301,
+   "SchoolName": "Clarkson University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 2240,
+   "StudentFacultyRatio": 10,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.0901,
+      "Facilities": 3.84518,
+      "Happiness": 3.83226,
+      "Clubs": 3.82587,
+      "Location": 3.78376,
+      "Food": 3.27052,
+      "Social": 3.64079,
+      "Opportunites": 4.00544,
+      "Safety": 3.89501,
+      "Internet": 3.59593
+   },
+   "Tuition": {
+      "out-state": 46700
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1330,
+         "SATLowerBound": 1143
+      }
+   },
+   "Major": {
+      "Business": 156,
+      "Communication": 172,
+      "Computer Science": 191,
+      "Biology": 209,
+      "Psychology": 173,
+      "Engineering": 121
+   }
+}

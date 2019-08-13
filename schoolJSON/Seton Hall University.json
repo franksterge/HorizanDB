@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1383,
+   "SchoolName": "Seton Hall University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 9910,
+   "StudentFacultyRatio": 9,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.12808,
+      "Facilities": 3.89776,
+      "Happiness": 3.88,
+      "Clubs": 3.82721,
+      "Location": 3.80659,
+      "Food": 3.32787,
+      "Social": 3.70755,
+      "Opportunites": 4.0298,
+      "Safety": 3.97015,
+      "Internet": 3.6496
+   },
+   "Tuition": {
+      "out-state": 38400
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 28,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1280,
+         "SATLowerBound": 1140
+      }
+   },
+   "Major": {
+      "Business": 193,
+      "Communication": 169,
+      "Computer Science": 201,
+      "Biology": 204,
+      "Psychology": 208,
+      "Engineering": 188
+   }
+}

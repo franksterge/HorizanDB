@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1427,
+   "SchoolName": "University of Dayton",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 6310,
+   "StudentFacultyRatio": 5,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.04881,
+      "Facilities": 3.81158,
+      "Happiness": 3.77261,
+      "Clubs": 3.73507,
+      "Location": 3.71581,
+      "Food": 3.2627,
+      "Social": 3.62515,
+      "Opportunites": 3.92867,
+      "Safety": 3.91437,
+      "Internet": 3.59093
+   },
+   "Tuition": {
+      "out-state": 41750
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1310,
+         "SATLowerBound": 1100
+      }
+   },
+   "Major": {
+      "Business": 142,
+      "Communication": 108,
+      "Computer Science": 113,
+      "Biology": 160,
+      "Psychology": 171,
+      "Engineering": 40
+   }
+}

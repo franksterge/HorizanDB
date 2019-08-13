@@ -1,0 +1,39 @@
+{
+   "SchoolID": 1378,
+   "SchoolName": "Rutgers University- New Brunswick",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 35641,
+   "StudentFacultyRatio": 15,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.20989,
+      "Facilities": 3.99344,
+      "Happiness": 4.00141,
+      "Clubs": 3.91181,
+      "Location": 3.90062,
+      "Food": 3.40878,
+      "Social": 3.8084,
+      "Opportunites": 4.12012,
+      "Safety": 4.05689,
+      "Internet": 3.72616
+   },
+   "Tuition": {
+      "in-state": 11619,
+      "out-state": 27560
+   },
+   "Test": {
+      "SAT": {
+         "SATUpperBound": 1400,
+         "SATLowerBound": 1190
+      }
+   },
+   "Major": {
+      "Business": 71,
+      "Communication": 105,
+      "Computer Science": 70,
+      "Biology": 81,
+      "Psychology": 72,
+      "Engineering": 55
+   }
+}

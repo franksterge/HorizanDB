@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1332,
+   "SchoolName": "Indiana University- Purdue University- Indianapolis",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 33429,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.09292,
+      "Facilities": 3.85767,
+      "Happiness": 3.84192,
+      "Clubs": 3.8134,
+      "Location": 3.78436,
+      "Food": 3.28518,
+      "Social": 3.66373,
+      "Opportunites": 4.01371,
+      "Safety": 3.91773,
+      "Internet": 3.60442
+   },
+   "Tuition": {
+      "in-state": 8255,
+      "out-state": 28727
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 26,
+         "ACTLowerBound": 19
+      },
+      "SAT": {
+         "SATUpperBound": 1190,
+         "SATLowerBound": 995
+      }
+   },
+   "Major": {
+      "Business": 169,
+      "Communication": 63,
+      "Computer Science": 96,
+      "Biology": 194,
+      "Psychology": 55,
+      "Engineering": 156
+   }
+}

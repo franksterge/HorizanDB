@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1465,
+   "SchoolName": "University of Notre Dame",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 23914,
+   "StudentFacultyRatio": 19,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.16906,
+      "Facilities": 3.94106,
+      "Happiness": 3.93924,
+      "Clubs": 3.88062,
+      "Location": 3.86101,
+      "Food": 3.35856,
+      "Social": 3.7495,
+      "Opportunites": 4.08629,
+      "Safety": 3.9973,
+      "Internet": 3.67626
+   },
+   "Tuition": {
+      "out-state": 50998
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 34,
+         "ACTLowerBound": 32
+      },
+      "SAT": {
+         "SATUpperBound": 1520,
+         "SATLowerBound": 1370
+      }
+   },
+   "Major": {
+      "Business": 7,
+      "Communication": 177,
+      "Computer Science": 33,
+      "Biology": 35,
+      "Psychology": 23,
+      "Engineering": 21
+   }
+}

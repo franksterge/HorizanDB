@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1370,
+   "SchoolName": "Pennsylvania State University- University Park",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 40835,
+   "StudentFacultyRatio": 16,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.14677,
+      "Facilities": 3.91476,
+      "Happiness": 3.90391,
+      "Clubs": 3.84767,
+      "Location": 3.82802,
+      "Food": 3.34168,
+      "Social": 3.72377,
+      "Opportunites": 4.04487,
+      "Safety": 3.98596,
+      "Internet": 3.66504
+   },
+   "Tuition": {
+      "in-state": 17416,
+      "out-state": 32644
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 30,
+         "ACTLowerBound": 25
+      },
+      "SAT": {
+         "SATUpperBound": 1340,
+         "SATLowerBound": 1160
+      }
+   },
+   "Major": {
+      "Business": 21,
+      "Communication": 33,
+      "Computer Science": 26,
+      "Biology": 48,
+      "Psychology": 51,
+      "Engineering": 27
+   }
+}

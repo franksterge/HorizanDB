@@ -1,0 +1,36 @@
+{
+   "SchoolID": 1500,
+   "SchoolName": "Western Michigan University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 17936,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.06159,
+      "Facilities": 3.81734,
+      "Happiness": 3.7916,
+      "Clubs": 3.76673,
+      "Location": 3.74153,
+      "Food": 3.26014,
+      "Social": 3.62478,
+      "Opportunites": 3.96443,
+      "Safety": 3.89673,
+      "Internet": 3.58484
+   },
+   "Tuition": {
+      "in-state": 11020,
+      "out-state": 13776
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 26,
+         "ACTLowerBound": 20
+      },
+      "SAT": {
+         "SATUpperBound": 1190,
+         "SATLowerBound": 960
+      }
+   },
+   "Major": {}
+}

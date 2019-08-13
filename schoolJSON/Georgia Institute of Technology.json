@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1324,
+   "SchoolName": "Georgia Institute of Technology",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 7463,
+   "StudentFacultyRatio": 11,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.06557,
+      "Facilities": 3.81857,
+      "Happiness": 3.79596,
+      "Clubs": 3.788,
+      "Location": 3.75372,
+      "Food": 3.25294,
+      "Social": 3.62203,
+      "Opportunites": 3.98479,
+      "Safety": 3.87907,
+      "Internet": 3.5746
+   },
+   "Tuition": {
+      "in-state": 10008,
+      "out-state": 30604
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 34,
+         "ACTLowerBound": 30
+      },
+      "SAT": {
+         "SATUpperBound": 1520,
+         "SATLowerBound": 1090
+      }
+   },
+   "Major": {
+      "Business": 102,
+      "Communication": 97,
+      "Computer Science": 3,
+      "Biology": 59,
+      "Psychology": 52,
+      "Engineering": 2
+   }
+}

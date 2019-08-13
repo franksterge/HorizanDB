@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1387,
+   "SchoolName": "Southern Methodist University",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 2063,
+   "StudentFacultyRatio": 10,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.20901,
+      "Facilities": 3.98756,
+      "Happiness": 3.99067,
+      "Clubs": 3.91161,
+      "Location": 3.89712,
+      "Food": 3.40152,
+      "Social": 3.79647,
+      "Opportunites": 4.11391,
+      "Safety": 4.04824,
+      "Internet": 3.72156
+   },
+   "Tuition": {
+      "out-state": 46594
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 32,
+         "ACTLowerBound": 28
+      },
+      "SAT": {
+         "SATUpperBound": 1440,
+         "SATLowerBound": 1270
+      }
+   },
+   "Major": {
+      "Business": 47,
+      "Communication": 113,
+      "Computer Science": 78,
+      "Biology": 101,
+      "Psychology": 84,
+      "Engineering": 104
+   }
+}

@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1468,
+   "SchoolName": "University of Pennsylvania",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 8576,
+   "StudentFacultyRatio": 10,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.09378,
+      "Facilities": 3.86569,
+      "Happiness": 3.83846,
+      "Clubs": 3.78779,
+      "Location": 3.7654,
+      "Food": 3.30514,
+      "Social": 3.68228,
+      "Opportunites": 3.98026,
+      "Safety": 3.95393,
+      "Internet": 3.63072
+   },
+   "Tuition": {
+      "out-state": 47416
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 35,
+         "ACTLowerBound": 32
+      },
+      "SAT": {
+         "SATUpperBound": 1560,
+         "SATLowerBound": 1420
+      }
+   },
+   "Major": {
+      "Business": 1,
+      "Communication": 3,
+      "Computer Science": 12,
+      "Biology": 3,
+      "Psychology": 1,
+      "Engineering": 25
+   }
+}

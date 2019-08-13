@@ -1,0 +1,24 @@
+{
+   "SchoolID": 1501,
+   "SchoolName": "Widener University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 3436,
+   "StudentFacultyRatio": 13,
+   "SchoolType": "Private",
+   "NLP": {},
+   "Tuition": {
+      "out-state": 43296
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 25,
+         "ACTLowerBound": 20
+      },
+      "SAT": {
+         "SATUpperBound": 1180,
+         "SATLowerBound": 1020
+      }
+   },
+   "Major": {}
+}

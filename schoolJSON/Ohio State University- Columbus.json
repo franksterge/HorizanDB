@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1364,
+   "SchoolName": "Ohio State University- Columbus",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 45946,
+   "StudentFacultyRatio": 19,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.16747,
+      "Facilities": 3.94106,
+      "Happiness": 3.93687,
+      "Clubs": 3.87112,
+      "Location": 3.85434,
+      "Food": 3.36292,
+      "Social": 3.75283,
+      "Opportunites": 4.07513,
+      "Safety": 4.00677,
+      "Internet": 3.68248
+   },
+   "Tuition": {
+      "in-state": 9718,
+      "out-state": 28822
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 27
+      },
+      "SAT": {
+         "SATUpperBound": 1450,
+         "SATLowerBound": 1260
+      }
+   },
+   "Major": {
+      "Business": 25,
+      "Communication": 14,
+      "Computer Science": 43,
+      "Biology": 48,
+      "Psychology": 40,
+      "Engineering": 26
+   }
+}

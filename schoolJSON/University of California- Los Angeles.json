@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1416,
+   "SchoolName": "University of California- Los Angeles",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 23044,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.01156,
+      "Facilities": 3.78329,
+      "Happiness": 3.74664,
+      "Clubs": 3.70843,
+      "Location": 3.68164,
+      "Food": 3.23872,
+      "Social": 3.60818,
+      "Opportunites": 3.90225,
+      "Safety": 3.87979,
+      "Internet": 3.56308
+   },
+   "Tuition": {
+      "in-state": 11502,
+      "out-state": 39516
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 34,
+         "ACTLowerBound": 29
+      },
+      "SAT": {
+         "SATUpperBound": 1450,
+         "SATLowerBound": 1220
+      }
+   },
+   "Major": {
+      "Business": 6,
+      "Communication": 24,
+      "Computer Science": 27,
+      "Biology": 58,
+      "Psychology": 4,
+      "Engineering": 31
+   }
+}

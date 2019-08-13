@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1380,
+   "SchoolName": "Saint Louis University",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 1791,
+   "StudentFacultyRatio": 15,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.2052,
+      "Facilities": 4.00038,
+      "Happiness": 4.01122,
+      "Clubs": 3.91858,
+      "Location": 3.9026,
+      "Food": 3.41103,
+      "Social": 3.81646,
+      "Opportunites": 4.12283,
+      "Safety": 4.05567,
+      "Internet": 3.72462
+   },
+   "Tuition": {
+      "out-state": 41540
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 25
+      },
+      "SAT": {
+         "SATUpperBound": 1390,
+         "SATLowerBound": 1170
+      }
+   },
+   "Major": {
+      "Business": 91,
+      "Communication": 109,
+      "Computer Science": 170,
+      "Biology": 106,
+      "Psychology": 111,
+      "Engineering": 139
+   }
+}

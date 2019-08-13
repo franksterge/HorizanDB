@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1314,
+   "SchoolName": "East Carolina University",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 5942,
+   "StudentFacultyRatio": 13,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.95991,
+      "Facilities": 3.69528,
+      "Happiness": 3.64497,
+      "Clubs": 3.68029,
+      "Location": 3.63413,
+      "Food": 3.15067,
+      "Social": 3.49639,
+      "Opportunites": 3.86519,
+      "Safety": 3.77204,
+      "Internet": 3.47939
+   },
+   "Tuition": {
+      "in-state": 4452,
+      "out-state": 20729
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 24,
+         "ACTLowerBound": 20
+      },
+      "SAT": {
+         "SATUpperBound": 1180,
+         "SATLowerBound": 1030
+      }
+   },
+   "Major": {
+      "Business": 201,
+      "Communication": 177,
+      "Computer Science": 170,
+      "Biology": 88,
+      "Psychology": 130,
+      "Engineering": 179
+   }
+}

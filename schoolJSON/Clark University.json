@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1300,
+   "SchoolName": "Clark University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 17804,
+   "StudentFacultyRatio": 20,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.80175,
+      "Facilities": 3.49963,
+      "Happiness": 3.40718,
+      "Clubs": 3.52251,
+      "Location": 3.4541,
+      "Food": 2.98757,
+      "Social": 3.29143,
+      "Opportunites": 3.68752,
+      "Safety": 3.59384,
+      "Internet": 3.32887
+   },
+   "Tuition": {
+      "out-state": 44050
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 30,
+         "ACTLowerBound": 26
+      },
+      "SAT": {
+         "SATUpperBound": 1340,
+         "SATLowerBound": 1240
+      }
+   },
+   "Major": {
+      "Business": 162,
+      "Communication": 159,
+      "Computer Science": 201,
+      "Biology": 189,
+      "Psychology": 111,
+      "Engineering": 188
+   }
+}

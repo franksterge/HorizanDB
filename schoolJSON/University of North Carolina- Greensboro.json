@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1463,
+   "SchoolName": "University of North Carolina- Greensboro",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 20354,
+   "StudentFacultyRatio": 16,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.9831,
+      "Facilities": 3.71626,
+      "Happiness": 3.65917,
+      "Clubs": 3.67841,
+      "Location": 3.64372,
+      "Food": 3.17729,
+      "Social": 3.52021,
+      "Opportunites": 3.86959,
+      "Safety": 3.80877,
+      "Internet": 3.50842
+   },
+   "Tuition": {
+      "in-state": 4422,
+      "out-state": 19581
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 25,
+         "ACTLowerBound": 20
+      },
+      "SAT": {
+         "SATUpperBound": 1180,
+         "SATLowerBound": 1030
+      }
+   },
+   "Major": {
+      "Business": 135,
+      "Communication": 95,
+      "Computer Science": 169,
+      "Biology": 128,
+      "Psychology": 53,
+      "Engineering": 188
+   }
+}

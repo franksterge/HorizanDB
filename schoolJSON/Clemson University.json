@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1302,
+   "SchoolName": "Clemson University",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 3090,
+   "StudentFacultyRatio": 14,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.85516,
+      "Facilities": 3.56908,
+      "Happiness": 3.49194,
+      "Clubs": 3.57555,
+      "Location": 3.51675,
+      "Food": 3.04486,
+      "Social": 3.36528,
+      "Opportunites": 3.75186,
+      "Safety": 3.65705,
+      "Internet": 3.38002
+   },
+   "Tuition": {
+      "in-state": 13752,
+      "out-state": 34694
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 27
+      },
+      "SAT": {
+         "SATUpperBound": 1390,
+         "SATLowerBound": 1220
+      }
+   },
+   "Major": {
+      "Business": 66,
+      "Communication": 103,
+      "Computer Science": 82,
+      "Biology": 61,
+      "Psychology": 106,
+      "Engineering": 45
+   }
+}

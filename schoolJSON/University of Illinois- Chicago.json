@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1436,
+   "SchoolName": "University of Illinois- Chicago",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 5069,
+   "StudentFacultyRatio": 10,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.05937,
+      "Facilities": 3.81284,
+      "Happiness": 3.78805,
+      "Clubs": 3.77285,
+      "Location": 3.74055,
+      "Food": 3.25248,
+      "Social": 3.61813,
+      "Opportunites": 3.96356,
+      "Safety": 3.88495,
+      "Internet": 3.57809
+   },
+   "Tuition": {
+      "in-state": 10584,
+      "out-state": 23440
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 26,
+         "ACTLowerBound": 20
+      },
+      "SAT": {
+         "SATUpperBound": 1330,
+         "SATLowerBound": 1080
+      }
+   },
+   "Major": {
+      "Business": 167,
+      "Communication": 153,
+      "Computer Science": 72,
+      "Biology": 92,
+      "Psychology": 93,
+      "Engineering": 141
+   }
+}

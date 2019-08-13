@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1291,
+   "SchoolName": "Brandeis University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 3635,
+   "StudentFacultyRatio": 10,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.56475,
+      "Facilities": 3.22473,
+      "Happiness": 3.0706,
+      "Clubs": 3.28151,
+      "Location": 3.18628,
+      "Food": 2.7579,
+      "Social": 3.01024,
+      "Opportunites": 3.42619,
+      "Safety": 3.3509,
+      "Internet": 3.11347
+   },
+   "Tuition": {
+      "out-state": 51460
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 33,
+         "ACTLowerBound": 29
+      },
+      "SAT": {
+         "SATUpperBound": 1470,
+         "SATLowerBound": 1280
+      }
+   },
+   "Major": {
+      "Business": 123,
+      "Communication": 177,
+      "Computer Science": 106,
+      "Biology": 51,
+      "Psychology": 65,
+      "Engineering": 188
+   }
+}

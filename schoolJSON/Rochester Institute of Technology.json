@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1377,
+   "SchoolName": "Rochester Institute of Technology",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 13515,
+   "StudentFacultyRatio": 13,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.16179,
+      "Facilities": 3.93405,
+      "Happiness": 3.92294,
+      "Clubs": 3.86449,
+      "Location": 3.8452,
+      "Food": 3.35632,
+      "Social": 3.74468,
+      "Opportunites": 4.06274,
+      "Safety": 4.00186,
+      "Internet": 3.67759
+   },
+   "Tuition": {
+      "out-state": 39506
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 32,
+         "ACTLowerBound": 26
+      },
+      "SAT": {
+         "SATUpperBound": 1380,
+         "SATLowerBound": 1190
+      }
+   },
+   "Major": {
+      "Business": 200,
+      "Communication": 157,
+      "Computer Science": 72,
+      "Biology": 201,
+      "Psychology": 194,
+      "Engineering": 109
+   }
+}

@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1420,
+   "SchoolName": "University of California- Santa Barbara",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 31002,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.83353,
+      "Facilities": 3.5704,
+      "Happiness": 3.48333,
+      "Clubs": 3.51118,
+      "Location": 3.47279,
+      "Food": 3.06953,
+      "Social": 3.40003,
+      "Opportunites": 3.68812,
+      "Safety": 3.70088,
+      "Internet": 3.40619
+   },
+   "Tuition": {
+      "in-state": 11502,
+      "out-state": 39516
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 33,
+         "ACTLowerBound": 28
+      },
+      "SAT": {
+         "SATUpperBound": 1400,
+         "SATLowerBound": 1190
+      }
+   },
+   "Major": {
+      "Business": 97,
+      "Communication": 27,
+      "Computer Science": 49,
+      "Biology": 64,
+      "Psychology": 53,
+      "Engineering": 34
+   }
+}

@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1422,
+   "SchoolName": "University of Central Florida",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 20073,
+   "StudentFacultyRatio": 22,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.19226,
+      "Facilities": 3.98167,
+      "Happiness": 3.98703,
+      "Clubs": 3.89585,
+      "Location": 3.88124,
+      "Food": 3.39903,
+      "Social": 3.80154,
+      "Opportunites": 4.10008,
+      "Safety": 4.04922,
+      "Internet": 3.71693
+   },
+   "Tuition": {
+      "in-state": 4478,
+      "out-state": 19810
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1320,
+         "SATLowerBound": 1150
+      }
+   },
+   "Major": {
+      "Business": 30,
+      "Communication": 58,
+      "Computer Science": 49,
+      "Biology": 139,
+      "Psychology": 95,
+      "Engineering": 78
+   }
+}

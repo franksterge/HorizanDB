@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1444,
+   "SchoolName": "University of Maryland College Park",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 22425,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.12402,
+      "Facilities": 3.88732,
+      "Happiness": 3.87328,
+      "Clubs": 3.83484,
+      "Location": 3.81023,
+      "Food": 3.31324,
+      "Social": 3.69321,
+      "Opportunites": 4.03845,
+      "Safety": 3.94801,
+      "Internet": 3.63343
+   },
+   "Tuition": {
+      "in-state": 8368,
+      "out-state": 22504
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 33,
+         "ACTLowerBound": 29
+      },
+      "SAT": {
+         "SATUpperBound": 1470,
+         "SATLowerBound": 1280
+      }
+   },
+   "Major": {
+      "Business": 45,
+      "Communication": 28,
+      "Computer Science": 15,
+      "Biology": 63,
+      "Psychology": 44,
+      "Engineering": 33
+   }
+}

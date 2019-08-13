@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1458,
+   "SchoolName": "University of Nebraska- Lincoln",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 23799,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.1888,
+      "Facilities": 3.96215,
+      "Happiness": 3.9661,
+      "Clubs": 3.90279,
+      "Location": 3.88277,
+      "Food": 3.37574,
+      "Social": 3.77148,
+      "Opportunites": 4.11015,
+      "Safety": 4.01249,
+      "Internet": 3.69227
+   },
+   "Tuition": {
+      "in-state": 7125,
+      "out-state": 22245
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1380,
+         "SATLowerBound": 1100
+      }
+   },
+   "Major": {
+      "Business": 53,
+      "Communication": 35,
+      "Computer Science": 108,
+      "Biology": 105,
+      "Psychology": 56,
+      "Engineering": 83
+   }
+}

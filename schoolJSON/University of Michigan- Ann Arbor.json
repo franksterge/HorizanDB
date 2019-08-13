@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1451,
+   "SchoolName": "University of Michigan- Ann Arbor",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 12660,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.05252,
+      "Facilities": 3.81951,
+      "Happiness": 3.7856,
+      "Clubs": 3.74909,
+      "Location": 3.7222,
+      "Food": 3.26726,
+      "Social": 3.63738,
+      "Opportunites": 3.94006,
+      "Safety": 3.90933,
+      "Internet": 3.59244
+   },
+   "Tuition": {
+      "in-state": 14498,
+      "out-state": 47148
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 33,
+         "ACTLowerBound": 30
+      },
+      "SAT": {
+         "SATUpperBound": 1500,
+         "SATLowerBound": 1330
+      }
+   },
+   "Major": {
+      "Business": 2,
+      "Communication": 15,
+      "Computer Science": 28,
+      "Biology": 11,
+      "Psychology": 3,
+      "Engineering": 5
+   }
+}

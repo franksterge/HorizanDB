@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1490,
+   "SchoolName": "University of Wyoming",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 3548,
+   "StudentFacultyRatio": 13,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.27156,
+      "Facilities": 4.05041,
+      "Happiness": 4.06281,
+      "Clubs": 3.98016,
+      "Location": 3.96535,
+      "Food": 3.44846,
+      "Social": 3.85395,
+      "Opportunites": 4.18328,
+      "Safety": 4.09213,
+      "Internet": 3.58347
+   },
+   "Tuition": {
+      "in-state": 3870,
+      "out-state": 15480
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1290,
+         "SATLowerBound": 1040
+      }
+   },
+   "Major": {
+      "Business": 176,
+      "Communication": 177,
+      "Computer Science": 147,
+      "Biology": 116,
+      "Psychology": 159,
+      "Engineering": 71
+   }
+}

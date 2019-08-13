@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1472,
+   "SchoolName": "University of San Diego",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 19326,
+   "StudentFacultyRatio": 14,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.03854,
+      "Facilities": 3.77879,
+      "Happiness": 3.72776,
+      "Clubs": 3.73175,
+      "Location": 3.70243,
+      "Food": 3.22665,
+      "Social": 3.57835,
+      "Opportunites": 3.92435,
+      "Safety": 3.86345,
+      "Internet": 3.55614
+   },
+   "Tuition": {
+      "out-state": 47100
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 33,
+         "ACTLowerBound": 27
+      },
+      "SAT": {
+         "SATUpperBound": 1410,
+         "SATLowerBound": 1210
+      }
+   },
+   "Major": {
+      "Business": 108,
+      "Communication": 124,
+      "Computer Science": 201,
+      "Biology": 130,
+      "Psychology": 124,
+      "Engineering": 158
+   }
+}

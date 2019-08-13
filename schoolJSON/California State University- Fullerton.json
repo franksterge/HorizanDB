@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1296,
+   "SchoolName": "California State University- Fullerton",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 35162,
+   "StudentFacultyRatio": 25,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.85916,
+      "Facilities": 3.57713,
+      "Happiness": 3.50426,
+      "Clubs": 3.58515,
+      "Location": 3.52552,
+      "Food": 3.04896,
+      "Social": 3.37312,
+      "Opportunites": 3.76605,
+      "Safety": 3.65831,
+      "Internet": 3.38159
+   },
+   "Tuition": {
+      "in-state": 5742,
+      "out-state": 17622
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 24,
+         "ACTLowerBound": 19
+      },
+      "SAT": {
+         "SATUpperBound": 1180,
+         "SATLowerBound": 1020
+      }
+   },
+   "Major": {
+      "Business": 179,
+      "Communication": 123,
+      "Computer Science": 173,
+      "Biology": 158,
+      "Psychology": 138,
+      "Engineering": 176
+   }
+}

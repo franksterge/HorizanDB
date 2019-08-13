@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1328,
+   "SchoolName": "Illinois Institute of Technology",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 6354,
+   "StudentFacultyRatio": 8,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.07904,
+      "Facilities": 3.84266,
+      "Happiness": 3.81556,
+      "Clubs": 3.77333,
+      "Location": 3.7521,
+      "Food": 3.28471,
+      "Social": 3.65428,
+      "Opportunites": 3.96852,
+      "Safety": 3.9311,
+      "Internet": 3.61104
+   },
+   "Tuition": {
+      "out-state": 44150
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 25
+      },
+      "SAT": {
+         "SATUpperBound": 1410,
+         "SATLowerBound": 1230
+      }
+   },
+   "Major": {
+      "Business": 159,
+      "Communication": 134,
+      "Computer Science": 80,
+      "Biology": 135,
+      "Psychology": 179,
+      "Engineering": 121
+   }
+}

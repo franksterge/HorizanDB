@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1287,
+   "SchoolName": "Biola University",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 4048,
+   "StudentFacultyRatio": 14,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.54684,
+      "Facilities": 3.21605,
+      "Happiness": 3.0755,
+      "Clubs": 3.28038,
+      "Location": 3.18143,
+      "Food": 2.74881,
+      "Social": 3.00767,
+      "Opportunites": 3.42245,
+      "Safety": 3.33896,
+      "Internet": 3.10137
+   },
+   "Tuition": {
+      "out-state": 38448
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 28,
+         "ACTLowerBound": 21
+      },
+      "SAT": {
+         "SATUpperBound": 1298,
+         "SATLowerBound": 1063
+      }
+   },
+   "Major": {
+      "Business": 180,
+      "Communication": 145,
+      "Computer Science": 189,
+      "Biology": 202,
+      "Psychology": 175,
+      "Engineering": 188
+   }
+}

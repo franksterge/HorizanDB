@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1446,
+   "SchoolName": "University of Massachusetts- Amherst",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 15546,
+   "StudentFacultyRatio": 15,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.1279,
+      "Facilities": 3.90962,
+      "Happiness": 3.90223,
+      "Clubs": 3.82745,
+      "Location": 3.81366,
+      "Food": 3.34084,
+      "Social": 3.72618,
+      "Opportunites": 4.03155,
+      "Safety": 3.99122,
+      "Internet": 3.66135
+   },
+   "Tuition": {
+      "in-state": 15030,
+      "out-state": 33096
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 26
+      },
+      "SAT": {
+         "SATUpperBound": 1360,
+         "SATLowerBound": 1180
+      }
+   },
+   "Major": {
+      "Business": 66,
+      "Communication": 77,
+      "Computer Science": 40,
+      "Biology": 99,
+      "Psychology": 64,
+      "Engineering": 82
+   }
+}

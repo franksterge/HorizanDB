@@ -1,0 +1,32 @@
+{
+   "SchoolID": 1410,
+   "SchoolName": "University of Alaska- Fairbanks",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 2181,
+   "StudentFacultyRatio": 10,
+   "SchoolType": "Public",
+   "NLP": {},
+   "Tuition": {
+      "in-state": 4848,
+      "out-state": 17160
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 25,
+         "ACTLowerBound": 17
+      },
+      "SAT": {
+         "SATUpperBound": 1270,
+         "SATLowerBound": 1030
+      }
+   },
+   "Major": {
+      "Business": 78,
+      "Communication": 111,
+      "Computer Science": 120,
+      "Biology": 103,
+      "Psychology": 208,
+      "Engineering": 113
+   }
+}

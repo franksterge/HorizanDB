@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1285,
+   "SchoolName": "Benedictine University",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 2884,
+   "StudentFacultyRatio": 11,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.27726,
+      "Facilities": 4.08938,
+      "Happiness": 4.12848,
+      "Clubs": 3.99125,
+      "Location": 3.98722,
+      "Food": 3.48646,
+      "Social": 3.90827,
+      "Opportunites": 4.20344,
+      "Safety": 4.14193,
+      "Internet": 3.79779
+   },
+   "Tuition": {
+      "out-state": 32400
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 25,
+         "ACTLowerBound": 19
+      },
+      "SAT": {
+         "SATUpperBound": 1100,
+         "SATLowerBound": 916
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 177,
+      "Computer Science": 201,
+      "Biology": 215,
+      "Psychology": 208,
+      "Engineering": 188
+   }
+}

@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1459,
+   "SchoolName": "University of New Hampshire",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 11372,
+   "StudentFacultyRatio": 14,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.05603,
+      "Facilities": 3.80565,
+      "Happiness": 3.77316,
+      "Clubs": 3.7612,
+      "Location": 3.73181,
+      "Food": 3.24829,
+      "Social": 3.61326,
+      "Opportunites": 3.95978,
+      "Safety": 3.88077,
+      "Internet": 3.57262
+   },
+   "Tuition": {
+      "in-state": 14770,
+      "out-state": 29340
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 28,
+         "ACTLowerBound": 23
+      },
+      "SAT": {
+         "SATUpperBound": 1260,
+         "SATLowerBound": 1070
+      }
+   },
+   "Major": {
+      "Business": 130,
+      "Communication": 149,
+      "Computer Science": 106,
+      "Biology": 188,
+      "Psychology": 88,
+      "Engineering": 119
+   }
+}

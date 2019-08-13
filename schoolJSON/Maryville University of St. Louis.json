@@ -1,0 +1,31 @@
+{
+   "SchoolID": 1344,
+   "SchoolName": "Maryville University of St. Louis",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 8335,
+   "StudentFacultyRatio": 14,
+   "SchoolType": "Private",
+   "NLP": {},
+   "Tuition": {
+      "out-state": 26070
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 21
+      },
+      "SAT": {
+         "SATUpperBound": 1265,
+         "SATLowerBound": 983
+      }
+   },
+   "Major": {
+      "Business": 185,
+      "Communication": 177,
+      "Computer Science": 201,
+      "Biology": 215,
+      "Psychology": 196,
+      "Engineering": 188
+   }
+}

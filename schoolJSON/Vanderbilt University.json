@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1492,
+   "SchoolName": "Vanderbilt University",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 6885,
+   "StudentFacultyRatio": 7,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.11237,
+      "Facilities": 3.89787,
+      "Happiness": 3.8854,
+      "Clubs": 3.81525,
+      "Location": 3.79485,
+      "Food": 3.33048,
+      "Social": 3.71905,
+      "Opportunites": 4.01521,
+      "Safety": 3.97833,
+      "Internet": 3.65066
+   },
+   "Tuition": {
+      "out-state": 46500
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 35,
+         "ACTLowerBound": 32
+      },
+      "SAT": {
+         "SATUpperBound": 1570,
+         "SATLowerBound": 1440
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 24,
+      "Computer Science": 102,
+      "Biology": 9,
+      "Psychology": 6,
+      "Engineering": 18
+   }
+}

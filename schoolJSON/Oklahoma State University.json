@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1366,
+   "SchoolName": "Oklahoma State University",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 20992,
+   "StudentFacultyRatio": 20,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.10719,
+      "Facilities": 3.87279,
+      "Happiness": 3.85025,
+      "Clubs": 3.80955,
+      "Location": 3.78356,
+      "Food": 3.30879,
+      "Social": 3.68035,
+      "Opportunites": 4.0001,
+      "Safety": 3.94601,
+      "Internet": 3.63185
+   },
+   "Tuition": {
+      "in-state": 5190,
+      "out-state": 20228
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 28,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1260,
+         "SATLowerBound": 1070
+      }
+   },
+   "Major": {
+      "Business": 118,
+      "Communication": 129,
+      "Computer Science": 179,
+      "Biology": 113,
+      "Psychology": 135,
+      "Engineering": 89
+   }
+}

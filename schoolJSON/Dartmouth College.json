@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1309,
+   "SchoolName": "Dartmouth College",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 3161,
+   "StudentFacultyRatio": 13,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.85456,
+      "Facilities": 3.56406,
+      "Happiness": 3.48191,
+      "Clubs": 3.56408,
+      "Location": 3.50821,
+      "Food": 3.04542,
+      "Social": 3.36361,
+      "Opportunites": 3.742,
+      "Safety": 3.66017,
+      "Internet": 3.38214
+   },
+   "Tuition": {
+      "out-state": 51468
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 34,
+         "ACTLowerBound": 30
+      },
+      "SAT": {
+         "SATUpperBound": 1560,
+         "SATLowerBound": 1430
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 177,
+      "Computer Science": 36,
+      "Biology": 22,
+      "Psychology": 33,
+      "Engineering": 53
+   }
+}

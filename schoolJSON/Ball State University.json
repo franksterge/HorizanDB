@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1283,
+   "SchoolName": "Ball State University",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 17004,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.62503,
+      "Facilities": 3.29371,
+      "Happiness": 3.15161,
+      "Clubs": 3.34451,
+      "Location": 3.25148,
+      "Food": 2.80926,
+      "Social": 3.07479,
+      "Opportunites": 3.50161,
+      "Safety": 3.39903,
+      "Internet": 3.16016
+   },
+   "Tuition": {
+      "in-state": 9112,
+      "out-state": 25280
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 24,
+         "ACTLowerBound": 20
+      },
+      "SAT": {
+         "SATUpperBound": 1240,
+         "SATLowerBound": 1080
+      }
+   },
+   "Major": {
+      "Business": 158,
+      "Communication": 92,
+      "Computer Science": 135,
+      "Biology": 160,
+      "Psychology": 168,
+      "Engineering": 188
+   }
+}

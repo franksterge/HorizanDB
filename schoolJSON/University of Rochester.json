@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1471,
+   "SchoolName": "University of Rochester",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 11716,
+   "StudentFacultyRatio": 6,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.03035,
+      "Facilities": 3.76554,
+      "Happiness": 3.71171,
+      "Clubs": 3.72318,
+      "Location": 3.6886,
+      "Food": 3.2171,
+      "Social": 3.56829,
+      "Opportunites": 3.90982,
+      "Safety": 3.85153,
+      "Internet": 3.54898
+   },
+   "Tuition": {
+      "out-state": 51090
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 26,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1410,
+         "SATLowerBound": 1230
+      }
+   },
+   "Major": {
+      "Business": 86,
+      "Communication": 60,
+      "Computer Science": 61,
+      "Biology": 35,
+      "Psychology": 28,
+      "Engineering": 86
+   }
+}

@@ -467,3 +467,4 @@ View vAllLeftSchoolData as (
   join SchoolMajorRankingSource sms on sms.SchoolID = s.SchoolID
   join MajorRanking m on m.MajorRankingID = sms.MajorRankingID
 );
+

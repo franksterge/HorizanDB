@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1405,
+   "SchoolName": "University at Albany- SUNY",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 22317,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.95181,
+      "Facilities": 3.69621,
+      "Happiness": 3.63328,
+      "Clubs": 3.63768,
+      "Location": 3.61162,
+      "Food": 3.1686,
+      "Social": 3.50124,
+      "Opportunites": 3.82694,
+      "Safety": 3.80733,
+      "Internet": 3.49893
+   },
+   "Tuition": {
+      "in-state": 9450,
+      "out-state": 23625
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 26,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1260,
+         "SATLowerBound": 1080
+      }
+   },
+   "Major": {
+      "Business": 202,
+      "Communication": 79,
+      "Computer Science": 163,
+      "Biology": 185,
+      "Psychology": 190,
+      "Engineering": 181
+   }
+}

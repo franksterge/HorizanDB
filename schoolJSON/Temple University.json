@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1396,
+   "SchoolName": "Temple University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 15252,
+   "StudentFacultyRatio": 15,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.08958,
+      "Facilities": 3.85635,
+      "Happiness": 3.82946,
+      "Clubs": 3.77821,
+      "Location": 3.7618,
+      "Food": 3.29813,
+      "Social": 3.67165,
+      "Opportunites": 3.98219,
+      "Safety": 3.94651,
+      "Internet": 3.62188
+   },
+   "Tuition": {
+      "in-state": 15768,
+      "out-state": 27528
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 28,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1230,
+         "SATLowerBound": 1010
+      }
+   },
+   "Major": {
+      "Business": 65,
+      "Communication": 51,
+      "Computer Science": 102,
+      "Biology": 115,
+      "Psychology": 73,
+      "Engineering": 147
+   }
+}

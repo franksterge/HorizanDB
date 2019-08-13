@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1431,
+   "SchoolName": "University of Georgia",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 8499,
+   "StudentFacultyRatio": 15,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.07958,
+      "Facilities": 3.85419,
+      "Happiness": 3.83232,
+      "Clubs": 3.77703,
+      "Location": 3.75742,
+      "Food": 3.29565,
+      "Social": 3.67178,
+      "Opportunites": 3.97544,
+      "Safety": 3.9429,
+      "Internet": 3.61866
+   },
+   "Tuition": {
+      "in-state": 9552,
+      "out-state": 28126
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 26
+      },
+      "SAT": {
+         "SATUpperBound": 1370,
+         "SATLowerBound": 1200
+      }
+   },
+   "Major": {
+      "Business": 9,
+      "Communication": 9,
+      "Computer Science": 78,
+      "Biology": 30,
+      "Psychology": 14,
+      "Engineering": 108
+   }
+}

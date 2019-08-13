@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1348,
+   "SchoolName": "Michigan State University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 17147,
+   "StudentFacultyRatio": 14,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.17984,
+      "Facilities": 3.96225,
+      "Happiness": 3.9608,
+      "Clubs": 3.88134,
+      "Location": 3.86479,
+      "Food": 3.38272,
+      "Social": 3.77761,
+      "Opportunites": 4.08196,
+      "Safety": 4.03169,
+      "Internet": 3.70305
+   },
+   "Tuition": {
+      "in-state": 14460,
+      "out-state": 39406
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 28,
+         "ACTLowerBound": 23
+      },
+      "SAT": {
+         "SATUpperBound": 1320,
+         "SATLowerBound": 1100
+      }
+   },
+   "Major": {
+      "Business": 45,
+      "Communication": 20,
+      "Computer Science": 46,
+      "Biology": 33,
+      "Psychology": 48,
+      "Engineering": 80
+   }
+}

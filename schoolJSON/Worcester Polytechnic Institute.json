@@ -1,0 +1,35 @@
+{
+   "SchoolID": 1502,
+   "SchoolName": "Worcester Polytechnic Institute",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 4435,
+   "StudentFacultyRatio": 13,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.07822,
+      "Facilities": 3.83683,
+      "Happiness": 3.80922,
+      "Clubs": 3.77933,
+      "Location": 3.75636,
+      "Food": 3.27554,
+      "Social": 3.64361,
+      "Opportunites": 3.97927,
+      "Safety": 3.91542,
+      "Internet": 3.59935
+   },
+   "Tuition": {
+      "out-state": 47988
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 32,
+         "ACTLowerBound": 27
+      },
+      "SAT": {
+         "SATUpperBound": 1460,
+         "SATLowerBound": 1270
+      }
+   },
+   "Major": {}
+}

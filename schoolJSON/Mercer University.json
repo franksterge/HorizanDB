@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1346,
+   "SchoolName": "Mercer University",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 4547,
+   "StudentFacultyRatio": 3,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.88031,
+      "Facilities": 3.60291,
+      "Happiness": 3.5156,
+      "Clubs": 3.55485,
+      "Location": 3.52281,
+      "Food": 3.09079,
+      "Social": 3.40899,
+      "Opportunites": 3.74124,
+      "Safety": 3.73053,
+      "Internet": 3.42928
+   },
+   "Tuition": {
+      "out-state": 35700
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 30,
+         "ACTLowerBound": 25
+      },
+      "SAT": {
+         "SATUpperBound": 1340,
+         "SATLowerBound": 1170
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 177,
+      "Computer Science": 201,
+      "Biology": 196,
+      "Psychology": 208,
+      "Engineering": 116
+   }
+}

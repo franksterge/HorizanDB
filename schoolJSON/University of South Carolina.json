@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1474,
+   "SchoolName": "University of South Carolina",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 6546,
+   "StudentFacultyRatio": 10,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.11939,
+      "Facilities": 3.88032,
+      "Happiness": 3.86163,
+      "Clubs": 3.82612,
+      "Location": 3.80462,
+      "Food": 3.30864,
+      "Social": 3.68279,
+      "Opportunites": 4.02564,
+      "Safety": 3.94786,
+      "Internet": 3.63072
+   },
+   "Tuition": {
+      "in-state": 11462,
+      "out-state": 31562
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 30,
+         "ACTLowerBound": 25
+      },
+      "SAT": {
+         "SATUpperBound": 1330,
+         "SATLowerBound": 1170
+      }
+   },
+   "Major": {
+      "Business": 38,
+      "Communication": 48,
+      "Computer Science": 167,
+      "Biology": 92,
+      "Psychology": 65,
+      "Engineering": 98
+   }
+}

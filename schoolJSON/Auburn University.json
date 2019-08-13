@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1281,
+   "SchoolName": "Auburn University",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 23964,
+   "StudentFacultyRatio": 19,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.63972,
+      "Facilities": 3.31572,
+      "Happiness": 3.18572,
+      "Clubs": 3.3696,
+      "Location": 3.27398,
+      "Food": 2.82456,
+      "Social": 3.09549,
+      "Opportunites": 3.52182,
+      "Safety": 3.4136,
+      "Internet": 3.17504
+   },
+   "Tuition": {
+      "in-state": 9336,
+      "out-state": 28008
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 30,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1310,
+         "SATLowerBound": 1130
+      }
+   },
+   "Major": {
+      "Business": 55,
+      "Communication": 147,
+      "Computer Science": 139,
+      "Biology": 95,
+      "Psychology": 131,
+      "Engineering": 52
+   }
+}

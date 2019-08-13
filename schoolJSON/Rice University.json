@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1375,
+   "SchoolName": "Rice University",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 4001,
+   "StudentFacultyRatio": 6,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.16778,
+      "Facilities": 3.94452,
+      "Happiness": 3.94254,
+      "Clubs": 3.87308,
+      "Location": 3.85587,
+      "Food": 3.36663,
+      "Social": 3.7583,
+      "Opportunites": 4.07638,
+      "Safety": 4.0112,
+      "Internet": 3.68585
+   },
+   "Tuition": {
+      "out-state": 44900
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 35,
+         "ACTLowerBound": 33
+      },
+      "SAT": {
+         "SATUpperBound": 1580,
+         "SATLowerBound": 1490
+      }
+   },
+   "Major": {
+      "Business": 104,
+      "Communication": 100,
+      "Computer Science": 18,
+      "Biology": 39,
+      "Psychology": 37,
+      "Engineering": 14
+   }
+}

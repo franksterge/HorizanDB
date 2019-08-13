@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1342,
+   "SchoolName": "Loyola University Chicago",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 11328,
+   "StudentFacultyRatio": 25,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.02205,
+      "Facilities": 3.76856,
+      "Happiness": 3.73101,
+      "Clubs": 3.73689,
+      "Location": 3.70167,
+      "Food": 3.21392,
+      "Social": 3.57212,
+      "Opportunites": 3.93015,
+      "Safety": 3.84249,
+      "Internet": 3.53884
+   },
+   "Tuition": {
+      "out-state": 41720
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1310,
+         "SATLowerBound": 1120
+      }
+   },
+   "Major": {
+      "Business": 117,
+      "Communication": 137,
+      "Computer Science": 195,
+      "Biology": 85,
+      "Psychology": 104,
+      "Engineering": 188
+   }
+}

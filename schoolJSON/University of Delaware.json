@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1428,
+   "SchoolName": "University of Delaware",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 26559,
+   "StudentFacultyRatio": 16,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.15178,
+      "Facilities": 3.93782,
+      "Happiness": 3.94003,
+      "Clubs": 3.85687,
+      "Location": 3.84047,
+      "Food": 3.364,
+      "Social": 3.75784,
+      "Opportunites": 4.05768,
+      "Safety": 4.01315,
+      "Internet": 3.68394
+   },
+   "Tuition": {
+      "in-state": 11870,
+      "out-state": 31860
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 25
+      },
+      "SAT": {
+         "SATUpperBound": 1330,
+         "SATLowerBound": 1130
+      }
+   },
+   "Major": {
+      "Business": 94,
+      "Communication": 173,
+      "Computer Science": 133,
+      "Biology": 151,
+      "Psychology": 70,
+      "Engineering": 67
+   }
+}

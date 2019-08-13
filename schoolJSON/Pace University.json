@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1369,
+   "SchoolName": "Pace University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 8674,
+   "StudentFacultyRatio": 14,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.24696,
+      "Facilities": 4.03219,
+      "Happiness": 4.04981,
+      "Clubs": 3.94727,
+      "Location": 3.94015,
+      "Food": 3.44081,
+      "Social": 3.84477,
+      "Opportunites": 4.16265,
+      "Safety": 4.08769,
+      "Internet": 3.75657
+   },
+   "Tuition": {
+      "out-state": 42354
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 21
+      },
+      "SAT": {
+         "SATUpperBound": 1220,
+         "SATLowerBound": 1040
+      }
+   },
+   "Major": {
+      "Business": 174,
+      "Communication": 177,
+      "Computer Science": 176,
+      "Biology": 171,
+      "Psychology": 159,
+      "Engineering": 169
+   }
+}

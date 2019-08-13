@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1430,
+   "SchoolName": "University of Florida",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 19241,
+   "StudentFacultyRatio": 16,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.40252,
+      "Facilities": 3.1078,
+      "Happiness": 2.93212,
+      "Clubs": 3.09178,
+      "Location": 3.00547,
+      "Food": 2.69997,
+      "Social": 2.93451,
+      "Opportunites": 3.22101,
+      "Safety": 3.269,
+      "Internet": 3.0395
+   },
+   "Tuition": {
+      "in-state": 4477,
+      "out-state": 25694
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1320,
+         "SATLowerBound": 1150
+      }
+   },
+   "Major": {
+      "Business": 28,
+      "Communication": 15,
+      "Computer Science": 35,
+      "Biology": 24,
+      "Psychology": 45,
+      "Engineering": 29
+   }
+}

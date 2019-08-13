@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1352,
+   "SchoolName": "Montana State University",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 6919,
+   "StudentFacultyRatio": 19,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.17575,
+      "Facilities": 3.97861,
+      "Happiness": 3.99193,
+      "Clubs": 3.8866,
+      "Location": 3.87166,
+      "Food": 3.3981,
+      "Social": 3.80378,
+      "Opportunites": 4.09256,
+      "Safety": 4.04486,
+      "Internet": 3.71186
+   },
+   "Tuition": {
+      "in-state": 5490,
+      "out-state": 22194
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 28,
+         "ACTLowerBound": 21
+      },
+      "SAT": {
+         "SATUpperBound": 1300,
+         "SATLowerBound": 1090
+      }
+   },
+   "Major": {
+      "Business": 165,
+      "Communication": 75,
+      "Computer Science": 186,
+      "Biology": 184,
+      "Psychology": 198,
+      "Engineering": 123
+   }
+}

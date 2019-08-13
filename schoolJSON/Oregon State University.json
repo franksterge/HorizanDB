@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1368,
+   "SchoolName": "Oregon State University",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 25838,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.11932,
+      "Facilities": 3.89072,
+      "Happiness": 3.87387,
+      "Clubs": 3.81637,
+      "Location": 3.79595,
+      "Food": 3.32517,
+      "Social": 3.70694,
+      "Opportunites": 4.01275,
+      "Safety": 3.97231,
+      "Internet": 3.64927
+   },
+   "Tuition": {
+      "in-state": 9075,
+      "out-state": 27735
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 28,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1300,
+         "SATLowerBound": 1070
+      }
+   },
+   "Major": {
+      "Business": 144,
+      "Communication": 177,
+      "Computer Science": 83,
+      "Biology": 152,
+      "Psychology": 182,
+      "Engineering": 96
+   }
+}

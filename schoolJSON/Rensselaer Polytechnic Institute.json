@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1374,
+   "SchoolName": "Rensselaer Polytechnic Institute",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 6366,
+   "StudentFacultyRatio": 13,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.28002,
+      "Facilities": 4.08171,
+      "Happiness": 4.11461,
+      "Clubs": 3.99334,
+      "Location": 3.98579,
+      "Food": 3.47834,
+      "Social": 3.90074,
+      "Opportunites": 4.20864,
+      "Safety": 4.12715,
+      "Internet": 3.78882
+   },
+   "Tuition": {
+      "out-state": 51000
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 32,
+         "ACTLowerBound": 28
+      },
+      "SAT": {
+         "SATUpperBound": 1500,
+         "SATLowerBound": 1320
+      }
+   },
+   "Major": {
+      "Business": 75,
+      "Communication": 96,
+      "Computer Science": 28,
+      "Biology": 88,
+      "Psychology": 86,
+      "Engineering": 34
+   }
+}

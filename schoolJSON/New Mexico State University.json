@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1355,
+   "SchoolName": "New Mexico State University",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 8483,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.18785,
+      "Facilities": 3.96895,
+      "Happiness": 3.97704,
+      "Clubs": 3.89982,
+      "Location": 3.88459,
+      "Food": 3.38429,
+      "Social": 3.78212,
+      "Opportunites": 4.1076,
+      "Safety": 4.02715,
+      "Internet": 3.70014
+   },
+   "Tuition": {
+      "in-state": 5323,
+      "out-state": 19884
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 23,
+         "ACTLowerBound": 18
+      },
+      "SAT": {
+         "SATUpperBound": 1160,
+         "SATLowerBound": 910
+      }
+   },
+   "Major": {
+      "Business": 147,
+      "Communication": 159,
+      "Computer Science": 117,
+      "Biology": 100,
+      "Psychology": 150,
+      "Engineering": 61
+   }
+}

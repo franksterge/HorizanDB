@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1322,
+   "SchoolName": "George Washington University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 25010,
+   "StudentFacultyRatio": 16,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.95662,
+      "Facilities": 3.68491,
+      "Happiness": 3.62599,
+      "Clubs": 3.66844,
+      "Location": 3.62346,
+      "Food": 3.14442,
+      "Social": 3.486,
+      "Opportunites": 3.85337,
+      "Safety": 3.76686,
+      "Internet": 3.47483
+   },
+   "Tuition": {
+      "out-state": 53435
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 32,
+         "ACTLowerBound": 29
+      },
+      "SAT": {
+         "SATUpperBound": 1440,
+         "SATLowerBound": 1280
+      }
+   },
+   "Major": {
+      "Business": 27,
+      "Communication": 37,
+      "Computer Science": 70,
+      "Biology": 69,
+      "Psychology": 80,
+      "Engineering": 102
+   }
+}

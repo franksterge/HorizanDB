@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1386,
+   "SchoolName": "Southern Illinois University- Carbondale",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 5969,
+   "StudentFacultyRatio": 14,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.1533,
+      "Facilities": 3.93358,
+      "Happiness": 3.92785,
+      "Clubs": 3.85444,
+      "Location": 3.83604,
+      "Food": 3.35996,
+      "Social": 3.75016,
+      "Opportunites": 4.0539,
+      "Safety": 4.00709,
+      "Internet": 3.68068
+   },
+   "Tuition": {
+      "in-state": 5742,
+      "out-state": 17622
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 26,
+         "ACTLowerBound": 20
+      },
+      "SAT": {
+         "SATUpperBound": 1330,
+         "SATLowerBound": 920
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 177,
+      "Computer Science": 149,
+      "Biology": 110,
+      "Psychology": 157,
+      "Engineering": 162
+   }
+}

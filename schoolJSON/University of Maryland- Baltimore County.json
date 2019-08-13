@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1445,
+   "SchoolName": "University of Maryland- Baltimore County",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 5168,
+   "StudentFacultyRatio": 15,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.06254,
+      "Facilities": 3.81093,
+      "Happiness": 3.77522,
+      "Clubs": 3.76699,
+      "Location": 3.73592,
+      "Food": 3.25218,
+      "Social": 3.61582,
+      "Opportunites": 3.95991,
+      "Safety": 3.88611,
+      "Internet": 3.57845
+   },
+   "Tuition": {
+      "in-state": 8481,
+      "out-state": 31688
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1360,
+         "SATLowerBound": 1140
+      }
+   },
+   "Major": {
+      "Business": 151,
+      "Communication": 177,
+      "Computer Science": 110,
+      "Biology": 168,
+      "Psychology": 134,
+      "Engineering": 130
+   }
+}

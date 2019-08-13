@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1452,
+   "SchoolName": "University of Minnesota- Twin Cities",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 6763,
+   "StudentFacultyRatio": 16,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.14165,
+      "Facilities": 2.8455,
+      "Happiness": 2.62758,
+      "Clubs": 2.85578,
+      "Location": 2.7342,
+      "Food": 2.49006,
+      "Social": 2.66808,
+      "Opportunites": 2.95218,
+      "Safety": 3.01276,
+      "Internet": 2.82475
+   },
+   "Tuition": {
+      "in-state": 12800,
+      "out-state": 24986
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 26
+      },
+      "SAT": {
+         "SATUpperBound": 1480,
+         "SATLowerBound": 1270
+      }
+   },
+   "Major": {
+      "Business": 15,
+      "Communication": 47,
+      "Computer Science": 36,
+      "Biology": 30,
+      "Psychology": 20,
+      "Engineering": 32
+   }
+}

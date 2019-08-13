@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1316,
+   "SchoolName": "Emory University",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 1564,
+   "StudentFacultyRatio": 9,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.93928,
+      "Facilities": 3.66911,
+      "Happiness": 3.61391,
+      "Clubs": 3.66264,
+      "Location": 3.61419,
+      "Food": 3.1271,
+      "Social": 3.46576,
+      "Opportunites": 3.84664,
+      "Safety": 3.74498,
+      "Internet": 3.45657
+   },
+   "Tuition": {
+      "out-state": 48690
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 33,
+         "ACTLowerBound": 30
+      },
+      "SAT": {
+         "SATUpperBound": 1520,
+         "SATLowerBound": 1350
+      }
+   },
+   "Major": {
+      "Business": 25,
+      "Communication": 28,
+      "Computer Science": 92,
+      "Biology": 13,
+      "Psychology": 41,
+      "Engineering": 158
+   }
+}

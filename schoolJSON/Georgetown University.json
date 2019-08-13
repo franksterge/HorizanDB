@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1323,
+   "SchoolName": "Georgetown University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 11999,
+   "StudentFacultyRatio": 13,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.97859,
+      "Facilities": 3.7153,
+      "Happiness": 3.66859,
+      "Clubs": 3.69547,
+      "Location": 3.65204,
+      "Food": 3.16846,
+      "Social": 3.51798,
+      "Opportunites": 3.88323,
+      "Safety": 3.79113,
+      "Internet": 3.49652
+   },
+   "Tuition": {
+      "out-state": 51720
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 34,
+         "ACTLowerBound": 30
+      },
+      "SAT": {
+         "SATUpperBound": 1520,
+         "SATLowerBound": 1350
+      }
+   },
+   "Major": {
+      "Business": 22,
+      "Communication": 81,
+      "Computer Science": 52,
+      "Biology": 47,
+      "Psychology": 47,
+      "Engineering": 188
+   }
+}

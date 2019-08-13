@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1400,
+   "SchoolName": "Texas Tech University",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 9011,
+   "StudentFacultyRatio": 13,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.06947,
+      "Facilities": 3.84116,
+      "Happiness": 3.8184,
+      "Clubs": 3.77104,
+      "Location": 3.74532,
+      "Food": 3.28632,
+      "Social": 3.65605,
+      "Opportunites": 3.96118,
+      "Safety": 3.92581,
+      "Internet": 3.60952
+   },
+   "Tuition": {
+      "in-state": 6432,
+      "out-state": 16224
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1240,
+         "SATLowerBound": 1070
+      }
+   },
+   "Major": {
+      "Business": 41,
+      "Communication": 40,
+      "Computer Science": 122,
+      "Biology": 170,
+      "Psychology": 106,
+      "Engineering": 109
+   }
+}

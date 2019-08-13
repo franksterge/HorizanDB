@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1406,
+   "SchoolName": "University at Buffalo- SUNY",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 40492,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.17778,
+      "Facilities": 3.95801,
+      "Happiness": 3.9567,
+      "Clubs": 3.87927,
+      "Location": 3.86651,
+      "Food": 3.3785,
+      "Social": 3.77081,
+      "Opportunites": 4.08417,
+      "Safety": 4.02691,
+      "Internet": 3.69763
+   },
+   "Tuition": {
+      "in-state": 6670,
+      "out-state": 23910
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1070,
+         "SATLowerBound": 880
+      }
+   },
+   "Major": {
+      "Business": 119,
+      "Communication": 152,
+      "Computer Science": 69,
+      "Biology": 117,
+      "Psychology": 113,
+      "Engineering": 19
+   }
+}

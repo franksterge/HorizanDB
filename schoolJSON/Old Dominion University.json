@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1367,
+   "SchoolName": "Old Dominion University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 19540,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.21284,
+      "Facilities": 4.02653,
+      "Happiness": 4.06647,
+      "Clubs": 3.93683,
+      "Location": 3.93327,
+      "Food": 3.43593,
+      "Social": 3.84839,
+      "Opportunites": 4.14297,
+      "Safety": 4.09324,
+      "Internet": 3.74713
+   },
+   "Tuition": {
+      "in-state": 6630,
+      "out-state": 23955
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 25,
+         "ACTLowerBound": 18
+      },
+      "SAT": {
+         "SATUpperBound": 1200,
+         "SATLowerBound": 980
+      }
+   },
+   "Major": {
+      "Business": 83,
+      "Communication": 177,
+      "Computer Science": 123,
+      "Biology": 112,
+      "Psychology": 94,
+      "Engineering": 120
+   }
+}

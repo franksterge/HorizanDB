@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1482,
+   "SchoolName": "University of Texas- Dallas",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 1816,
+   "StudentFacultyRatio": 11,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.13456,
+      "Facilities": 3.89964,
+      "Happiness": 3.88481,
+      "Clubs": 3.83996,
+      "Location": 3.81817,
+      "Food": 3.32647,
+      "Social": 3.70857,
+      "Opportunites": 4.04343,
+      "Safety": 3.9653,
+      "Internet": 3.64689
+   },
+   "Tuition": {
+      "in-state": 11528,
+      "out-state": 29656
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 32,
+         "ACTLowerBound": 26
+      },
+      "SAT": {
+         "SATUpperBound": 1430,
+         "SATLowerBound": 1220
+      }
+   },
+   "Major": {
+      "Business": 41,
+      "Communication": 177,
+      "Computer Science": 55,
+      "Biology": 123,
+      "Psychology": 117,
+      "Engineering": 88
+   }
+}

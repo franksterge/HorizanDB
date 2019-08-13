@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1362,
+   "SchoolName": "Northwestern University",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 8700,
+   "StudentFacultyRatio": 6,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.17888,
+      "Facilities": 3.95634,
+      "Happiness": 3.95823,
+      "Clubs": 3.88575,
+      "Location": 3.8717,
+      "Food": 3.37455,
+      "Social": 3.76644,
+      "Opportunites": 4.09326,
+      "Safety": 4.01865,
+      "Internet": 3.69212
+   },
+   "Tuition": {
+      "out-state": 52239
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 34,
+         "ACTLowerBound": 32
+      },
+      "SAT": {
+         "SATUpperBound": 1560,
+         "SATLowerBound": 1420
+      }
+   },
+   "Major": {
+      "Business": 10,
+      "Communication": 3,
+      "Computer Science": 60,
+      "Biology": 12,
+      "Psychology": 30,
+      "Engineering": 17
+   }
+}

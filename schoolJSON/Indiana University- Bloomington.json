@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1331,
+   "SchoolName": "Indiana University- Bloomington",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 1482,
+   "StudentFacultyRatio": 9,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.09266,
+      "Facilities": 3.85248,
+      "Happiness": 3.83601,
+      "Clubs": 3.81249,
+      "Location": 3.78344,
+      "Food": 3.28192,
+      "Social": 3.65639,
+      "Opportunites": 4.01072,
+      "Safety": 3.91329,
+      "Internet": 3.60253
+   },
+   "Tuition": {
+      "in-state": 9210,
+      "out-state": 33522
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 25
+      },
+      "SAT": {
+         "SATUpperBound": 1350,
+         "SATLowerBound": 1140
+      }
+   },
+   "Major": {
+      "Business": 14,
+      "Communication": 32,
+      "Computer Science": 56,
+      "Biology": 50,
+      "Psychology": 49,
+      "Engineering": 165
+   }
+}

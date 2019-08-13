@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1397,
+   "SchoolName": "Tennessee Technological University",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 29580,
+   "StudentFacultyRatio": 14,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.0704,
+      "Facilities": 3.83576,
+      "Happiness": 3.81001,
+      "Clubs": 3.76924,
+      "Location": 3.74606,
+      "Food": 3.27868,
+      "Social": 3.64639,
+      "Opportunites": 3.96428,
+      "Safety": 3.92346,
+      "Internet": 3.6047
+   },
+   "Tuition": {
+      "in-state": 7296,
+      "out-state": 23160
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 28,
+         "ACTLowerBound": 21
+      },
+      "SAT": {
+         "SATUpperBound": 1250,
+         "SATLowerBound": 1010
+      }
+   },
+   "Major": {
+      "Business": 146,
+      "Communication": 177,
+      "Computer Science": 145,
+      "Biology": 168,
+      "Psychology": 200,
+      "Engineering": 160
+   }
+}

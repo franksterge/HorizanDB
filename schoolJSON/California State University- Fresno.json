@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1295,
+   "SchoolName": "California State University- Fresno",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 22261,
+   "StudentFacultyRatio": 23,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.70123,
+      "Facilities": 3.3914,
+      "Happiness": 3.27676,
+      "Clubs": 3.4225,
+      "Location": 3.3453,
+      "Food": 2.897,
+      "Social": 3.18333,
+      "Opportunites": 3.57979,
+      "Safety": 3.50159,
+      "Internet": 3.24249
+   },
+   "Tuition": {
+      "in-state": 5742,
+      "out-state": 17622
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 22,
+         "ACTLowerBound": 16
+      },
+      "SAT": {
+         "SATUpperBound": 1110,
+         "SATLowerBound": 910
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 177,
+      "Computer Science": 192,
+      "Biology": 154,
+      "Psychology": 208,
+      "Engineering": 180
+   }
+}

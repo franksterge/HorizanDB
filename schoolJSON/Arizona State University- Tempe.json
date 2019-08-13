@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1279,
+   "SchoolName": "Arizona State University- Tempe",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 42427,
+   "StudentFacultyRatio": 20,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.70606,
+      "Facilities": 3.39393,
+      "Happiness": 3.27979,
+      "Clubs": 3.43465,
+      "Location": 3.35067,
+      "Food": 2.88463,
+      "Social": 3.1685,
+      "Opportunites": 3.61187,
+      "Safety": 3.47259,
+      "Internet": 3.22682
+   },
+   "Tuition": {
+      "in-state": 10104,
+      "out-state": 26684
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1350,
+         "SATLowerBound": 1120
+      }
+   },
+   "Major": {
+      "Business": 124,
+      "Communication": 117,
+      "Computer Science": 51,
+      "Biology": 80,
+      "Psychology": 49,
+      "Engineering": 46
+   }
+}

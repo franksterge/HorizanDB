@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1433,
+   "SchoolName": "University of Hawaii- Manoa",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 5765,
+   "StudentFacultyRatio": 11,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.15458,
+      "Facilities": 3.92491,
+      "Happiness": 3.92296,
+      "Clubs": 3.87201,
+      "Location": 3.84809,
+      "Food": 3.34317,
+      "Social": 3.73094,
+      "Opportunites": 4.07264,
+      "Safety": 3.97931,
+      "Internet": 3.66213
+   },
+   "Tuition": {
+      "in-state": 10872,
+      "out-state": 32904
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 26,
+         "ACTLowerBound": 21
+      },
+      "SAT": {
+         "SATUpperBound": 1240,
+         "SATLowerBound": 1050
+      }
+   },
+   "Major": {
+      "Business": 150,
+      "Communication": 177,
+      "Computer Science": 24,
+      "Biology": 55,
+      "Psychology": 147,
+      "Engineering": 112
+   }
+}

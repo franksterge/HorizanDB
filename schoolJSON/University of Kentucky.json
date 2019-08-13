@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1440,
+   "SchoolName": "University of Kentucky",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 19448,
+   "StudentFacultyRatio": 19,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.11822,
+      "Facilities": 3.90252,
+      "Happiness": 3.89305,
+      "Clubs": 3.81989,
+      "Location": 3.79975,
+      "Food": 3.33669,
+      "Social": 3.72249,
+      "Opportunites": 4.01644,
+      "Safety": 3.98404,
+      "Internet": 3.65764
+   },
+   "Tuition": {
+      "in-state": 10579,
+      "out-state": 26683
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 28,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1330,
+         "SATLowerBound": 1080
+      }
+   },
+   "Major": {
+      "Business": 100,
+      "Communication": 102,
+      "Computer Science": 116,
+      "Biology": 71,
+      "Psychology": 108,
+      "Engineering": 74
+   }
+}

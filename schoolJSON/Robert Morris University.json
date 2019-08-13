@@ -1,0 +1,31 @@
+{
+   "SchoolID": 1376,
+   "SchoolName": "Robert Morris University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 4243,
+   "StudentFacultyRatio": 15,
+   "SchoolType": "Private",
+   "NLP": {},
+   "Tuition": {
+      "out-state": 28210
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 21
+      },
+      "SAT": {
+         "SATUpperBound": 1200,
+         "SATLowerBound": 1020
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 177,
+      "Computer Science": 201,
+      "Biology": 215,
+      "Psychology": 208,
+      "Engineering": 188
+   }
+}

@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1447,
+   "SchoolName": "University of Massachusetts- Boston",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 9279,
+   "StudentFacultyRatio": 16,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.99877,
+      "Facilities": 3.73086,
+      "Happiness": 3.67414,
+      "Clubs": 3.69276,
+      "Location": 3.65912,
+      "Food": 3.18783,
+      "Social": 3.53134,
+      "Opportunites": 3.88665,
+      "Safety": 3.81827,
+      "Internet": 3.51864
+   },
+   "Tuition": {
+      "in-state": 13503,
+      "out-state": 32660
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 26,
+         "ACTLowerBound": 21
+      },
+      "SAT": {
+         "SATUpperBound": 1220,
+         "SATLowerBound": 1040
+      }
+   },
+   "Major": {
+      "Business": 174,
+      "Communication": 107,
+      "Computer Science": 99,
+      "Biology": 124,
+      "Psychology": 187,
+      "Engineering": 174
+   }
+}

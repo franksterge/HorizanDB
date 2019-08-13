@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1429,
+   "SchoolName": "University of Denver",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 15586,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.88423,
+      "Facilities": 3.61181,
+      "Happiness": 3.51972,
+      "Clubs": 3.54968,
+      "Location": 3.51488,
+      "Food": 3.10161,
+      "Social": 3.43623,
+      "Opportunites": 3.73092,
+      "Safety": 3.74322,
+      "Internet": 3.44224
+   },
+   "Tuition": {
+      "out-state": 47520
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 21
+      },
+      "SAT": {
+         "SATUpperBound": 1280,
+         "SATLowerBound": 1060
+      }
+   },
+   "Major": {
+      "Business": 106,
+      "Communication": 109,
+      "Computer Science": 138,
+      "Biology": 121,
+      "Psychology": 60,
+      "Engineering": 149
+   }
+}

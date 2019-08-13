@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1434,
+   "SchoolName": "University of Houston",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 35247,
+   "StudentFacultyRatio": 19,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.13915,
+      "Facilities": 3.906,
+      "Happiness": 3.89931,
+      "Clubs": 3.85531,
+      "Location": 3.83179,
+      "Food": 3.32854,
+      "Social": 3.71354,
+      "Opportunites": 4.058,
+      "Safety": 3.96365,
+      "Internet": 3.64701
+   },
+   "Tuition": {
+      "in-state": 8724,
+      "out-state": 21084
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 23
+      },
+      "SAT": {
+         "SATUpperBound": 1280,
+         "SATLowerBound": 1110
+      }
+   },
+   "Major": {
+      "Business": 52,
+      "Communication": 156,
+      "Computer Science": 140,
+      "Biology": 162,
+      "Psychology": 109,
+      "Engineering": 102
+   }
+}

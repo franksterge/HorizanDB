@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1334,
+   "SchoolName": "Johns Hopkins University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 30571,
+   "StudentFacultyRatio": 19,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.06364,
+      "Facilities": 3.81447,
+      "Happiness": 3.78543,
+      "Clubs": 3.77878,
+      "Location": 3.74567,
+      "Food": 3.25115,
+      "Social": 3.61716,
+      "Opportunites": 3.97284,
+      "Safety": 3.88102,
+      "Internet": 3.57503
+   },
+   "Tuition": {
+      "out-state": 52170
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 35,
+         "ACTLowerBound": 33
+      },
+      "SAT": {
+         "SATUpperBound": 1570,
+         "SATLowerBound": 1450
+      }
+   },
+   "Major": {
+      "Business": 134,
+      "Communication": 22,
+      "Computer Science": 6,
+      "Biology": 3,
+      "Psychology": 29,
+      "Engineering": 2
+   }
+}

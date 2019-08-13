@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1460,
+   "SchoolName": "University of New Mexico",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 13787,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.04507,
+      "Facilities": 3.78433,
+      "Happiness": 3.73668,
+      "Clubs": 3.74472,
+      "Location": 3.71183,
+      "Food": 3.22945,
+      "Social": 3.58408,
+      "Opportunites": 3.93483,
+      "Safety": 3.8626,
+      "Internet": 3.55842
+   },
+   "Tuition": {
+      "in-state": 5960,
+      "out-state": 20550
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 25,
+         "ACTLowerBound": 19
+      },
+      "SAT": {
+         "SATUpperBound": 1170,
+         "SATLowerBound": 930
+      }
+   },
+   "Major": {
+      "Business": 166,
+      "Communication": 177,
+      "Computer Science": 59,
+      "Biology": 57,
+      "Psychology": 175,
+      "Engineering": 74
+   }
+}

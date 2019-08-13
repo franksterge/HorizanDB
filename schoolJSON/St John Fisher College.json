@@ -1,0 +1,31 @@
+{
+   "SchoolID": 1388,
+   "SchoolName": "St John Fisher College",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 10885,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Private",
+   "NLP": {},
+   "Tuition": {
+      "out-state": 32540
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 26,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1150,
+         "SATLowerBound": 970
+      }
+   },
+   "Major": {
+      "Business": 189,
+      "Communication": 162,
+      "Computer Science": 201,
+      "Biology": 215,
+      "Psychology": 208,
+      "Engineering": 188
+   }
+}

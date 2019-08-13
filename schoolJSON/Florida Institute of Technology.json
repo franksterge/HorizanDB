@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1317,
+   "SchoolName": "Florida Institute of Technology",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 6937,
+   "StudentFacultyRatio": 9,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.16179,
+      "Facilities": 3.94293,
+      "Happiness": 3.93807,
+      "Clubs": 3.8644,
+      "Location": 3.84773,
+      "Food": 3.36691,
+      "Social": 3.75946,
+      "Opportunites": 4.06718,
+      "Safety": 4.01485,
+      "Internet": 3.68642
+   },
+   "Tuition": {
+      "out-state": 40490
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1320,
+         "SATLowerBound": 1130
+      }
+   },
+   "Major": {
+      "Business": 187,
+      "Communication": 177,
+      "Computer Science": 105,
+      "Biology": 157,
+      "Psychology": 132,
+      "Engineering": 143
+   }
+}

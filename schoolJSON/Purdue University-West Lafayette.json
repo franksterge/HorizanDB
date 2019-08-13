@@ -1,0 +1,32 @@
+{
+   "SchoolID": 1373,
+   "SchoolName": "Purdue University-West Lafayette",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 32132,
+   "StudentFacultyRatio": 13,
+   "SchoolType": "Public",
+   "NLP": {},
+   "Tuition": {
+      "in-state": 9208,
+      "out-state": 28010
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 25
+      },
+      "SAT": {
+         "SATUpperBound": 1380,
+         "SATLowerBound": 1150
+      }
+   },
+   "Major": {
+      "Business": 23,
+      "Communication": 52,
+      "Computer Science": 30,
+      "Biology": 79,
+      "Psychology": 59,
+      "Engineering": 9
+   }
+}

@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1493,
+   "SchoolName": "Villanova University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 6950,
+   "StudentFacultyRatio": 11,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.1353,
+      "Facilities": 3.89535,
+      "Happiness": 3.87935,
+      "Clubs": 3.83198,
+      "Location": 3.81246,
+      "Food": 3.32852,
+      "Social": 3.70884,
+      "Opportunites": 4.03522,
+      "Safety": 3.96863,
+      "Internet": 3.65092
+   },
+   "Tuition": {
+      "out-state": 50554
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 33,
+         "ACTLowerBound": 30
+      },
+      "SAT": {
+         "SATUpperBound": 1440,
+         "SATLowerBound": 1250
+      }
+   },
+   "Major": {
+      "Business": 36,
+      "Communication": 59,
+      "Computer Science": 130,
+      "Biology": 103,
+      "Psychology": 105,
+      "Engineering": 100
+   }
+}

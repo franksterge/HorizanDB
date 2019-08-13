@@ -1,0 +1,36 @@
+{
+   "SchoolID": 1499,
+   "SchoolName": "West Virginia University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 22501,
+   "StudentFacultyRatio": 20,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.97342,
+      "Facilities": 3.73443,
+      "Happiness": 3.67888,
+      "Clubs": 3.67037,
+      "Location": 3.63424,
+      "Food": 3.19835,
+      "Social": 3.55068,
+      "Opportunites": 3.85163,
+      "Safety": 3.83215,
+      "Internet": 3.5251
+   },
+   "Tuition": {
+      "in-state": 8376,
+      "out-state": 23616
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 22,
+         "ACTLowerBound": 17
+      },
+      "SAT": {
+         "SATUpperBound": 1056,
+         "SATLowerBound": 900
+      }
+   },
+   "Major": {}
+}

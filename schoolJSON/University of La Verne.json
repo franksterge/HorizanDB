@@ -1,0 +1,31 @@
+{
+   "SchoolID": 1441,
+   "SchoolName": "University of La Verne",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 33955,
+   "StudentFacultyRatio": 20,
+   "SchoolType": "Public",
+   "NLP": {},
+   "Tuition": {
+      "out-state": 39915
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 25,
+         "ACTLowerBound": 19
+      },
+      "SAT": {
+         "SATUpperBound": 1193,
+         "SATLowerBound": 1020
+      }
+   },
+   "Major": {
+      "Business": 170,
+      "Communication": 168,
+      "Computer Science": 201,
+      "Biology": 215,
+      "Psychology": 203,
+      "Engineering": 188
+   }
+}

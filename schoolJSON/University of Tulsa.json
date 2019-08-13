@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1484,
+   "SchoolName": "University of Tulsa",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 24635,
+   "StudentFacultyRatio": 16,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.9221,
+      "Facilities": 3.6551,
+      "Happiness": 3.58279,
+      "Clubs": 3.61999,
+      "Location": 3.58249,
+      "Food": 3.12362,
+      "Social": 3.4562,
+      "Opportunites": 3.80721,
+      "Safety": 3.75722,
+      "Internet": 3.61053
+   },
+   "Tuition": {
+      "out-state": 45786
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 32,
+         "ACTLowerBound": 25
+      },
+      "SAT": {
+         "SATUpperBound": 1440,
+         "SATLowerBound": 1150
+      }
+   },
+   "Major": {
+      "Business": 127,
+      "Communication": 177,
+      "Computer Science": 88,
+      "Biology": 144,
+      "Psychology": 91,
+      "Engineering": 94
+   }
+}

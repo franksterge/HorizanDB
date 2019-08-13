@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1307,
+   "SchoolName": "Cornell University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 8170,
+   "StudentFacultyRatio": 6,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.99775,
+      "Facilities": 3.77319,
+      "Happiness": 3.73726,
+      "Clubs": 3.69888,
+      "Location": 3.66936,
+      "Food": 3.23126,
+      "Social": 3.5977,
+      "Opportunites": 3.89022,
+      "Safety": 3.869,
+      "Internet": 3.55435
+   },
+   "Tuition": {
+      "out-state": 52612
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 34,
+         "ACTLowerBound": 31
+      },
+      "SAT": {
+         "SATUpperBound": 1550,
+         "SATLowerBound": 1390
+      }
+   },
+   "Major": {
+      "Business": 12,
+      "Communication": 23,
+      "Computer Science": 9,
+      "Biology": 8,
+      "Psychology": 11,
+      "Engineering": 13
+   }
+}

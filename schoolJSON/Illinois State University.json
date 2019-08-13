@@ -1,0 +1,39 @@
+{
+   "SchoolID": 1329,
+   "SchoolName": "Illinois State University",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 2900,
+   "StudentFacultyRatio": 12,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.02403,
+      "Facilities": 3.76378,
+      "Happiness": 3.72174,
+      "Clubs": 3.73389,
+      "Location": 3.6971,
+      "Food": 3.20992,
+      "Social": 3.56451,
+      "Opportunites": 3.92653,
+      "Safety": 3.83658,
+      "Internet": 3.53701
+   },
+   "Tuition": {
+      "in-state": 11108,
+      "out-state": 22215
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 26,
+         "ACTLowerBound": 21
+      }
+   },
+   "Major": {
+      "Business": 139,
+      "Communication": 164,
+      "Computer Science": 190,
+      "Biology": 145,
+      "Psychology": 172,
+      "Engineering": 184
+   }
+}

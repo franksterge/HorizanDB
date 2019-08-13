@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1308,
+   "SchoolName": "Dallas Baptist University",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 14907,
+   "StudentFacultyRatio": 9,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.88165,
+      "Facilities": 3.60026,
+      "Happiness": 3.52415,
+      "Clubs": 3.59676,
+      "Location": 3.54271,
+      "Food": 3.07151,
+      "Social": 3.39672,
+      "Opportunites": 3.77719,
+      "Safety": 3.68789,
+      "Internet": 3.40533
+   },
+   "Tuition": {
+      "out-state": 26580
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 24,
+         "ACTLowerBound": 19
+      },
+      "SAT": {
+         "SATUpperBound": 1250,
+         "SATLowerBound": 1090
+      }
+   },
+   "Major": {
+      "Business": 168,
+      "Communication": 146,
+      "Computer Science": 201,
+      "Biology": 215,
+      "Psychology": 202,
+      "Engineering": 188
+   }
+}

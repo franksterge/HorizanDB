@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1321,
+   "SchoolName": "George Mason University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 2215,
+   "StudentFacultyRatio": 11,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.01827,
+      "Facilities": 3.75727,
+      "Happiness": 3.71638,
+      "Clubs": 3.73683,
+      "Location": 3.69641,
+      "Food": 3.2018,
+      "Social": 3.55509,
+      "Opportunites": 3.92541,
+      "Safety": 3.82529,
+      "Internet": 3.52877
+   },
+   "Tuition": {
+      "in-state": 8672,
+      "out-state": 31118
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 30,
+         "ACTLowerBound": 24
+      },
+      "SAT": {
+         "SATUpperBound": 1290,
+         "SATLowerBound": 1100
+      }
+   },
+   "Major": {
+      "Business": 177,
+      "Communication": 21,
+      "Computer Science": 84,
+      "Biology": 186,
+      "Psychology": 151,
+      "Engineering": 137
+   }
+}

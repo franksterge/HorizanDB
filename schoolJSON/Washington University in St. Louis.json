@@ -1,0 +1,35 @@
+{
+   "SchoolID": 1498,
+   "SchoolName": "Washington University in St. Louis",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 7675,
+   "StudentFacultyRatio": 8,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.2146,
+      "Facilities": 3.99852,
+      "Happiness": 4.01049,
+      "Clubs": 3.92618,
+      "Location": 3.91368,
+      "Food": 3.40744,
+      "Social": 3.80921,
+      "Opportunites": 4.13633,
+      "Safety": 4.05148,
+      "Internet": 3.72213
+   },
+   "Tuition": {
+      "out-state": 50650
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 34,
+         "ACTLowerBound": 32
+      },
+      "SAT": {
+         "SATUpperBound": 1570,
+         "SATLowerBound": 1470
+      }
+   },
+   "Major": {}
+}

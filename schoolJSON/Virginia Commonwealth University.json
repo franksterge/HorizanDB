@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1494,
+   "SchoolName": "Virginia Commonwealth University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 23663,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.20822,
+      "Facilities": 3.99467,
+      "Happiness": 4.01275,
+      "Clubs": 3.923,
+      "Location": 3.90843,
+      "Food": 3.40487,
+      "Social": 3.80813,
+      "Opportunites": 4.1315,
+      "Safety": 4.04779,
+      "Internet": 3.71999
+   },
+   "Tuition": {
+      "in-state": 11340,
+      "out-state": 30712
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 21
+      },
+      "SAT": {
+         "SATUpperBound": 1260,
+         "SATLowerBound": 1070
+      }
+   },
+   "Major": {
+      "Business": 198,
+      "Communication": 158,
+      "Computer Science": 151,
+      "Biology": 175,
+      "Psychology": 140,
+      "Engineering": 129
+   }
+}

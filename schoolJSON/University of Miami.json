@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1450,
+   "SchoolName": "University of Miami",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 23388,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.01461,
+      "Facilities": 3.77462,
+      "Happiness": 3.73287,
+      "Clubs": 3.70249,
+      "Location": 3.67787,
+      "Food": 3.23296,
+      "Social": 3.5904,
+      "Opportunites": 3.89373,
+      "Safety": 3.87979,
+      "Internet": 3.5626
+   },
+   "Tuition": {
+      "out-state": 47040
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 32,
+         "ACTLowerBound": 28
+      },
+      "SAT": {
+         "SATUpperBound": 1420,
+         "SATLowerBound": 1230
+      }
+   },
+   "Major": {
+      "Business": 87,
+      "Communication": 73,
+      "Computer Science": 95,
+      "Biology": 38,
+      "Psychology": 18,
+      "Engineering": 115
+   }
+}

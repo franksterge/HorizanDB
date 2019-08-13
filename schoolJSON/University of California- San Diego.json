@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1419,
+   "SchoolName": "University of California- San Diego",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 29307,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.77318,
+      "Facilities": 3.50427,
+      "Happiness": 3.39914,
+      "Clubs": 3.45403,
+      "Location": 3.40581,
+      "Food": 3.01597,
+      "Social": 3.33036,
+      "Opportunites": 3.61909,
+      "Safety": 3.63859,
+      "Internet": 3.35321
+   },
+   "Tuition": {
+      "in-state": 11502,
+      "out-state": 39516
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 33,
+         "ACTLowerBound": 27
+      },
+      "SAT": {
+         "SATUpperBound": 1410,
+         "SATLowerBound": 1210
+      }
+   },
+   "Major": {
+      "Business": 48,
+      "Communication": 45,
+      "Computer Science": 19,
+      "Biology": 61,
+      "Psychology": 32,
+      "Engineering": 42
+   }
+}

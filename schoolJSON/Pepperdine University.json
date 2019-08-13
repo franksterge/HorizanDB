@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1371,
+   "SchoolName": "Pepperdine University",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Suburban",
+   "SchoolSize": 3604,
+   "StudentFacultyRatio": 10,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.05341,
+      "Facilities": 3.79894,
+      "Happiness": 3.75307,
+      "Clubs": 3.7442,
+      "Location": 3.71579,
+      "Food": 3.24689,
+      "Social": 3.60655,
+      "Opportunites": 3.93946,
+      "Safety": 3.8846,
+      "Internet": 3.57536
+   },
+   "Tuition": {
+      "out-state": 51740
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 31,
+         "ACTLowerBound": 26
+      },
+      "SAT": {
+         "SATUpperBound": 1390,
+         "SATLowerBound": 1200
+      }
+   },
+   "Major": {
+      "Business": 74,
+      "Communication": 62,
+      "Computer Science": 201,
+      "Biology": 150,
+      "Psychology": 96,
+      "Engineering": 188
+   }
+}

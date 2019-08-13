@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1483,
+   "SchoolName": "University of the Pacific",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 3343,
+   "StudentFacultyRatio": 11,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.05849,
+      "Facilities": 3.8164,
+      "Happiness": 3.78876,
+      "Clubs": 3.76556,
+      "Location": 3.74059,
+      "Food": 3.25865,
+      "Social": 3.62317,
+      "Opportunites": 3.95835,
+      "Safety": 3.89892,
+      "Internet": 3.45568
+   },
+   "Tuition": {
+      "out-state": 40484
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 30,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1330,
+         "SATLowerBound": 1070
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 52,
+      "Computer Science": 161,
+      "Biology": 146,
+      "Psychology": 208,
+      "Engineering": 182
+   }
+}

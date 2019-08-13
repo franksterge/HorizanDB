@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1453,
+   "SchoolName": "University of Mississippi",
+   "SchoolLocation": "Southeast",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 14012,
+   "StudentFacultyRatio": 17,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.21626,
+      "Facilities": 3.99124,
+      "Happiness": 3.99936,
+      "Clubs": 3.9309,
+      "Location": 3.91427,
+      "Food": 3.39893,
+      "Social": 3.79643,
+      "Opportunites": 4.14111,
+      "Safety": 4.03611,
+      "Internet": 3.7142
+   },
+   "Tuition": {
+      "in-state": 8190,
+      "out-state": 23454
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 29,
+         "ACTLowerBound": 22
+      },
+      "SAT": {
+         "SATUpperBound": 1290,
+         "SATLowerBound": 1070
+      }
+   },
+   "Major": {
+      "Business": 113,
+      "Communication": 140,
+      "Computer Science": 182,
+      "Biology": 128,
+      "Psychology": 164,
+      "Engineering": 157
+   }
+}

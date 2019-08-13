@@ -1,0 +1,31 @@
+{
+   "SchoolID": 1292,
+   "SchoolName": "Brigham Young University- Provo",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 31233,
+   "StudentFacultyRatio": 20,
+   "SchoolType": "Private",
+   "NLP": {},
+   "Tuition": {
+      "out-state": 5460
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 32,
+         "ACTLowerBound": 27
+      },
+      "SAT": {
+         "SATUpperBound": 1410,
+         "SATLowerBound": 1210
+      }
+   },
+   "Major": {
+      "Business": 33,
+      "Communication": 92,
+      "Computer Science": 72,
+      "Biology": 65,
+      "Psychology": 60,
+      "Engineering": 72
+   }
+}

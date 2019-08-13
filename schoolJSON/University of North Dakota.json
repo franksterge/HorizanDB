@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1464,
+   "SchoolName": "University of North Dakota",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 18862,
+   "StudentFacultyRatio": 13,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.07634,
+      "Facilities": 3.82766,
+      "Happiness": 3.79258,
+      "Clubs": 3.7797,
+      "Location": 3.75091,
+      "Food": 3.26528,
+      "Social": 3.6325,
+      "Opportunites": 3.97481,
+      "Safety": 3.90106,
+      "Internet": 3.59026
+   },
+   "Tuition": {
+      "in-state": 6946,
+      "out-state": 18546
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 26,
+         "ACTLowerBound": 21
+      },
+      "SAT": {
+         "SATUpperBound": 1270,
+         "SATLowerBound": 1050
+      }
+   },
+   "Major": {
+      "Business": 188,
+      "Communication": 127,
+      "Computer Science": 186,
+      "Biology": 190,
+      "Psychology": 195,
+      "Engineering": 68
+   }
+}

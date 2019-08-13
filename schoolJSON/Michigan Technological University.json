@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1349,
+   "SchoolName": "Michigan Technological University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 38996,
+   "StudentFacultyRatio": 16,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.07719,
+      "Facilities": 3.83985,
+      "Happiness": 3.82569,
+      "Clubs": 3.7989,
+      "Location": 3.76676,
+      "Food": 3.27324,
+      "Social": 3.64649,
+      "Opportunites": 3.98953,
+      "Safety": 3.90643,
+      "Internet": 3.59638
+   },
+   "Tuition": {
+      "in-state": 14774,
+      "out-state": 32018
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 30,
+         "ACTLowerBound": 25
+      },
+      "SAT": {
+         "SATUpperBound": 1340,
+         "SATLowerBound": 1160
+      }
+   },
+   "Major": {
+      "Business": 116,
+      "Communication": 71,
+      "Computer Science": 100,
+      "Biology": 159,
+      "Psychology": 124,
+      "Engineering": 54
+   }
+}

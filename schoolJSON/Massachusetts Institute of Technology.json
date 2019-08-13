@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1345,
+   "SchoolName": "Massachusetts Institute of Technology",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 3183,
+   "StudentFacultyRatio": 14,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.06085,
+      "Facilities": 3.81228,
+      "Happiness": 3.78291,
+      "Clubs": 3.77357,
+      "Location": 3.74181,
+      "Food": 3.25021,
+      "Social": 3.61601,
+      "Opportunites": 3.97024,
+      "Safety": 3.88063,
+      "Internet": 3.57383
+   },
+   "Tuition": {
+      "out-state": 49580
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 35,
+         "ACTLowerBound": 33
+      },
+      "SAT": {
+         "SATUpperBound": 1570,
+         "SATLowerBound": 1490
+      }
+   },
+   "Major": {
+      "Business": 3,
+      "Communication": 177,
+      "Computer Science": 2,
+      "Biology": 15,
+      "Psychology": 80,
+      "Engineering": 1
+   }
+}

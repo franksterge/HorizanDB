@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1395,
+   "SchoolName": "Syracuse University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 5030,
+   "StudentFacultyRatio": 13,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.19615,
+      "Facilities": 4.00014,
+      "Happiness": 4.02059,
+      "Clubs": 3.91526,
+      "Location": 3.89899,
+      "Food": 3.41491,
+      "Social": 3.81774,
+      "Opportunites": 4.11752,
+      "Safety": 4.05539,
+      "Internet": 3.7258
+   },
+   "Tuition": {
+      "out-state": 45150
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 30,
+         "ACTLowerBound": 25
+      },
+      "SAT": {
+         "SATUpperBound": 1350,
+         "SATLowerBound": 1160
+      }
+   },
+   "Major": {
+      "Business": 121,
+      "Communication": 17,
+      "Computer Science": 91,
+      "Biology": 154,
+      "Psychology": 162,
+      "Engineering": 135
+   }
+}

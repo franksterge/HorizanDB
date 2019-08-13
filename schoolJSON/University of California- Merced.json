@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1417,
+   "SchoolName": "University of California- Merced",
+   "SchoolLocation": "West Coast",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 30574,
+   "StudentFacultyRatio": 18,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 3.87556,
+      "Facilities": 3.60919,
+      "Happiness": 3.52563,
+      "Clubs": 3.54707,
+      "Location": 3.51292,
+      "Food": 3.09968,
+      "Social": 3.44031,
+      "Opportunites": 3.73051,
+      "Safety": 3.73792,
+      "Internet": 3.4378
+   },
+   "Tuition": {
+      "in-state": 11502,
+      "out-state": 39516
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 27,
+         "ACTLowerBound": 20
+      },
+      "SAT": {
+         "SATUpperBound": 1170,
+         "SATLowerBound": 1000
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 177,
+      "Computer Science": 201,
+      "Biology": 119,
+      "Psychology": 101,
+      "Engineering": 138
+   }
+}

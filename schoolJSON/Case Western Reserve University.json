@@ -1,0 +1,42 @@
+{
+   "SchoolID": 1298,
+   "SchoolName": "Case Western Reserve University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 5150,
+   "StudentFacultyRatio": 11,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 3.71741,
+      "Facilities": 3.41085,
+      "Happiness": 3.30381,
+      "Clubs": 3.44163,
+      "Location": 3.36451,
+      "Food": 2.91307,
+      "Social": 3.20422,
+      "Opportunites": 3.60084,
+      "Safety": 3.51627,
+      "Internet": 3.25733
+   },
+   "Tuition": {
+      "out-state": 47074
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 33,
+         "ACTLowerBound": 30
+      },
+      "SAT": {
+         "SATUpperBound": 1520,
+         "SATLowerBound": 1340
+      }
+   },
+   "Major": {
+      "Business": 89,
+      "Communication": 103,
+      "Computer Science": 115,
+      "Biology": 32,
+      "Psychology": 65,
+      "Engineering": 48
+   }
+}

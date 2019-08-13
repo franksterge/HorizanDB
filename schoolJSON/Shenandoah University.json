@@ -1,0 +1,31 @@
+{
+   "SchoolID": 1384,
+   "SchoolName": "Shenandoah University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 30272,
+   "StudentFacultyRatio": 28,
+   "SchoolType": "Private",
+   "NLP": {},
+   "Tuition": {
+      "out-state": 30700
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 26,
+         "ACTLowerBound": 20
+      },
+      "SAT": {
+         "SATUpperBound": 1200,
+         "SATLowerBound": 1010
+      }
+   },
+   "Major": {
+      "Business": 203,
+      "Communication": 177,
+      "Computer Science": 201,
+      "Biology": 215,
+      "Psychology": 208,
+      "Engineering": 188
+   }
+}

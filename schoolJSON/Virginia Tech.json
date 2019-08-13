@@ -1,0 +1,38 @@
+{
+   "SchoolID": 1495,
+   "SchoolName": "Virginia Tech",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Rural",
+   "SchoolSize": 27193,
+   "StudentFacultyRatio": 14,
+   "SchoolType": "Public",
+   "NLP": {
+      "Reputation": 4.1383,
+      "Facilities": 3.90315,
+      "Happiness": 3.88751,
+      "Clubs": 3.84389,
+      "Location": 3.82278,
+      "Food": 3.328,
+      "Social": 3.70751,
+      "Opportunites": 4.04472,
+      "Safety": 3.96829,
+      "Internet": 3.64941
+   },
+   "Tuition": {
+      "in-state": 11093,
+      "out-state": 28273
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 30,
+         "ACTLowerBound": 25
+      },
+      "SAT": {
+         "SATUpperBound": 1360,
+         "SATLowerBound": 1180
+      }
+   },
+   "Major": {
+      "Business": 57
+   }
+}

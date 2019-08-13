@@ -1,0 +1,35 @@
+{
+   "SchoolID": 1503,
+   "SchoolName": "Yale University",
+   "SchoolLocation": "Northeast",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 5746,
+   "StudentFacultyRatio": 6,
+   "SchoolType": "Private",
+   "NLP": {
+      "Reputation": 4.14923,
+      "Facilities": 3.92278,
+      "Happiness": 3.91949,
+      "Clubs": 3.85859,
+      "Location": 3.83945,
+      "Food": 3.34653,
+      "Social": 3.73434,
+      "Opportunites": 4.06123,
+      "Safety": 3.98825,
+      "Internet": 3.66578
+   },
+   "Tuition": {
+      "out-state": 51400
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 35,
+         "ACTLowerBound": 32
+      },
+      "SAT": {
+         "SATUpperBound": 1580,
+         "SATLowerBound": 1460
+      }
+   },
+   "Major": {}
+}

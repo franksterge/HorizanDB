@@ -1,0 +1,43 @@
+{
+   "SchoolID": 1359,
+   "SchoolName": "North Dakota State University",
+   "SchoolLocation": "Central",
+   "SchoolEnvironment": "Urban",
+   "SchoolSize": 11984,
+   "StudentFacultyRatio": 20,
+   "SchoolType": "Public",
+   "NLP": {
+      "Safety": 3.84377,
+      "Internet": 3.53936,
+      "Reputation": 4.01288,
+      "Facilities": 3.74949,
+      "Happiness": 3.69409,
+      "Clubs": 3.70102,
+      "Location": 3.6684,
+      "Food": 3.20664,
+      "Social": 3.55553,
+      "Opportunites": 3.88857
+   },
+   "Tuition": {
+      "in-state": 7201,
+      "out-state": 19227
+   },
+   "Test": {
+      "ACT": {
+         "ACTUpperBound": 26,
+         "ACTLowerBound": 21
+      },
+      "SAT": {
+         "SATUpperBound": 1328,
+         "SATLowerBound": 1060
+      }
+   },
+   "Major": {
+      "Business": 161,
+      "Communication": 81,
+      "Computer Science": 94,
+      "Biology": 207,
+      "Psychology": 186,
+      "Engineering": 132
+   }
+}
