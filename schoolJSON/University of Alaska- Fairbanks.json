@@ -7,9 +7,19 @@
    "StudentFacultyRatio": 10,
    "SchoolType": "Public",
    "NLP": {},
+   "ApplicationName": [],
    "Tuition": {
-      "in-state": 4848,
-      "out-state": 17160
+      "General": {
+         "in-state": 4848,
+         "out-state": 17160
+      },
+      "IncomeSpecific": {
+         "low": 7349,
+         "medium-low": 8213,
+         "medium": 9990,
+         "medium-high": 14037,
+         "high": 13285
+      }
    },
    "Test": {
       "ACT": {

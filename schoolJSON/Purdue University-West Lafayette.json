@@ -7,9 +7,22 @@
    "StudentFacultyRatio": 13,
    "SchoolType": "Public",
    "NLP": {},
+   "ApplicationName": [
+      "Common App",
+      "Coalition App"
+   ],
    "Tuition": {
-      "in-state": 9208,
-      "out-state": 28010
+      "General": {
+         "in-state": 9208,
+         "out-state": 28010
+      },
+      "IncomeSpecific": {
+         "low": 5019,
+         "medium-low": 5639,
+         "medium": 9071,
+         "medium-high": 16730,
+         "high": 21159
+      }
    },
    "Test": {
       "ACT": {

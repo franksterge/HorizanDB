@@ -123,3 +123,7 @@ select * from SchoolImages;
 
 select * from SchoolDetail;
 Select * from SchoolNLP;
+use HorizanDB;
+call pGetSchoolIncomeSpecificTuition('University of Washington');
+select * from SchoolTuition st
+join TuitionDetail t on t.TuitionID = st.TuitionID;

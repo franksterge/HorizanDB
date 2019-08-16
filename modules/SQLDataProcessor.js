@@ -92,10 +92,38 @@ const proccessedData = async () => {
             preparedData.get(schoolName)["NLP"] = schoolNLP;
         }
     }
-    const addTuition = async () => {
-        console.log("Adding School Tuition Info...");
+
+    const addApplication = async () => {
+        console.log("Adding School Application Info...");
         for (const schoolName of schoolList) {
-            await function () {preparedData.get(schoolName)["Tuition"] = [];}
+            await function () {preparedData.get(schoolName)["ApplicationName"] = [];}
+            const schoolNLP = await new Promise(
+                (resolve, reject) => db.query('call pGetSchoolApplication("' + schoolName + '")', 
+                    function (error, results) {
+                        if (error) {
+                            console.error('error: ' + error.stack);
+                            reject(error);
+                        } else {
+                            results = JSON.parse(JSON.stringify(results));
+                            var finalApplications = [];
+                            for (obj in results[0]) {
+                                obj = results[0][obj];
+                                for (header in obj) {
+                                    finalApplications.push(obj[header]);
+                                }
+                            }
+                            resolve(finalApplications);
+                        }
+                    }
+                )
+            );
+            preparedData.get(schoolName)["ApplicationName"] = schoolNLP;
+        }
+    }
+
+    const addTuition = async () => {
+        console.log("Adding School general tuition info...");
+        for (const schoolName of schoolList) {
             const schoolTuition = await new Promise(
                 (resolve, reject) => db.query('call pGetSchoolTuition("' + schoolName + '")', 
                     function (error, results) {
@@ -125,9 +153,51 @@ const proccessedData = async () => {
                     }
                 )
             );
-            preparedData.get(schoolName)["Tuition"] = schoolTuition;
+            preparedData.get(schoolName)["Tuition"] = {};
+            preparedData.get(schoolName)["Tuition"]["General"] = {};
+            preparedData.get(schoolName)["Tuition"]["General"] = schoolTuition;
         }
     }
+    
+    const addTuition2 = async () => {
+        console.log("Adding School income specific tuition Info...");
+        for (const schoolName of schoolList) {
+            await function () {
+                preparedData.get(schoolName)["Tuition"]["IncomeSpecific"] = [];
+            }
+            const schoolTuition = await new Promise(
+                (resolve, reject) => db.query('call pGetSchoolIncomeSpecificTuition("' + schoolName + '")', 
+                    function (error, results) {
+                        if (error) {
+                            console.error('error: ' + error.stack);
+                            reject(error);
+                        } else {
+                            results = JSON.parse(JSON.stringify(results));
+                            var finalTuition = {};
+                            for (obj in results[0]) {
+                                obj = results[0][obj];
+                                var counter = 0;
+                                var type;
+                                var amount; 
+                                for (header in obj) {
+                                    if (counter == 0) {
+                                        type = "" + obj[header];
+                                    } else {
+                                        amount = obj[header];
+                                    }
+                                    counter++;
+                                }
+                                finalTuition[type] = amount;
+                            }
+                            resolve(finalTuition);
+                        }
+                    }
+                )
+            );
+            preparedData.get(schoolName)["Tuition"]["IncomeSpecific"] = schoolTuition;
+        }
+    }
+
     //TODO: 
     const addTest = async () => {
         console.log("Adding School Test Info...");
@@ -169,7 +239,6 @@ const proccessedData = async () => {
             preparedData.get(schoolName)["Test"] = schoolTest;
         }
     }
-
 
     const addMajor = async () => {
         console.log("Adding School Major Info...");
@@ -222,7 +291,9 @@ const proccessedData = async () => {
 
     await addDetails();
     await addNLP();
+    await addApplication();
     await addTuition();
+    await addTuition2();
     await addTest();
     await addMajor();
     // await console.log(preparedData.get('University of Washington'))

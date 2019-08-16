@@ -18,9 +18,21 @@
       "Safety": 3.30661,
       "Internet": 3.07197
    },
+   "ApplicationName": [
+      "Coalition App"
+   ],
    "Tuition": {
-      "in-state": 6670,
-      "out-state": 21550
+      "General": {
+         "in-state": 6670,
+         "out-state": 21550
+      },
+      "IncomeSpecific": {
+         "low": 11030,
+         "medium-low": 13632,
+         "medium": 18969,
+         "medium-high": 22471,
+         "high": 23316
+      }
    },
    "Test": {
       "ACT": {

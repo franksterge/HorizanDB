@@ -18,9 +18,19 @@
       "Safety": 3.87979,
       "Internet": 3.56308
    },
+   "ApplicationName": [],
    "Tuition": {
-      "in-state": 11502,
-      "out-state": 39516
+      "General": {
+         "in-state": 11502,
+         "out-state": 39516
+      },
+      "IncomeSpecific": {
+         "low": 8233,
+         "medium-low": 9559,
+         "medium": 12593,
+         "medium-high": 20215,
+         "high": 29293
+      }
    },
    "Test": {
       "ACT": {

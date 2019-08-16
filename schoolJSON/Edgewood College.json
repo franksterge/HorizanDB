@@ -7,8 +7,20 @@
    "StudentFacultyRatio": 19,
    "SchoolType": "Private",
    "NLP": {},
+   "ApplicationName": [
+      "Common App"
+   ],
    "Tuition": {
-      "out-state": 28500
+      "General": {
+         "out-state": 28500
+      },
+      "IncomeSpecific": {
+         "low": 18979,
+         "medium-low": 19802,
+         "medium": 20422,
+         "medium-high": 24749,
+         "high": 31574
+      }
    },
    "Test": {
       "ACT": {

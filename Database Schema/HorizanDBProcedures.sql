@@ -548,10 +548,6 @@ end;
 /* 
     get major rankings of the given school
  */
-<<<<<<< HEAD
-=======
-drop Procedure pGetSchoolMajorRanking;
->>>>>>> cee141c3e6e3c24a751b4f6b192cda3e623ea175
 use HorizanDB;
 drop Procedure pGetSchoolMajorRanking;
 Create
@@ -633,7 +629,6 @@ begin
     if @@error_count = 0
     then
         create temporary table tempTest(
-<<<<<<< HEAD
             Select t.TestName, st.ScoreUpperBound, st.ScoreLowerBound
             from SchoolDetail s
             join SchoolTest st on s.SchoolID = st.SchoolID
@@ -642,16 +637,6 @@ begin
         );
         Select * from tempTest;
         drop table tempTest;
-=======
-            Select s.SchoolName, st.ScoreUpperBound, st.ScoreLowerBound, t.TestName
-            from SchoolDetail s
-            join SchoolTest st on s.SchoolID = st.SchoolID
-            join TestDetail t on t.TestID = st.TestID
-            where SchoolID = School_ID
-        );
-        Select * from tempTest;
-        
->>>>>>> cee141c3e6e3c24a751b4f6b192cda3e623ea175
     end if;
 end;
 
@@ -678,7 +663,6 @@ begin
     if @@error_count = 0
     then
         create temporary table tempApp(
-<<<<<<< HEAD
             Select a.ApplicationName
             from SchoolDetail s
             join SchoolApplication sa on s.SchoolID = sa.SchoolID
@@ -692,20 +676,6 @@ end;
 
 use HorizanDB;
 drop procedure pGetSchoolNLP;
-=======
-            Select s.SchoolName, a.ApplicationName, a.ApplicationLink, t.TestName
-            from SchoolDetail s
-            join SchoolTest st on s.SchoolID = st.SchoolID
-            join TestDetail t on t.TestID = st.TestID
-            where SchoolID = School_ID
-        );
-        Select * from tempApp;
-    end if;
-end;
-
-drop procedure pGetSchoolNLP;
-use HorizanDB;
->>>>>>> cee141c3e6e3c24a751b4f6b192cda3e623ea175
 Create
 Procedure pGetSchoolNLP(
     School_Name VarChar(255)
@@ -718,7 +688,6 @@ begin
         SIGNAL SQLSTATE '45000'
         Set MESSAGE_TEXT = 'School not found';
     end if;
-<<<<<<< HEAD
 
     if @@error_count = 0
     then
@@ -756,25 +725,40 @@ begin
             from SchoolDetail s
             join SchoolTuition st on s.SchoolID = st.SchoolID
             join TuitionDetail t on t.TuitionID = st.TuitionID
-            where s.SchoolID = School_ID 
-            and t.TuitionName in ('in-state', 'out-state')
+            where s.SchoolID = School_ID
+            and  t.TuitionName in ('in-state', 'out-state')
         );
         Select * from tempTuition;
         drop table tempTuition;
     end if;
 end;
-=======
+
+drop procedure pGetSchoolIncomeSpecificTuition;
+use HorizanDB;
+Create
+Procedure pGetSchoolIncomeSpecificTuition(
+    School_Name VarChar(255)
+)
+begin
+    Declare School_ID int;
+    Call pGetSchool (School_Name, School_ID);
+    if School_ID is null
+    then
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'School not found';
+    end if;
 
     if @@error_count = 0
     then
-        create temporary table tempnlp(
-            Select s.SchoolName, sn.NLPRating, n.NLPCategory
+        create temporary table tempTuition(
+            Select t.TuitionType, st.TuitionAmount
             from SchoolDetail s
-            join SchoolNLP sn on s.SchoolID = sn.SchoolID
-            join NLPData n on n.NLPID = sn.NLPID
-            where SchoolID = School_ID
+            join SchoolTuition st on s.SchoolID = st.SchoolID
+            join TuitionDetail t on t.TuitionID = st.TuitionID
+            where s.SchoolID = School_ID
+            and  t.TuitionName = 'general'
         );
-        Select * from tempnlp;
+        Select * from tempTuition;
+        drop table tempTuition;
     end if;
 end;
->>>>>>> cee141c3e6e3c24a751b4f6b192cda3e623ea175

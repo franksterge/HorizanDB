@@ -85,6 +85,7 @@ Table TuitionDetail (
   IncomeRangeUpperBound int null,
   IncomeRangeLowerBound int not null default 0
 );
+
 use HorizanDB;
 Create
 Table SchoolTuition(

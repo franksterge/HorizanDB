@@ -18,9 +18,19 @@
       "Social": 3.55553,
       "Opportunites": 3.88857
    },
+   "ApplicationName": [],
    "Tuition": {
-      "in-state": 7201,
-      "out-state": 19227
+      "General": {
+         "in-state": 7201,
+         "out-state": 19227
+      },
+      "IncomeSpecific": {
+         "low": 10145,
+         "medium-low": 11400,
+         "medium": 14730,
+         "medium-high": 16490,
+         "high": 17639
+      }
    },
    "Test": {
       "ACT": {
