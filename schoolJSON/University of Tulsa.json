@@ -50,5 +50,9 @@
       "Biology": 144,
       "Psychology": 91,
       "Engineering": 94
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Tulsalogo.png",
+      "General": []
    }
 }

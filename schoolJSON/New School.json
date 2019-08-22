@@ -50,5 +50,9 @@
       "Biology": 215,
       "Psychology": 189,
       "Engineering": 185
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/New_Schoollogo.png",
+      "General": []
    }
 }

@@ -51,5 +51,9 @@
       "Biology": 13,
       "Psychology": 25,
       "Engineering": 23
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Wisconsin-_Madisonlogo.png",
+      "General": []
    }
 }

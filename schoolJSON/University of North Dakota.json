@@ -49,5 +49,12 @@
       "Biology": 190,
       "Psychology": 195,
       "Engineering": 68
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_North_Dakotalogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_North_Dakota2.jpeg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_North_Dakota3.jpg"
+      ]
    }
 }

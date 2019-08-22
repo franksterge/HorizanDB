@@ -49,5 +49,12 @@
       "Biology": 64,
       "Psychology": 53,
       "Engineering": 34
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_California-_Santa_Barbaralogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_California-_Santa_Barbara2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_California-_Santa_Barbara3.jpg"
+      ]
    }
 }

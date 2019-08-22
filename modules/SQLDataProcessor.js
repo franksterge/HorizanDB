@@ -274,7 +274,64 @@ const proccessedData = async () => {
                 )
             );
             preparedData.get(schoolName)["Major"] = schoolMajor;
+        }
+    }
 
+    const addLogo = async () => {
+        console.log("Adding School Logo Image Info...");
+        for (const schoolName of schoolList) {
+            const schoolLogo = await new Promise(
+                (resolve, reject) => db.query('call pGetSchoolLogo("' + schoolName + '")', 
+                    function (error, results) {
+                        if (error) {
+                            console.error('error: ' + error.stack);
+                            reject(error);
+                        } else {
+                            results = JSON.parse(JSON.stringify(results));
+                            var logoURL;
+                            for (obj in results[0]) {
+                                obj = results[0][obj];
+                                for (header in obj) {
+                                    imageURL = "" + obj[header];
+                                }
+                                logoURL = imageURL;
+                            }
+                            resolve(logoURL);                        
+                        }
+                    }
+                )
+            );
+            preparedData.get(schoolName)["Image"] = {};
+            preparedData.get(schoolName)["Image"]["Logo"] = {};
+            preparedData.get(schoolName)["Image"]["Logo"] = schoolLogo;
+        }
+    }
+
+    const addGeneralImage = async () => {
+        console.log("Adding School General Image URL...");
+        for (const schoolName of schoolList) {
+            const schoolImage = await new Promise(
+                (resolve, reject) => db.query('call pGetSchoolGeneralImage("' + schoolName + '")', 
+                    function (error, results) {
+                        if (error) {
+                            console.error('error: ' + error.stack);
+                            reject(error);
+                        } else {
+                            results = JSON.parse(JSON.stringify(results));
+                            var finalImages = [];
+                            for (obj in results[0]) {
+                                obj = results[0][obj];
+                                for (header in obj) {
+                                    finalImages.push("" + obj[header]);
+                                }
+                            }
+                            resolve(finalImages);                        
+                        }
+                    }
+                )
+            );
+            preparedData.get(schoolName)["Image"]["General"] = schoolImage;
+                    
             const outputDir = '../schoolJSON/';
             // console.log("writing JSON file to " + outputDir);
             let fileName = schoolName + '.json';
@@ -288,7 +345,6 @@ const proccessedData = async () => {
             });
         }
     }
-
     await addDetails();
     await addNLP();
     await addApplication();
@@ -296,12 +352,14 @@ const proccessedData = async () => {
     await addTuition2();
     await addTest();
     await addMajor();
+    await addLogo()
+    await addGeneralImage();
     // await console.log(preparedData.get('University of Washington'))
     await console.log(Date.now() - tick);
-    
 }
 
 proccessedData();
+
 
 
 

@@ -48,5 +48,12 @@
       "Biology": 15,
       "Psychology": 80,
       "Engineering": 1
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Massachusetts_Institute_of_Technologylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Massachusetts_Institute_of_Technology2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Massachusetts_Institute_of_Technology3.jpg"
+      ]
    }
 }

@@ -49,5 +49,11 @@
       "Biology": 215,
       "Psychology": 208,
       "Engineering": 47
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Colorado_School_of_Mineslogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Colorado_School_of_Mines3.jpg"
+      ]
    }
 }

@@ -50,5 +50,9 @@
       "Biology": 15,
       "Psychology": 9,
       "Engineering": 28
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Southern_Californialogo.png",
+      "General": []
    }
 }

@@ -48,5 +48,9 @@
       "Biology": 208,
       "Psychology": 199,
       "Engineering": 188
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Andrews_Universitylogo.png",
+      "General": []
    }
 }

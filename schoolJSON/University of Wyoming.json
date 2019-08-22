@@ -51,5 +51,9 @@
       "Biology": 116,
       "Psychology": 159,
       "Engineering": 71
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Wyominglogo.png",
+      "General": []
    }
 }

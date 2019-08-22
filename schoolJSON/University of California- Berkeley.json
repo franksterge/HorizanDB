@@ -49,5 +49,12 @@
       "Biology": 23,
       "Psychology": 9,
       "Engineering": 6
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_California-_Berkeleylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_California-_Berkeley2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_California-_Berkeley3.jpg"
+      ]
    }
 }

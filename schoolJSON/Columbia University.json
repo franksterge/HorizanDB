@@ -51,5 +51,12 @@
       "Biology": 10,
       "Psychology": 34,
       "Engineering": 20
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Columbia_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Columbia_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Columbia_University3.jpg"
+      ]
    }
 }

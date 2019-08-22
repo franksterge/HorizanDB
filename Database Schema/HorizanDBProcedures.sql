@@ -762,3 +762,109 @@ begin
         drop table tempTuition;
     end if;
 end;
+
+use HorizanDB;
+drop procedure pGetSchoolLogo;
+Create
+Procedure pGetSchoolLogo(
+    School_Name VarChar(255)
+)
+begin
+    Declare School_ID int;
+    Call pGetSchool (School_Name, School_ID);
+    if School_ID is null
+    then
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'School not found';
+    end if;
+
+    if @@error_count = 0
+    then
+        create temporary table tempImage(
+            Select i.ImagePath
+            from SchoolDetail s
+            join SchoolImage si on s.SchoolID = si.SchoolID
+            join ImageDetail i on i.ImageID = si.ImageID
+            where s.SchoolID = School_ID
+            and  i.ImageType = 'Logo'
+        );
+        Select * from tempImage;
+        drop table tempImage;
+    end if;
+end;
+
+use HorizanDB;
+drop procedure pGetSchoolGeneralImage;
+Create
+Procedure pGetSchoolGeneralImage(
+    School_Name VarChar(255)
+)
+begin
+    Declare School_ID int;
+    Call pGetSchool (School_Name, School_ID);
+    if School_ID is null
+    then
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'School not found';
+    end if;
+
+    if @@error_count = 0
+    then
+        create temporary table tempImage(
+            Select distinct i.ImagePath
+            from SchoolDetail s
+            join SchoolImage si on s.SchoolID = si.SchoolID
+            join ImageDetail i on i.ImageID = si.ImageID
+            where s.SchoolID = School_ID
+            and  i.ImageType = 'General'
+        );
+        Select * from tempImage;
+        drop table tempImage;
+    end if;
+end;
+
+/*
+    Match a school with a user with given match percentage and current date as entry date
+    Usage: 
+        call pInsUserSchool(UserFirstName, UserLastName, UserEmail, SchoolName, MatchPercentage);
+*/
+
+drop procedure pInsUserSchool;
+Use HorizanDB;
+Create 
+Procedure pInsUserSchool(
+    User_First_Name VarChar(20),
+    User_Last_Name VarChar(20),
+    User_Email VarChar(100),
+    School_Name VarChar(255),
+    Match_Percentage int
+)
+begin 
+    Declare User_ID int;
+    Declare School_ID int;
+    Declare Entry_Date date;
+    Call pGetUser(User_First_Name, User_Last_Name, User_Email, User_ID);
+    if User_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'User not found';
+    end if;
+
+    Call pGetSchool(School_Name, School_ID);
+    If School_ID is null 
+    then 
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Invalid School name';
+    End if;
+
+    Set Entry_Date = Now();
+    Start TRANSACTION;
+    Insert Into UserCollege(UserID, SchoolID, MatchPercentage, EntryDate)
+    Values (User_ID, School_ID, Match_Percentage, Entry_Date);
+    If @@error_count <> 0
+        Then 
+            Rollback;
+        Else
+            Commit;
+    End if;
+end;

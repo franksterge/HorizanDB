@@ -51,5 +51,9 @@
       "Biology": 112,
       "Psychology": 94,
       "Engineering": 120
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Old_Dominion_Universitylogo.png",
+      "General": []
    }
 }

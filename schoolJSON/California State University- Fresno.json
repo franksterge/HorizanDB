@@ -49,5 +49,12 @@
       "Biology": 154,
       "Psychology": 208,
       "Engineering": 180
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/California_State_University-_Fresnologo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/California_State_University-_Fresno2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/California_State_University-_Fresno3.JPG"
+      ]
    }
 }

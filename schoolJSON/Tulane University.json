@@ -48,5 +48,12 @@
       "Biology": 42,
       "Psychology": 77,
       "Engineering": 106
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Tulane_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Tulane_University2.jpeg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Tulane_University3.jpg"
+      ]
    }
 }

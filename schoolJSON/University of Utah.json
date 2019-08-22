@@ -51,5 +51,9 @@
       "Biology": 81,
       "Psychology": 83,
       "Engineering": 78
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Utahlogo.png",
+      "General": []
    }
 }

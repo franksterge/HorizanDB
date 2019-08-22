@@ -49,5 +49,12 @@
       "Biology": 159,
       "Psychology": 124,
       "Engineering": 54
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Michigan_Technological_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Michigan_Technological_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Michigan_Technological_University3.jpg"
+      ]
    }
 }

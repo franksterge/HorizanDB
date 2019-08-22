@@ -51,5 +51,9 @@
       "Biology": 122,
       "Psychology": 136,
       "Engineering": 170
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Missouri-_St._Louislogo.png",
+      "General": []
    }
 }

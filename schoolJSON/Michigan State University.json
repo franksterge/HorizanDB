@@ -52,5 +52,12 @@
       "Biology": 33,
       "Psychology": 48,
       "Engineering": 80
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Michigan_State_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Michigan_State_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Michigan_State_University3.jpg"
+      ]
    }
 }

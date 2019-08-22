@@ -50,5 +50,12 @@
       "Biology": 81,
       "Psychology": 126,
       "Engineering": 85
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Drexel_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Drexel_University2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Drexel_University3.JPG"
+      ]
    }
 }

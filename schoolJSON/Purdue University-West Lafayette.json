@@ -41,5 +41,9 @@
       "Biology": 79,
       "Psychology": 59,
       "Engineering": 9
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Purdue_University-_West_Lafayettelogo.png",
+      "General": []
    }
 }

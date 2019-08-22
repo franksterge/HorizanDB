@@ -51,5 +51,12 @@
       "Biology": 39,
       "Psychology": 37,
       "Engineering": 14
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Rice_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Rice_University2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Rice_University3.jpg"
+      ]
    }
 }

@@ -48,5 +48,9 @@
       "Biology": 167,
       "Psychology": 145,
       "Engineering": 186
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Azusa_Pacific_Universitylogo.png",
+      "General": []
    }
 }

@@ -49,5 +49,9 @@
       "Biology": 110,
       "Psychology": 157,
       "Engineering": 162
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Southern_Illinois_University-_Carbondalelogo.png",
+      "General": []
    }
 }

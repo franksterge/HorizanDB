@@ -49,5 +49,12 @@
       "Biology": 37,
       "Psychology": 74,
       "Engineering": 61
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_California-_Davislogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_California-_Davis2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_California-_Davis3.jpg"
+      ]
    }
 }

@@ -20,13 +20,9 @@
     "csv-parser": "^2.2.0",
     "csv-writer": "^1.2.0",
     "fs": "0.0.1-security",
-<<<<<<< HEAD
     "fs-extra": "^8.1.0",
     "hashmap": "^2.3.0",
     "jsonfile": "^5.0.0",
-=======
-    "hashmap": "^2.3.0",
->>>>>>> cee141c3e6e3c24a751b4f6b192cda3e623ea175
     "mysql": "^2.17.0"
   }
 }

@@ -52,5 +52,9 @@
       "Biology": 69,
       "Psychology": 123,
       "Engineering": 140
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Vermontlogo.png",
+      "General": []
    }
 }

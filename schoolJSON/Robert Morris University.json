@@ -39,5 +39,9 @@
       "Biology": 215,
       "Psychology": 208,
       "Engineering": 188
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Robert_Morris_Universitylogo.png",
+      "General": []
    }
 }

@@ -127,3 +127,6 @@ use HorizanDB;
 call pGetSchoolIncomeSpecificTuition('University of Washington');
 select * from SchoolTuition st
 join TuitionDetail t on t.TuitionID = st.TuitionID;
+use HorizanDB;
+select * from ImageDetail
+where ImageType = 'Logo';

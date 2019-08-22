@@ -51,5 +51,9 @@
       "Biology": 186,
       "Psychology": 151,
       "Engineering": 137
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/George_Mason_Universitylogo.png",
+      "General": []
    }
 }

@@ -52,5 +52,11 @@
       "Biology": 117,
       "Psychology": 113,
       "Engineering": 19
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_at_Buffalo-_SUNYlogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_at_Buffalo-_SUNY2.jpg"
+      ]
    }
 }

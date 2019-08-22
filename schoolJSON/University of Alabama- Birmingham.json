@@ -51,5 +51,12 @@
       "Biology": 40,
       "Psychology": 99,
       "Engineering": 56
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Alabama_Birminghamlogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Alabama-_Birmingham2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Alabama-_Birmingham3.jpg"
+      ]
    }
 }

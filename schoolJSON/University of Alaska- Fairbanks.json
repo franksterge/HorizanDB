@@ -38,5 +38,12 @@
       "Biology": 103,
       "Psychology": 208,
       "Engineering": 113
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Alaska-_Fairbankslogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Alaska-_Fairbanks2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Alaska-_Fairbanks3.jpg"
+      ]
    }
 }

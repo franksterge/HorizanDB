@@ -51,5 +51,11 @@
       "Biology": 88,
       "Psychology": 130,
       "Engineering": 179
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/East_Carolina_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/East_Carolina_University2.JPG"
+      ]
    }
 }

@@ -50,5 +50,12 @@
       "Biology": 106,
       "Psychology": 103,
       "Engineering": 65
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Lehigh_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Lehigh_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Lehigh_University3.jpg"
+      ]
    }
 }

@@ -51,5 +51,9 @@
       "Biology": 35,
       "Psychology": 23,
       "Engineering": 21
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Notre_Damelogo.png",
+      "General": []
    }
 }

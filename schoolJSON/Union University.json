@@ -37,5 +37,9 @@
       "Biology": 198,
       "Psychology": 185,
       "Engineering": 188
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Union_Universitylogo.png",
+      "General": []
    }
 }

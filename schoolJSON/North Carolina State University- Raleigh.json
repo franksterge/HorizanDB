@@ -52,5 +52,11 @@
       "Biology": 44,
       "Psychology": 116,
       "Engineering": 29
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/North_Carolina_State_University-_Raleighlogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/North_Carolina_State_University-_Raleigh2.jpg"
+      ]
    }
 }

@@ -49,5 +49,8 @@
       "Biology": 123,
       "Psychology": 117,
       "Engineering": 88
+   },
+   "Image": {
+      "General": []
    }
 }

@@ -49,5 +49,9 @@
       "Biology": 178,
       "Psychology": 42,
       "Engineering": 80
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Utah_State_Universitylogo.png",
+      "General": []
    }
 }

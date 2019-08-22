@@ -52,5 +52,12 @@
       "Biology": 11,
       "Psychology": 3,
       "Engineering": 5
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Michigan-_Ann_Arborlogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Michigan-_Ann_Arbor2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Michigan-_Ann_Arbor3.jpg"
+      ]
    }
 }

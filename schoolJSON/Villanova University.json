@@ -50,5 +50,9 @@
       "Biology": 103,
       "Psychology": 105,
       "Engineering": 100
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Villanova_Universitylogo.png",
+      "General": []
    }
 }

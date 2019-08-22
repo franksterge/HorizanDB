@@ -52,5 +52,9 @@
       "Biology": 75,
       "Psychology": 110,
       "Engineering": 96
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Oklahomalogo.png",
+      "General": []
    }
 }

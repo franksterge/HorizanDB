@@ -51,5 +51,12 @@
       "Biology": 63,
       "Psychology": 44,
       "Engineering": 33
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Maryland-_College_Parklogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Maryland_College_Park2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Maryland_College_Park3.jpg"
+      ]
    }
 }

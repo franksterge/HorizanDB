@@ -44,5 +44,9 @@
          "SATLowerBound": 960
       }
    },
-   "Major": {}
+   "Major": {},
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Western_Michigan_Universitylogo.png",
+      "General": []
+   }
 }

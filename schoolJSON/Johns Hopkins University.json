@@ -51,5 +51,12 @@
       "Biology": 3,
       "Psychology": 29,
       "Engineering": 2
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Johns_Hopkins_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Johns_Hopkins_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Johns_Hopkins_University3.jpg"
+      ]
    }
 }

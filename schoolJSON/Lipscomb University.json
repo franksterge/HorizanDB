@@ -39,5 +39,11 @@
       "Biology": 193,
       "Psychology": 206,
       "Engineering": 188
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Lipscomb_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Lipscomb_University2.jpg"
+      ]
    }
 }

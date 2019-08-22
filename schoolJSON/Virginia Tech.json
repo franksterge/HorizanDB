@@ -46,5 +46,9 @@
    },
    "Major": {
       "Business": 57
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Virginia_Techlogo.png",
+      "General": []
    }
 }

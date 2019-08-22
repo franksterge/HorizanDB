@@ -51,5 +51,9 @@
       "Biology": 148,
       "Psychology": 208,
       "Engineering": 37
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/New_Jersey_Institute_of_Technologylogo.png",
+      "General": []
    }
 }

@@ -51,5 +51,9 @@
       "Biology": 197,
       "Psychology": 181,
       "Engineering": 173
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Southern_Mississippilogo.png",
+      "General": []
    }
 }

@@ -48,5 +48,12 @@
       "Biology": 190,
       "Psychology": 196,
       "Engineering": 175
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Duquesne_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Duquesne_University2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Duquesne_University3.JPG"
+      ]
    }
 }

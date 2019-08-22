@@ -52,5 +52,12 @@
       "Biology": 48,
       "Psychology": 40,
       "Engineering": 26
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Ohio_State_University-_Columbuslogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Ohio_State_University-_Columbus2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Ohio_State_University-_Columbus3.jpg"
+      ]
    }
 }

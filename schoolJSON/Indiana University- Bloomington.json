@@ -52,5 +52,12 @@
       "Biology": 50,
       "Psychology": 49,
       "Engineering": 165
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Indiana_University-_Bloominton.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Indiana_University-_Bloomington2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Indiana_University-_Bloomington3.jpg"
+      ]
    }
 }

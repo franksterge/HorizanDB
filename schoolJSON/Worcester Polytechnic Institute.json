@@ -43,5 +43,9 @@
          "SATLowerBound": 1270
       }
    },
-   "Major": {}
+   "Major": {},
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Worcester_Polytechnic_Institutelogo.png",
+      "General": []
+   }
 }

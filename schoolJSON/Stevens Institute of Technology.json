@@ -50,5 +50,10 @@
       "Biology": 174,
       "Psychology": 208,
       "Engineering": 66
+   },
+   "Image": {
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Stevens_Institute_of_Technology2.JPG"
+      ]
    }
 }

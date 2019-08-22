@@ -49,5 +49,12 @@
       "Biology": 55,
       "Psychology": 147,
       "Engineering": 112
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Hawaii-_Manoalogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Hawaii-_Manoa2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Hawaii-_Manoa3.jpg"
+      ]
    }
 }

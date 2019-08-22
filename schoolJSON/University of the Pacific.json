@@ -50,5 +50,9 @@
       "Biology": 146,
       "Psychology": 208,
       "Engineering": 182
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_the_Pacificlogo.png",
+      "General": []
    }
 }

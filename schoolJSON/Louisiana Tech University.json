@@ -49,5 +49,12 @@
       "Biology": 200,
       "Psychology": 203,
       "Engineering": 145
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Louisiana_Tech_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Louisiana_Tech_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Louisiana_Tech_University3.jpg"
+      ]
    }
 }

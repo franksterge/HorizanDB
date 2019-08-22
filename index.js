@@ -16,7 +16,7 @@ var smallDollarAmount = /\$(\d*)/gi;
 var s3Bucket = "https://horizan-images.s3.us-east-2.amazonaws.com/";
 var s3UniversityImage = s3Bucket + "Univerisity/";
 // var schoolName = /([a-zA-Z_-,'\.]*)(logo.png)/gi;
-var logoBucket = s3UniversityImage + "SchoolLogos/";
+var logoBucket = s3UniversityImage + "University_image/";
 
 new Promise((resolve, reject) => {
     const connection = mysql.createConnection({
@@ -37,7 +37,7 @@ new Promise((resolve, reject) => {
 })
 .then(context => {
     return new Promise((resolve, reject) => {
-        fs.createReadStream('/Users/Frank/OneDrive/Horizan/LocalFiles/RawData/schoolLogo.csv')
+        fs.createReadStream('/Users/Frank/OneDrive/Horizan/LocalFiles/RawData/schoolGeneral.csv')
         .pipe(csv())
         .on('data', (row) => {
             // var testScore = [];
@@ -55,11 +55,13 @@ new Promise((resolve, reject) => {
                 let value = row[key];
                 var imgLink = logoBucket + value;
                 // console.log(imgLink);
-                schoolName = value.substring(0, value.length - 8);
+                let imgName = value.split(/\./gi)[0];
+                schoolName = value.substring(0, imgName.length - 1);
                 schoolName = schoolName.replace(/_/gi, " ");
+                imageNumber = imgName[imgName.length - 1];
                 parameters.push(schoolName);
-                parameters.push(schoolName + " Logo");
-                parameters.push("Logo");
+                parameters.push(imgName);
+                parameters.push("General");
                 parameters.push(imgLink);
                 // var testType;
                 // var testLowBound;
@@ -190,7 +192,7 @@ new Promise((resolve, reject) => {
                         reject(error);
                     }
                 });
-            } else if (parameters > 3) {
+            } else if (parameters > 4) {
                 parameters = [];
                 parameters.push(schoolName);
             }

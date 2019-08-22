@@ -52,5 +52,12 @@
       "Biology": 71,
       "Psychology": 108,
       "Engineering": 74
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Kentuckylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Kentucky2.jpeg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Kentucky3.jpg"
+      ]
    }
 }

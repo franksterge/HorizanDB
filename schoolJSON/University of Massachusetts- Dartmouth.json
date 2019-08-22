@@ -51,5 +51,11 @@
       "Biology": 137,
       "Psychology": 127,
       "Engineering": 150
+   },
+   "Image": {
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Massachusetts-_Dartmouth2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Massachusetts-_Dartmouth3.jpg"
+      ]
    }
 }

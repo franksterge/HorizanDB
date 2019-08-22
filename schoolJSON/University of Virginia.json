@@ -41,5 +41,9 @@
       "Biology": 27,
       "Psychology": 30,
       "Engineering": 38
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Virginialogo.png",
+      "General": []
    }
 }

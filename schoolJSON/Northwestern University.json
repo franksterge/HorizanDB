@@ -51,5 +51,12 @@
       "Biology": 12,
       "Psychology": 30,
       "Engineering": 17
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Northwestern_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Northwestern_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Northwestern_University3.jpg"
+      ]
    }
 }

@@ -51,5 +51,9 @@
       "Biology": 97,
       "Psychology": 100,
       "Engineering": 152
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Rhode_Islandlogo.png",
+      "General": []
    }
 }

@@ -51,5 +51,9 @@
       "Biology": 194,
       "Psychology": 55,
       "Engineering": 156
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Indiana_Univeristy-_Purdue_University-_Indianapolis.png",
+      "General": []
    }
 }

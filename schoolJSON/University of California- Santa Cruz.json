@@ -49,5 +49,11 @@
       "Biology": 140,
       "Psychology": 183,
       "Engineering": 39
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_California-_Santa_Cruzlogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_California-_Santa_Cruz2.jpg"
+      ]
    }
 }

@@ -52,5 +52,9 @@
       "Biology": 28,
       "Psychology": 26,
       "Engineering": 60
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Pittsburghlogo.png",
+      "General": []
    }
 }

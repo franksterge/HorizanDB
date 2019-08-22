@@ -49,5 +49,11 @@
       "Biology": 170,
       "Psychology": 106,
       "Engineering": 109
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Texas_Tech_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Texas_Tech_University2.jpg"
+      ]
    }
 }

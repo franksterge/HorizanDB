@@ -51,5 +51,11 @@
       "Biology": 30,
       "Psychology": 14,
       "Engineering": 108
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Georgialogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Georgia2.jpg"
+      ]
    }
 }

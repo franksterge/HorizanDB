@@ -37,5 +37,12 @@
       "Biology": 65,
       "Psychology": 60,
       "Engineering": 72
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Brigham_Young_University-_Provologo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Brigham_Young_University-_Provo2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Brigham_Young_University-_Provo3.jpg"
+      ]
    }
 }

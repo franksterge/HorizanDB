@@ -51,5 +51,9 @@
       "Biology": 9,
       "Psychology": 6,
       "Engineering": 18
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Vanderbilt_Universitylogo.png",
+      "General": []
    }
 }

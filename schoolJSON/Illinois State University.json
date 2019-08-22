@@ -47,5 +47,9 @@
       "Biology": 145,
       "Psychology": 172,
       "Engineering": 184
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Illinois_State_Universitylogo.png",
+      "General": []
    }
 }

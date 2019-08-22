@@ -51,5 +51,12 @@
       "Biology": 139,
       "Psychology": 95,
       "Engineering": 78
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Central_Floridalogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Central_Florida2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Central_Florida3.jpg"
+      ]
    }
 }

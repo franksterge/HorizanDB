@@ -50,5 +50,9 @@
       "Biology": 189,
       "Psychology": 111,
       "Engineering": 188
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Clark_Universitylogo.png",
+      "General": []
    }
 }

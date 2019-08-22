@@ -50,5 +50,9 @@
       "Biology": 130,
       "Psychology": 124,
       "Engineering": 158
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_San_Diegologo.png",
+      "General": []
    }
 }

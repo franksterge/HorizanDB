@@ -50,5 +50,11 @@
       "Biology": 157,
       "Psychology": 132,
       "Engineering": 143
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Florida_Institute_of_Technologylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Florida_Institute_of_Technology2.jpg"
+      ]
    }
 }

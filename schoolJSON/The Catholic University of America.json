@@ -50,5 +50,9 @@
       "Biology": 138,
       "Psychology": 114,
       "Engineering": 167
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/The_Catholic_University_of_Americalogo.png",
+      "General": []
    }
 }

@@ -52,5 +52,12 @@
       "Biology": 151,
       "Psychology": 70,
       "Engineering": 67
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Delawarelogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Delaware2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Delaware3.jpg"
+      ]
    }
 }

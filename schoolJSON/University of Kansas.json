@@ -51,5 +51,11 @@
       "Biology": 66,
       "Psychology": 69,
       "Engineering": 113
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Kansaslogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Kansas2.jpg"
+      ]
    }
 }

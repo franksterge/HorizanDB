@@ -50,5 +50,11 @@
       "Biology": 52,
       "Psychology": 18,
       "Engineering": 15
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Carnegie_Mellon_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Carnegie_Mellon_University2.jpg"
+      ]
    }
 }

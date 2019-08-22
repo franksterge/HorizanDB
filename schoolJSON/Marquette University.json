@@ -50,5 +50,12 @@
       "Biology": 109,
       "Psychology": 137,
       "Engineering": 133
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Marquette_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Marquette_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Marquette_University3.jpg"
+      ]
    }
 }

@@ -51,5 +51,12 @@
       "Biology": 192,
       "Psychology": 164,
       "Engineering": 131
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Idahologo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Idaho2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Idaho3.jpg"
+      ]
    }
 }

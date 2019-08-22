@@ -52,5 +52,9 @@
       "Biology": 111,
       "Psychology": 76,
       "Engineering": 188
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Oregonlogo.png",
+      "General": []
    }
 }

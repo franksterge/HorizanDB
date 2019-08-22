@@ -51,5 +51,12 @@
       "Biology": 80,
       "Psychology": 49,
       "Engineering": 46
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Arizona_State_University-_Tempelogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Arizona_State_University-_Tempe2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Arizona_State_University-_Tempe3.jpg"
+      ]
    }
 }

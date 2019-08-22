@@ -49,5 +49,9 @@
       "Biology": 179,
       "Psychology": 178,
       "Engineering": 163
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_South_Dakotalogo.png",
+      "General": []
    }
 }

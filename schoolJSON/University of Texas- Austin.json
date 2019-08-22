@@ -51,5 +51,9 @@
       "Biology": 41,
       "Psychology": 38,
       "Engineering": 7
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Texas-_Austinlogo.png",
+      "General": []
    }
 }

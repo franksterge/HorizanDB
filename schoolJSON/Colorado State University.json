@@ -51,5 +51,9 @@
       "Biology": 95,
       "Psychology": 121,
       "Engineering": 118
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Colorado_State_Universitylogo.png",
+      "General": []
    }
 }

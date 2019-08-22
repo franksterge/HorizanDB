@@ -51,5 +51,11 @@
       "Biology": 173,
       "Psychology": 166,
       "Engineering": 166
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Missouri-_Kansas_Citylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Missouri-_Kansas_City2.jpg"
+      ]
    }
 }

@@ -32,5 +32,8 @@
          "SATLowerBound": 1020
       }
    },
-   "Major": {}
+   "Major": {},
+   "Image": {
+      "General": []
+   }
 }

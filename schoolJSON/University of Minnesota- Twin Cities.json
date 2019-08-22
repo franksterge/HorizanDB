@@ -52,5 +52,12 @@
       "Biology": 30,
       "Psychology": 20,
       "Engineering": 32
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Minnesota-_Twin_Citieslogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Minnesota-_Twin_Cities2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Minnesota-_Twin_Cities3.jpg"
+      ]
    }
 }

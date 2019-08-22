@@ -51,5 +51,9 @@
       "Biology": 54,
       "Psychology": 77,
       "Engineering": 16
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Texas_A&M_University-_College_Stationlogo.png",
+      "General": []
    }
 }

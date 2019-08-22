@@ -40,5 +40,11 @@
       "Biology": 133,
       "Psychology": 208,
       "Engineering": 147
+   },
+   "Image": {
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/SUNY_College_of_Environmental_Science_and_Forestry2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/SUNY_College_of_Environmental_Science_and_Forestry3.jpg"
+      ]
    }
 }

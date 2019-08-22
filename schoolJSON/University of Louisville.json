@@ -49,5 +49,12 @@
       "Biology": 78,
       "Psychology": 120,
       "Engineering": 125
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Louisvillelogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Louisville2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Louisville3.jpg"
+      ]
    }
 }

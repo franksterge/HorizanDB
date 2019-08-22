@@ -51,5 +51,11 @@
       "Biology": 101,
       "Psychology": 84,
       "Engineering": 104
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Southern_Methodist_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Southern_Methodist_University2.jpg"
+      ]
    }
 }

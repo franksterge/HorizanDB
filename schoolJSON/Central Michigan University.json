@@ -49,5 +49,12 @@
       "Biology": 205,
       "Psychology": 146,
       "Engineering": 178
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Central_Michigan_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Central_Michigan_University2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Central_Michigan_University3.JPG"
+      ]
    }
 }

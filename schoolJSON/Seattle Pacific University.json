@@ -50,5 +50,11 @@
       "Biology": 195,
       "Psychology": 159,
       "Engineering": 187
+   },
+   "Image": {
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Seattle_Pacific_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Seattle_Pacific_University3.jpg"
+      ]
    }
 }

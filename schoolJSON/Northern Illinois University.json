@@ -49,5 +49,11 @@
       "Biology": 166,
       "Psychology": 97,
       "Engineering": 164
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Northern_Illinois_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Northern_Illinois_University2.jpg"
+      ]
    }
 }

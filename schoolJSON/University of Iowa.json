@@ -51,5 +51,12 @@
       "Biology": 60,
       "Psychology": 71,
       "Engineering": 64
+   },
+   "Image": {
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Iowalogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Iowa2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Iowa3.jpg"
+      ]
    }
 }

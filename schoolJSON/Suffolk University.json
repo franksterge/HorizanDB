@@ -48,5 +48,11 @@
       "Biology": 176,
       "Psychology": 163,
       "Engineering": 188
+   },
+   "Image": {
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Suffolk_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Suffolk_University3.jpg"
+      ]
    }
 }
