@@ -868,3 +868,75 @@ begin
             Commit;
     End if;
 end;
+
+Use HorizanDB;
+Create 
+Procedure pGetUserCollection(
+    User_First_Name VarChar(20),
+    User_Last_Name VarChar(20),
+    User_Email VarChar(100)
+)
+begin 
+    Declare User_ID int;
+
+    Call pGetUser(User_First_Name, User_Last_Name, User_Email, User_ID);
+    if User_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'User not found';
+    end if;
+    
+    if @@error_count = 0
+    then 
+        create temporary table tempCollection(
+            Select distinct c.CollectionName, c.CollectionDesc
+            from CollectionDetail c
+            join UserSchoolCollection usc on c.CollectionID = usc.CollectionID
+            join UserDetail u on u.UserID = usc.UserID
+            where u.UserID = User_ID
+        );
+        Select * from tempCollection;
+        drop table tempCollection;
+    end if;
+end;
+
+Use HorizanDB;
+Create 
+Procedure pGetUserCollectionDetail(
+    User_First_Name VarChar(20),
+    User_Last_Name VarChar(20),
+    User_Email VarChar(100),
+    Collection_Name VarChar(100)
+)
+begin 
+    Declare User_ID int;
+    Declare Collection_ID int;
+    Call pGetUser(User_First_Name, User_Last_Name, User_Email, User_ID);
+    if User_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'User not found';
+    end if;
+    
+    Call pGetCollection(Collection_Name, Collection_ID);
+    if Collection_ID is null 
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'Collection not found';
+    end if;
+
+
+    if @@error_count = 0
+    then 
+        create temporary table tempCollection(
+            Select s.SchoolName
+            from CollectionDetail c
+            join UserSchoolCollection usc on c.CollectionID = usc.CollectionID
+            join UserDetail u on u.UserID = usc.UserID
+            join SchoolDetail s on s.SchoolID = usc.SchoolID
+            where u.UserID = User_ID and c.CollectionID = Collection_ID
+        );
+        Select * from tempCollection;
+        drop table tempCollection;
+    end if;
+end;
