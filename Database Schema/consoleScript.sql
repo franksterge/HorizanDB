@@ -130,3 +130,11 @@ join TuitionDetail t on t.TuitionID = st.TuitionID;
 use HorizanDB;
 select * from ImageDetail
 where ImageType = 'Logo';
+
+use HorizanDB;
+Select * from ImageDetail where ImageType = "General";
+Delete from SchoolImage where ImageType = "General"
+
+Use HorizanDB;
+call pGetUserResponses('John', 'Doe', 'johndoe@testemail.com/');
+Select * from UserResponse;

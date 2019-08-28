@@ -279,7 +279,18 @@ Table UserServey(
   Foreign Key (ServeyID) REFERENCES ServeyDetail(ServeyID)
 );
 
+Use HorizanDB;
+Create 
+Table UserResponse(
+  ResponseID int AUTO_INCREMENT primary key not null,
+  UserID int not null,
+  FileName varChar(200) not null,
+  EntryDate date not null,
+  Foreign key (UserID) REFERENCES UserDetail(UserID)
+);
+
 use HorizanDB;
+drop table ServeyDetail;
 Create 
 Table ServeyDetail(
   ServeyID int AUTO_INCREMENT primary Key not null,
@@ -301,3 +312,5 @@ Table ServeyData(
 /*
 --Create stored procedure to lookup+insert data
 */
+
+

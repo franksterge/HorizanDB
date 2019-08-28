@@ -160,6 +160,33 @@ Begin
 End;
 
 Use HorizanDB;
+Create 
+Procedure pGetImage(
+  In Image_Path VarChar(2000),
+  Out Image_ID int
+)
+Begin
+  Set Image_ID = (
+    Select ImageID From ImageDetail
+    Where ImagePath = Image_Path
+  );
+End;
+
+
+Use HorizanDB;
+Create 
+Procedure pGetUserResponse(
+  In File_Name varChar(200),
+  out Response_ID int
+)
+begin 
+  set Response_ID = (
+    Select ResponseID from UserResponse
+    where FileName = File_Name
+  );
+End;
+
+Use HorizanDB;
 /* drop procedure pInsSchoolMajorRankingSource; */
 Create
 Procedure pInsSchoolMajorRankingSource(
@@ -280,6 +307,7 @@ Begin
     Commit;
   End if;
 End;
+
 use HorizanDB;
 Create 
 Procedure pInsSchoolTuition(
@@ -392,6 +420,7 @@ Begin
 End;
 
 Use HorizanDB;
+drop procedure pInsSchoolImage;
 Create 
 Procedure pInsSchoolImage(
   School_Name VarChar(255),
@@ -410,6 +439,13 @@ Begin
     SET MESSAGE_TEXT = 'Invalid School name';
   End if;
 
+  call pGetImage(Image_Path, Image_ID);
+  if Image_ID is not null
+  then 
+    SIGNAL  SQLSTATE '45000'
+    SET MESSAGE_TEXT = 'Image already in database';
+  end if;
+
   Start Transaction;
   Insert into ImageDetail (ImageName, ImageType, ImagePath)
   values (Image_Name, Image_Type, Image_Path);
@@ -423,48 +459,39 @@ Begin
     commit;
   end if;
 end;
-use HorizanDB;
-drop view vAllSchoolData;
-create
-View vAllSchoolData as (
-  Select s.SchoolName,  s.SchoolLocation, 
-   s.SchoolEnvironment, s.SchoolSize, s.StudentFacultyRatio,
-  s.SchoolType, n.NLPCategory, sn.NLPRating,  a.ApplicationName,
-  st.TuitionAmount, t.TuitionName, t.TuitionType, t. IncomeRangeUpperBound, t. IncomeRangeLowerBound, 
-  ste.ScoreUpperBound, ste.ScoreLowerBound,
-  te.TestName, sms.MajorRanking, m.MajorRankingName
-  from SchoolDetail s 
-  left join SchoolNLP sn on sn.SchoolID = s.SchoolID
-  left join NLPData n on n.NLPID = sn.NLPID
-  left join SchoolApplication sa on s.SchoolID = sa.SchoolID
-  left join ApplicationDetail a on a.ApplicationID = sa.ApplicationID
-  left join SchoolTuition st on st.SchoolID = s.SchoolID
-  left join TuitionDetail t on t.TuitionID = st.TuitionID
-  left join SchoolTest ste on ste.SchoolID = s.SchoolID
-  left join TestDetail te on te.TestID = ste.TestID
-  left join SchoolMajorRankingSource sms on sms.SchoolID = s.SchoolID
-  left join MajorRanking m on m.MajorRankingID = sms.MajorRankingID
-);
-use HorizanDB;
 
-create
-View vAllLeftSchoolData as (
-  Select s.SchoolName,  s.SchoolLocation, 
-   s.SchoolEnvironment, s.SchoolSize, s.StudentFacultyRatio,
-  s.SchoolType, n.NLPCategory, sn.NLPRating,  a.ApplicationName,
-  st.TuitionAmount, t.TuitionName, t.TuitionType, t. IncomeRangeUpperBound, t. IncomeRangeLowerBound, 
-  ste.ScoreUpperBound, ste.ScoreLowerBound,
-  te.TestName, sms.MajorRanking, m.MajorRankingName
-  from SchoolDetail s 
-  join SchoolNLP sn on sn.SchoolID = s.SchoolID
-  join NLPData n on n.NLPID = sn.NLPID
-  join SchoolApplication sa on s.SchoolID = sa.SchoolID
-  join ApplicationDetail a on a.ApplicationID = sa.ApplicationID
-  join SchoolTuition st on st.SchoolID = s.SchoolID
-  join TuitionDetail t on t.TuitionID = st.TuitionID
-  join SchoolTest ste on ste.SchoolID = s.SchoolID
-  join TestDetail te on te.TestID = ste.TestID
-  join SchoolMajorRankingSource sms on sms.SchoolID = s.SchoolID
-  join MajorRanking m on m.MajorRankingID = sms.MajorRankingID
-);
+/*
+  Usage: call pInsUserResponse(UserFirstName, UserLastName, UserEmail);
+  Note: automatically assembles the name of JSON file on SQL to keep entry date accurate
+*/
+Use HorizanDB;
+drop procedure PInsUserResponse;
+Create 
+Procedure pInsUserResponse(
+    User_First_Name VarChar(20),
+    User_Last_Name VarChar(20),
+    User_Email VarChar(100)
+) 
+Begin
+  Declare User_ID int;
+  Declare Entry_Date Datetime;
+  Declare Final_File_Name VarChar(200);
+  Call pGetUser(User_First_Name, User_Last_Name, User_Email, User_ID);
+  if User_ID is null
+  then 
+      SIGNAL SQLSTATE '45000'
+      Set MESSAGE_TEXT = 'User not registered';
+  end if;
 
+  Set Entry_Date = Now();
+  Set Final_File_Name = (Select (CONCAT(User_First_Name, User_Last_Name, User_Email, 'survey', Entry_Date, '.json')));
+  Set Final_File_Name = replace(Final_File_Name, ' ', '');
+  Insert into UserResponse(UserID, FileName, EntryDate)
+  Values (User_ID, Final_File_Name, Entry_Date);
+  if @@error_count <> 0
+  then 
+    rollback;
+  else 
+    commit;
+  end if;
+end;

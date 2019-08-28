@@ -37,7 +37,7 @@ new Promise((resolve, reject) => {
 })
 .then(context => {
     return new Promise((resolve, reject) => {
-        fs.createReadStream('/Users/Frank/OneDrive/Horizan/LocalFiles/RawData/schoolGeneral.csv')
+        fs.createReadStream('/Users/Frank/OneDrive/Horizan/LocalFiles/RawData/schoolGeneral2.csv')
         .pipe(csv())
         .on('data', (row) => {
             // var testScore = [];

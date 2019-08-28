@@ -940,3 +940,41 @@ begin
         drop table tempCollection;
     end if;
 end;
+
+/*
+    Get list of all json files for the given user
+*/
+Use HorizanDB;
+drop procedure pGetUserResponses;
+Create 
+Procedure pGetUserResponses(
+    User_First_Name VarChar(20),
+    User_Last_Name VarChar(20),
+    User_Email VarChar(100)
+)
+begin 
+    Declare User_ID int;
+    Call pGetUser(User_First_Name, User_Last_Name, User_Email, User_ID);
+    if User_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'User not found';
+    end if;
+
+    if @@error_count = 0
+    then 
+        create temporary table tempResponse(
+            Select r.FileName
+            from UserResponse r
+            join UserDetail u on u.UserID = r.UserID
+            where u.UserID = User_ID
+        );
+        Select * from tempResponse;
+        drop table tempResponse;
+    end if;
+end;
+
+Use HorizanDB;
+Create View vGetAllSchoolNames as (
+    Select distinct SchoolName from SchoolDetail
+);
