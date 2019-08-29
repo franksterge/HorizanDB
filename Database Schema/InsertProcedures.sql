@@ -470,11 +470,12 @@ Create
 Procedure pInsUserResponse(
     User_First_Name VarChar(20),
     User_Last_Name VarChar(20),
-    User_Email VarChar(100)
+    User_Email VarChar(100), 
+    File_Name VarChar(200),
+    Entry_Date DateTime
 ) 
 Begin
   Declare User_ID int;
-  Declare Entry_Date Datetime;
   Declare Final_File_Name VarChar(200);
   Call pGetUser(User_First_Name, User_Last_Name, User_Email, User_ID);
   if User_ID is null
@@ -483,9 +484,8 @@ Begin
       Set MESSAGE_TEXT = 'User not registered';
   end if;
 
-  Set Entry_Date = Now();
-  Set Final_File_Name = (Select (CONCAT(User_First_Name, User_Last_Name, User_Email, 'survey', Entry_Date, '.json')));
-  Set Final_File_Name = replace(Final_File_Name, ' ', '');
+  Set Entry_Date = DATE_FORMAT(Entry_Date, '%Y-%m-%d %H:%i:%s');
+  Set Final_File_Name = replace(File_Name, ' ', '');
   Insert into UserResponse(UserID, FileName, EntryDate)
   Values (User_ID, Final_File_Name, Entry_Date);
   if @@error_count <> 0

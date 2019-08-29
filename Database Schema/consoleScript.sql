@@ -136,5 +136,7 @@ Select * from ImageDetail where ImageType = "General";
 Delete from SchoolImage where ImageType = "General"
 
 Use HorizanDB;
-call pGetUserResponses('John', 'Doe', 'johndoe@testemail.com/');
+call pInsUserResponse('John', 'Doe', 'johndoe@testemail.com/', 'JohnDoejohndoe@testemail.comsurvey2019-08-24 21:23:54.json', '2019-08-24 21:23:54');
 Select * from UserResponse;
+
+select Date_Format('2019-08-24 21:23:54', '%Y-%m-%d %H:%i:%s');

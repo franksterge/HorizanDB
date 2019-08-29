@@ -280,12 +280,13 @@ Table UserServey(
 );
 
 Use HorizanDB;
+drop table UserResponse;
 Create 
 Table UserResponse(
   ResponseID int AUTO_INCREMENT primary key not null,
   UserID int not null,
   FileName varChar(200) not null,
-  EntryDate date not null,
+  EntryDate datetime not null,
   Foreign key (UserID) REFERENCES UserDetail(UserID)
 );
 
