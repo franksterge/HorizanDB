@@ -135,6 +135,12 @@ use HorizanDB;
 Select * from ImageDetail where ImageType = "General";
 Delete from SchoolImage where ImageType = "General"
 
+
+/* 
+sample procedure call and datetime format for pInsUserResponse
+note:
+- the procedure automatically takeout the space in the filename.
+ */
 Use HorizanDB;
 call pInsUserResponse('John', 'Doe', 'johndoe@testemail.com/', 'JohnDoejohndoe@testemail.comsurvey2019-08-24 21:23:54.json', '2019-08-24 21:23:54');
 Select * from UserResponse;
