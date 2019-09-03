@@ -51,46 +51,6 @@ Begin
 end;
 
 /*
-    Stored procedure to get all matched schools
-    SQL Code Usage:
-        Call pGetMySchoolList(UserFirstName, UserLastName, UserEmail)
-    returns a table with all matched school name, acceptance rate, 
-    school location, match percentage, thumbnail image path and image name
-*/
-Use HorizanDB;
-drop Procedure pGetMySchoolList;
-Create 
-Procedure pGetMySchoolList (
-    User_First_Name VarChar(20),
-    User_Last_Name VarChar(20),
-    User_Email VarChar(100)
-) 
-Begin
-    Declare User_ID int;
-    Call pGetUser(User_First_Name, User_Last_Name, User_Email, User_ID);
-    if User_ID is null
-    then 
-        SIGNAL SQLSTATE '45000'
-        Set MESSAGE_TEXT = 'User not registered';
-    end if;
-
-    if @@error_count = 0
-    then 
-    create temporary table tempSchoolList(
-        Select s.SchoolName, s.AcceptanceRate, s.SchoolLocation, usc.MatchPercentage, i.ImagePath, i.ImageName
-        from SchoolDetail s 
-        join UserSchoolCollection usc on  s.SchoolID = usc.SchoolID
-        join CollectionDetail c on s.CollectionID = c.CollectionID
-        join SchoolImage si on s.SchoolID = si.SchoolID
-        join ImageDetail i on i.ImageID = si.ImageID
-        join UserDetail u on u.UserID = usc.UserID
-        where u.UserID = User_ID and i.ImageType = "ThumbNail"
-    );
-    select * from tempSchoolList;
-    end if;
-End
-
-/*
     Stored procedure to get servey list
     Usage:
         call pGetServeyList(UserFirstName, UserLastName, UserEmail)
@@ -829,20 +789,22 @@ end;
         call pInsUserSchool(UserFirstName, UserLastName, UserEmail, SchoolName, MatchPercentage);
 */
 
-drop procedure pInsUserSchool;
 Use HorizanDB;
+drop procedure pInsUserSchool;
 Create 
 Procedure pInsUserSchool(
     User_First_Name VarChar(20),
     User_Last_Name VarChar(20),
     User_Email VarChar(100),
     School_Name VarChar(255),
-    Match_Percentage int
+    File_Name VarChar(200),
+    Match_Percentage int,
+    Entry_Date datetime
 )
 begin 
     Declare User_ID int;
     Declare School_ID int;
-    Declare Entry_Date date;
+    Declare File_ID int;
     Call pGetUser(User_First_Name, User_Last_Name, User_Email, User_ID);
     if User_ID is null
     then 
@@ -857,10 +819,16 @@ begin
         SET MESSAGE_TEXT = 'Invalid School name';
     End if;
 
-    Set Entry_Date = Now();
+    Call pGetUserResponse(File_Name, File_ID);
+    if File_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'File not found';
+    end if;
+
     Start TRANSACTION;
-    Insert Into UserCollege(UserID, SchoolID, MatchPercentage, EntryDate)
-    Values (User_ID, School_ID, Match_Percentage, Entry_Date);
+    Insert Into UserCollege(UserID, SchoolID, ResponseID, MatchPercentage, EntryDate)
+    Values (User_ID, School_ID, File_ID, Match_Percentage, Entry_Date);
     If @@error_count <> 0
         Then 
             Rollback;
@@ -978,3 +946,48 @@ Use HorizanDB;
 Create View vGetAllSchoolNames as (
     Select distinct SchoolName from SchoolDetail
 );
+
+/*
+    Stored procedure to get all matched schools
+    SQL Code Usage:
+        Call pGetUserMatchPercentage(UserFirstName, UserLastName, UserEmail, FileName)
+    returns a table with all matched school name and match percentage
+*/
+Use HorizanDB;
+drop Procedure pGetUserMatchPercentage;
+Create 
+Procedure pGetUserMatchPercentage (
+    User_First_Name VarChar(20),
+    User_Last_Name VarChar(20),
+    User_Email VarChar(100),
+    File_Name VarChar(200)
+) 
+Begin
+    Declare User_ID int;
+    Declare File_ID int;
+    Call pGetUser(User_First_Name, User_Last_Name, User_Email, User_ID);
+    if User_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'User not registered';
+    end if;
+
+    Call pGetUserResponse(File_Name, File_ID);
+    if File_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'File not found';
+    end if;
+
+    if @@error_count = 0
+    then 
+    create temporary table tempSchoolList(
+        Select s.SchoolName, uc.MatchPercentage
+        from SchoolDetail s 
+        Join UserCollege uc on s.SchoolID = uc.SchoolID
+        Join UserResponse ur on uc.ResponseID = ur.ResponseID
+        Where uc.UserID = User_ID and ur.ResponseID = File_ID
+    );
+    select * from tempSchoolList;
+    end if;
+End

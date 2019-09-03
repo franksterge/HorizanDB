@@ -185,18 +185,14 @@ Table UserCollege(
   UserSchoolID int AUTO_INCREMENT primary key not null,
   UserID int not null,
   SchoolID int not null,
+  ResponseID int not null,
   MatchPercentage int not null,
-  EntryDate date not null,
+  EntryDate datetime not null,
   Foreign Key (UserID) REFERENCES UserDetail(UserID),
-  Foreign Key (SchoolID) REFERENCES SchoolDetail(SchoolID)
+  Foreign Key (SchoolID) REFERENCES SchoolDetail(SchoolID),
+  Foreign Key (ResponseID) REFERENCES UserResponse(ResponseID)
 );
-use HorizanDB;
-create function fn_GetCurrentDate()
-returns date
-DETERMINISTIC
-begin 
-  return curdate();
-end;
+
 use HorizanDB;
 /* alter table UserDetail
 add unique (UserEmail); */
@@ -269,17 +265,6 @@ Table UserApplication(
 );
 
 Use HorizanDB;
-Create 
-Table UserServey(
-  UserServeyID int AUTO_INCREMENT primary key not null,
-  UserID int not null,
-  ServeyID int not null,
-  EntryDate date not null,
-  Foreign key (UserID) REFERENCES UserDetail(UserID),
-  Foreign Key (ServeyID) REFERENCES ServeyDetail(ServeyID)
-);
-
-Use HorizanDB;
 drop table UserResponse;
 Create 
 Table UserResponse(
@@ -290,26 +275,14 @@ Table UserResponse(
   Foreign key (UserID) REFERENCES UserDetail(UserID)
 );
 
-use HorizanDB;
+/* use HorizanDB;
 drop table ServeyDetail;
 Create 
 Table ServeyDetail(
   ServeyID int AUTO_INCREMENT primary Key not null,
   ServeyName varChar(100) not null
-);
-/* Use HorizanDB;
- alter table ServeyDetail add column ServeyName varChar(100) not null;
-Use HorizanDB; */
-use HorizanDB;
-Create
-Table ServeyData(
-  ServeyDataID int AUTO_INCREMENT primary Key not null,
-  ServeyID int not null,
-  NLPID int not null,
-  Score float not null,
-  Foreign key (ServeyID) REFERENCES ServeyDetail(ServeyID),
-  Foreign Key (NLPID) REFERENCES NLPData(NLPID)
-);
+); */
+
 /*
 --Create stored procedure to lookup+insert data
 */
