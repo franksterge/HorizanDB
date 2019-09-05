@@ -783,60 +783,6 @@ begin
     end if;
 end;
 
-/*
-    Match a school with a user with given match percentage and current date as entry date
-    Usage: 
-        call pInsUserSchool(UserFirstName, UserLastName, UserEmail, SchoolName, MatchPercentage);
-*/
-
-Use HorizanDB;
-drop procedure pInsUserSchool;
-Create 
-Procedure pInsUserSchool(
-    User_First_Name VarChar(20),
-    User_Last_Name VarChar(20),
-    User_Email VarChar(100),
-    School_Name VarChar(255),
-    File_Name VarChar(200),
-    Match_Percentage int,
-    Entry_Date datetime
-)
-begin 
-    Declare User_ID int;
-    Declare School_ID int;
-    Declare File_ID int;
-    Call pGetUser(User_First_Name, User_Last_Name, User_Email, User_ID);
-    if User_ID is null
-    then 
-        SIGNAL SQLSTATE '45000'
-        Set MESSAGE_TEXT = 'User not found';
-    end if;
-
-    Call pGetSchool(School_Name, School_ID);
-    If School_ID is null 
-    then 
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Invalid School name';
-    End if;
-
-    Call pGetUserResponse(File_Name, File_ID);
-    if File_ID is null
-    then 
-        SIGNAL SQLSTATE '45000'
-        Set MESSAGE_TEXT = 'File not found';
-    end if;
-
-    Start TRANSACTION;
-    Insert Into UserCollege(UserID, SchoolID, ResponseID, MatchPercentage, EntryDate)
-    Values (User_ID, School_ID, File_ID, Match_Percentage, Entry_Date);
-    If @@error_count <> 0
-        Then 
-            Rollback;
-        Else
-            Commit;
-    End if;
-end;
-
 Use HorizanDB;
 Create 
 Procedure pGetUserCollection(
@@ -991,3 +937,64 @@ Begin
     select * from tempSchoolList;
     end if;
 End
+
+
+/* 
+    get school name, location, school type, and the LATEST match percentage for the given user 
+    of the given school
+    usage: 
+        call pGetSchoolSummary(User first name, user last name, user email, school name)
+    Note:
+        this procedure only returns the matching result from the LATEST survey
+ */
+Use HorizanDB;
+drop Procedure pGetSchoolSummary;
+Create
+Procedure pGetSchoolSummary(
+    User_First_Name VarChar(20),
+    User_Last_Name VarChar(20),
+    User_Email VarChar(100),
+    School_Name VarChar(255)
+)
+begin
+    Declare School_ID int;
+    Declare User_ID int;
+    Declare Match_ID int;
+    Call pGetSchool (School_Name, School_ID);
+    if School_ID is null
+    then
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'School not found';
+    end if;
+
+    Call pGetUser(User_First_Name, User_Last_Name, User_Email, User_ID);
+    if User_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'User not registered';
+    end if;
+
+    Call pGetUserSchoolMatch(User_ID, School_ID, Match_ID);
+    if Match_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'Current user was not matched in the past with the  given school';
+    end if;
+
+    if @@error_count = 0
+    then
+        create temporary table tempSummary(
+            Select  s.SchoolName, s.SchoolLocation, s.SchoolType, uc.MatchPercentage, i.ImagePath 
+            from SchoolDetail s
+            join UserCollege uc on s.SchoolID = uc.SchoolID
+            join SchoolImage si on s.SchoolID = si.SchoolID
+            join ImageDetail i on i.ImageID = si.ImageID
+            where s.SchoolID = School_ID 
+            and uc.UserID = User_ID
+            and uc.UserSchoolID = Match_ID
+            and i.ImageType = 'Logo'
+        );
+        Select * from tempSummary;
+        drop table tempSummary;
+    end if;
+end;

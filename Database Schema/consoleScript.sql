@@ -145,7 +145,7 @@ call pInsUserResponse('John', 'Doe', 'johndoe@testemail.com/', 'JohnDoejohndoe@t
 Use HorizanDB;
 call pGetUserMatchPercentage('John', 'Deer', 'johndeer@testemail.com', 'JohnDeerjohndeer@testemail.comsurvey2019-09-0220:32:00.json');
 Use HorizanDB;
-Select * from UserCollege;
+Select * from ImageDetail;
 Select * from UserResponse;
 
 select Date_Format('2019-08-24 21:23:54', '%Y-%m-%d %H:%i:%s');

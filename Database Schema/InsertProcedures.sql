@@ -187,6 +187,40 @@ begin
 End;
 
 Use HorizanDB;
+Create 
+Procedure pGetUserSchoolMatch(
+  In User_ID int,
+  In School_ID int,
+  Out Match_ID int
+)
+begin 
+  Set Match_ID = (
+    Select UserSchoolID from UserSchool
+    where UserID = User_ID
+    and SchoolID = School_ID
+    order by EntryDate Desc
+    limit 1
+  );
+end;
+
+Use HorizanDB;
+Create 
+Procedure pGetPastUserSchoolMatch(
+  In User_ID int,
+  In School_ID int,
+  In Entry_Date datetime,
+  Out Match_ID int
+)
+begin 
+  Set Match_ID = (
+    Select UserSchoolID from UserSchool
+    where UserID = User_ID
+    and SchoolID = School_ID
+    and EntryDate = Entry_Date
+  );
+end;
+
+Use HorizanDB;
 /* drop procedure pInsSchoolMajorRankingSource; */
 Create
 Procedure pInsSchoolMajorRankingSource(
@@ -495,3 +529,57 @@ Begin
     commit;
   end if;
 end;
+
+/*
+    Match a school with a user with given match percentage and current date as entry date
+    Usage: 
+        call pInsUserSchool(UserFirstName, UserLastName, UserEmail, SchoolName, MatchPercentage);
+*/
+Use HorizanDB;
+drop procedure pInsUserSchool;
+Create 
+Procedure pInsUserSchool(
+    User_First_Name VarChar(20),
+    User_Last_Name VarChar(20),
+    User_Email VarChar(100),
+    School_Name VarChar(255),
+    File_Name VarChar(200),
+    Match_Percentage int,
+    Entry_Date datetime
+)
+begin 
+    Declare User_ID int;
+    Declare School_ID int;
+    Declare File_ID int;
+    Call pGetUser(User_First_Name, User_Last_Name, User_Email, User_ID);
+    if User_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'User not found';
+    end if;
+
+    Call pGetSchool(School_Name, School_ID);
+    If School_ID is null 
+    then 
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Invalid School name';
+    End if;
+
+    Call pGetUserResponse(File_Name, File_ID);
+    if File_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'File not found';
+    end if;
+
+    Start TRANSACTION;
+    Insert Into UserCollege(UserID, SchoolID, ResponseID, MatchPercentage, EntryDate)
+    Values (User_ID, School_ID, File_ID, Match_Percentage, Entry_Date);
+    If @@error_count <> 0
+        Then 
+            Rollback;
+        Else
+            Commit;
+    End if;
+end;
+
