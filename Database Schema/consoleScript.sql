@@ -141,11 +141,16 @@ sample procedure call and datetime format for pInsUserResponse
 note:
 - the procedure automatically takeout the space in the filename.
  */
-call pInsUserResponse('John', 'Doe', 'johndoe@testemail.com/', 'JohnDoejohndoe@testemail.comsurvey2019-08-24 21:23:54.json', '2019-08-24 21:23:54');
 Use HorizanDB;
+call pInsUserResponse('John', 'Doe', 'johndoe@testemail.com/', 'JohnDoejohndoe@testemail.comsurvey2019-08-24 21:23:54.json', '2019-08-24:21:23:54');
 call pGetUserMatchPercentage('John', 'Deer', 'johndeer@testemail.com', 'JohnDeerjohndeer@testemail.comsurvey2019-09-0220:32:00.json');
-Use HorizanDB;
-Select * from ImageDetail;
+Select * from SchoolDetail where SchoolID = 1390;
+Select * from UserDetail where UserID = 8;
 Select * from UserResponse;
-
-select Date_Format('2019-08-24 21:23:54', '%Y-%m-%d %H:%i:%s');
+Select * from ImageDetail;
+Use HorizanDB;
+Select * from UserTest;
+call pInsUserTest('John', 'Deer', 'johndeer@testemail.com', 'SAT', '2000', '2019-08-24:21:23:54');
+Select * from UserSchoolCollection;
+Select * from CollectionDetail Where CollectionID = 1;
+select Date_Format('2019-08-24:21:23:54', '%Y-%m-%d:%H:%i:%s');

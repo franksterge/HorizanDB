@@ -209,6 +209,9 @@ Table UserTest(
   Foreign key (TestID) REFERENCES TestDetail(TestID)
 );
 use HorizanDB;
+alter table UserTest
+modify column EntryDate Datetime;
+
 /* alter table UserTest add column EntryDate Date not null default Now(); */
 
 Use HorizanDB;

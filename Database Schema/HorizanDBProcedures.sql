@@ -363,6 +363,7 @@ end;
         call pInsUserTest(serFirstName, UserLastName, UserEmail, TestName, Score, EntryDate);
 */
 Use HorizanDB;
+drop procedure pInsUserTest;
 Create
 Procedure pInsUserTest(
     User_First_Name VarChar(20),
@@ -370,7 +371,7 @@ Procedure pInsUserTest(
     User_Email VarChar(100),
     Test_Name VarChar(50),
     Test_Score int,
-    Entry_Date date
+    Entry_Date datetime
 )
 begin
     Declare User_ID int;
@@ -815,6 +816,7 @@ begin
 end;
 
 Use HorizanDB;
+drop procedure pGetUserCollectionDetail;
 Create 
 Procedure pGetUserCollectionDetail(
     User_First_Name VarChar(20),
@@ -843,7 +845,7 @@ begin
     if @@error_count = 0
     then 
         create temporary table tempCollection(
-            Select s.SchoolName
+            Select distinct s.SchoolName
             from CollectionDetail c
             join UserSchoolCollection usc on c.CollectionID = usc.CollectionID
             join UserDetail u on u.UserID = usc.UserID
@@ -997,4 +999,55 @@ begin
         Select * from tempSummary;
         drop table tempSummary;
     end if;
+end;
+
+/*
+    Usage: call pRmSchoolFromUserCollection(UserFirstName, UserLastName, UserEmail, SchoolName, CollectionName)
+
+*/
+drop procedure pRmSchoolFromUserCollection;
+Use HorizanDB;
+Create 
+Procedure pRmSchoolFromUserCollection(
+    User_First_Name VarChar(20),
+    User_Last_Name VarChar(20),
+    User_Email VarChar(100),
+    School_Name VarChar(255),
+    Collection_Name VarChar(20)
+)
+Begin
+    Declare User_ID int;
+    Declare Collection_ID int;
+    Declare School_ID int;
+
+    Call pGetUser(User_First_Name, User_Last_Name, User_Email, User_ID);
+    if User_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'User not found';
+    end if;
+
+    Call pGetCollection(Collection_Name, Collection_ID);
+    if Collection_ID is null 
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'User not found';
+    end if;
+
+    Call pGetSchool(School_Name, SchooL_ID);
+    if School_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'School not found';
+    end if;
+
+    Start TRANSACTION;
+    Delete from UserSchoolCollection
+    where UserID = User_ID and CollectionID = CollectionID and SchoolID = School_ID;
+    If @@error_count <> 0
+    then 
+        Rollback;
+    else 
+        commit;
+    End if;
 end;

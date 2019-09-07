@@ -187,6 +187,7 @@ begin
 End;
 
 Use HorizanDB;
+drop procedure pGetUserSchoolMatch;
 Create 
 Procedure pGetUserSchoolMatch(
   In User_ID int,
@@ -195,10 +196,25 @@ Procedure pGetUserSchoolMatch(
 )
 begin 
   Set Match_ID = (
-    Select UserSchoolID from UserSchool
+    Select UserSchoolID from UserCollege
     where UserID = User_ID
     and SchoolID = School_ID
     order by EntryDate Desc
+    limit 1
+  );
+end;
+
+Use HorizanDB;
+Create 
+procedure pGetTip(
+  In Tip_Title varChar(50),
+  Out Tip_ID int
+)
+begin 
+  Set Tip_ID = (
+    Select TipID from Tips
+    where TipTitle = Tip_Title
+    order by Tip_ID Desc
     limit 1
   );
 end;
@@ -518,8 +534,8 @@ Begin
       Set MESSAGE_TEXT = 'User not registered';
   end if;
 
-  Set Entry_Date = DATE_FORMAT(Entry_Date, '%Y-%m-%d %H:%i:%s');
-  Set Final_File_Name = replace(File_Name, ' ', '');
+  Set Entry_Date = DATE_FORMAT(Entry_Date, '%Y-%m-%d:%H:%i:%s');
+  Set Final_File_Name = replace(File_Name, ' ', ':');
   Insert into UserResponse(UserID, FileName, EntryDate)
   Values (User_ID, Final_File_Name, Entry_Date);
   if @@error_count <> 0
@@ -583,3 +599,33 @@ begin
     End if;
 end;
 
+
+Use HorizanDB;
+Create 
+procedure pInsTip (
+  In Tip_Title varchar(50),
+  In Tip_Detail varChar(2000),
+  In Image_Name Varchar(50),
+  In Image_Path varChar(2000)
+)
+begin 
+  Declare Image_ID int;
+  Declare Tip_ID int;
+
+  Call pGetTip(Tip_Title, Tip_ID);
+  start TRANSACTION;
+  Insert Into ImageDetail(ImageName, ImageType, ImagePath)
+  values (Image_Name, 'Tips', Image_Path);
+
+  Set Image_ID = LAST_INSERT_ID();
+
+  Insert Into Tips(TipTitle, TipDetail, ImageID)
+  values (Tip_Title, Tip_Detail, Image_ID);
+
+  If @@error_count <> 0
+    then 
+      Rollback;
+    else 
+      commit;
+  end if;
+end;
