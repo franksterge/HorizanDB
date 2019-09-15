@@ -186,6 +186,22 @@ begin
   );
 End;
 
+drop procedure pGetUserSchoolMatch;
+Use HorizanDB;
+Create 
+Procedure pGetLatestUserResponse(
+  In User_ID int,
+  Out Response_ID int
+)
+begin 
+  Set Response_ID = (
+    Select ResponseID from UserResponse
+    where UserID = User_ID
+    order by EntryDate desc
+    limit 1
+  );
+end;
+
 Use HorizanDB;
 drop procedure pGetUserSchoolMatch;
 Create 
@@ -199,7 +215,7 @@ begin
     Select UserSchoolID from UserCollege
     where UserID = User_ID
     and SchoolID = School_ID
-    order by EntryDate Desc
+    order by EntryDate desc
     limit 1
   );
 end;
@@ -489,7 +505,7 @@ Begin
     SET MESSAGE_TEXT = 'Invalid School name';
   End if;
 
-  call pGetImage(Image_Path, Image_ID);
+  call pGetImage(Image_Name, Image_ID);
   if Image_ID is not null
   then 
     SIGNAL  SQLSTATE '45000'

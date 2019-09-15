@@ -47,6 +47,7 @@ Begin
         where c.CollectionName = 'Favorite'and u.UserID = User_ID and i.ImageType = "ThumbNail"
     );
     select * from tempHome;
+    drop table tempHome;
     end if;
 end;
 
@@ -83,6 +84,7 @@ Begin
         where u.UserID = User_ID
     );
     select * from tempServeyList;
+    drop table tempServeyList;
     end if;
 End;
 
@@ -94,6 +96,7 @@ End;
 */
 
 Use HorizanDB;
+drop procedure pGetUserProfile;
 Create 
 Procedure pGetUserProfile(
     In User_First_Name VarChar(20),
@@ -119,6 +122,7 @@ Begin
         Where u.UserID = User_ID
     );
     select * from tempUserProfile;
+    drop table tempUserProfile;
     end if;
 End;
 
@@ -937,6 +941,7 @@ Begin
         Where uc.UserID = User_ID and ur.ResponseID = File_ID
     );
     select * from tempSchoolList;
+    drop table tempSchoolList;
     end if;
 End
 
@@ -961,7 +966,7 @@ Procedure pGetSchoolSummary(
 begin
     Declare School_ID int;
     Declare User_ID int;
-    Declare Match_ID int;
+    Declare Response_ID int;
     Call pGetSchool (School_Name, School_ID);
     if School_ID is null
     then
@@ -976,8 +981,8 @@ begin
         Set MESSAGE_TEXT = 'User not registered';
     end if;
 
-    Call pGetUserSchoolMatch(User_ID, School_ID, Match_ID);
-    if Match_ID is null
+    Call pGetLatestUserResponse(User_ID, Response_ID);
+    if Response_ID is null
     then 
         SIGNAL SQLSTATE '45000'
         Set MESSAGE_TEXT = 'Current user was not matched in the past with the  given school';
@@ -993,7 +998,7 @@ begin
             join ImageDetail i on i.ImageID = si.ImageID
             where s.SchoolID = School_ID 
             and uc.UserID = User_ID
-            and uc.UserSchoolID = Match_ID
+            and uc.ResponseID = Response_ID
             and i.ImageType = 'Logo'
         );
         Select * from tempSummary;

@@ -148,9 +148,65 @@ Select * from SchoolDetail where SchoolID = 1390;
 Select * from UserDetail where UserID = 8;
 Select * from UserResponse;
 Select * from ImageDetail;
-Use HorizanDB;
 Select * from UserTest;
 call pInsUserTest('John', 'Deer', 'johndeer@testemail.com', 'SAT', '2000', '2019-08-24:21:23:54');
 Select * from UserSchoolCollection;
 Select * from CollectionDetail Where CollectionID = 1;
 select Date_Format('2019-08-24:21:23:54', '%Y-%m-%d:%H:%i:%s');
+
+Use HorizanDB;
+select * from ImageDetail;
+call pUpdateLink;
+create procedure pUpdateLink()
+begin
+  declare size int;
+  declare i int;
+  declare link varchar(2000);
+  set i = 1;
+  set size = 780;
+  while i <= size do
+    set link = (
+      select ImagePath from ImageDetail 
+      where ImageID = i
+    );
+
+    set link = replace(link, 'Univerisity', 'University');
+    update ImageDetail set ImagePath = link
+    where ImageID = i;
+
+    set i = i + 1;
+  end WHILE;
+end;
+Use HorizanDB;
+Select  s.SchoolName, s.SchoolLocation, s.SchoolType, uc.MatchPercentage, i.ImagePath 
+from SchoolDetail s
+join UserCollege uc on s.SchoolID = uc.SchoolID
+left join SchoolImage si on s.SchoolID = si.SchoolID
+left join ImageDetail i on i.ImageID = si.ImageID
+where i.ImageType = 'Logo'
+
+
+delete from SchoolImage where SchoolID = 1315;
+Use HorizanDB;
+Select * from UserCollege where UserID=9;
+call pGetSchoolSummary('Nick', 'Cherry', 'niteshfire101@yahoo.com','University of Washington');
+Select * from UserDetail 
+order by EntryDate desc
+limit 1;
+call pInsSchoolImage('Edgewood College', 'Edgewood College Logo', 'Logo', '');
+call pInsSchoolImage('Illinois Institute of Technology', 'Illinois Institute of Technology Logo', 'Logo', '');
+call pInsSchoolImage('Immaculata University', 'Immaculata University Logo', 'Logo', '');
+call pInsSchoolImage('Lesley University', 'Lesley University Logo', 'Logo', '');
+call pInsSchoolImage('Maryville University of St. Louis', 'Maryville University of St. Louis Logo', 'Logo', '');
+call pInsSchoolImage('Seattle Pacific University', 'Seattle Pacific University Logo', 'Logo', '');
+call pInsSchoolImage('Shenandoah University', 'Shenandoah University Logo', 'Logo', '');
+call pInsSchoolImage('St John Fisher College', 'St John Fisher College Logo', 'Logo', '');
+call pInsSchoolImage('Stevens Institute of Technology', 'Stevens Institute of Technology Logo', 'Logo', '');
+call pInsSchoolImage('Suffolk University', 'Suffolk University Logo', 'Logo', '');
+call pInsSchoolImage('SUNY College of Environmental Science and Forestry', 'SUNY College of Environmental Science and Forestry Logo', 'Logo', '');
+call pInsSchoolImage('University of Massachusetts- Dartmouth', 'University of Massachusetts- Dartmouth Logo', 'Logo', '');
+call pInsSchoolImage('University of Rochester', 'University of Rochester Logo', 'Logo', '');
+call pInsSchoolImage('University of St Thomas', 'University of St Thomas Logo', 'Logo', '');
+call pInsSchoolImage('University of Texas- Dallas', 'University of Texas- Dallas Logo', 'Logo', '');
+call pInsSchoolImage('Washington University in St. Louis', 'Washington University in St. Louis Logo', 'Logo', '');
+call pInsSchoolImage('Widener University', 'Widener University Logo', 'Logo', '');
