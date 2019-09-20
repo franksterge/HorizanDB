@@ -187,8 +187,17 @@ where i.ImageType = 'Logo'
 
 
 delete from SchoolImage where SchoolID = 1315;
+Select * from UserDetail where UserEmail = 'andrewwwang10@gmail.com';
 Use HorizanDB;
-Select * from UserCollege where UserID=9;
+Select ResponseID from UserResponse
+where UserID = 19;
+order by EntryDate desc
+limit 1;
+Select * from
+UserCollege where UserID=18;
+
+ SchoolDetail;
+call pGetSchoolSummaryNoUser('University of Washington');
 call pGetSchoolSummary('Nick', 'Cherry', 'niteshfire101@yahoo.com','University of Washington');
 Select * from UserDetail 
 order by EntryDate desc

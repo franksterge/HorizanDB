@@ -564,9 +564,9 @@ begin
     then
         create temporary table tempDetail(
             Select  SchoolID, SchoolName, SchoolLocation, SchoolEnvironment,
-            SchoolSize, StudentFacultyRatio, SchoolType
+            SchoolSize, StudentFacultyRatio, SchoolType, AcceptanceRate
             from SchoolDetail 
-            where s.SchoolID = School_ID
+            where SchoolID = School_ID
         );
         Select * from tempDetail;
         drop table tempDetail;
@@ -999,6 +999,38 @@ begin
             where s.SchoolID = School_ID 
             and uc.UserID = User_ID
             and uc.ResponseID = Response_ID
+            and i.ImageType = 'Logo'
+        );
+        Select * from tempSummary;
+        drop table tempSummary;
+    end if;
+end;
+
+
+
+drop Procedure pGetSchoolSummary;
+Use HorizanDB;
+Create
+Procedure pGetSchoolSummaryNoUser(
+    School_Name VarChar(255)
+)
+begin
+    Declare School_ID int;
+    Call pGetSchool (School_Name, School_ID);
+    if School_ID is null
+    then
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'School not found';
+    end if;
+
+    if @@error_count = 0
+    then
+        create temporary table tempSummary(
+            Select  s.SchoolName, s.SchoolLocation, s.SchoolType, i.ImagePath 
+            from SchoolDetail s
+            join SchoolImage si on s.SchoolID = si.SchoolID
+            join ImageDetail i on i.ImageID = si.ImageID
+            where s.SchoolID = School_ID 
             and i.ImageType = 'Logo'
         );
         Select * from tempSummary;
