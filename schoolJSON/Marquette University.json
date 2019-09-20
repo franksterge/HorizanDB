@@ -6,6 +6,7 @@
    "SchoolSize": 11420,
    "StudentFacultyRatio": 14,
    "SchoolType": "Private",
+   "AcceptanceRate": "89%",
    "NLP": {
       "Reputation": 4.10834,
       "Facilities": 3.87793,
@@ -52,10 +53,11 @@
       "Engineering": 133
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Marquette_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Marquette_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Marquette_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Marquette_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Marquette_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Marquette_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Marquette_University1.png"
       ]
    }
 }

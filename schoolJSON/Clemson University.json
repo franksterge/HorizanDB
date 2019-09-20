@@ -6,6 +6,7 @@
    "SchoolSize": 3090,
    "StudentFacultyRatio": 14,
    "SchoolType": "Public",
+   "AcceptanceRate": "47%",
    "NLP": {
       "Reputation": 3.85516,
       "Facilities": 3.56908,
@@ -53,10 +54,11 @@
       "Engineering": 45
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Clemson_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Clemson_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Clemson_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Clemson_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Clemson_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Clemson_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Clemson_University1.png"
       ]
    }
 }

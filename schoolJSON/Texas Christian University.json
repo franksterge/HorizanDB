@@ -6,6 +6,7 @@
    "SchoolSize": 53065,
    "StudentFacultyRatio": 21,
    "SchoolType": "Private",
+   "AcceptanceRate": "41%",
    "NLP": {
       "Reputation": 4.17476,
       "Facilities": 3.95905,
@@ -52,10 +53,11 @@
       "Engineering": 168
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Texas_Christian_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Texas_Christian_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Texas_Christian_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Texas_Christian_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Texas_Christian_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Texas_Christian_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Texas_Christian_University1.png"
       ]
    }
 }

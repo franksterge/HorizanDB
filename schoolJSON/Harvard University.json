@@ -6,6 +6,7 @@
    "SchoolSize": 15573,
    "StudentFacultyRatio": 22,
    "SchoolType": "Private",
+   "AcceptanceRate": "5%",
    "NLP": {
       "Reputation": 4.02458,
       "Facilities": 3.76587,
@@ -53,10 +54,11 @@
       "Engineering": 10
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Harvard_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Harvard_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Harvard_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Harvard_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Harvard_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Harvard_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Harvard_University1.png"
       ]
    }
 }

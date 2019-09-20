@@ -6,6 +6,7 @@
    "SchoolSize": 35162,
    "StudentFacultyRatio": 25,
    "SchoolType": "Public",
+   "AcceptanceRate": "59%",
    "NLP": {
       "Reputation": 3.85916,
       "Facilities": 3.57713,
@@ -51,10 +52,11 @@
       "Engineering": 176
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/California_State_University-_Fullertonlogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/California_State_University-_Fullertonlogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/California_State_University-_Fullerton2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/California_State_University-_Fullerton3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/California_State_University-_Fullerton2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/California_State_University-_Fullerton3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/California_State_University-_Fullerton1.png"
       ]
    }
 }

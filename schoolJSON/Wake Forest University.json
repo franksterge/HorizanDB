@@ -6,6 +6,7 @@
    "SchoolSize": 5102,
    "StudentFacultyRatio": 11,
    "SchoolType": "Private",
+   "AcceptanceRate": "28%",
    "NLP": {
       "Reputation": 4.19784,
       "Facilities": 3.98262,
@@ -46,7 +47,11 @@
    },
    "Major": {},
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Wake_Forest_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Wake_Forest_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Wake_Forest_University1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Wake_Forest_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Wake_Forest_University3.jpg"
+      ]
    }
 }

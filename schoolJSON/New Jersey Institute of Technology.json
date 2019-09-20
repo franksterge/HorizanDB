@@ -6,6 +6,7 @@
    "SchoolSize": 16852,
    "StudentFacultyRatio": 17,
    "SchoolType": "Public",
+   "AcceptanceRate": "61%",
    "NLP": {
       "Reputation": 4.12831,
       "Facilities": 3.8909,
@@ -53,7 +54,9 @@
       "Engineering": 37
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/New_Jersey_Institute_of_Technologylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/New_Jersey_Institute_of_Technologylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/New_Jersey_Institute_of_Technology1.png"
+      ]
    }
 }

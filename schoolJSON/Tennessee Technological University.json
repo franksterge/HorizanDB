@@ -6,6 +6,7 @@
    "SchoolSize": 29580,
    "StudentFacultyRatio": 14,
    "SchoolType": "Public",
+   "AcceptanceRate": "66%",
    "NLP": {
       "Reputation": 4.0704,
       "Facilities": 3.83576,
@@ -51,10 +52,10 @@
       "Engineering": 160
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Tennessee_Technological_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Tennessee_Technological_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Tennessee_Technological_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Tennessee_Technological_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Tennessee_Technological_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Tennessee_Technological_University3.jpg"
       ]
    }
 }

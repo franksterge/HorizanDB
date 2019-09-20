@@ -6,6 +6,7 @@
    "SchoolSize": 13134,
    "StudentFacultyRatio": 19,
    "SchoolType": "Public",
+   "AcceptanceRate": "66%",
    "NLP": {
       "Reputation": 4.1374,
       "Facilities": 3.9329,
@@ -51,11 +52,12 @@
       "Engineering": 92
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Arkansaslogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Arkansaslogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Arkansas2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Arkansas3.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Arkansas4.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Arkansas2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Arkansas3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Arkansas4.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Arkansas1.png"
       ]
    }
 }

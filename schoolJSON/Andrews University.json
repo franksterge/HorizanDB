@@ -6,6 +6,7 @@
    "SchoolSize": 1704,
    "StudentFacultyRatio": 10,
    "SchoolType": "Private",
+   "AcceptanceRate": "58%",
    "NLP": {
       "Reputation": 3.76723,
       "Facilities": 3.45992,
@@ -50,7 +51,9 @@
       "Engineering": 188
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Andrews_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Andrews_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Andrews_University1.png"
+      ]
    }
 }

@@ -6,6 +6,7 @@
    "SchoolSize": 13825,
    "StudentFacultyRatio": 14,
    "SchoolType": "Private",
+   "AcceptanceRate": "27%",
    "NLP": {
       "Reputation": 4.16166,
       "Facilities": 3.93521,
@@ -53,10 +54,11 @@
       "Engineering": 44
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Northeastern_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Northeastern_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Northeastern_University2.JPG",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Northeastern_University3.JPG"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Northeastern_University2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Northeastern_University3.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Northeastern_University1.png"
       ]
    }
 }

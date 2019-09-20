@@ -6,6 +6,7 @@
    "SchoolSize": 5746,
    "StudentFacultyRatio": 6,
    "SchoolType": "Private",
+   "AcceptanceRate": "7%",
    "NLP": {
       "Reputation": 4.14923,
       "Facilities": 3.92278,
@@ -46,7 +47,11 @@
    },
    "Major": {},
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Yale_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Yale_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Yale_University1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Yale_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Yale_University3.jpg"
+      ]
    }
 }

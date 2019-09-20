@@ -6,6 +6,7 @@
    "SchoolSize": 22501,
    "StudentFacultyRatio": 20,
    "SchoolType": "Public",
+   "AcceptanceRate": "72%",
    "NLP": {
       "Reputation": 3.97342,
       "Facilities": 3.73443,
@@ -46,7 +47,9 @@
    },
    "Major": {},
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/West_Virginia_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/West_Virginia_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/West_Virginia_University1.png"
+      ]
    }
 }

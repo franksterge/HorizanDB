@@ -6,6 +6,7 @@
    "SchoolSize": 7871,
    "StudentFacultyRatio": 8,
    "SchoolType": "Public",
+   "AcceptanceRate": "81%",
    "NLP": {
       "Reputation": 4.16363,
       "Facilities": 3.94019,
@@ -51,7 +52,9 @@
       "Engineering": 72
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Alabama-_Huntsvillelogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Alabama-_Huntsvillelogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Alabama-_Huntsville1.png"
+      ]
    }
 }

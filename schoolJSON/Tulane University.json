@@ -6,6 +6,7 @@
    "SchoolSize": 33305,
    "StudentFacultyRatio": 23,
    "SchoolType": "Private",
+   "AcceptanceRate": "21%",
    "NLP": {
       "Reputation": 4.17508,
       "Facilities": 3.9589,
@@ -50,10 +51,11 @@
       "Engineering": 106
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Tulane_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Tulane_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Tulane_University2.jpeg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Tulane_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Tulane_University2.jpeg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Tulane_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Tulane_University1.png"
       ]
    }
 }

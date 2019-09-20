@@ -6,6 +6,7 @@
    "SchoolSize": 23265,
    "StudentFacultyRatio": 19,
    "SchoolType": "Private",
+   "AcceptanceRate": "71%",
    "NLP": {},
    "ApplicationName": [
       "Common App"
@@ -41,8 +42,7 @@
       "Engineering": 188
    },
    "Image": {
-      "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Edgewood_College2.jpg"
-      ]
+      "Logo": "",
+      "General": []
    }
 }

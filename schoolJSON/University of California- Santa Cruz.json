@@ -6,6 +6,7 @@
    "SchoolSize": 7375,
    "StudentFacultyRatio": 20,
    "SchoolType": "Public",
+   "AcceptanceRate": "51%",
    "NLP": {
       "Reputation": 3.79459,
       "Facilities": 3.52406,
@@ -51,9 +52,10 @@
       "Engineering": 39
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_California-_Santa_Cruzlogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_California-_Santa_Cruzlogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_California-_Santa_Cruz2.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_California-_Santa_Cruz2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_California-_Santa_Cruz1.png"
       ]
    }
 }

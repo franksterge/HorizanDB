@@ -6,6 +6,7 @@
    "SchoolSize": 10885,
    "StudentFacultyRatio": 17,
    "SchoolType": "Private",
+   "AcceptanceRate": "65%",
    "NLP": {},
    "ApplicationName": [
       "Common App"
@@ -41,6 +42,9 @@
       "Engineering": 188
    },
    "Image": {
-      "General": []
+      "Logo": "",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/St_John_Fisher_College1.png"
+      ]
    }
 }

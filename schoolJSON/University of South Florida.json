@@ -6,6 +6,7 @@
    "SchoolSize": 6845,
    "StudentFacultyRatio": 13,
    "SchoolType": "Public",
+   "AcceptanceRate": "44%",
    "NLP": {
       "Reputation": 4.17764,
       "Facilities": 3.97308,
@@ -53,7 +54,10 @@
       "Engineering": 104
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_South_Floridalogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_South_Floridalogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_South_Florida1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_South_Florida2.jpg"
+      ]
    }
 }

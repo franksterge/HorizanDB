@@ -6,6 +6,7 @@
    "SchoolSize": 2987,
    "StudentFacultyRatio": 14,
    "SchoolType": "Public",
+   "AcceptanceRate": "74%",
    "NLP": {
       "Reputation": 4.00518,
       "Facilities": 3.74191,
@@ -53,7 +54,7 @@
       "Engineering": 94
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Louisiana_State_University-_Baton_Rougelogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Louisiana_State_University-_Baton_Rougelogo.png",
       "General": []
    }
 }

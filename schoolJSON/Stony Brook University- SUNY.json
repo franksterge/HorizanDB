@@ -6,6 +6,7 @@
    "SchoolSize": 7064,
    "StudentFacultyRatio": 12,
    "SchoolType": "Public",
+   "AcceptanceRate": "42%",
    "NLP": {},
    "ApplicationName": [
       "Common App",
@@ -43,10 +44,10 @@
       "Engineering": 134
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Stony_Brook_University-_SUNYlogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Stony_Brook_University-_SUNYlogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Stony_Brook_University-_SUNY2.JPG",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Stony_Brook_University-_SUNY3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Stony_Brook_University-_SUNY2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Stony_Brook_University-_SUNY3.jpg"
       ]
    }
 }

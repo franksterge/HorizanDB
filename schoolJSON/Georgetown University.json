@@ -6,6 +6,7 @@
    "SchoolSize": 11999,
    "StudentFacultyRatio": 13,
    "SchoolType": "Private",
+   "AcceptanceRate": "16%",
    "NLP": {
       "Reputation": 3.97859,
       "Facilities": 3.7153,
@@ -50,10 +51,11 @@
       "Engineering": 188
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Georgetown_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Georgetown_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Georgetown_University2.JPG",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Georgetown_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Georgetown_University2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Georgetown_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Georgetown_University1.png"
       ]
    }
 }

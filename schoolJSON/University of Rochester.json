@@ -6,6 +6,7 @@
    "SchoolSize": 11716,
    "StudentFacultyRatio": 6,
    "SchoolType": "Public",
+   "AcceptanceRate": "34%",
    "NLP": {
       "Reputation": 4.03035,
       "Facilities": 3.76554,
@@ -53,6 +54,11 @@
       "Engineering": 86
    },
    "Image": {
-      "General": []
+      "Logo": "",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Rochester1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Rochester2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Rochester3.jpg"
+      ]
    }
 }

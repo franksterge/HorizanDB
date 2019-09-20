@@ -6,6 +6,7 @@
    "SchoolSize": 26362,
    "StudentFacultyRatio": 17,
    "SchoolType": "Public",
+   "AcceptanceRate": "16%",
    "NLP": {
       "Reputation": 4.10672,
       "Facilities": 3.86959,
@@ -52,7 +53,11 @@
       "Engineering": 28
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Southern_Californialogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Southern_Californialogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Southern_California1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Southern_California2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Southern_California3.jpg"
+      ]
    }
 }

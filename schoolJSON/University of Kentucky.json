@@ -6,6 +6,7 @@
    "SchoolSize": 19448,
    "StudentFacultyRatio": 19,
    "SchoolType": "Public",
+   "AcceptanceRate": "96%",
    "NLP": {
       "Reputation": 4.11822,
       "Facilities": 3.90252,
@@ -54,10 +55,11 @@
       "Engineering": 74
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Kentuckylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Kentuckylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Kentucky2.jpeg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Kentucky3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Kentucky2.jpeg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Kentucky3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Kentucky1.png"
       ]
    }
 }

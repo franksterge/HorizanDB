@@ -6,6 +6,7 @@
    "SchoolSize": 6366,
    "StudentFacultyRatio": 13,
    "SchoolType": "Private",
+   "AcceptanceRate": "43%",
    "NLP": {
       "Reputation": 4.28002,
       "Facilities": 4.08171,
@@ -53,9 +54,10 @@
       "Engineering": 34
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Rennsselaer_Polytechnic_Institutelogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Rennsselaer_Polytechnic_Institutelogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Rensselaer_Polytechnic_Institute2.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Rensselaer_Polytechnic_Institute2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Rensselaer_Polytechnic_Institute1.png"
       ]
    }
 }

@@ -6,6 +6,7 @@
    "SchoolSize": 19402,
    "StudentFacultyRatio": 16,
    "SchoolType": "Public",
+   "AcceptanceRate": "36%",
    "NLP": {
       "Reputation": 3.83926,
       "Facilities": 3.54844,
@@ -53,7 +54,7 @@
       "Engineering": 188
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/College_of_William_&_Marylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/College_of_William_&_Marylogo.png",
       "General": []
    }
 }

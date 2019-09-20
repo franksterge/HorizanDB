@@ -6,6 +6,7 @@
    "SchoolSize": 23663,
    "StudentFacultyRatio": 18,
    "SchoolType": "Public",
+   "AcceptanceRate": "77%",
    "NLP": {
       "Reputation": 4.20822,
       "Facilities": 3.99467,
@@ -53,7 +54,11 @@
       "Engineering": 129
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Virginia_Commonwealth_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Virginia_Commonwealth_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Virginia_Commonwealth_University1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Virginia_Commonwealth_University2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Virginia_Commonwealth_University3.jpg"
+      ]
    }
 }

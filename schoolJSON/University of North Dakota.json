@@ -6,6 +6,7 @@
    "SchoolSize": 18862,
    "StudentFacultyRatio": 13,
    "SchoolType": "Public",
+   "AcceptanceRate": "83%",
    "NLP": {
       "Reputation": 4.07634,
       "Facilities": 3.82766,
@@ -51,10 +52,11 @@
       "Engineering": 68
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_North_Dakotalogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_North_Dakotalogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_North_Dakota2.jpeg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_North_Dakota3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_North_Dakota2.jpeg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_North_Dakota3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_North_Dakota1.png"
       ]
    }
 }

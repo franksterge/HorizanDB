@@ -6,6 +6,7 @@
    "SchoolSize": 5541,
    "StudentFacultyRatio": 9,
    "SchoolType": "Public",
+   "AcceptanceRate": "92%",
    "NLP": {
       "Reputation": 4.02628,
       "Facilities": 3.78236,
@@ -53,10 +54,11 @@
       "Engineering": 56
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Alabama_Birminghamlogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Alabama_Birminghamlogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Alabama-_Birmingham2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Alabama-_Birmingham3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Alabama-_Birmingham2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Alabama-_Birmingham3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Alabama-_Birmingham1.png"
       ]
    }
 }

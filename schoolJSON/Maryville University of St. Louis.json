@@ -6,6 +6,7 @@
    "SchoolSize": 8335,
    "StudentFacultyRatio": 14,
    "SchoolType": "Private",
+   "AcceptanceRate": "92%",
    "NLP": {},
    "ApplicationName": [
       "Common App"
@@ -41,6 +42,7 @@
       "Engineering": 188
    },
    "Image": {
+      "Logo": "",
       "General": []
    }
 }

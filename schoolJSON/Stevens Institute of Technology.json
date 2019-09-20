@@ -6,6 +6,7 @@
    "SchoolSize": 16761,
    "StudentFacultyRatio": 17,
    "SchoolType": "Private",
+   "AcceptanceRate": "44%",
    "NLP": {
       "Reputation": 4.17985,
       "Facilities": 3.96457,
@@ -52,8 +53,10 @@
       "Engineering": 66
    },
    "Image": {
+      "Logo": "",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Stevens_Institute_of_Technology2.JPG"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Stevens_Institute_of_Technology2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Stevens_Institute_of_Technology1.png"
       ]
    }
 }

@@ -6,6 +6,7 @@
    "SchoolSize": 14680,
    "StudentFacultyRatio": 18,
    "SchoolType": "Public",
+   "AcceptanceRate": "68%",
    "NLP": {
       "Reputation": 3.63332,
       "Facilities": 3.32042,
@@ -53,10 +54,11 @@
       "Engineering": 188
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Bowling_Green_State_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Bowling_Green_State_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Bowling_Green_State_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Bowling_Green_State_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Bowling_Green_State_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Bowling_Green_State_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Bowling_Green_State_University1.png"
       ]
    }
 }

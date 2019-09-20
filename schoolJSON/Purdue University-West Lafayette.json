@@ -6,6 +6,7 @@
    "SchoolSize": 32132,
    "StudentFacultyRatio": 13,
    "SchoolType": "Public",
+   "AcceptanceRate": "57%",
    "NLP": {},
    "ApplicationName": [
       "Common App",
@@ -43,7 +44,11 @@
       "Engineering": 9
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Purdue_University-_West_Lafayettelogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Purdue_University-_West_Lafayettelogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Purdue_University-West_Lafayette1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Purdue_University-West_Lafayette2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Purdue_University-West_Lafayette3.jpg"
+      ]
    }
 }

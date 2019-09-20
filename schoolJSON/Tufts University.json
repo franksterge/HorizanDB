@@ -6,6 +6,7 @@
    "SchoolSize": 7125,
    "StudentFacultyRatio": 10,
    "SchoolType": "Private",
+   "AcceptanceRate": "15%",
    "NLP": {
       "Reputation": 4.1363,
       "Facilities": 3.91241,
@@ -52,10 +53,11 @@
       "Engineering": 59
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Tufts_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Tufts_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Tufts_University2.JPG",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Tufts_University3.JPG"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Tufts_University2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Tufts_University3.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Tufts_University1.png"
       ]
    }
 }

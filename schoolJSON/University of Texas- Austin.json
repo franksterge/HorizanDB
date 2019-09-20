@@ -6,6 +6,7 @@
    "SchoolSize": 11815,
    "StudentFacultyRatio": 17,
    "SchoolType": "Public",
+   "AcceptanceRate": "36%",
    "NLP": {
       "Reputation": 4.12171,
       "Facilities": 3.88523,
@@ -53,7 +54,10 @@
       "Engineering": 7
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Texas-_Austinlogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Texas-_Austinlogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Texas-_Austin1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Texas-_Austin2.JPG"
+      ]
    }
 }

@@ -6,6 +6,7 @@
    "SchoolSize": 4435,
    "StudentFacultyRatio": 13,
    "SchoolType": "Private",
+   "AcceptanceRate": "48%",
    "NLP": {
       "Reputation": 4.07822,
       "Facilities": 3.83683,
@@ -45,7 +46,11 @@
    },
    "Major": {},
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Worcester_Polytechnic_Institutelogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Worcester_Polytechnic_Institutelogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Worcester_Polytechnic_Institute1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Worcester_Polytechnic_Institute2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Worcester_Polytechnic_Institute3.jpg"
+      ]
    }
 }

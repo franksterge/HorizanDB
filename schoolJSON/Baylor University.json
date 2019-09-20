@@ -6,6 +6,7 @@
    "SchoolSize": 14316,
    "StudentFacultyRatio": 14,
    "SchoolType": "Private",
+   "AcceptanceRate": "39%",
    "NLP": {
       "Reputation": 3.67374,
       "Facilities": 3.36001,
@@ -52,10 +53,11 @@
       "Engineering": 151
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Baylor_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Baylor_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Baylor_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Baylor_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Baylor_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Baylor_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Baylor_University1.png"
       ]
    }
 }

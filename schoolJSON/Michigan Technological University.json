@@ -6,6 +6,7 @@
    "SchoolSize": 38996,
    "StudentFacultyRatio": 16,
    "SchoolType": "Public",
+   "AcceptanceRate": "74%",
    "NLP": {
       "Reputation": 4.07719,
       "Facilities": 3.83985,
@@ -51,10 +52,11 @@
       "Engineering": 54
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Michigan_Technological_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Michigan_Technological_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Michigan_Technological_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Michigan_Technological_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Michigan_Technological_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Michigan_Technological_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Michigan_Technological_University1.png"
       ]
    }
 }

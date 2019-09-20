@@ -6,6 +6,7 @@
    "SchoolSize": 3161,
    "StudentFacultyRatio": 13,
    "SchoolType": "Private",
+   "AcceptanceRate": "10%",
    "NLP": {
       "Reputation": 3.85456,
       "Facilities": 3.56406,
@@ -53,10 +54,11 @@
       "Engineering": 53
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Dartmouth_Collegelogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Dartmouth_Collegelogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Dartmouth_College2.JPG",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Dartmouth_College3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Dartmouth_College2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Dartmouth_College3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Dartmouth_College1.png"
       ]
    }
 }

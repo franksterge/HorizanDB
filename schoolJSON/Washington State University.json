@@ -6,6 +6,7 @@
    "SchoolSize": 25277,
    "StudentFacultyRatio": 15,
    "SchoolType": "Public",
+   "AcceptanceRate": "73%",
    "NLP": {
       "Reputation": 4.0132,
       "Facilities": 3.77029,
@@ -44,7 +45,11 @@
    },
    "Major": {},
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Washington_State_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Washington_State_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Washington_State_University1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Washington_State_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Washington_State_University3.jpg"
+      ]
    }
 }

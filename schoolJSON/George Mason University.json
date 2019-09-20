@@ -6,6 +6,7 @@
    "SchoolSize": 2215,
    "StudentFacultyRatio": 11,
    "SchoolType": "Public",
+   "AcceptanceRate": "81%",
    "NLP": {
       "Reputation": 4.01827,
       "Facilities": 3.75727,
@@ -53,7 +54,9 @@
       "Engineering": 137
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/George_Mason_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/George_Mason_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/George_Mason_University1.png"
+      ]
    }
 }

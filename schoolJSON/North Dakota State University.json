@@ -6,6 +6,7 @@
    "SchoolSize": 11984,
    "StudentFacultyRatio": 20,
    "SchoolType": "Public",
+   "AcceptanceRate": "92%",
    "NLP": {
       "Safety": 3.84377,
       "Internet": 3.53936,
@@ -51,9 +52,9 @@
       "Engineering": 132
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/North_Dakota_State_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/North_Dakota_State_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/North_Dakota_State_University2.JPG"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/North_Dakota_State_University2.JPG"
       ]
    }
 }

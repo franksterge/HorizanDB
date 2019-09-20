@@ -6,6 +6,7 @@
    "SchoolSize": 8576,
    "StudentFacultyRatio": 10,
    "SchoolType": "Public",
+   "AcceptanceRate": "9%",
    "NLP": {
       "Reputation": 4.09378,
       "Facilities": 3.86569,
@@ -53,7 +54,11 @@
       "Engineering": 25
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Pennsylvanialogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Pennsylvanialogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Pennsylvania1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Pennsylvania2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Pennsylvania3.jpg"
+      ]
    }
 }

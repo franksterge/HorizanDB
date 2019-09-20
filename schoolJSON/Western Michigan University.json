@@ -6,6 +6,7 @@
    "SchoolSize": 17936,
    "StudentFacultyRatio": 17,
    "SchoolType": "Public",
+   "AcceptanceRate": "82%",
    "NLP": {
       "Reputation": 4.06159,
       "Facilities": 3.81734,
@@ -46,7 +47,10 @@
    },
    "Major": {},
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Western_Michigan_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Western_Michigan_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Western_Michigan_University1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Western_Michigan_University2.jpg"
+      ]
    }
 }

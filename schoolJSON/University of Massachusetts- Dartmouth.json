@@ -6,6 +6,7 @@
    "SchoolSize": 11234,
    "StudentFacultyRatio": 18,
    "SchoolType": "Public",
+   "AcceptanceRate": "84%",
    "NLP": {
       "Reputation": 4.04856,
       "Facilities": 3.79261,
@@ -53,9 +54,11 @@
       "Engineering": 150
    },
    "Image": {
+      "Logo": "",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Massachusetts-_Dartmouth2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Massachusetts-_Dartmouth3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Massachusetts-_Dartmouth2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Massachusetts-_Dartmouth3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Massachusetts-_Dartmouth1.png"
       ]
    }
 }

@@ -6,6 +6,7 @@
    "SchoolSize": 27193,
    "StudentFacultyRatio": 14,
    "SchoolType": "Public",
+   "AcceptanceRate": "70%",
    "NLP": {
       "Reputation": 4.1383,
       "Facilities": 3.90315,
@@ -48,7 +49,9 @@
       "Business": 57
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Virginia_Techlogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Virginia_Techlogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Virginia_Tech1.png"
+      ]
    }
 }

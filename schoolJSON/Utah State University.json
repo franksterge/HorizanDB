@@ -6,6 +6,7 @@
    "SchoolSize": 24618,
    "StudentFacultyRatio": 20,
    "SchoolType": "Public",
+   "AcceptanceRate": "89%",
    "NLP": {
       "Reputation": 4.17988,
       "Facilities": 3.96429,
@@ -51,7 +52,10 @@
       "Engineering": 80
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Utah_State_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Utah_State_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Utah_State_University1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Utah_State_University2.jpg"
+      ]
    }
 }

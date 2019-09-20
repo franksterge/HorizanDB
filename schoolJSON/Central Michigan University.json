@@ -6,6 +6,7 @@
    "SchoolSize": 3315,
    "StudentFacultyRatio": 7,
    "SchoolType": "Public",
+   "AcceptanceRate": "68%",
    "NLP": {
       "Reputation": 3.92762,
       "Facilities": 3.6756,
@@ -51,10 +52,11 @@
       "Engineering": 178
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Central_Michigan_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Central_Michigan_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Central_Michigan_University2.JPG",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Central_Michigan_University3.JPG"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Central_Michigan_University2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Central_Michigan_University3.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Central_Michigan_University1.png"
       ]
    }
 }

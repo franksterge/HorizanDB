@@ -6,6 +6,7 @@
    "SchoolSize": 3123,
    "StudentFacultyRatio": 10,
    "SchoolType": "Private",
+   "AcceptanceRate": "83%",
    "NLP": {
       "Reputation": 4.23127,
       "Facilities": 4.03322,
@@ -50,9 +51,11 @@
       "Engineering": 188
    },
    "Image": {
+      "Logo": "",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Suffolk_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Suffolk_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Suffolk_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Suffolk_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Suffolk_University1.png"
       ]
    }
 }

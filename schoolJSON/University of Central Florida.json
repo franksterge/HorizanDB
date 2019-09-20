@@ -6,6 +6,7 @@
    "SchoolSize": 20073,
    "StudentFacultyRatio": 22,
    "SchoolType": "Public",
+   "AcceptanceRate": "50%",
    "NLP": {
       "Reputation": 4.19226,
       "Facilities": 3.98167,
@@ -53,10 +54,11 @@
       "Engineering": 78
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Central_Floridalogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Central_Floridalogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Central_Florida2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Central_Florida3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Central_Florida2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Central_Florida3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Central_Florida1.png"
       ]
    }
 }

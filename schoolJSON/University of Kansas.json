@@ -6,6 +6,7 @@
    "SchoolSize": 9885,
    "StudentFacultyRatio": 14,
    "SchoolType": "Public",
+   "AcceptanceRate": "93%",
    "NLP": {
       "Reputation": 4.10182,
       "Facilities": 3.85972,
@@ -53,9 +54,10 @@
       "Engineering": 113
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Kansaslogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Kansaslogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Kansas2.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Kansas2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Kansas1.png"
       ]
    }
 }

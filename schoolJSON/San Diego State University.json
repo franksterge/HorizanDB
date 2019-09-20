@@ -6,6 +6,7 @@
    "SchoolSize": 13508,
    "StudentFacultyRatio": 19,
    "SchoolType": "Public",
+   "AcceptanceRate": "35%",
    "NLP": {
       "Reputation": 4.13322,
       "Facilities": 3.90214,
@@ -51,10 +52,11 @@
       "Engineering": 146
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/San_Diego_State_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/San_Diego_State_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/San_Diego_State_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/San_Diego_State_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/San_Diego_State_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/San_Diego_State_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/San_Diego_State_University1.png"
       ]
    }
 }

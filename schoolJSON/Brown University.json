@@ -6,6 +6,7 @@
    "SchoolSize": 6988,
    "StudentFacultyRatio": 7,
    "SchoolType": "Private",
+   "AcceptanceRate": "9%",
    "NLP": {
       "Reputation": 3.83294,
       "Facilities": 3.55231,
@@ -53,10 +54,11 @@
       "Engineering": 48
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Brown_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Brown_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Brown_University2.JPG",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Brown_University3.JPG"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Brown_University2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Brown_University3.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Brown_University1.png"
       ]
    }
 }

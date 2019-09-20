@@ -6,6 +6,7 @@
    "SchoolSize": 961,
    "StudentFacultyRatio": 3,
    "SchoolType": "Private",
+   "AcceptanceRate": "8%",
    "NLP": {
       "Reputation": 3.71649,
       "Facilities": 3.41032,
@@ -53,10 +54,11 @@
       "Engineering": 21
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/California_Institute_of_Technologylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/California_Institute_of_Technologylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/California_Institute_of_Technology2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/California_Institute_of_Technology3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/California_Institute_of_Technology2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/California_Institute_of_Technology3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/California_Institute_of_Technology1.png"
       ]
    }
 }

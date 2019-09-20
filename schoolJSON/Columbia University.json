@@ -6,6 +6,7 @@
    "SchoolSize": 25523,
    "StudentFacultyRatio": 16,
    "SchoolType": "Private",
+   "AcceptanceRate": "6%",
    "NLP": {
       "Reputation": 3.90693,
       "Facilities": 3.62825,
@@ -53,10 +54,11 @@
       "Engineering": 20
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Columbia_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Columbia_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Columbia_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Columbia_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Columbia_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Columbia_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Columbia_University1.png"
       ]
    }
 }

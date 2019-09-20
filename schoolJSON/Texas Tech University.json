@@ -6,6 +6,7 @@
    "SchoolSize": 9011,
    "StudentFacultyRatio": 13,
    "SchoolType": "Public",
+   "AcceptanceRate": "69%",
    "NLP": {
       "Reputation": 4.06947,
       "Facilities": 3.84116,
@@ -51,9 +52,10 @@
       "Engineering": 109
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Texas_Tech_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Texas_Tech_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Texas_Tech_University2.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Texas_Tech_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Texas_Tech_University1.png"
       ]
    }
 }

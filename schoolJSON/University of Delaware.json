@@ -6,6 +6,7 @@
    "SchoolSize": 26559,
    "StudentFacultyRatio": 16,
    "SchoolType": "Public",
+   "AcceptanceRate": "60%",
    "NLP": {
       "Reputation": 4.15178,
       "Facilities": 3.93782,
@@ -54,10 +55,11 @@
       "Engineering": 67
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Delawarelogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Delawarelogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Delaware2.JPG",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Delaware3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Delaware2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Delaware3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Delaware1.png"
       ]
    }
 }

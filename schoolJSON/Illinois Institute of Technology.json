@@ -6,6 +6,7 @@
    "SchoolSize": 6354,
    "StudentFacultyRatio": 8,
    "SchoolType": "Private",
+   "AcceptanceRate": "54%",
    "NLP": {
       "Reputation": 4.07904,
       "Facilities": 3.84266,
@@ -52,6 +53,9 @@
       "Engineering": 121
    },
    "Image": {
-      "General": []
+      "Logo": "",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Illinois_Institute_of_Technology1.png"
+      ]
    }
 }

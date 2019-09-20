@@ -6,6 +6,7 @@
    "SchoolSize": 24503,
    "StudentFacultyRatio": 16,
    "SchoolType": "Public",
+   "AcceptanceRate": "76%",
    "NLP": {
       "Reputation": 4.01376,
       "Facilities": 3.76109,
@@ -51,10 +52,11 @@
       "Engineering": 125
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Louisvillelogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Louisvillelogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Louisville2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Louisville3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Louisville2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Louisville3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Louisville1.png"
       ]
    }
 }

@@ -6,6 +6,7 @@
    "SchoolSize": 30272,
    "StudentFacultyRatio": 28,
    "SchoolType": "Private",
+   "AcceptanceRate": "83%",
    "NLP": {},
    "ApplicationName": [],
    "Tuition": {
@@ -39,6 +40,9 @@
       "Engineering": 188
    },
    "Image": {
-      "General": []
+      "Logo": "",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Shenandoah_University1.png"
+      ]
    }
 }

@@ -6,6 +6,7 @@
    "SchoolSize": 4243,
    "StudentFacultyRatio": 15,
    "SchoolType": "Private",
+   "AcceptanceRate": "83%",
    "NLP": {},
    "ApplicationName": [
       "Common App"
@@ -41,7 +42,9 @@
       "Engineering": 188
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Robert_Morris_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Robert_Morris_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Robert_Morris_University1.png"
+      ]
    }
 }

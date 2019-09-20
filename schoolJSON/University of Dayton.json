@@ -6,6 +6,7 @@
    "SchoolSize": 6310,
    "StudentFacultyRatio": 5,
    "SchoolType": "Public",
+   "AcceptanceRate": "72%",
    "NLP": {
       "Reputation": 4.04881,
       "Facilities": 3.81158,
@@ -53,10 +54,11 @@
       "Engineering": 40
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Daytonlogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Daytonlogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Dayton2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Dayton3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Dayton2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Dayton3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Dayton1.png"
       ]
    }
 }

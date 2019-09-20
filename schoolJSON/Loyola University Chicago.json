@@ -6,6 +6,7 @@
    "SchoolSize": 11328,
    "StudentFacultyRatio": 25,
    "SchoolType": "Private",
+   "AcceptanceRate": "71%",
    "NLP": {
       "Reputation": 4.02205,
       "Facilities": 3.76856,
@@ -50,10 +51,11 @@
       "Engineering": 188
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Loyola_University_Chicagologo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Loyola_University_Chicagologo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Loyola_University_Chicago2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Loyola_University_Chicago3.JPG"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Loyola_University_Chicago2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Loyola_University_Chicago3.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Loyola_University_Chicago1.png"
       ]
    }
 }

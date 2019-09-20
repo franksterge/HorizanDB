@@ -6,6 +6,7 @@
    "SchoolSize": 8551,
    "StudentFacultyRatio": 15,
    "SchoolType": "Public",
+   "AcceptanceRate": "64%",
    "NLP": {
       "Reputation": 3.78723,
       "Facilities": 3.48096,
@@ -49,9 +50,10 @@
       "Engineering": 177
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Rutgers_University_Newarklogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Rutgers_University_Newarklogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Rutgers_University-_Newark2.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Rutgers_University-_Newark2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Rutgers_University-_Newark1.png"
       ]
    }
 }

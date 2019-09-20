@@ -6,6 +6,7 @@
    "SchoolSize": 42427,
    "StudentFacultyRatio": 20,
    "SchoolType": "Public",
+   "AcceptanceRate": "84%",
    "NLP": {
       "Reputation": 3.70606,
       "Facilities": 3.39393,
@@ -53,10 +54,11 @@
       "Engineering": 46
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Arizona_State_University-_Tempelogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Arizona_State_University-_Tempelogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Arizona_State_University-_Tempe2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Arizona_State_University-_Tempe3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Arizona_State_University-_Tempe2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Arizona_State_University-_Tempe3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Arizona_State_University-_Tempe1.png"
       ]
    }
 }

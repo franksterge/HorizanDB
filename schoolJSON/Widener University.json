@@ -6,6 +6,7 @@
    "SchoolSize": 3436,
    "StudentFacultyRatio": 13,
    "SchoolType": "Private",
+   "AcceptanceRate": "65%",
    "NLP": {},
    "ApplicationName": [
       "Common App"
@@ -34,6 +35,9 @@
    },
    "Major": {},
    "Image": {
-      "General": []
+      "Logo": "",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Widener_University1.png"
+      ]
    }
 }

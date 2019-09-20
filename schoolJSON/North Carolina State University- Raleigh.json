@@ -6,6 +6,7 @@
    "SchoolSize": 24150,
    "StudentFacultyRatio": 13,
    "SchoolType": "Public",
+   "AcceptanceRate": "51%",
    "NLP": {
       "Reputation": 4.15272,
       "Facilities": 3.92598,
@@ -54,9 +55,10 @@
       "Engineering": 29
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/North_Carolina_State_University-_Raleighlogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/North_Carolina_State_University-_Raleighlogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/North_Carolina_State_University-_Raleigh2.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/North_Carolina_State_University-_Raleigh2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/North_Carolina_State_University-_Raleigh1.png"
       ]
    }
 }

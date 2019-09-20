@@ -6,6 +6,7 @@
    "SchoolSize": 1564,
    "StudentFacultyRatio": 9,
    "SchoolType": "Private",
+   "AcceptanceRate": "22%",
    "NLP": {
       "Reputation": 3.93928,
       "Facilities": 3.66911,
@@ -53,10 +54,11 @@
       "Engineering": 158
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Emory_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Emory_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Emory_University2.JPG",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Emory_University3.jpeg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Emory_University2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Emory_University3.jpeg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Emory_University1.png"
       ]
    }
 }

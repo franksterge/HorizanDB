@@ -6,6 +6,7 @@
    "SchoolSize": 5266,
    "StudentFacultyRatio": 11,
    "SchoolType": "Private",
+   "AcceptanceRate": "73%",
    "NLP": {
       "Reputation": 3.89882,
       "Facilities": 3.60048,
@@ -53,7 +54,9 @@
       "Engineering": 188
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Adelphi_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Adelphi_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Adelphi_University1.png"
+      ]
    }
 }

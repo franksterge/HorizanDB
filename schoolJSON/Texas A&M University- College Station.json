@@ -6,6 +6,7 @@
    "SchoolSize": 9365,
    "StudentFacultyRatio": 18,
    "SchoolType": "Public",
+   "AcceptanceRate": "70%",
    "NLP": {
       "Reputation": 4.20449,
       "Facilities": 3.99234,
@@ -53,7 +54,7 @@
       "Engineering": 16
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Texas_A&M_University-_College_Stationlogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Texas_A&M_University-_College_Stationlogo.png",
       "General": []
    }
 }

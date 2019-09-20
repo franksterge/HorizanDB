@@ -6,6 +6,7 @@
    "SchoolSize": 19540,
    "StudentFacultyRatio": 18,
    "SchoolType": "Public",
+   "AcceptanceRate": "86%",
    "NLP": {
       "Reputation": 4.21284,
       "Facilities": 4.02653,
@@ -53,7 +54,9 @@
       "Engineering": 120
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Old_Dominion_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Old_Dominion_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Old_Dominion_University1.png"
+      ]
    }
 }

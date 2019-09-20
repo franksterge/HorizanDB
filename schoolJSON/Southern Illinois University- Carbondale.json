@@ -6,6 +6,7 @@
    "SchoolSize": 5969,
    "StudentFacultyRatio": 14,
    "SchoolType": "Public",
+   "AcceptanceRate": "76%",
    "NLP": {
       "Reputation": 4.1533,
       "Facilities": 3.93358,
@@ -51,7 +52,11 @@
       "Engineering": 162
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Southern_Illinois_University-_Carbondalelogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Southern_Illinois_University-_Carbondalelogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Southern_Illinois_University-_Carbondale1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Southern_Illinois_University-_Carbondale2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Southern_Illinois_University-_Carbondale3.jpg"
+      ]
    }
 }

@@ -6,6 +6,7 @@
    "SchoolSize": 31233,
    "StudentFacultyRatio": 20,
    "SchoolType": "Private",
+   "AcceptanceRate": "52%",
    "NLP": {},
    "ApplicationName": [],
    "Tuition": {
@@ -39,10 +40,11 @@
       "Engineering": 72
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Brigham_Young_University-_Provologo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Brigham_Young_University-_Provologo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Brigham_Young_University-_Provo2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Brigham_Young_University-_Provo3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Brigham_Young_University-_Provo2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Brigham_Young_University-_Provo3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Brigham_Young_University-_Provo1.png"
       ]
    }
 }

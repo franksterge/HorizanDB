@@ -6,6 +6,7 @@
    "SchoolSize": 18312,
    "StudentFacultyRatio": 20,
    "SchoolType": "Public",
+   "AcceptanceRate": "84%",
    "NLP": {
       "Reputation": 4.26671,
       "Facilities": 4.05877,
@@ -53,7 +54,7 @@
       "Engineering": 77
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Missouri_University_of_Science_&_Technologylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Missouri_University_of_Science_&_Technologylogo.png",
       "General": []
    }
 }

@@ -6,6 +6,7 @@
    "SchoolSize": 31331,
    "StudentFacultyRatio": 19,
    "SchoolType": "Public",
+   "AcceptanceRate": "27%",
    "NLP": {},
    "ApplicationName": [
       "Common App",
@@ -43,7 +44,10 @@
       "Engineering": 38
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Virginialogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Virginialogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Virginia1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Virginia2.jpg"
+      ]
    }
 }

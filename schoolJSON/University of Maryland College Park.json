@@ -6,6 +6,7 @@
    "SchoolSize": 22425,
    "StudentFacultyRatio": 17,
    "SchoolType": "Public",
+   "AcceptanceRate": "44%",
    "NLP": {
       "Reputation": 4.12402,
       "Facilities": 3.88732,
@@ -53,10 +54,11 @@
       "Engineering": 33
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Maryland-_College_Parklogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Maryland-_College_Parklogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Maryland_College_Park2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Maryland_College_Park3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Maryland_College_Park2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Maryland_College_Park3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Maryland_College_Park1.png"
       ]
    }
 }

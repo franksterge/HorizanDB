@@ -6,6 +6,7 @@
    "SchoolSize": 8123,
    "StudentFacultyRatio": 11,
    "SchoolType": "Private",
+   "AcceptanceRate": "29%",
    "NLP": {
       "Reputation": 4.08746,
       "Facilities": 3.85093,
@@ -53,10 +54,11 @@
       "Engineering": 188
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/American_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/American_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/American_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/American_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/American_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/American_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/American_University1.png"
       ]
    }
 }

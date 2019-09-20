@@ -6,6 +6,7 @@
    "SchoolSize": 8170,
    "StudentFacultyRatio": 6,
    "SchoolType": "Private",
+   "AcceptanceRate": "13%",
    "NLP": {
       "Reputation": 3.99775,
       "Facilities": 3.77319,
@@ -52,10 +53,11 @@
       "Engineering": 13
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Cornell_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Cornell_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Cornell_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Cornell_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Cornell_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Cornell_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Cornell_University1.png"
       ]
    }
 }

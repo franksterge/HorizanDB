@@ -6,6 +6,7 @@
    "SchoolSize": 56853,
    "StudentFacultyRatio": 30,
    "SchoolType": "Public",
+   "AcceptanceRate": "48%",
    "NLP": {
       "Reputation": 4.15852,
       "Facilities": 3.94744,
@@ -54,9 +55,10 @@
       "Engineering": 99
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Connecticutlogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Connecticutlogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Connecticut2.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Connecticut2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Connecticut1.png"
       ]
    }
 }

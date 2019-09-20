@@ -6,6 +6,7 @@
    "SchoolSize": 17804,
    "StudentFacultyRatio": 20,
    "SchoolType": "Private",
+   "AcceptanceRate": "56%",
    "NLP": {
       "Reputation": 3.80175,
       "Facilities": 3.49963,
@@ -52,7 +53,9 @@
       "Engineering": 188
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Clark_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Clark_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Clark_University1.png"
+      ]
    }
 }

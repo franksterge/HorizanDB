@@ -6,6 +6,7 @@
    "SchoolSize": 2096,
    "StudentFacultyRatio": 10,
    "SchoolType": "Private",
+   "AcceptanceRate": "60%",
    "NLP": {},
    "ApplicationName": [
       "Common App"
@@ -41,9 +42,10 @@
       "Engineering": 188
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Lipscomb_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Lipscomb_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Lipscomb_University2.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Lipscomb_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Lipscomb_University1.png"
       ]
    }
 }

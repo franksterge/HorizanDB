@@ -6,6 +6,7 @@
    "SchoolSize": 6452,
    "StudentFacultyRatio": 11,
    "SchoolType": "Private",
+   "AcceptanceRate": "5%",
    "NLP": {
       "Reputation": 4.16426,
       "Facilities": 3.94268,
@@ -53,10 +54,11 @@
       "Engineering": 4
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Stanford_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Stanford_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Stanford_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Stanford_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Stanford_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Stanford_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Stanford_University1.png"
       ]
    }
 }

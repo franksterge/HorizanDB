@@ -6,6 +6,7 @@
    "SchoolSize": 4788,
    "StudentFacultyRatio": 16,
    "SchoolType": "Public",
+   "AcceptanceRate": "83%",
    "NLP": {
       "Reputation": 3.89227,
       "Facilities": 3.61256,
@@ -53,7 +54,11 @@
       "Engineering": 118
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Colorado_State_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Colorado_State_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Colorado_State_University1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Colorado_State_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Colorado_State_University3.jpg"
+      ]
    }
 }

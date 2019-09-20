@@ -6,6 +6,7 @@
    "SchoolSize": 30574,
    "StudentFacultyRatio": 18,
    "SchoolType": "Public",
+   "AcceptanceRate": "69%",
    "NLP": {
       "Reputation": 3.87556,
       "Facilities": 3.60919,
@@ -51,9 +52,10 @@
       "Engineering": 138
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_California-_Mercedlogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_California-_Mercedlogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_California-_Merced2.JPG"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_California-_Merced2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_California-_Merced1.png"
       ]
    }
 }

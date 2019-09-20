@@ -6,6 +6,7 @@
    "SchoolSize": 37215,
    "StudentFacultyRatio": 22,
    "SchoolType": "Public",
+   "AcceptanceRate": "86%",
    "NLP": {
       "Reputation": 4.01946,
       "Facilities": 3.7632,
@@ -53,10 +54,11 @@
       "Engineering": 64
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Iowalogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Iowalogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Iowa2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Iowa3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Iowa2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Iowa3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Iowa1.png"
       ]
    }
 }

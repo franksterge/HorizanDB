@@ -6,6 +6,7 @@
    "SchoolSize": 6546,
    "StudentFacultyRatio": 10,
    "SchoolType": "Public",
+   "AcceptanceRate": "72%",
    "NLP": {
       "Reputation": 4.11939,
       "Facilities": 3.88032,
@@ -53,7 +54,11 @@
       "Engineering": 98
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_South_Carolinalogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_South_Carolinalogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_South_Carolina1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_South_Carolina2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_South_Carolina3.jpg"
+      ]
    }
 }

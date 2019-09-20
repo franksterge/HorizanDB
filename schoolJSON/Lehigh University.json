@@ -6,6 +6,7 @@
    "SchoolSize": 23178,
    "StudentFacultyRatio": 20,
    "SchoolType": "Private",
+   "AcceptanceRate": "25%",
    "NLP": {
       "Reputation": 4.11989,
       "Facilities": 3.88986,
@@ -52,10 +53,11 @@
       "Engineering": 65
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Lehigh_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Lehigh_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Lehigh_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Lehigh_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Lehigh_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Lehigh_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Lehigh_University1.png"
       ]
    }
 }

@@ -6,6 +6,7 @@
    "SchoolSize": 1816,
    "StudentFacultyRatio": 11,
    "SchoolType": "Public",
+   "AcceptanceRate": "76%",
    "NLP": {
       "Reputation": 4.13456,
       "Facilities": 3.89964,
@@ -51,6 +52,11 @@
       "Engineering": 88
    },
    "Image": {
-      "General": []
+      "Logo": "",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Texas-_Dallas1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Texas-_Dallas2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Texas-_Dallas3.jpg"
+      ]
    }
 }

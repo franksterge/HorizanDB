@@ -6,6 +6,7 @@
    "SchoolSize": 33429,
    "StudentFacultyRatio": 17,
    "SchoolType": "Public",
+   "AcceptanceRate": "80%",
    "NLP": {
       "Reputation": 4.09292,
       "Facilities": 3.85767,
@@ -53,7 +54,10 @@
       "Engineering": 156
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Indiana_Univeristy-_Purdue_University-_Indianapolis.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Indiana_Univeristy-_Purdue_University-_Indianapolis.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Indiana_University-_Purdue_University-_Indianapolis2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Indiana_University-_Purdue_University-_Indianapolis3.JPG"
+      ]
    }
 }

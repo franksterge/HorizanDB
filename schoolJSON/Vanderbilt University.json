@@ -6,6 +6,7 @@
    "SchoolSize": 6885,
    "StudentFacultyRatio": 7,
    "SchoolType": "Private",
+   "AcceptanceRate": "11%",
    "NLP": {
       "Reputation": 4.11237,
       "Facilities": 3.89787,
@@ -53,7 +54,11 @@
       "Engineering": 18
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Vanderbilt_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Vanderbilt_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Vanderbilt_University1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Vanderbilt_University2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Vanderbilt_University3.JPG"
+      ]
    }
 }

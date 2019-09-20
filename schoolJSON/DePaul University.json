@@ -6,6 +6,7 @@
    "SchoolSize": 4410,
    "StudentFacultyRatio": 7,
    "SchoolType": "Private",
+   "AcceptanceRate": "72%",
    "NLP": {
       "Reputation": 4.35488,
       "Facilities": 4.14158,
@@ -52,10 +53,11 @@
       "Engineering": 188
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/DePaul_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/DePaul_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/DePaul_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/DePaul_University3.JPG"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/DePaul_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/DePaul_University3.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Depaul_University1.png"
       ]
    }
 }

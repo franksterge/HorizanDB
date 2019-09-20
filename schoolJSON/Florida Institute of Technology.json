@@ -6,6 +6,7 @@
    "SchoolSize": 6937,
    "StudentFacultyRatio": 9,
    "SchoolType": "Private",
+   "AcceptanceRate": "63%",
    "NLP": {
       "Reputation": 4.16179,
       "Facilities": 3.94293,
@@ -52,9 +53,10 @@
       "Engineering": 143
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Florida_Institute_of_Technologylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Florida_Institute_of_Technologylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Florida_Institute_of_Technology2.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Florida_Institute_of_Technology2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Florida_Institute_of_Technology1.png"
       ]
    }
 }

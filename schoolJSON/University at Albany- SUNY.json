@@ -6,6 +6,7 @@
    "SchoolSize": 22317,
    "StudentFacultyRatio": 17,
    "SchoolType": "Public",
+   "AcceptanceRate": "54%",
    "NLP": {
       "Reputation": 3.95181,
       "Facilities": 3.69621,
@@ -54,10 +55,10 @@
       "Engineering": 181
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_at_Albany-_SUNYlogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_at_Albany-_SUNYlogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_at_Albany-_SUNY2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_at_Albany-_SUNY3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_at_Albany-_SUNY2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_at_Albany-_SUNY3.jpg"
       ]
    }
 }

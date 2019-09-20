@@ -6,6 +6,7 @@
    "SchoolSize": 2900,
    "StudentFacultyRatio": 12,
    "SchoolType": "Public",
+   "AcceptanceRate": "89%",
    "NLP": {
       "Reputation": 4.02403,
       "Facilities": 3.76378,
@@ -49,7 +50,9 @@
       "Engineering": 184
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Illinois_State_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Illinois_State_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Illinois_State_University1.png"
+      ]
    }
 }

@@ -6,6 +6,7 @@
    "SchoolSize": 3548,
    "StudentFacultyRatio": 13,
    "SchoolType": "Public",
+   "AcceptanceRate": "97%",
    "NLP": {
       "Reputation": 4.27156,
       "Facilities": 4.05041,
@@ -53,7 +54,11 @@
       "Engineering": 71
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Wyominglogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Wyominglogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Wyoming1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Wyoming2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Wyoming3.jpg"
+      ]
    }
 }

@@ -6,6 +6,7 @@
    "SchoolSize": 17147,
    "StudentFacultyRatio": 14,
    "SchoolType": "Public",
+   "AcceptanceRate": "72%",
    "NLP": {
       "Reputation": 4.17984,
       "Facilities": 3.96225,
@@ -54,10 +55,11 @@
       "Engineering": 80
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Michigan_State_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Michigan_State_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Michigan_State_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Michigan_State_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Michigan_State_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Michigan_State_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Michigan_State_University1.png"
       ]
    }
 }

@@ -6,6 +6,7 @@
    "SchoolSize": 7675,
    "StudentFacultyRatio": 8,
    "SchoolType": "Private",
+   "AcceptanceRate": "16%",
    "NLP": {
       "Reputation": 4.2146,
       "Facilities": 3.99852,
@@ -46,6 +47,7 @@
    },
    "Major": {},
    "Image": {
+      "Logo": "",
       "General": []
    }
 }

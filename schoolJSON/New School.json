@@ -6,6 +6,7 @@
    "SchoolSize": 11713,
    "StudentFacultyRatio": 17,
    "SchoolType": "Private",
+   "AcceptanceRate": "70%",
    "NLP": {
       "Reputation": 4.14471,
       "Facilities": 3.92043,
@@ -52,7 +53,9 @@
       "Engineering": 185
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/New_Schoollogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/New_Schoollogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/New_School1.png"
+      ]
    }
 }

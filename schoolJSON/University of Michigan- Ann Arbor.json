@@ -6,6 +6,7 @@
    "SchoolSize": 12660,
    "StudentFacultyRatio": 17,
    "SchoolType": "Public",
+   "AcceptanceRate": "27%",
    "NLP": {
       "Reputation": 4.05252,
       "Facilities": 3.81951,
@@ -54,10 +55,11 @@
       "Engineering": 5
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Michigan-_Ann_Arborlogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Michigan-_Ann_Arborlogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Michigan-_Ann_Arbor2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Michigan-_Ann_Arbor3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Michigan-_Ann_Arbor2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Michigan-_Ann_Arbor3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Michigan-_Ann_Arbor1.png"
       ]
    }
 }

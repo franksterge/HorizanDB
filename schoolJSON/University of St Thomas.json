@@ -6,6 +6,7 @@
    "SchoolSize": 31772,
    "StudentFacultyRatio": 22,
    "SchoolType": "Public",
+   "AcceptanceRate": "84%",
    "NLP": {},
    "ApplicationName": [
       "Common App"
@@ -42,6 +43,11 @@
       "Engineering": 183
    },
    "Image": {
-      "General": []
+      "Logo": "",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_St_Thomas1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_St_Thomas2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_St_Thomas3.jpg"
+      ]
    }
 }

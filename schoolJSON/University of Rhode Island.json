@@ -6,6 +6,7 @@
    "SchoolSize": 19340,
    "StudentFacultyRatio": 17,
    "SchoolType": "Public",
+   "AcceptanceRate": "69%",
    "NLP": {
       "Reputation": 4.12352,
       "Facilities": 3.88775,
@@ -53,7 +54,10 @@
       "Engineering": 152
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Rhode_Islandlogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Rhode_Islandlogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Rhode_Island1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Rhode_Island2.jpg"
+      ]
    }
 }

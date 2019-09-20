@@ -6,6 +6,7 @@
    "SchoolSize": 9921,
    "StudentFacultyRatio": 13,
    "SchoolType": "Private",
+   "AcceptanceRate": "32%",
    "NLP": {
       "Reputation": 3.59945,
       "Facilities": 3.27104,
@@ -52,10 +53,11 @@
       "Engineering": 188
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Boston_Collegelogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Boston_Collegelogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Boston_College2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Boston_College3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Boston_College2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Boston_College3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Boston_College1.png"
       ]
    }
 }

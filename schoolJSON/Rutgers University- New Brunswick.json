@@ -6,6 +6,7 @@
    "SchoolSize": 35641,
    "StudentFacultyRatio": 15,
    "SchoolType": "Public",
+   "AcceptanceRate": "58%",
    "NLP": {
       "Reputation": 4.20989,
       "Facilities": 3.99344,
@@ -49,10 +50,11 @@
       "Engineering": 55
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Rutgers_University-_New_Brunswicklogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Rutgers_University-_New_Brunswicklogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Rutgers_University-_New_Brunswick2.JPG",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Rutgers_University-_New_Brunswick3.JPG"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Rutgers_University-_New_Brunswick2.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Rutgers_University-_New_Brunswick3.JPG",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Rutgers_University-_New_Brunswick1.png"
       ]
    }
 }

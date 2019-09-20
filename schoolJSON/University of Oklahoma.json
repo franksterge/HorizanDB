@@ -6,6 +6,7 @@
    "SchoolSize": 16439,
    "StudentFacultyRatio": 18,
    "SchoolType": "Public",
+   "AcceptanceRate": "69%",
    "NLP": {
       "Reputation": 4.20877,
       "Facilities": 3.9918,
@@ -54,7 +55,11 @@
       "Engineering": 96
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Oklahomalogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Oklahomalogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Oklahoma1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Oklahoma2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Oklahoma3.jpg"
+      ]
    }
 }

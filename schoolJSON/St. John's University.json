@@ -6,6 +6,7 @@
    "SchoolSize": 10987,
    "StudentFacultyRatio": 14,
    "SchoolType": "Private",
+   "AcceptanceRate": "68%",
    "NLP": {
       "Reputation": 4.07883,
       "Facilities": 3.83537,
@@ -52,7 +53,7 @@
       "Engineering": 188
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/St._John's_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/St._John's_Universitylogo.png",
       "General": []
    }
 }

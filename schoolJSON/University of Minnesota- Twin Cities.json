@@ -6,6 +6,7 @@
    "SchoolSize": 6763,
    "StudentFacultyRatio": 16,
    "SchoolType": "Public",
+   "AcceptanceRate": "50%",
    "NLP": {
       "Reputation": 3.14165,
       "Facilities": 2.8455,
@@ -54,10 +55,11 @@
       "Engineering": 32
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Minnesota-_Twin_Citieslogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Minnesota-_Twin_Citieslogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Minnesota-_Twin_Cities2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/University_of_Minnesota-_Twin_Cities3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Minnesota-_Twin_Cities2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Minnesota-_Twin_Cities3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Minnesota-_Twin_Cities1.png"
       ]
    }
 }

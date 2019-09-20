@@ -6,6 +6,7 @@
    "SchoolSize": 6950,
    "StudentFacultyRatio": 11,
    "SchoolType": "Private",
+   "AcceptanceRate": "36%",
    "NLP": {
       "Reputation": 4.1353,
       "Facilities": 3.89535,
@@ -52,7 +53,11 @@
       "Engineering": 100
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Villanova_Universitylogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Villanova_Universitylogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Villanova_University1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Villanova_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Villanova_University3.JPG"
+      ]
    }
 }

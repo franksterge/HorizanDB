@@ -6,6 +6,7 @@
    "SchoolSize": 7463,
    "StudentFacultyRatio": 11,
    "SchoolType": "Public",
+   "AcceptanceRate": "23%",
    "NLP": {
       "Reputation": 4.06557,
       "Facilities": 3.81857,
@@ -54,10 +55,11 @@
       "Engineering": 2
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Georgia_Institute_of_Technologylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Georgia_Institute_of_Technologylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Georgia_Institute_of_Technology2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Georgia_Institute_of_Technology3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Georgia_Institute_of_Technology2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Georgia_Institute_of_Technology3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Georgia_Institute_of_Technology1.png"
       ]
    }
 }

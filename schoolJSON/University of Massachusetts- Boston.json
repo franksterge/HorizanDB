@@ -6,6 +6,7 @@
    "SchoolSize": 9279,
    "StudentFacultyRatio": 16,
    "SchoolType": "Public",
+   "AcceptanceRate": "75%",
    "NLP": {
       "Reputation": 3.99877,
       "Facilities": 3.73086,
@@ -53,7 +54,9 @@
       "Engineering": 174
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Massachusetts-_Bostonlogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Massachusetts-_Bostonlogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Massachusetts-_Boston1.png"
+      ]
    }
 }

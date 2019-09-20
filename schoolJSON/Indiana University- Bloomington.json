@@ -6,6 +6,7 @@
    "SchoolSize": 1482,
    "StudentFacultyRatio": 9,
    "SchoolType": "Public",
+   "AcceptanceRate": "76%",
    "NLP": {
       "Reputation": 4.09266,
       "Facilities": 3.85248,
@@ -54,10 +55,11 @@
       "Engineering": 165
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Indiana_University-_Bloominton.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Indiana_University-_Bloominton.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Indiana_University-_Bloomington2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Indiana_University-_Bloomington3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Indiana_University-_Bloomington2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Indiana_University-_Bloomington3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Indiana_University-_Bloomington1.png"
       ]
    }
 }

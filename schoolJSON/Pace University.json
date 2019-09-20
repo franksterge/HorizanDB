@@ -6,6 +6,7 @@
    "SchoolSize": 8674,
    "StudentFacultyRatio": 14,
    "SchoolType": "Private",
+   "AcceptanceRate": "80%",
    "NLP": {
       "Reputation": 4.24696,
       "Facilities": 4.03219,
@@ -52,10 +53,11 @@
       "Engineering": 169
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/Pace_Universitylogo.png",
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Pace_Universitylogo.png",
       "General": [
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Pace_University2.jpg",
-         "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/University_image/Pace_University3.jpg"
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Pace_University2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Pace_University3.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Pace_University1.png"
       ]
    }
 }

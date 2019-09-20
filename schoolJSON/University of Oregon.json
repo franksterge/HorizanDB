@@ -6,6 +6,7 @@
    "SchoolSize": 11000,
    "StudentFacultyRatio": 18,
    "SchoolType": "Public",
+   "AcceptanceRate": "83%",
    "NLP": {
       "Reputation": 4.11788,
       "Facilities": 3.90565,
@@ -54,7 +55,11 @@
       "Engineering": 188
    },
    "Image": {
-      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/Univerisity/SchoolLogos/University_of_Oregonlogo.png",
-      "General": []
+      "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Oregonlogo.png",
+      "General": [
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Oregon1.png",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Oregon2.jpg",
+         "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Oregon3.jpg"
+      ]
    }
 }
