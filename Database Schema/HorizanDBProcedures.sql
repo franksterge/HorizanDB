@@ -1088,3 +1088,45 @@ Begin
         commit;
     End if;
 end;
+
+/* 
+MARK: implement remove here 
+ */
+drop procedure pRmUserResponse;
+Use HorizanDB;
+Create 
+Procedure pRmUserResponse(
+    User_First_Name VarChar(20),
+    User_Last_Name VarChar(20),
+    User_Email VarChar(100),
+    File_Name Varchar(200) 
+)
+begin
+    Declare User_ID int;
+    Declare Response_ID int;
+
+    Call pGetUser(User_First_Name, User_Last_Name, User_Email, User_ID);
+    if User_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'User not found';
+    end if;
+
+    call pGetUserResponse(File_Name, Response_ID);
+    if Response_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'File not found';
+    end if;
+
+    START TRANSACTION;
+    Update UserResponse
+    set EntryDate = Date_Format('1970-01-01:00:00:00', '%Y-%m-%d:%H:%i:%s')
+    where UserID = User_ID and ResponseID = Response_ID;
+    if @@error_count = 0
+    then 
+    Commit;
+    else 
+    rollback;
+    end if;
+end;

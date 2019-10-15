@@ -196,11 +196,17 @@ limit 1;
 Select * from
 UserCollege where UserID=18;
 
- SchoolDetail;
+Use HorizanDB;
+Select * from UserDetail ud 
+join UserCollege us on ud.UserID = us.UserID
+join SchoolDetail s on us.SchoolID = s.SchoolID
+where ud.UserFirstName = 'Mina'
+order by MatchPercentage desc;
 call pGetSchoolSummaryNoUser('University of Washington');
 call pGetSchoolSummary('Nick', 'Cherry', 'niteshfire101@yahoo.com','University of Washington');
-Select * from UserDetail 
-order by EntryDate desc
+Use HorizanDB;
+Select * from UserResponse 
+order by EntryDate asc
 limit 1;
 call pInsSchoolImage('Edgewood College', 'Edgewood College Logo', 'Logo', '');
 call pInsSchoolImage('Illinois Institute of Technology', 'Illinois Institute of Technology Logo', 'Logo', '');
@@ -219,3 +225,7 @@ call pInsSchoolImage('University of St Thomas', 'University of St Thomas Logo', 
 call pInsSchoolImage('University of Texas- Dallas', 'University of Texas- Dallas Logo', 'Logo', '');
 call pInsSchoolImage('Washington University in St. Louis', 'Washington University in St. Louis Logo', 'Logo', '');
 call pInsSchoolImage('Widener University', 'Widener University Logo', 'Logo', '');
+
+use HorizanDB;
+call pRmUserResponse('dummy', 'user', 'dummyuser@email.com', 'dummyuserdummyuser@email.comsurvey2019-09-19:03:39:18.json');
+select * from UserDetail where UserID = 20;
