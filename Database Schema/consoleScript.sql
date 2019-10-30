@@ -226,6 +226,25 @@ call pInsSchoolImage('University of Texas- Dallas', 'University of Texas- Dallas
 call pInsSchoolImage('Washington University in St. Louis', 'Washington University in St. Louis Logo', 'Logo', '');
 call pInsSchoolImage('Widener University', 'Widener University Logo', 'Logo', '');
 
-use HorizanDB;
+
+
+/* 
+use case for pRmUserResponse
+ */
+call pGetUserResponses('Nick', 'Cherry', )
 call pRmUserResponse('dummy', 'user', 'dummyuser@email.com', 'dummyuserdummyuser@email.comsurvey2019-09-19:03:39:18.json');
-select * from UserDetail where UserID = 20;
+
+select * from StudentType;
+select * from SchoolDeadline;
+Use HorizanDB;
+call pGetSchoolDeadline('University of Rochester', 'Regular Decision', 2020, 'AU', 'Incoming Freshman');
+Select count(distinct SchoolID) from SchoolDeadline;
+
+delete from SchoolDeadline where SchoolDeadlineID	 <> 0;
+select (date(Date_Format('2019-11-01T07:00:00.000Z', '%Y-%m-%dT%H:%i:%sZ')));
+Insert into DeadlineDetail(DeadlineName)
+values('Regular Decision'), ('Early Decision'), ('Early Action'), ('Regular Decision Priority Application');
+Insert into DeadlineCycle(DeadlineCycleYear, DeadlineCycleSeason)
+values (2020, 'AU');
+Insert into StudentType(StudentTypeName)
+values ('Incoming Freshman'), ('Transfer');

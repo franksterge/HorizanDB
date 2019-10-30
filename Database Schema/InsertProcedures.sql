@@ -253,6 +253,48 @@ begin
 end;
 
 Use HorizanDB;
+drop procedure pGetDeadline;
+Create
+Procedure pGetDeadline(
+  In Deadline_Name varChar(50),
+  Out Deadline_ID int
+)
+begin
+  Set Deadline_ID = (
+    Select DeadlineID from DeadlineDetail
+    where DeadlineName = Deadline_Name
+  );
+end;
+
+Use HorizanDB;
+Create 
+Procedure pGetDeadlineCycle(
+  In DeadlineCycle_Year int,
+  In DeadlineCycle_Season varChar(2),
+  Out DeadlineCycle_ID int
+)
+begin 
+  Set DeadlineCycle_ID = (
+    Select DeadlineCycleID from DeadlineCycle
+    where DeadlineCycleYear = DeadlineCycle_Year
+    and DeadlineCycleSeason = DeadlineCycle_Season
+  );
+end;
+
+Use HorizanDB;
+Create 
+Procedure pGetStudentType(
+  In StudentType_Name varChar(50),
+  Out StudentType_ID int
+)
+begin
+  Set StudentType_ID = (
+    Select StudentTypeID from StudentType
+    where StudentTypeName = StudentType_Name
+  );
+end;
+
+Use HorizanDB;
 /* drop procedure pInsSchoolMajorRankingSource; */
 Create
 Procedure pInsSchoolMajorRankingSource(
@@ -641,6 +683,64 @@ begin
   If @@error_count <> 0
     then 
       Rollback;
+    else 
+      commit;
+  end if;
+end;
+
+Use HorizanDB;
+drop procedure pInsSchoolDeadline;
+Create 
+procedure pInsSchoolDeadline(
+  School_Name Varchar(255),
+  Deadline_Name Varchar(50),
+  DeadlineCycle_Year int,
+  DeadlineCycle_Season Varchar(2),
+  StudentType_Name Varchar(50),
+  Deadline_Datetime Varchar(30)
+)
+begin
+  Declare School_ID int;
+  Declare Deadline_ID int;
+  Declare DeadlineCycle_ID int;
+  Declare StudentType_ID int;
+  Declare Parsed_Date date; 
+
+  Set Parsed_Date = date(Date_Format(Deadline_Datetime, '%Y-%m-%dT%H:%i:%sZ'));
+  Call pGetSchool(School_Name, School_ID);
+  If School_ID is null 
+  then 
+    SIGNAL SQLSTATE '45000'
+    SET MESSAGE_TEXT = 'Invalid School name';
+  End if;
+
+  Call pGetDeadline(Deadline_Name, Deadline_ID);
+  If Deadline_ID is null 
+  then 
+    SIGNAL SQLSTATE '45000'
+    SET MESSAGE_TEXT = 'Invalid Deadline name';
+  End if;
+
+  Call pGetDeadlineCycle(DeadlineCycle_Year, DeadlineCycle_Season, DeadlineCycle_ID);
+  If DeadlineCycle_ID is null 
+  then 
+    SIGNAL SQLSTATE '45000'
+    SET MESSAGE_TEXT = 'Invalid Deadline Cycle name';
+  End if;  
+
+  Call pGetStudentType(StudentType_Name, StudentType_ID);
+  if StudentType_ID is null
+  then 
+    SIGNAL SQLSTATE '45000'
+    SET MESSAGE_TEXT = 'Student type not found';
+  end if;
+
+  Start TRANSACTION;
+  insert into SchoolDeadline(SchoolID, DeadlineID, DeadlineCycleID, StudentTypeID, DeadlineDatetime)
+  values (School_ID, Deadline_ID, DeadlineCycle_ID, StudentType_ID, Parsed_Date);
+  If @@error_count <> 0
+    then 
+      rollback;
     else 
       commit;
   end if;

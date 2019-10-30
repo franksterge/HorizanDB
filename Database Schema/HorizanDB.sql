@@ -59,15 +59,41 @@ Table ApplicationDetail (
   ApplicationLink VarChar(500) not null
 );
 
+/* 
+MARK:determine data needed
+ */
 Use HorizanDB;
 Create 
-Table ApplicationDeadline (
-  DeadlineID int AUTO_INCREMENT primary key not null,
-  ApplicationID int not null,
-  DeadlineName VarChar(50) not null,
+Table SchoolDeadline (
+  SchoolDeadlineID int AUTO_INCREMENT primary key not null,
+  SchoolID int not null,
+  DeadlineID int not null,
+  DeadlineCycleID int not null,
+  StudentTypeID int not null,
   DeadlineDatetime datetime not null,
-  Foreign Key (ApplciationID) REFERENCES ApplicationDetail
+  Foreign Key (SchoolID) REFERENCES SchoolDetail(SchoolID),
+  Foreign Key (DeadlineID) References DeadlineDetail(DeadlineID),
+  Foreign Key (DeadlineCycleID) references DeadlineCycle(DeadlineCycleID),
+  Foreign Key (StudentTypeID) references StudentType(StudentTypeID)
 );
+
+use HorizanDB;
+Create
+table DeadlineCycle (
+  DeadlineCycleID int AUTO_INCREMENT primary key not null,
+  DeadlineCycleYear int not null,
+  DeadlineCycleSeason VarChar(2) not null
+);
+Create 
+Table DeadlineDetail (
+  DeadlineID int AUTO_INCREMENT primary key not null,
+  DeadlineName VarChar(50) not null
+);
+Create 
+Table StudentType (
+  StudentTypeID int AUTO_INCREMENT primary key not null,
+  StudentTypeName VarChar(50) not null
+)
 
 /* drop table SchoolApplication; */
 Create
