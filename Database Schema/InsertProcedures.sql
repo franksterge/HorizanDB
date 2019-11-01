@@ -295,6 +295,26 @@ begin
 end;
 
 Use HorizanDB;
+drop procedure pGetSchoolDeadline;
+Create 
+Procedure pGetSchoolDeadline(
+  In School_ID int,
+  In Deadline_ID int,
+  In DeadlineCycle_ID int,
+  In StudentType_ID int,
+  out SchoolDeadline_ID int
+)
+Begin
+  Set SchoolDeadline_ID = (
+    Select SchoolDeadlineID from SchoolDeadline
+    where SchoolID = School_ID
+    and DeadlineID = Deadline_ID
+    and DeadlineCycleID = DeadlineCycle_ID
+    and StudentTypeID = StudentType_ID
+  );
+End;
+
+Use HorizanDB;
 /* drop procedure pInsSchoolMajorRankingSource; */
 Create
 Procedure pInsSchoolMajorRankingSource(

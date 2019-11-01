@@ -951,23 +951,32 @@ End
     get school name, location, school type, and the LATEST match percentage for the given user 
     of the given school
     usage: 
-        call pGetSchoolSummary(User first name, user last name, user email, school name)
+        call pGetSchoolSummary(User first name, user last name, user email, school name, deadline cycle year, deadlien cycle season)
     Note:
         this procedure only returns the matching result from the LATEST survey
+        need to provide the latest cycle info (currently 2020 AU)
  */
-Use HorizanDB;
+
+--  MARK: update school summary. need deadline cycle and student type info
 drop Procedure pGetSchoolSummary;
+Use HorizanDB;
 Create
 Procedure pGetSchoolSummary(
     User_First_Name VarChar(20),
     User_Last_Name VarChar(20),
     User_Email VarChar(100),
-    School_Name VarChar(255)
+    School_Name VarChar(255),
+    DeadlineCycle_Year int,
+    DeadlineCycle_Season Varchar(2)
 )
 begin
     Declare School_ID int;
     Declare User_ID int;
     Declare Response_ID int;
+    Declare Deadline_ID int;
+    Declare DeadlineCycle_ID int;
+    Declare StudentType_ID int;
+    Declare SchoolDeadline_ID int;
     Call pGetSchool (School_Name, School_ID);
     if School_ID is null
     then
@@ -989,49 +998,47 @@ begin
         Set MESSAGE_TEXT = 'Current user was not matched in the past with the  given school';
     end if;
 
+    Call pGetDeadline('Regular Decision', Deadline_ID);
+    If Deadline_ID is null 
+    then 
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Invalid Deadline name';
+    End if;
+
+    Call pGetDeadlineCycle(DeadlineCycle_Year, DeadlineCycle_Season, DeadlineCycle_ID);
+    If DeadlineCycle_ID is null 
+    then 
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Invalid Deadline Cycle name';
+    End if;  
+
+    Call pGetStudentType('Incoming Freshman', StudentType_ID);
+    if StudentType_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Student type not found';
+    end if;
+
+    Call pGetSchoolDeadline(School_ID, Deadline_ID, DeadlineCycle_ID, StudentType_ID, SchoolDeadline_ID);
+    if SchoolDeadline_ID is null
+    then
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'SchoolDeadline not found';
+    end if; 
+
     if @@error_count = 0
     then
         create temporary table tempSummary(
-            Select  s.SchoolName, s.SchoolLocation, s.SchoolType, uc.MatchPercentage, i.ImagePath 
+            Select  s.SchoolName, s.SchoolLocation, s.SchoolType, uc.MatchPercentage, i.ImagePath, sd.DeadlineDatetime
             from SchoolDetail s
             join UserCollege uc on s.SchoolID = uc.SchoolID
             join SchoolImage si on s.SchoolID = si.SchoolID
             join ImageDetail i on i.ImageID = si.ImageID
+            join SchoolDeadline sd on s.SchoolID = sd.SchoolID
             where s.SchoolID = School_ID 
             and uc.UserID = User_ID
             and uc.ResponseID = Response_ID
-            and i.ImageType = 'Logo'
-        );
-        Select * from tempSummary;
-        drop table tempSummary;
-    end if;
-end;
-
-
-
-drop Procedure pGetSchoolSummary;
-Use HorizanDB;
-Create
-Procedure pGetSchoolSummaryNoUser(
-    School_Name VarChar(255)
-)
-begin
-    Declare School_ID int;
-    Call pGetSchool (School_Name, School_ID);
-    if School_ID is null
-    then
-        SIGNAL SQLSTATE '45000'
-        Set MESSAGE_TEXT = 'School not found';
-    end if;
-
-    if @@error_count = 0
-    then
-        create temporary table tempSummary(
-            Select  s.SchoolName, s.SchoolLocation, s.SchoolType, i.ImagePath 
-            from SchoolDetail s
-            join SchoolImage si on s.SchoolID = si.SchoolID
-            join ImageDetail i on i.ImageID = si.ImageID
-            where s.SchoolID = School_ID 
+            and sd.SchoolDeadlineID = SchoolDeadline_ID
             and i.ImageType = 'Logo'
         );
         Select * from tempSummary;
@@ -1090,9 +1097,7 @@ Begin
     End if;
 end;
 
-/* 
-MARK: implement remove here 
- */
+
 drop procedure pRmUserResponse;
 Use HorizanDB;
 Create 
