@@ -46,5 +46,8 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Brigham_Young_University-_Provo3.jpg",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Brigham_Young_University-_Provo1.png"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2019-12-15T08:00:00.000Z"
    }
 }

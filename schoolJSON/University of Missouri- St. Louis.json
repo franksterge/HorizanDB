@@ -56,5 +56,8 @@
    "Image": {
       "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/University_of_Missouri-_St._Louislogo.png",
       "General": []
+   },
+   "Deadlines": {
+      "Regular Decision": "2020-08-20T07:00:00.000Z"
    }
 }

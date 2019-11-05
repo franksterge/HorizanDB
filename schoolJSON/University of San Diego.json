@@ -57,5 +57,8 @@
       "General": [
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_San_Diego1.png"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2019-12-15T08:00:00.000Z"
    }
 }

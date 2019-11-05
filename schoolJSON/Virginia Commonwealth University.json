@@ -60,5 +60,8 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Virginia_Commonwealth_University2.JPG",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Virginia_Commonwealth_University3.jpg"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2020-01-16T08:00:00.000Z"
    }
 }

@@ -58,5 +58,8 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_California-_Irvine3.JPG",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_California-_Irvine1.png"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2019-11-30T08:00:00.000Z"
    }
 }

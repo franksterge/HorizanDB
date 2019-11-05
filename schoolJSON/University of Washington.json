@@ -60,5 +60,8 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Washington2.JPG",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Washington3.jpg"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2019-11-15T08:00:00.000Z"
    }
 }

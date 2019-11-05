@@ -232,11 +232,12 @@ call pInsSchoolImage('Widener University', 'Widener University Logo', 'Logo', ''
 use case for pRmUserResponse
  */
 call pGetUserResponses('Nick', 'Cherry', )
-call pRmUserResponse('dummy', 'user', 'dummyuser@email.com', 'dummyuserdummyuser@email.comsurvey2019-09-19:03:39:18.json');
 
 select * from StudentType;
-select * from SchoolDeadline;
 Use HorizanDB;
+select SchoolDetail.SchoolName, SchoolDeadline.DeadlineDatetime from SchoolDeadline
+join SchoolDetail on SchoolDeadline.SchoolID = SchoolDetail.SchoolID;
+call pGetSchoolSummary('dummy', 'user', 'dummyuser@email.com', 'University of Texas- Dallas', 2020, 'AU');
 call pGetSchoolDeadline('University of Rochester', 'Regular Decision', 2020, 'AU', 'Incoming Freshman');
 Select count(distinct SchoolID) from SchoolDeadline;
 

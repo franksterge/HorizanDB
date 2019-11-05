@@ -59,5 +59,10 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Seton_Hall_University3.jpg",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Seton_Hall_University1.png"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "9999-12-31T08:00:00.000Z",
+      "Early Action": "2019-12-15T08:00:00.000Z",
+      "Regular Decision Priority Application": "2020-03-01T08:00:00.000Z"
    }
 }

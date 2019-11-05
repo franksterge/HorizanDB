@@ -62,5 +62,9 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_New_Hampshire4.jpg",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_New_Hampshire1.png"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2020-02-01T08:00:00.000Z",
+      "Early Action": "2019-11-15T08:00:00.000Z"
    }
 }

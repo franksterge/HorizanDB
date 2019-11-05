@@ -59,5 +59,9 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Southern_Mississippi1.png",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Southern_Mississippi2.jpg"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "9999-12-31T08:00:00.000Z",
+      "Regular Decision Priority Application": "2020-06-30T07:00:00.000Z"
    }
 }

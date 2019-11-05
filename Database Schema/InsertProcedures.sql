@@ -765,3 +765,52 @@ begin
       commit;
   end if;
 end;
+
+Use HorizanDB;
+Create
+Procedure pGetSchoolDeadline(
+    School_Name VarChar(255)
+)
+begin 
+    Declare School_ID int;
+    Declare DeadlineCycle_ID int;
+    Declare StudentType_ID int;
+
+    Call pGetSchool (School_Name, School_ID);
+    if School_ID is null
+    then
+        SIGNAL SQLSTATE '45000'
+        Set MESSAGE_TEXT = 'School not found';
+    end if;
+
+    Call pGetDeadlineCycle(2020, 'AU', DeadlineCycle_ID);
+    If DeadlineCycle_ID is null 
+    then 
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Invalid Deadline Cycle name';
+    End if;  
+
+    Call pGetStudentType('Incoming Freshman', StudentType_ID);
+    if StudentType_ID is null
+    then 
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Student type not found';
+    end if;
+
+
+    if @@error_count = 0
+    then 
+        create temporary table tempDeadlineCycle(
+            Select sd.DeadlineDatetime, dd.DeadlineName
+            from SchoolDeadline sd
+            join DeadlineCycle dc on sd.DeadlineCycleID = dc.DeadlineCycleID
+            join DeadlineDetail dd on sd.DeadlineID = dd.DeadlineID
+            join StudentType st on sd.StudentTypeID = st.StudentTypeID
+            where sd.SchoolID = School_ID
+            and sd.DeadlineCycleID = DeadlineCycle_ID
+            and sd.StudentTypeID = StudentType_ID
+        );
+        Select * from tempDeadlineCycle;
+        drop table tempDeadlineCycle;
+    end if;
+end;

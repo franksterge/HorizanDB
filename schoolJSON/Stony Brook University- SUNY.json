@@ -49,5 +49,9 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Stony_Brook_University-_SUNY2.JPG",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Stony_Brook_University-_SUNY3.jpg"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2020-01-15T08:00:00.000Z",
+      "Regular Decision Priority Application": "2020-01-15T08:00:00.000Z"
    }
 }

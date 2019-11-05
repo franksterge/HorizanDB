@@ -56,5 +56,8 @@
    "Image": {
       "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Texas_A&M_University-_College_Stationlogo.png",
       "General": []
+   },
+   "Deadlines": {
+      "Regular Decision": "2019-12-01T08:00:00.000Z"
    }
 }

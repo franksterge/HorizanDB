@@ -61,5 +61,9 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Oklahoma2.jpg",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Oklahoma3.jpg"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2020-02-01T08:00:00.000Z",
+      "Regular Decision Priority Application": "2019-12-15T08:00:00.000Z"
    }
 }

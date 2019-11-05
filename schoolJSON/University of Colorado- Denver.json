@@ -57,5 +57,9 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Colorado-_Denver2.jpg",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Colorado-_Denver1.png"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "9999-12-31T08:00:00.000Z",
+      "Regular Decision Priority Application": "2020-08-01T07:00:00.000Z"
    }
 }

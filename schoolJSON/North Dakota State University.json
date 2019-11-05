@@ -56,5 +56,8 @@
       "General": [
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/North_Dakota_State_University2.JPG"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2020-08-01T07:00:00.000Z"
    }
 }

@@ -52,5 +52,9 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Worcester_Polytechnic_Institute2.jpg",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Worcester_Polytechnic_Institute3.jpg"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2020-02-01T08:00:00.000Z",
+      "Early Action": "2019-11-11T08:00:00.000Z"
    }
 }

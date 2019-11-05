@@ -331,9 +331,54 @@ const proccessedData = async () => {
                 )
             );
             preparedData.get(schoolName)["Image"]["General"] = schoolImage;
-                    
+
+        }
+    }
+
+
+    //
+    const addDeadline = async () => {
+        console.log("Adding Deadline data...");
+        for (const schoolName of schoolList) {
+            const deadline = await new Promise(
+                (resolve, reject) => db.query('call pGetSchoolDeadlines("' + schoolName + '")', 
+                    function (error, results) {
+                        if (error) {
+                            console.error('error: ' + error.stack);
+                            reject(error);
+                        } else {
+                            results = JSON.parse(JSON.stringify(results));
+                            var finalDeadlines = {};
+                            for (obj in results[0]) {
+                                obj = results[0][obj];
+                                var counter = 0;
+                                var deadlineName;
+                                var deadlineDatetime; 
+                                for (header in obj) {
+                                    if (counter == 0) {
+                                        deadlineDatetime = "" + obj[header];
+                                    } else {
+                                        deadlineName = obj[header];
+                                    }
+                                    counter++;
+                                }
+                                finalDeadlines[deadlineName] = deadlineDatetime;
+                                // console.log(deadlineName + ": " + deadlineDatetime);
+                            }
+                            resolve(finalDeadlines);    
+                        }                
+                    }
+                )
+            );
+            preparedData.get(schoolName)["Deadlines"] = deadline;
+        }
+        console.log("Finished all data processing.")
+    }
+
+    const writeToFile = async () => {
+        console.log("Start file writing...")
+        for (const schoolName of schoolList) {
             const outputDir = '../schoolJSON/';
-            // console.log("writing JSON file to " + outputDir);
             let fileName = schoolName + '.json';
             let fileDir = outputDir + fileName;
             console.log("writing " + fileDir);
@@ -354,6 +399,8 @@ const proccessedData = async () => {
     await addMajor();
     await addLogo()
     await addGeneralImage();
+    await addDeadline();
+    await writeToFile();
     // await console.log(preparedData.get('University of Washington'))
     await console.log(Date.now() - tick);
 }
@@ -362,6 +409,10 @@ proccessedData();
 
 
 
+
+
+
+                    
 
 
     // var schoolList = ['Adelphi University',

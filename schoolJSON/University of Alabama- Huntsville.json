@@ -56,5 +56,8 @@
       "General": [
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Alabama-_Huntsville1.png"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2020-08-17T07:00:00.000Z"
    }
 }

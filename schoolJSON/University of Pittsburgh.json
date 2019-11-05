@@ -61,5 +61,8 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Pittsburgh2.jpg",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Pittsburgh3.JPG"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "9999-12-31T08:00:00.000Z"
    }
 }

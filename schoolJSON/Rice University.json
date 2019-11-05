@@ -60,5 +60,9 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Rice_University3.jpg",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Rice_University1.png"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2020-01-01T08:00:00.000Z",
+      "Early Decision": "2019-11-01T07:00:00.000Z"
    }
 }

@@ -60,5 +60,9 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Pennsylvania_State_University-_University_Park3.jpg",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Pennsylvania_State_University-_University_Park1.png"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "9999-12-31T08:00:00.000Z",
+      "Regular Decision Priority Application": "2019-11-30T08:00:00.000Z"
    }
 }

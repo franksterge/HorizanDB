@@ -58,5 +58,8 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/New_Mexico_State_University3.jpg",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/New_Mexico_State_University1.png"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "9999-12-31T08:00:00.000Z"
    }
 }

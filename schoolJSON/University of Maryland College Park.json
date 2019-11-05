@@ -60,5 +60,10 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Maryland_College_Park3.jpg",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Maryland_College_Park1.png"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2020-01-20T08:00:00.000Z",
+      "Early Action": "2019-11-01T07:00:00.000Z",
+      "Regular Decision Priority Application": "2019-11-01T07:00:00.000Z"
    }
 }

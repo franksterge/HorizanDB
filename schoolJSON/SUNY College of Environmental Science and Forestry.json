@@ -48,5 +48,10 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/SUNY_College_of_Environmental_Science_and_Forestry2.jpg",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/SUNY_College_of_Environmental_Science_and_Forestry3.jpg"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "9999-12-31T08:00:00.000Z",
+      "Early Decision": "2019-12-01T08:00:00.000Z",
+      "Regular Decision Priority Application": "2020-02-01T08:00:00.000Z"
    }
 }

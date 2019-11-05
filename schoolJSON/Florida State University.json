@@ -61,5 +61,8 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Florida_State_University3.jpg",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Florida_State_University1.png"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2020-02-07T08:00:00.000Z"
    }
 }

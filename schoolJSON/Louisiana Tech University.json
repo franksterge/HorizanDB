@@ -58,5 +58,9 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Louisiana_Tech_University3.jpg",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Louisiana_Tech_University1.png"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "9999-12-31T08:00:00.000Z",
+      "Regular Decision Priority Application": "2020-01-05T08:00:00.000Z"
    }
 }

@@ -57,5 +57,10 @@
       "General": [
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_the_Pacific1.png"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2020-01-15T08:00:00.000Z",
+      "Early Action": "2019-11-15T08:00:00.000Z",
+      "Regular Decision Priority Application": "2019-11-15T08:00:00.000Z"
    }
 }

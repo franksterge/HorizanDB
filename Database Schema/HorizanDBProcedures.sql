@@ -1020,29 +1020,42 @@ begin
     end if;
 
     Call pGetSchoolDeadline(School_ID, Deadline_ID, DeadlineCycle_ID, StudentType_ID, SchoolDeadline_ID);
-    if SchoolDeadline_ID is null
-    then
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'SchoolDeadline not found';
-    end if; 
+
 
     if @@error_count = 0
     then
-        create temporary table tempSummary(
-            Select  s.SchoolName, s.SchoolLocation, s.SchoolType, uc.MatchPercentage, i.ImagePath, sd.DeadlineDatetime
-            from SchoolDetail s
-            join UserCollege uc on s.SchoolID = uc.SchoolID
-            join SchoolImage si on s.SchoolID = si.SchoolID
-            join ImageDetail i on i.ImageID = si.ImageID
-            join SchoolDeadline sd on s.SchoolID = sd.SchoolID
-            where s.SchoolID = School_ID 
-            and uc.UserID = User_ID
-            and uc.ResponseID = Response_ID
-            and sd.SchoolDeadlineID = SchoolDeadline_ID
-            and i.ImageType = 'Logo'
-        );
-        Select * from tempSummary;
-        drop table tempSummary;
+        if SchoolDeadline_ID is null
+        then
+            create temporary table tempSummary(
+                Select  s.SchoolName, s.SchoolLocation, s.SchoolType, uc.MatchPercentage, i.ImagePath
+                from SchoolDetail s
+                join UserCollege uc on s.SchoolID = uc.SchoolID
+                join SchoolImage si on s.SchoolID = si.SchoolID
+                join ImageDetail i on i.ImageID = si.ImageID
+                where s.SchoolID = School_ID 
+                and uc.UserID = User_ID
+                and uc.ResponseID = Response_ID
+                and i.ImageType = 'Logo'
+            );
+            Select * from tempSummary;
+            drop table tempSummary;
+        else 
+            create temporary table tempSummary(
+                Select  s.SchoolName, s.SchoolLocation, s.SchoolType, uc.MatchPercentage, i.ImagePath, sd.DeadlineDatetime
+                from SchoolDetail s
+                join UserCollege uc on s.SchoolID = uc.SchoolID
+                join SchoolImage si on s.SchoolID = si.SchoolID
+                join ImageDetail i on i.ImageID = si.ImageID
+                join SchoolDeadline sd on s.SchoolID = sd.SchoolID
+                where s.SchoolID = School_ID 
+                and uc.UserID = User_ID
+                and uc.ResponseID = Response_ID
+                and sd.SchoolDeadlineID = SchoolDeadline_ID
+                and i.ImageType = 'Logo'
+            );
+            Select * from tempSummary;
+            drop table tempSummary;
+        end if; 
     end if;
 end;
 

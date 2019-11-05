@@ -56,5 +56,9 @@
    "Image": {
       "Logo": "https://horizan-images.s3.us-east-2.amazonaws.com/University/SchoolLogos/Missouri_University_of_Science_&_Technologylogo.png",
       "General": []
+   },
+   "Deadlines": {
+      "Regular Decision": "2020-07-01T07:00:00.000Z",
+      "Regular Decision Priority Application": "2019-12-01T08:00:00.000Z"
    }
 }

@@ -58,5 +58,9 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Stevens_Institute_of_Technology2.JPG",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/Stevens_Institute_of_Technology1.png"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2020-01-15T08:00:00.000Z",
+      "Early Decision": "2019-11-15T08:00:00.000Z"
    }
 }

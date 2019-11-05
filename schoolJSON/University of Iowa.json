@@ -60,5 +60,8 @@
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Iowa3.jpg",
          "https://horizan-images.s3.us-east-2.amazonaws.com/University/University_image/University_of_Iowa1.png"
       ]
+   },
+   "Deadlines": {
+      "Regular Decision": "2020-05-01T07:00:00.000Z"
    }
 }
