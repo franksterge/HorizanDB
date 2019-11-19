@@ -235,13 +235,15 @@ call pGetUserResponses('Nick', 'Cherry', )
 
 select * from StudentType;
 Use HorizanDB;
+call pGetSchoolDeadlineInfo('Boston University','Regular Decision',2020,'AU','Incoming Freshman');
+Select count(distinct SchoolID) from SchoolDeadline;
+delete from SchoolDeadline where SchoolDeadlineID	 <> 0;
+
+call pGetSchoolSummary('dummy', 'user', 'dummyuser@email.com', 'University of South Dakota', 2020, 'AU');
 select SchoolDetail.SchoolName, SchoolDeadline.DeadlineDatetime from SchoolDeadline
 join SchoolDetail on SchoolDeadline.SchoolID = SchoolDetail.SchoolID;
-call pGetSchoolSummary('dummy', 'user', 'dummyuser@email.com', 'University of Texas- Dallas', 2020, 'AU');
 call pGetSchoolDeadline('University of Rochester', 'Regular Decision', 2020, 'AU', 'Incoming Freshman');
-Select count(distinct SchoolID) from SchoolDeadline;
 
-delete from SchoolDeadline where SchoolDeadlineID	 <> 0;
 select (date(Date_Format('2019-11-01T07:00:00.000Z', '%Y-%m-%dT%H:%i:%sZ')));
 Insert into DeadlineDetail(DeadlineName)
 values('Regular Decision'), ('Early Decision'), ('Early Action'), ('Regular Decision Priority Application');

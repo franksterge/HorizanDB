@@ -768,7 +768,7 @@ end;
 
 Use HorizanDB;
 Create
-Procedure pGetSchoolDeadline(
+Procedure pGetSchoolDeadlines(
     School_Name VarChar(255)
 )
 begin 
