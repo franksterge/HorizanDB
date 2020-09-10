@@ -59,9 +59,7 @@ Table ApplicationDetail (
   ApplicationLink VarChar(500) not null
 );
 
-/* 
-MARK:determine data needed
- */
+
 Use HorizanDB;
 Create 
 Table SchoolDeadline (
